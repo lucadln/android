@@ -21,6 +21,7 @@ import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.content.res.Resources.Theme;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,13 +35,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Setup spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(
                 toolbar.getContext(),
                 new String[]{
-                        "Section 1",
-                        "Section 2",
-                        "Section 3",
+                        "Present",
+                        "Present Continuous",
+                        "Simple Past",
+                        "Past Perfect",
+                        "Condtional",
+                        "Conditional Perfect",
+                        "Future"
                 }));
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -48,9 +53,50 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                        .commit();
+                switch (position) {
+                    case 0:
+                        Toast.makeText(parent.getContext(), "Present", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 1:
+                        Toast.makeText(parent.getContext(), "Present Continuous", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 2:
+                        Toast.makeText(parent.getContext(), "Simple past", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 3:
+                        Toast.makeText(parent.getContext(), "Past perfect", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 4:
+                        Toast.makeText(parent.getContext(), "Conditional", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 5:
+                        Toast.makeText(parent.getContext(), "Conditional Perfect", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                    case 6:
+                        Toast.makeText(parent.getContext(), "Future", Toast.LENGTH_SHORT).show();
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .commit();
+                        break;
+                }
             }
 
             @Override
@@ -66,9 +112,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -159,9 +203,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView = inflater.inflate(R.layout.tab1_present, container, false);
             return rootView;
         }
     }

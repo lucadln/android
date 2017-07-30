@@ -9,8 +9,9 @@
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.MainActivity$PlaceholderFragment">
 
     <TextView
-        android:id="@+id/section_label"
+        android:id="@+id/tab3_simple_past"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Simple past"/>
 
 </RelativeLayout>
