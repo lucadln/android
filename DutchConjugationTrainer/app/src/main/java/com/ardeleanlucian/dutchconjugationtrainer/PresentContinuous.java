@@ -12,6 +12,14 @@ import android.view.ViewGroup;
 
 public class PresentContinuous extends Fragment {
 
+    public static PresentContinuous newInstance() {
+        PresentContinuous frag = new PresentContinuous();
+        return frag;
+    }
+
+    public PresentContinuous() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

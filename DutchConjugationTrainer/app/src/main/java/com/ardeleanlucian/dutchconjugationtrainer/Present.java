@@ -12,10 +12,18 @@ import android.view.ViewGroup;
 
 public class Present extends Fragment {
 
+    public static Present newInstance() {
+        Present frag = new Present();
+        return frag;
+    }
+
+    public Present() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab4_past_perfect, container, false);
+        View rootView = inflater.inflate(R.layout.tab1_present, container, false);
         return rootView;
     }
 }

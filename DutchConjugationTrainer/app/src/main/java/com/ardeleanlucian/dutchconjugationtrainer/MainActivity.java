@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         Toast.makeText(parent.getContext(), "Present", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, Present.newInstance())
                                 .commit();
                         break;
                     case 1:
                         Toast.makeText(parent.getContext(), "Present Continuous", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, PresentContinuous.newInstance())
                                 .commit();
                         break;
                     case 2:
