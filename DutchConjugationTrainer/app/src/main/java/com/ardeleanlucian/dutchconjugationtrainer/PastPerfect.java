@@ -12,6 +12,14 @@ import android.view.ViewGroup;
 
 public class PastPerfect extends Fragment {
 
+    public static PastPerfect newInstance() {
+        PastPerfect frag = new PastPerfect();
+        return frag;
+    }
+
+    public PastPerfect() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

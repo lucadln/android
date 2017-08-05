@@ -12,6 +12,14 @@ import android.view.ViewGroup;
 
 public class Future extends Fragment {
 
+    public static Future newInstance() {
+        Future frag = new Future();
+        return frag;
+    }
+
+    public Future() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

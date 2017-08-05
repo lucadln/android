@@ -12,6 +12,14 @@ import android.view.ViewGroup;
 
 public class SimplePast extends Fragment {
 
+    public static SimplePast newInstance() {
+        SimplePast frag = new SimplePast();
+        return frag;
+    }
+
+    public SimplePast() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

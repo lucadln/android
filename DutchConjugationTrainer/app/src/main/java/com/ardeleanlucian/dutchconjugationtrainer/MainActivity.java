@@ -67,33 +67,33 @@ public class MainActivity extends AppCompatActivity {
                                 .commit();
                         break;
                     case 2:
-                        Toast.makeText(parent.getContext(), "Simple past", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(parent.getContext(), "Present Continuous", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, SimplePast.newInstance())
                                 .commit();
                         break;
                     case 3:
                         Toast.makeText(parent.getContext(), "Past perfect", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, PastPerfect.newInstance())
                                 .commit();
                         break;
                     case 4:
                         Toast.makeText(parent.getContext(), "Conditional", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, Conditional.newInstance())
                                 .commit();
                         break;
                     case 5:
                         Toast.makeText(parent.getContext(), "Conditional Perfect", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, ConditionalPerfect.newInstance())
                                 .commit();
                         break;
                     case 6:
                         Toast.makeText(parent.getContext(), "Future", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.container, PlaceholderFragment.newInstance(position))
+                                .replace(R.id.container, Future.newInstance())
                                 .commit();
                         break;
                 }

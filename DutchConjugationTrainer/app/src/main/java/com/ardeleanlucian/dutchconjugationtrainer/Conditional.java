@@ -1,5 +1,6 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.service.notification.Condition;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,14 @@ import android.view.ViewGroup;
  */
 
 public class Conditional extends Fragment {
+
+    public static Conditional newInstance() {
+        Conditional frag = new Conditional();
+        return frag;
+    }
+
+    public Conditional() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
