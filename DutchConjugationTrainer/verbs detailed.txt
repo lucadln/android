@@ -1,0 +1,100 @@
+1. Denken
+	A. Present
+		ik denk
+		jij denkt
+		hij denkt
+		wij denken
+		jullie denken
+		zij denken
+	B. Present Continuous
+		ik ben aan het denken
+		jij bent aan het denken
+		hij is aan het denken
+		wij zijn aan het denken
+		jullie zijn aan het denken
+		zij zijn aan het denken
+	C. Simple Past
+		ik dacht
+		jij dacht
+		hij dacht
+		wij dachten
+		jullie dachten
+		zij dachten
+	D. Past Perfect
+		ik had gedacht
+		jij had gedacht
+		hij had gedacht
+		wij hadden gedacht
+		jullie hadden gedacht
+		zij hadden gedacht
+	E. Conditional
+		ik zou denken
+		jij zou denken
+		hij zou denken
+		wij zouden denken
+		jullie zouden denken
+		zij zouden denken
+	F. Conditional Perfect
+		ik zou gedacht hebben
+		jij zou gedacht hebben
+		hij zou gedacht hebben
+		wij zouden gedacht hebben
+		jullie zouden gedacht hebben
+		zij zouden gedacht hebben
+	E. Future
+		ik zal denken
+		jij zult denken
+		hij zal denken
+		wij zullen denken
+		jullie zullen denken
+		zij zullen denken
+2. Blijven
+	A. Present
+		ik blijf
+		jij blijft
+		hij blijft
+		wij blijven
+		jullie blijven
+		zij blijven
+	B. Present Continuous
+		ik ben aan het blijven
+		jij bent aan het blijven
+		hij is aan het blijven
+		wij zijn aan het blijven
+		jullie zijn aan het blijven
+		zij zijn aan het blijven
+	C. Simple Past
+		ik bleef
+		jij bleef
+		hij bleef
+		wij bleven
+		jullie bleven
+		zij bleven
+	D. Past Perfect
+		ik was gebleven
+		jij was gebleven
+		hij was gebleven
+		wij waren gebleven
+		jullie waren gebleven
+		zij waren gebleven
+	E. Conditional
+		ik zou blijven
+		jij zou blijven
+		zij zou blijven
+		wij zouden blijven
+		jullie zouden blijven
+		zij zouden blijven
+	F. Conditional Perfect
+		ik zou gebleven zijn
+		jij zou gebleven zijn
+		hij zou gelbeven zijn
+		wij zouden gebleven zijn
+		jullie zouden gebleven zijn
+		zij zouden gebleven zijn
+	E. Future
+		ik zal blijven
+		jij zult blijven
+		hij zal blijven
+		wij zullen blijven
+		jullie zullen blijven
+		zij zullen blijven

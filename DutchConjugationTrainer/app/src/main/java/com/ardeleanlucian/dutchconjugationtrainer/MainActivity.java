@@ -55,43 +55,36 @@ public class MainActivity extends AppCompatActivity {
                 // container view.
                 switch (position) {
                     case 0:
-                        Toast.makeText(parent.getContext(), "Present", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, Present.newInstance())
                                 .commit();
                         break;
                     case 1:
-                        Toast.makeText(parent.getContext(), "Present Continuous", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, PresentContinuous.newInstance())
                                 .commit();
                         break;
                     case 2:
-                        Toast.makeText(parent.getContext(), "Present Continuous", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, SimplePast.newInstance())
                                 .commit();
                         break;
                     case 3:
-                        Toast.makeText(parent.getContext(), "Past perfect", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, PastPerfect.newInstance())
                                 .commit();
                         break;
                     case 4:
-                        Toast.makeText(parent.getContext(), "Conditional", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, Conditional.newInstance())
                                 .commit();
                         break;
                     case 5:
-                        Toast.makeText(parent.getContext(), "Conditional Perfect", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, ConditionalPerfect.newInstance())
                                 .commit();
                         break;
                     case 6:
-                        Toast.makeText(parent.getContext(), "Future", Toast.LENGTH_SHORT).show();
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, Future.newInstance())
                                 .commit();
@@ -171,40 +164,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void setDropDownViewTheme(Theme theme) {
             mDropDownHelper.setDropDownViewTheme(theme);
-        }
-    }
-
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.tab1_present, container, false);
-            return rootView;
         }
     }
 }
