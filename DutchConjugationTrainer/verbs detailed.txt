@@ -1,4 +1,4 @@
-1. Denken
+1. Denken (to think)
 	A. Present
 		ik denk
 		jij denkt
@@ -48,7 +48,7 @@
 		wij zullen denken
 		jullie zullen denken
 		zij zullen denken
-2. Blijven
+2. Blijven (to stay)
 	A. Present
 		ik blijf
 		jij blijft
