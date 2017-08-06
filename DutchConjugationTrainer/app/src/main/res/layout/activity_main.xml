@@ -32,6 +32,94 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="100dp"
+        android:paddingLeft="40dp"
+        android:stretchColumns="1">
+        <TableRow>
+            <TextView
+                android:text="infinitive"
+                android:id="@+id/infinitive"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:text="translation"
+                android:id="@+id/translation"
+                android:padding="3dip"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="ik"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/ik_present"
+                android:text="ik_verb"
+                android:padding="3dip"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="jij"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/jij_present"
+                android:text="jij_verb"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="hij/zij"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/hij_present"
+                android:text="hij_verb"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="wij"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/wij_present"
+                android:text="wij_verb"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="jullie"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/jullie_present"
+                android:text="jullie_verb"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="zij"
+                android:padding="3dip"
+                android:gravity="right"/>
+            <TextView
+                android:id="@+id/zij_present"
+                android:text="zij_verb"
+                android:padding="3dip" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="The outcome is ...!"
+                android:gravity="right"/>
+            <Button
+                android:id="@+id/next"
+                android:text="Next" />
+        </TableRow>
+    </TableLayout>
+
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/container"
         android:layout_width="match_parent"
