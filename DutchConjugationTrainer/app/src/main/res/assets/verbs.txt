@@ -1,5 +1,5 @@
 denken
-to think
+(to think)
 denk
 denkt
 denkt
@@ -43,7 +43,7 @@ zullen denken
 zullen denken
 zullen denken
 blijven
-to stay
+(to stay)
 blijf
 blijft
 blijft
