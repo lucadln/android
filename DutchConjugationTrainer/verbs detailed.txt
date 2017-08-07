@@ -98,3 +98,53 @@
 		wij zullen blijven
 		jullie zullen blijven
 		zij zullen blijven
+3. Kijken (to look)
+	A. Present
+		ik kijk
+		jij kijkt
+		hij kijkt
+		wij kijken
+		jullie kijken
+		zij kijken
+	B. Present Continuous
+		ik ben aan het kijken
+		jij bent aan het kijken
+		hij is aan het kijken
+		wij zijn aan het kijken
+		jullie zijn aan het kijken
+		zij zijn aan het kijken
+	C. Simple Past
+		ik keek
+		jij keek
+		hij keek
+		wij keken
+		jullie keken
+		zij keken
+	D. Past Perfect
+		ik had gekeken
+		jij had gekeken
+		hij had gekeken
+		wij hadden gekeken
+		jullie hadden gekeken
+		zij hadden gekeken
+	E. Conditional
+		ik zou kijken
+		jij zou kijken
+		hij zou kijken
+		wij zouden kijken
+		jullie zouden kijken
+		zij zouden kijken
+	F. Conditional Perfect
+		ik zou gekeken hebben
+		jij zou gekeken hebben
+		hij zou gekeken hebben
+		wij zouden gekeken hebben
+		jullie zouden gekeken hebben
+		zij zouden gekeken hebben
+	E. Future
+		ik zal kijken
+		jij zult kijken
+		hij zal kijken
+		wij zullen kijken
+		jullie zullen kijken
+		zij zullen kijken

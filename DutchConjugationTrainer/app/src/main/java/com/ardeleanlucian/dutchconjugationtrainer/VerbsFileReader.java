@@ -37,7 +37,6 @@ public class VerbsFileReader {
         String currentVerbKey = "com.ardeleanlucian.dutchconjugationtrainer.current_verb";
         // Get the next verb from the phone settings - 'denken' is default
         String currentVerb = prefs.getString(currentVerbKey, "denken");
-        String initVerb = "denken";
 
         try {
             BufferedReader bufferedReader = new BufferedReader(
