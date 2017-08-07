@@ -34,13 +34,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = this;
 
-        // Define variables for reading Shared Preferences.
-        final SharedPreferences prefs = context.getSharedPreferences(
-                "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
-        final String currentTenseKey = "com.ardeleanlucian.dutchconjugationtrainer.current_tense";
-        // Get the last used tense
-        spinnerPosition = prefs.getInt(currentTenseKey, 0);
-
         // Define variables for textviews
         final TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
         final TextView TRANSLATION = (TextView) findViewById(R.id.translation);
@@ -51,11 +44,19 @@ public class MainActivity extends AppCompatActivity {
         final TextView JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
         final TextView ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
 
+        // Set up the action toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Setup spinner
+        // Define variables for reading Shared Preferences.
+        final SharedPreferences prefs = context.getSharedPreferences(
+                "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
+        final String currentTenseKey = "com.ardeleanlucian.dutchconjugationtrainer.current_tense";
+        // Get the last used tense
+        spinnerPosition = prefs.getInt(currentTenseKey, 0);
+
+        // Set up the spinner
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(
                 toolbar.getContext(),
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 ZIJ_VERB.setText(    tenseConjugationResult.getZijVerb()     );
 
                 // Save tense choice in application memory.
+                spinnerPosition = position;
                 prefs.edit().putInt(currentTenseKey, position).apply();
             }
 
