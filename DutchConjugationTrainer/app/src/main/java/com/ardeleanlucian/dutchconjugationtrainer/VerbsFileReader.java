@@ -34,12 +34,10 @@ public class VerbsFileReader {
         // Define a variable for reading Shared Preferences.
         SharedPreferences prefs = context.getSharedPreferences(
                 "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
-        // Get the next verb from the phone settings - 'denken' if no settings are present.
-        String currentVerb = prefs.getString("com.ardeleanlucian.dutchconjugationtrainer.next_verb",
-                                          "denken");
-        // Set 2 variables to help looping through the verb list.
+        String currentVerbKey = "com.ardeleanlucian.dutchconjugationtrainer.current_verb";
+        // Get the next verb from the phone settings - 'denken' is default
+        String currentVerb = prefs.getString(currentVerbKey, "denken");
         String initVerb = "denken";
-        String lastVerb = "blijven";
 
         try {
             BufferedReader bufferedReader = new BufferedReader(
@@ -47,13 +45,18 @@ public class VerbsFileReader {
             while (((tempReader = bufferedReader.readLine()) != null) && !found) {
                 if (tempReader.equals(currentVerb)) {
                     if (action == "next") {
-//                        bufferedReader.readLine();
-//                        if ((dutchWord = bufferedReader.readLine()) == null) {
-//                            dutchWord = initDutchWord;
-//                            englishWord = initEnglishWord;
-//                        } else {
-//                            englishWord = bufferedReader.readLine();
-//                        }
+                        // Skip the conjugations and move to the next word
+                        for (int i = 0; i < 44; i++) {
+                            bufferedReader.readLine();
+                        }
+                        if ((currentVerb = bufferedReader.readLine()) == null) {
+                            /** We got to the end of the verb file.
+                            /* We'll reading from the beggining again. */
+                            currentVerb = initVerb;
+                        } else {
+                            prefs.edit().putString(currentVerbKey, currentVerb).apply();
+                        }
+                        readFile(context, tense, "none");
                     } else {
                         infinitive = currentVerb;
                         translation = bufferedReader.readLine();
@@ -99,10 +102,6 @@ public class VerbsFileReader {
                         jullieVerb = bufferedReader.readLine();
                         zijVerb = bufferedReader.readLine();
                     }
-
-                    // Store the latest dutch word in the phone memory
-//                    lastDisplayedWord = dutchWord;
-//                    prefs.edit().putString(indexKeyA1, lastDisplayedWord).apply();
                     found = true;
                 }
             }

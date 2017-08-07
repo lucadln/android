@@ -1,11 +1,11 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,9 +21,6 @@ import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.content.res.Resources.Theme;
 
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.logging.FileHandler;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,14 +35,21 @@ public class MainActivity extends AppCompatActivity {
     private String zijVerb = "unknown";
 
     Context context;
-
     TenseConjugationResult tenseConjugationResult;
+    int spinnerPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = this;
+
+        // Define variables for reading Shared Preferences.
+        final SharedPreferences prefs = context.getSharedPreferences(
+                "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
+        final String currentTenseKey = "com.ardeleanlucian.dutchconjugationtrainer.current_tense";
+        // Get the last used tense
+        spinnerPosition = prefs.getInt(currentTenseKey, 0);
 
         // Define variables for textviews
         final TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
                         "Conditional Perfect",
                         "Future"
                 }));
+
+        spinner.setSelection(spinnerPosition);
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
@@ -113,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 WIJ_VERB.setText(wijVerb);
                 JULLIE_VERB.setText(jullieVerb);
                 ZIJ_VERB.setText(zijVerb);
+
+                prefs.edit().putInt(currentTenseKey, position).apply();
             }
 
             @Override
@@ -128,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    /** Define actions to be taken when clicking on the 'Next' button */
+    public void onClickNext(View view) {
+
     }
 
     @Override
@@ -151,7 +164,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
     private static class MyAdapter extends ArrayAdapter<String> implements ThemedSpinnerAdapter {
         private final ThemedSpinnerAdapter.Helper mDropDownHelper;
