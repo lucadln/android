@@ -29,7 +29,7 @@ public class VerbsFileReader {
         this.context = context;
     }
 
-    public TenseConjugationResult readFile(Context context, String tense, String action) {
+    public TenseConjugationResult readFile(Context context, int position, String action) {
 
         // Define a variable for reading Shared Preferences.
         SharedPreferences prefs = context.getSharedPreferences(
@@ -46,62 +46,63 @@ public class VerbsFileReader {
                 if (tempReader.equals(currentVerb)) {
                     if (action == "next") {
                         // Skip the conjugations and move to the next word
-                        for (int i = 0; i < 44; i++) {
+                        for (int i = 0; i < 43; i++) {
                             bufferedReader.readLine();
                         }
                         if ((currentVerb = bufferedReader.readLine()) == null) {
                             /** We got to the end of the verb file.
-                            /* We'll reading from the beggining again. */
-                            currentVerb = initVerb;
-                        } else {
-                            prefs.edit().putString(currentVerbKey, currentVerb).apply();
+                            /* We'll start reading from the beggining again. */
+                            bufferedReader.close();
+                            bufferedReader = new BufferedReader(
+                                    new InputStreamReader(context.getAssets().open("verbs.txt")));
+                            currentVerb = bufferedReader.readLine();
                         }
-                        readFile(context, tense, "none");
-                    } else {
-                        infinitive = currentVerb;
-                        translation = bufferedReader.readLine();
-                        switch (tense) {
-                            // Skip reading lines in the 'verbs.txt' file if needed.
-                            case "present":
-                                break;
-                            case "present_continuous":
-                                for (int i = 0; i < 6; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                            case "simple_past":
-                                for (int i = 0; i < 12; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                            case "past_perfect":
-                                for (int i = 0; i < 18; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                            case "conditional":
-                                for (int i = 0; i < 24; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                            case "conditional_perfect":
-                                for (int i = 0; i < 30; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                            case "future":
-                                for (int i = 0; i < 36; i++) {
-                                    bufferedReader.readLine();
-                                }
-                                break;
-                        }
-                        ikVerb = bufferedReader.readLine();
-                        jijVerb = bufferedReader.readLine();
-                        hijVerb = bufferedReader.readLine();
-                        wijVerb = bufferedReader.readLine();
-                        jullieVerb = bufferedReader.readLine();
-                        zijVerb = bufferedReader.readLine();
+                        // Set the new current word in the phone preferences
+                        prefs.edit().putString(currentVerbKey, currentVerb).apply();
                     }
+                    infinitive = currentVerb;
+                    translation = bufferedReader.readLine();
+                    switch (position) {
+                        // Skip reading lines in the 'verbs.txt' file if needed.
+                        case 0:
+                            break;
+                        case 1:
+                            for (int i = 0; i < 6; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                        case 2:
+                            for (int i = 0; i < 12; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                        case 3:
+                            for (int i = 0; i < 18; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                        case 4:
+                            for (int i = 0; i < 24; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                        case 5:
+                            for (int i = 0; i < 30; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                        case 6:
+                            for (int i = 0; i < 36; i++) {
+                                bufferedReader.readLine();
+                            }
+                            break;
+                    }
+                    ikVerb = bufferedReader.readLine();
+                    jijVerb = bufferedReader.readLine();
+                    hijVerb = bufferedReader.readLine();
+                    wijVerb = bufferedReader.readLine();
+                    jullieVerb = bufferedReader.readLine();
+                    zijVerb = bufferedReader.readLine();
                     found = true;
                 }
             }

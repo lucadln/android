@@ -24,16 +24,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Define variables for storing verb conjugation values.
-    private String infinitive = "unknown";
-    private String translation = "unknown";
-    private String ikVerb = "unknown";
-    private String jijVerb = "unknown";
-    private String hijVerb = "unknown";
-    private String wijVerb = "unknown";
-    private String jullieVerb = "unknown";
-    private String zijVerb = "unknown";
-
     Context context;
     TenseConjugationResult tenseConjugationResult;
     int spinnerPosition;
@@ -87,39 +77,19 @@ public class MainActivity extends AppCompatActivity {
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
-                if (position == 0) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "present", "none");
-                } else if (position == 1) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "present_continuous", "none");
-                } else if (position == 2) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "simple_past", "none");
-                } else if (position == 3) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "past_perfect", "none");
-                } else if (position == 4) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "conditional", "none");
-                } else if (position == 5) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "conditional_perfect", "none");
-                } else if (position == 6) {
-                    tenseConjugationResult = verbsFileReader.readFile(context, "future", "none");
-                }
-                infinitive = tenseConjugationResult.getInfinitive();
-                translation = tenseConjugationResult.getTranslation();
-                ikVerb = tenseConjugationResult.getIkVerb();
-                jijVerb = tenseConjugationResult.getJijVerb();
-                hijVerb = tenseConjugationResult.getHijVerb();
-                wijVerb = tenseConjugationResult.getWijVerb();
-                jullieVerb = tenseConjugationResult.getJullieVerb();
-                zijVerb = tenseConjugationResult.getZijVerb();
+                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
 
-                INFINITVE.setText(infinitive);
-                TRANSLATION.setText(translation);
-                IK_VERB.setText(ikVerb);
-                JIJ_VERB.setText(jijVerb);
-                HIJ_VERB.setText(hijVerb);
-                WIJ_VERB.setText(wijVerb);
-                JULLIE_VERB.setText(jullieVerb);
-                ZIJ_VERB.setText(zijVerb);
+                // Display the new conjugations
+                INFINITVE.setText(   tenseConjugationResult.getInfinitive()  );
+                TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+                IK_VERB.setText(     tenseConjugationResult.getIkVerb()      );
+                JIJ_VERB.setText(    tenseConjugationResult.getJijVerb()     );
+                HIJ_VERB.setText(    tenseConjugationResult.getHijVerb()     );
+                WIJ_VERB.setText(    tenseConjugationResult.getWijVerb()     );
+                JULLIE_VERB.setText( tenseConjugationResult.getJullieVerb()  );
+                ZIJ_VERB.setText(    tenseConjugationResult.getZijVerb()     );
 
+                // Save tense choice in application memory.
                 prefs.edit().putInt(currentTenseKey, position).apply();
             }
 
@@ -140,7 +110,28 @@ public class MainActivity extends AppCompatActivity {
 
     /** Define actions to be taken when clicking on the 'Next' button */
     public void onClickNext(View view) {
+        VerbsFileReader verbsFileReader = new VerbsFileReader(context);
+        tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
 
+        // Define variables for textviews
+        final TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
+        final TextView TRANSLATION = (TextView) findViewById(R.id.translation);
+        final TextView IK_VERB = (TextView) findViewById(R.id.ik_present);
+        final TextView JIJ_VERB = (TextView) findViewById(R.id.jij_present);
+        final TextView HIJ_VERB = (TextView) findViewById(R.id.hij_present);
+        final TextView WIJ_VERB = (TextView) findViewById(R.id.wij_present);
+        final TextView JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
+        final TextView ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
+
+        // Display the new conjugations
+        INFINITVE.setText(   tenseConjugationResult.getInfinitive()  );
+        TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+        IK_VERB.setText(     tenseConjugationResult.getIkVerb()      );
+        JIJ_VERB.setText(    tenseConjugationResult.getJijVerb()     );
+        HIJ_VERB.setText(    tenseConjugationResult.getHijVerb()     );
+        WIJ_VERB.setText(    tenseConjugationResult.getWijVerb()     );
+        JULLIE_VERB.setText( tenseConjugationResult.getJullieVerb()  );
+        ZIJ_VERB.setText(    tenseConjugationResult.getZijVerb()     );
     }
 
     @Override
