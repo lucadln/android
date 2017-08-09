@@ -3,8 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_preferences"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Preferences"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/reset_scores"
+        android:orderInCategory="100"
+        android:title="Reset scores"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="About"
         app:showAsAction="never" />
 </menu>
