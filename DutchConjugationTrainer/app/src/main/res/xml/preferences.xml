@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:key="pref_sync"
-        android:title="Sync preferences"
-        android:summary="Summary of synchronization preferences"
-        android:defaultValue="true" />
-    <CheckBoxPreference
-        android:key="pref_sync2"
-        android:title="Sync preferences2"
-        android:summary="Summary of synchronization preferences2"
+        android:key="my_pref"
+        android:title="My preference"
+        android:summary="This is my preference"
         android:defaultValue="true" />
 </PreferenceScreen>
