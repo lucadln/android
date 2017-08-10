@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Swap languages action button -->
+    <item
+        android:id="@+id/action_swap"
+        android:icon="@drawable/ic_swap_vertical_circle_black_24dp"
+        android:title="action_swap"
+        app:showAsAction="always"/>
+
+    <!-- Change difficulty action button -->
+    <item
+        android:id="@+id/action_change_difficulty"
+        android:icon="@drawable/ic_widgets_black_24dp"
+        android:title="action_change_difficulty"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/diffChoiceA1"
+                android:title="Easy"
+                android:icon="@mipmap/difficulty_easy"/>
+            <item
+                android:id="@+id/diffChoiceA2"
+                android:title="Medium"
+                android:icon="@mipmap/difficulty_medium"/>
+            <item
+                android:id="@+id/diffChoiceB1"
+                android:title="Hard"
+                android:icon="@mipmap/difficulty_hard"/>
+        </menu>
+    </item>
+</menu>
