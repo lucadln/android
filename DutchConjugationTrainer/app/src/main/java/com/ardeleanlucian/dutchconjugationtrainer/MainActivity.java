@@ -2,6 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     Context context;
     TenseConjugationResult tenseConjugationResult;
     int spinnerPosition;
+    Boolean showTranslationPref;
+    Boolean readOnlyPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +38,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = this;
 
-        // Define variables for textviews
-        final TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
-        final TextView TRANSLATION = (TextView) findViewById(R.id.translation);
-        final TextView IK_VERB = (TextView) findViewById(R.id.ik_present);
-        final TextView JIJ_VERB = (TextView) findViewById(R.id.jij_present);
-        final TextView HIJ_VERB = (TextView) findViewById(R.id.hij_present);
-        final TextView WIJ_VERB = (TextView) findViewById(R.id.wij_present);
-        final TextView JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
-        final TextView ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
+        // Set preferences-menu default values when application is started for the first time
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        // Get preferences from phone storage
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
 
         // Set up the action toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -81,9 +81,29 @@ public class MainActivity extends AppCompatActivity {
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
                 tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
 
+                // Get default values
+                SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
+                readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+
+                // Define variables for textviews
+                TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
+                TextView TRANSLATION = (TextView) findViewById(R.id.translation);
+                TextView IK_VERB = (TextView) findViewById(R.id.ik_present);
+                TextView JIJ_VERB = (TextView) findViewById(R.id.jij_present);
+                TextView HIJ_VERB = (TextView) findViewById(R.id.hij_present);
+                TextView WIJ_VERB = (TextView) findViewById(R.id.wij_present);
+                TextView JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
+                TextView ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
+
                 // Display the new conjugations
-                INFINITVE.setText(   tenseConjugationResult.getInfinitive()  );
-                TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+                INFINITVE.setText( tenseConjugationResult.getInfinitive() );
+                if (showTranslationPref) {
+                    TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+                    TRANSLATION.setVisibility(View.VISIBLE);
+                } else {
+                    TRANSLATION.setVisibility(View.GONE);
+                }
                 IK_VERB.setText(     tenseConjugationResult.getIkVerb()      );
                 JIJ_VERB.setText(    tenseConjugationResult.getJijVerb()     );
                 HIJ_VERB.setText(    tenseConjugationResult.getHijVerb()     );
@@ -116,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
         tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
 
+        // Get default values
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+
         // Define variables for textviews
         final TextView INFINITVE = (TextView) findViewById(R.id.infinitive);
         final TextView TRANSLATION = (TextView) findViewById(R.id.translation);
@@ -127,8 +152,13 @@ public class MainActivity extends AppCompatActivity {
         final TextView ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
 
         // Display the new conjugations
-        INFINITVE.setText(   tenseConjugationResult.getInfinitive()  );
-        TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+        INFINITVE.setText( tenseConjugationResult.getInfinitive() );
+        if (showTranslationPref) {
+            TRANSLATION.setText( tenseConjugationResult.getTranslation() );
+            TRANSLATION.setVisibility(View.VISIBLE);
+        } else {
+            TRANSLATION.setVisibility(View.GONE);
+        }
         IK_VERB.setText(     tenseConjugationResult.getIkVerb()      );
         JIJ_VERB.setText(    tenseConjugationResult.getJijVerb()     );
         HIJ_VERB.setText(    tenseConjugationResult.getHijVerb()     );
@@ -154,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_preferences) {
             Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            // Start new activity to display preferences
             startActivity(i);
             return true;
         }

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:key="my_pref"
-        android:title="My preference"
-        android:summary="This is my preference"
+        android:key="show_translation"
+        android:title="Show translation"
+        android:summary="For the infinitive form"
         android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="read_only"
+        android:title="Read-only conjugations"
+        android:summary="Writting conjugations not required"
+        android:defaultValue="false" />
 </PreferenceScreen>

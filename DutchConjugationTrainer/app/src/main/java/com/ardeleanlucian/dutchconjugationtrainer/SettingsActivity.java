@@ -1,6 +1,6 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
-import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +9,11 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Ardelean Lucian on 8/9/2017.
  */
 
-public class SettingsActivity extends AppCompatActivity{
+public class SettingsActivity extends AppCompatActivity {
+
+    public static final String KEY_SHOW_TRANS = "show_translation";
+    public static final String KEY_READ_ONLY = "read_only";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
