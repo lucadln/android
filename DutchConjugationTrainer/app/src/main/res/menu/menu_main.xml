@@ -8,9 +8,9 @@
         android:title="Preferences"
         app:showAsAction="never" />
     <item
-        android:id="@+id/reset_scores"
+        android:id="@+id/scores"
         android:orderInCategory="100"
-        android:title="Reset scores"
+        android:title="Scores"
         app:showAsAction="never" />
     <item
         android:id="@+id/about"
