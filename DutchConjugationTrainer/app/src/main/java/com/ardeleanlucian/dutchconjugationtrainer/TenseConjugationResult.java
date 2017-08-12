@@ -1,5 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.widget.TextView;
+
 /**
  * Created by Ardelean Lucian on 8/6/2017.
  */
@@ -26,6 +28,17 @@ public class TenseConjugationResult {
         this.wijVerb = wijVerb;
         this.jullieVerb = jullieVerb;
         this.zijVerb = zijVerb;
+    }
+
+    public void displayConjugations(TextView IK_VERB, TextView JIJ_VERB, TextView HIJ_VERB,
+                                    TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB,
+                                    Boolean showConjugation[]) {
+        IK_VERB.setText(     getIkVerb()      );
+        JIJ_VERB.setText(    getJijVerb()     );
+        HIJ_VERB.setText(    getHijVerb()     );
+        WIJ_VERB.setText(    getWijVerb()     );
+        JULLIE_VERB.setText( getJullieVerb()  );
+        ZIJ_VERB.setText(    getZijVerb()     );
     }
 
     public String getInfinitive() { return infinitive; }
