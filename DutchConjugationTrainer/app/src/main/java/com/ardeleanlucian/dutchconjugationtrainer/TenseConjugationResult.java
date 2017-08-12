@@ -1,5 +1,6 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -8,14 +9,14 @@ import android.widget.TextView;
 
 public class TenseConjugationResult {
 
-    private String infinitive = "unknown";
-    private String translation = "unknown";
-    private String ikVerb = "unknown";
-    private String jijVerb = "unknown";
-    private String hijVerb = "unknown";
-    private String wijVerb = "unknown";
-    private String jullieVerb = "unknown";
-    private String zijVerb = "unknown";
+    private String infinitive;
+    private String translation;
+    private String ikVerb;
+    private String jijVerb;
+    private String hijVerb;
+    private String wijVerb;
+    private String jullieVerb;
+    private String zijVerb;
 
     public TenseConjugationResult(String infinitive, String translation,
                                   String ikVerb, String jijVerb, String hijVerb,
@@ -30,42 +31,27 @@ public class TenseConjugationResult {
         this.zijVerb = zijVerb;
     }
 
+    // Display verb conjugations
     public void displayConjugations(TextView IK_VERB, TextView JIJ_VERB, TextView HIJ_VERB,
                                     TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB,
-                                    Boolean showConjugation[]) {
-        IK_VERB.setText(     getIkVerb()      );
-        JIJ_VERB.setText(    getJijVerb()     );
-        HIJ_VERB.setText(    getHijVerb()     );
-        WIJ_VERB.setText(    getWijVerb()     );
-        JULLIE_VERB.setText( getJullieVerb()  );
-        ZIJ_VERB.setText(    getZijVerb()     );
+                                    boolean showConjugation[]) {
+
+        IK_VERB.setText(     ikVerb      );
+        JIJ_VERB.setText(    jijVerb     );
+        HIJ_VERB.setText(    hijVerb     );
+        WIJ_VERB.setText(    wijVerb     );
+        JULLIE_VERB.setText( jullieVerb  );
+        ZIJ_VERB.setText(    zijVerb     );
     }
 
-    public String getInfinitive() { return infinitive; }
-
-    public String getTranslation() { return translation; }
-
-    public String getIkVerb() {
-        return ikVerb;
-    }
-
-    public String getJijVerb() {
-        return jijVerb;
-    }
-
-    public String getHijVerb() {
-        return hijVerb;
-    }
-
-    public String getWijVerb() {
-        return wijVerb;
-    }
-
-    public String getJullieVerb() {
-        return jullieVerb;
-    }
-
-    public String getZijVerb() {
-        return zijVerb;
+    // Display infinitive and translation
+    public void displayVerb(TextView INFINITIVE, TextView TRANSLATION, boolean showTranslation) {
+        INFINITIVE.setText( infinitive );
+        if (showTranslation) {
+            TRANSLATION.setText( translation );
+            TRANSLATION.setVisibility(View.VISIBLE);
+        } else {
+            TRANSLATION.setVisibility(View.GONE);
+        }
     }
 }

@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private TenseConjugationResult tenseConjugationResult;
     private int spinnerPosition;
-    private Boolean showTranslationPref;
-    private Boolean readOnlyPref;
-    private Boolean showConjugation[] = {false , false, false, false, false, false};
+    private boolean showTranslationPref;
+    private boolean readOnlyPref;
+    private boolean showConjugation[] = {false , false, false, false, false, false};
     private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                               "Condtional", "Conditional Perfect", "Future" };
 
@@ -99,14 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
                 readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
 
-                // Display infinitive and (possible) translation
-                INFINITVE.setText( tenseConjugationResult.getInfinitive() );
-                if (showTranslationPref) {
-                    TRANSLATION.setText( tenseConjugationResult.getTranslation() );
-                    TRANSLATION.setVisibility(View.VISIBLE);
-                } else {
-                    TRANSLATION.setVisibility(View.GONE);
-                }
+                // Display the infinitive and translation
+                tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
                 // Display conjugations
                 tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
                         WIJ_VERB, JULLIE_VERB, ZIJ_VERB, showConjugation);
@@ -141,14 +135,8 @@ public class MainActivity extends AppCompatActivity {
         showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
         readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
 
-        // Display infinitive and (possible) translation
-        INFINITVE.setText( tenseConjugationResult.getInfinitive() );
-        if (showTranslationPref) {
-            TRANSLATION.setText( tenseConjugationResult.getTranslation() );
-            TRANSLATION.setVisibility(View.VISIBLE);
-        } else {
-            TRANSLATION.setVisibility(View.GONE);
-        }
+        // Display the infinitive and translation
+        tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
         // Display conjugations
         tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB, showConjugation);
@@ -197,7 +185,6 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 view = convertView;
             }
-
             TextView textView = (TextView) view.findViewById(android.R.id.text1);
             textView.setText(getItem(position));
 
