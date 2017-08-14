@@ -37,7 +37,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="100dp"
         android:paddingLeft="40dp"
-        android:stretchColumns="1">
+        android:stretchColumns="1"
+        android:onClick="onTapScreen">
         <TableRow>
             <TextView
                 android:text="infinitive"

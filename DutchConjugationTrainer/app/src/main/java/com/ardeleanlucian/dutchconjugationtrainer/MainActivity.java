@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private int spinnerPosition;
     private boolean showTranslationPref;
     private boolean readOnlyPref;
-    private boolean showConjugation[] = {false , false, false, false, false, false};
+    private int displayConjugation = 0;
     private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                               "Condtional", "Conditional Perfect", "Future" };
 
@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
                 tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
                 // Display conjugations
                 tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, showConjugation);
+                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
-                // Save tense choice in application memory.
+                // Save tense choice in phone memory.
                 spinnerPosition = position;
                 prefs.edit().putInt(currentTenseKey, position).apply();
             }
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
         // Display conjugations
         tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                WIJ_VERB, JULLIE_VERB, ZIJ_VERB, showConjugation);
+                WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
     }
 
     @Override
@@ -164,6 +164,18 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onTapScreen(View view) {
+        /*  If the user opted for the read-only option
+         *    then show the conjugation one by one for
+         *    every person (ik, jij, hij...) when
+         *    tapping the screen  */
+        if (readOnlyPref) {
+            // TO DO
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+        }
     }
 
     private static class MyAdapter extends ArrayAdapter<String> implements ThemedSpinnerAdapter {
