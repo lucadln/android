@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private int spinnerPosition;
     private boolean showTranslationPref;
     private boolean readOnlyPref;
-    private int displayConjugation = 0;
+    private int displayConjIndex = 0;
     private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                               "Condtional", "Conditional Perfect", "Future" };
 
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
                 tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
 
-                // Get default values
+                // Get default preferences values
                 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                 showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
                 readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
                 // Display conjugations
                 tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
 
                 // Save tense choice in phone memory.
                 spinnerPosition = position;
@@ -127,6 +127,9 @@ public class MainActivity extends AppCompatActivity {
 
     /** Define actions to be taken when clicking on the 'Next' button */
     public void onClickNext(View view) {
+        // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
+        displayConjIndex = 0;
+
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
         tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
 
@@ -139,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
         // Display conjugations
         tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+                WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
     }
 
     @Override
@@ -172,9 +175,12 @@ public class MainActivity extends AppCompatActivity {
          *    every person (ik, jij, hij...) when
          *    tapping the screen  */
         if (readOnlyPref) {
-            // TO DO
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            if (displayConjIndex < 6) {
+                displayConjIndex++;
+                // Display conjugations
+                tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
+                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
+            }
         }
     }
 

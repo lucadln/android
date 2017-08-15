@@ -44,7 +44,8 @@ public class TenseConjugationResult {
 
     // Method to display verb conjugations
     public void displayConjugations(TextView IK_VERB, TextView JIJ_VERB, TextView HIJ_VERB,
-                                    TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB) {
+                                    TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB,
+                                    int displayConjIndex) {
 
         IK_VERB.setText(     ikVerb      );
         JIJ_VERB.setText(    jijVerb     );
@@ -52,5 +53,75 @@ public class TenseConjugationResult {
         WIJ_VERB.setText(    wijVerb     );
         JULLIE_VERB.setText( jullieVerb  );
         ZIJ_VERB.setText(    zijVerb     );
+
+        decideVisibility(IK_VERB, JIJ_VERB, HIJ_VERB,
+                WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                displayConjIndex);
+
+    }
+
+    // Decide which conjugations are visible considering the displayConjIndex
+    public void decideVisibility(TextView IK_VERB, TextView JIJ_VERB, TextView HIJ_VERB,
+                                 TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB,
+                                 int displayConjIndex) {
+
+        switch (displayConjIndex) {
+            case 0:
+                IK_VERB.setVisibility(View.INVISIBLE);
+                JIJ_VERB.setVisibility(View.INVISIBLE);
+                HIJ_VERB.setVisibility(View.INVISIBLE);
+                WIJ_VERB.setVisibility(View.INVISIBLE);
+                JULLIE_VERB.setVisibility(View.INVISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 1:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.INVISIBLE);
+                HIJ_VERB.setVisibility(View.INVISIBLE);
+                WIJ_VERB.setVisibility(View.INVISIBLE);
+                JULLIE_VERB.setVisibility(View.INVISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 2:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.VISIBLE);
+                HIJ_VERB.setVisibility(View.INVISIBLE);
+                WIJ_VERB.setVisibility(View.INVISIBLE);
+                JULLIE_VERB.setVisibility(View.INVISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 3:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.VISIBLE);
+                HIJ_VERB.setVisibility(View.VISIBLE);
+                WIJ_VERB.setVisibility(View.INVISIBLE);
+                JULLIE_VERB.setVisibility(View.INVISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 4:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.VISIBLE);
+                HIJ_VERB.setVisibility(View.VISIBLE);
+                WIJ_VERB.setVisibility(View.VISIBLE);
+                JULLIE_VERB.setVisibility(View.INVISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 5:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.VISIBLE);
+                HIJ_VERB.setVisibility(View.VISIBLE);
+                WIJ_VERB.setVisibility(View.VISIBLE);
+                JULLIE_VERB.setVisibility(View.VISIBLE);
+                ZIJ_VERB.setVisibility(View.INVISIBLE);
+                break;
+            case 6:
+                IK_VERB.setVisibility(View.VISIBLE);
+                JIJ_VERB.setVisibility(View.VISIBLE);
+                HIJ_VERB.setVisibility(View.VISIBLE);
+                WIJ_VERB.setVisibility(View.VISIBLE);
+                JULLIE_VERB.setVisibility(View.VISIBLE);
+                ZIJ_VERB.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 }
