@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
                 tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
+                
+                displayConjIndex = 0;
 
                 // Get default preferences values
                 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
