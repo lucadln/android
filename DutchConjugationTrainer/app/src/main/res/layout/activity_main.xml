@@ -64,7 +64,7 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/ik"    
+                android:id="@+id/ik"
                 android:gravity="right"
                 android:padding="3dip"
                 android:text="ik" />

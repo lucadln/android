@@ -163,6 +163,19 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+        IK_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                        /* When focus is lost check that the text field
+                        * has valid values.
+                        */
+                if (!hasFocus) {
+                    IK_VERB_FIELD.setEnabled(false);
+                }
+            }
+        });
     }
 
     /** Define actions to be taken when clicking on the 'Next' button */
