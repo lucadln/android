@@ -64,15 +64,23 @@
         <TableRow>
 
             <TextView
-                android:id="@+id/ik"
+                android:id="@+id/ik"    
                 android:gravity="right"
                 android:padding="3dip"
                 android:text="ik" />
 
             <TextView
-                android:id="@+id/ik_present"
+                android:id="@+id/ik_verb"
                 android:padding="3dip"
-                android:text="ik_verb" />
+                android:text="ik_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/ik_verb_field"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -84,9 +92,17 @@
                 android:text="jij" />
 
             <TextView
-                android:id="@+id/jij_present"
+                android:id="@+id/jij_verb"
                 android:padding="3dip"
-                android:text="jij_verb" />
+                android:text="jij_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/jij_verb_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -98,9 +114,17 @@
                 android:text="hij/zij" />
 
             <TextView
-                android:id="@+id/hij_present"
+                android:id="@+id/hij_verb"
                 android:padding="3dip"
-                android:text="hij_verb" />
+                android:text="hij_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/hij_verb_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -112,9 +136,17 @@
                 android:text="wij" />
 
             <TextView
-                android:id="@+id/wij_present"
+                android:id="@+id/wij_verb"
                 android:padding="3dip"
-                android:text="wij_verb" />
+                android:text="wij_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/wij_verb_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -126,9 +158,17 @@
                 android:text="jullie" />
 
             <TextView
-                android:id="@+id/jullie_present"
+                android:id="@+id/jullie_verb"
                 android:padding="3dip"
-                android:text="jullie_verb" />
+                android:text="jullie_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/jullie_verb_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -140,9 +180,17 @@
                 android:text="zij" />
 
             <TextView
-                android:id="@+id/zij_present"
+                android:id="@+id/zij_verb"
                 android:padding="3dip"
-                android:text="zij_verb" />
+                android:text="zij_verb"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/zij_verb_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionNext"/>
         </TableRow>
 
         <TableRow>
@@ -155,6 +203,7 @@
                 android:id="@+id/next"
                 android:onClick="onClickNext"
                 android:text="Next" />
+
         </TableRow>
     </TableLayout>
 

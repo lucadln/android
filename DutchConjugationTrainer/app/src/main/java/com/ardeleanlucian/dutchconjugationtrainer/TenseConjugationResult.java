@@ -207,6 +207,13 @@ public class TenseConjugationResult {
                 ZIJ.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    public void displayInputFields(TextView IK,       TextView JIJ,         TextView HIJ,
+                                   TextView WIJ,      TextView JULLIE,      TextView ZIJ,
+                                   TextView IK_VERB_FIELD,     TextView JIJ_VERB_FIELD,
+                                   TextView HIJ_VERB_FIELD,    TextView WIJ_VERB_FIELD,
+                                   TextView JULLIE_VERB_FIELD, TextView ZIJ_VERB_FIELD) {
 
     }
 }
