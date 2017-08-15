@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerPosition = prefs.getInt(currentTenseKey, 0);
 
         // Set up the spinner
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(
                 toolbar.getContext(), tense));
 
