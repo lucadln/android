@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private int spinnerPosition;
     private boolean showTranslationPref;
     private boolean readOnlyPref;
+    private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
     private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                               "Condtional", "Conditional Perfect", "Future" };
@@ -73,12 +74,15 @@ public class MainActivity extends AppCompatActivity {
         JULLIE = (TextView) findViewById(R.id.jullie);
         ZIJ = (TextView) findViewById(R.id.zij);
 
-        // Define variables for reading last used tense
+        // Get other preferences from phone memory
         final SharedPreferences prefs = context.getSharedPreferences(
                 "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
         final String currentTenseKey = "com.ardeleanlucian.dutchconjugationtrainer.current_tense";
+        final String firstReadKey = "com.ardeleanlucian.dutchconjugationtrainer.first_read";
         // Get the last used tense
         spinnerPosition = prefs.getInt(currentTenseKey, 0);
+        // Check if application was run before in read-only mode
+        firstTimeReadOnly = prefs.getBoolean(firstReadKey, true);
 
         // Set up the spinner
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -94,8 +98,27 @@ public class MainActivity extends AppCompatActivity {
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
                 tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
-                
+
                 displayConjIndex = 0;
+
+                /* If the application is started for the first time
+                 *   in read-only mode then instruct the user to tap
+                 *   screen for conjugation */
+                if ((firstTimeReadOnly) && (readOnlyPref)) {
+                    String infoTapScreen = "Tap screen for conjugation";
+                    final Snackbar snackBar = Snackbar.make(view, infoTapScreen,
+                            Snackbar.LENGTH_INDEFINITE);
+
+                    snackBar.setAction("Dismiss", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackBar.dismiss();
+                            prefs.edit().putBoolean(firstReadKey, false).apply();
+                            firstTimeReadOnly = false;
+                        }
+                    });
+                    snackBar.show();
+                }
 
                 // Get default preferences values
                 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
@@ -118,15 +141,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
             }
         });
     }
