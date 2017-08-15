@@ -52,6 +52,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/ik"
                 android:text="ik"
                 android:padding="3dip"
                 android:gravity="right"/>
@@ -63,6 +64,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/jij"
                 android:text="jij"
                 android:padding="3dip"
                 android:gravity="right"/>
@@ -73,6 +75,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/hij"
                 android:text="hij/zij"
                 android:padding="3dip"
                 android:gravity="right"/>
@@ -83,6 +86,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/wij"
                 android:text="wij"
                 android:padding="3dip"
                 android:gravity="right"/>
@@ -93,6 +97,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/jullie"
                 android:text="jullie"
                 android:padding="3dip"
                 android:gravity="right"/>
@@ -103,6 +108,7 @@
         </TableRow>
         <TableRow>
             <TextView
+                android:id="@+id/zij"
                 android:text="zij"
                 android:padding="3dip"
                 android:gravity="right"/>

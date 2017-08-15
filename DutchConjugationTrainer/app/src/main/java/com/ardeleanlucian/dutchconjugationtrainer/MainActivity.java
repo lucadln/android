@@ -35,14 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                               "Condtional", "Conditional Perfect", "Future" };
 
-    private TextView INFINITVE;
-    private TextView TRANSLATION;
-    private TextView IK_VERB;
-    private TextView JIJ_VERB;
-    private TextView HIJ_VERB;
-    private TextView WIJ_VERB;
-    private TextView JULLIE_VERB;
-    private TextView ZIJ_VERB;
+    private TextView INFINITVE, TRANSLATION,
+                     IK,      JIJ,      HIJ,      WIJ,      JULLIE,      ZIJ,
+                     IK_VERB, JIJ_VERB, HIJ_VERB, WIJ_VERB, JULLIE_VERB, ZIJ_VERB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Define variables for textviews
+        // Set variables for textviews
         INFINITVE =  (TextView) findViewById(R.id.infinitive);
         TRANSLATION = (TextView) findViewById(R.id.translation);
         IK_VERB = (TextView) findViewById(R.id.ik_present);
@@ -71,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
         WIJ_VERB = (TextView) findViewById(R.id.wij_present);
         JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
         ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
+        IK = (TextView) findViewById(R.id.ik);
+        JIJ = (TextView) findViewById(R.id.jij);
+        HIJ = (TextView) findViewById(R.id.hij);
+        WIJ = (TextView) findViewById(R.id.wij);
+        JULLIE = (TextView) findViewById(R.id.jullie);
+        ZIJ = (TextView) findViewById(R.id.zij);
 
         // Define variables for reading last used tense
         final SharedPreferences prefs = context.getSharedPreferences(
@@ -102,8 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 // Display the infinitive and translation
                 tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
                 // Display conjugations
-                tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
+                tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                           WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                           IK,       JIJ,         HIJ,
+                                                           WIJ,      JULLIE,      ZIJ,
+                                                           displayConjIndex);
 
                 // Save tense choice in phone memory.
                 spinnerPosition = position;
@@ -141,8 +145,11 @@ public class MainActivity extends AppCompatActivity {
         // Display the infinitive and translation
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
         // Display conjugations
-        tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
+        tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                   WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                   IK,       JIJ,         HIJ,
+                                                   WIJ,      JULLIE,      ZIJ,
+                                                   displayConjIndex);
     }
 
     @Override
@@ -178,8 +185,11 @@ public class MainActivity extends AppCompatActivity {
             if (displayConjIndex < 6) {
                 displayConjIndex++;
                 // Display conjugations
-                tenseConjugationResult.displayConjugations(IK_VERB, JIJ_VERB, HIJ_VERB,
-                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, displayConjIndex);
+                tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                           WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                           IK,       JIJ,         HIJ,
+                                                           WIJ,      JULLIE,      ZIJ,
+                                                           displayConjIndex);
             }
         }
     }
