@@ -1,8 +1,10 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.graphics.Color;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -247,5 +249,26 @@ public class TenseConjugationResult {
         WIJ_VERB_FIELD.setText( "" );
         JULLIE_VERB_FIELD.setText( "" );
         ZIJ_VERB_FIELD.setText( "" );
+    }
+
+    public void handleInput(EditText INPUT_FIELD, TextView CONJUGATION) {
+
+        String userInput;
+
+        if ( (userInput = INPUT_FIELD.getText().toString()).matches( "" ) ) {
+            // If the user didn't enter anything yet do nothing
+        } else {
+            /* If the user entered something then
+            *      hide the EditText and display
+            *      the input as a TextView */
+            INPUT_FIELD.setVisibility(View.GONE);
+            CONJUGATION.setVisibility(View.VISIBLE);
+            if ( userInput.equalsIgnoreCase( CONJUGATION.getText().toString() ) ) {
+                CONJUGATION.setTextColor(Color.GREEN);
+            } else {
+                CONJUGATION.setText(userInput);
+                CONJUGATION.setTextColor(Color.RED);
+            }
+        }
     }
 }

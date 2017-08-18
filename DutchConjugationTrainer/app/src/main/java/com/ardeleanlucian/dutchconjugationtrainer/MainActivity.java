@@ -2,9 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -174,31 +172,54 @@ public class MainActivity extends AppCompatActivity {
         });
 
         IK_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                String userInput;
-                /* When focus is lost check that the text field
-                 * has valid values. */
                 if (!hasFocus) {
-                    if ( (userInput = IK_VERB_FIELD.getText().toString()).matches( "" ) ) {
-                        // If the user didn't enter anything yet do nothing
-                     } else {
-                        /* If the user entered something then
-                        *      hide the EditText and display
-                        *      the input as a TextView */
-                        IK_VERB_FIELD.setVisibility(View.GONE);
-                        IK_VERB.setVisibility(View.VISIBLE);
-                        if ( userInput.equalsIgnoreCase( IK_VERB.getText().toString() ) ) {
-                            IK_VERB.setTextColor(Color.GREEN);
-                        } else {
-                            IK_VERB.setText(userInput);
-                            IK_VERB.setTextColor(Color.RED);
-                        }
-                    }
+                    tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
                 }
             }
         });
+        JIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
+                }
+            }
+        });
+        HIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
+                }
+            }
+        });
+        WIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
+                }
+            }
+        });
+        JULLIE_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
+                }
+            }
+        });
+        ZIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
+                }
+            }
+        });
+
     }
 
     /** Define actions to be taken when clicking on the 'Next' button */
