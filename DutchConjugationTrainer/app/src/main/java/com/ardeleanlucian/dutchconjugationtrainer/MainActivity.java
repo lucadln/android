@@ -3,7 +3,6 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.content.Context;
 import android.support.v7.widget.ThemedSpinnerAdapter;
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView INFINITVE, TRANSLATION,
                      IK,      JIJ,      HIJ,      WIJ,      JULLIE,      ZIJ,
                      IK_VERB, JIJ_VERB, HIJ_VERB, WIJ_VERB, JULLIE_VERB, ZIJ_VERB;
+    private EditText IK_VERB_FIELD,  JIJ_VERB_FIELD,    HIJ_VERB_FIELD,
+                     WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,18 +63,26 @@ public class MainActivity extends AppCompatActivity {
         // Set variables for textviews
         INFINITVE =  (TextView) findViewById(R.id.infinitive);
         TRANSLATION = (TextView) findViewById(R.id.translation);
-        IK_VERB = (TextView) findViewById(R.id.ik_present);
-        JIJ_VERB = (TextView) findViewById(R.id.jij_present);
-        HIJ_VERB = (TextView) findViewById(R.id.hij_present);
-        WIJ_VERB = (TextView) findViewById(R.id.wij_present);
-        JULLIE_VERB = (TextView) findViewById(R.id.jullie_present);
-        ZIJ_VERB = (TextView) findViewById(R.id.zij_present);
+        IK_VERB = (TextView) findViewById(R.id.ik_verb);
+        JIJ_VERB = (TextView) findViewById(R.id.jij_verb);
+        HIJ_VERB = (TextView) findViewById(R.id.hij_verb);
+        WIJ_VERB = (TextView) findViewById(R.id.wij_verb);
+        JULLIE_VERB = (TextView) findViewById(R.id.jullie_verb);
+        ZIJ_VERB = (TextView) findViewById(R.id.zij_verb);
         IK = (TextView) findViewById(R.id.ik);
         JIJ = (TextView) findViewById(R.id.jij);
         HIJ = (TextView) findViewById(R.id.hij);
         WIJ = (TextView) findViewById(R.id.wij);
         JULLIE = (TextView) findViewById(R.id.jullie);
         ZIJ = (TextView) findViewById(R.id.zij);
+
+        // Set variables for EditTexts
+        IK_VERB_FIELD = (EditText) findViewById(R.id.ik_verb_field);
+        JIJ_VERB_FIELD = (EditText) findViewById(R.id.jij_verb_field);
+        HIJ_VERB_FIELD = (EditText) findViewById(R.id.hij_verb_field);
+        WIJ_VERB_FIELD = (EditText) findViewById(R.id.wij_verb_field);
+        JULLIE_VERB_FIELD = (EditText) findViewById(R.id.jullie_verb_field);
+        ZIJ_VERB_FIELD = (EditText) findViewById(R.id.zij_verb_field);
 
         // Get other preferences from phone memory
         final SharedPreferences prefs = context.getSharedPreferences(
@@ -94,11 +104,22 @@ public class MainActivity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Save tense choice in phone memory.
+                spinnerPosition = position;
+                prefs.edit().putInt(currentTenseKey, position).apply();
+
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
-                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
 
+                // Read verbs.txt and set conjugations
+                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
+                tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                         WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+
+                /* displayConjIndex is used in read-only mode to
+                *      know what conjugation to show at a certain
+                *      point (conjugation for ik, then for jij etc)*/
                 displayConjIndex = 0;
 
                 /* If the application is started for the first time
@@ -127,22 +148,78 @@ public class MainActivity extends AppCompatActivity {
 
                 // Display the infinitive and translation
                 tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
-                // Display conjugations
-                tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
-                                                           WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
-                                                           IK,       JIJ,         HIJ,
-                                                           WIJ,      JULLIE,      ZIJ,
-                                                           displayConjIndex);
 
-                // Save tense choice in phone memory.
-                spinnerPosition = position;
-                prefs.edit().putInt(currentTenseKey, position).apply();
+                if (readOnlyPref) {
+                    // Display conjugations
+                    tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                               WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                               IK,   JIJ,    HIJ,
+                                                               WIJ,  JULLIE, ZIJ,
+                                                               displayConjIndex);
+                } else {
+                    // Display the input fields to write conjugation
+                    tenseConjugationResult.displayInputFields(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                              WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                              IK_VERB_FIELD,     JIJ_VERB_FIELD,
+                                                              HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
+                                                              JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+
+        IK_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
+                }
+            }
+        });
+        JIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
+                }
+            }
+        });
+        HIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
+                }
+            }
+        });
+        WIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
+                }
+            }
+        });
+        JULLIE_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
+                }
+            }
+        });
+        ZIJ_VERB_FIELD.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
+                }
+            }
+        });
+
     }
 
     /** Define actions to be taken when clicking on the 'Next' button */
@@ -151,7 +228,11 @@ public class MainActivity extends AppCompatActivity {
         displayConjIndex = 0;
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
+
+        // Read file and set conjugations
         tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
+        tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
         // Get default values
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -160,12 +241,22 @@ public class MainActivity extends AppCompatActivity {
 
         // Display the infinitive and translation
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
-        // Display conjugations
-        tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
-                                                   WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
-                                                   IK,       JIJ,         HIJ,
-                                                   WIJ,      JULLIE,      ZIJ,
-                                                   displayConjIndex);
+
+        if (readOnlyPref) {
+            // Display conjugations
+            tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                    WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                    IK,   JIJ,    HIJ,
+                    WIJ,  JULLIE, ZIJ,
+                    displayConjIndex);
+        } else {
+            // Display the input fields to write conjugation
+            tenseConjugationResult.displayInputFields(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                      WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                      IK_VERB_FIELD,     JIJ_VERB_FIELD,
+                                                      HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
+                                                      JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
+        }
     }
 
     @Override
