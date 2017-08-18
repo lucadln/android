@@ -80,7 +80,8 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>
@@ -99,10 +100,11 @@
 
             <EditText
                 android:id="@+id/jij_verb_field"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>
@@ -121,10 +123,11 @@
 
             <EditText
                 android:id="@+id/hij_verb_field"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>
@@ -143,10 +146,11 @@
 
             <EditText
                 android:id="@+id/wij_verb_field"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>
@@ -165,10 +169,11 @@
 
             <EditText
                 android:id="@+id/jullie_verb_field"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>
@@ -187,10 +192,11 @@
 
             <EditText
                 android:id="@+id/zij_verb_field"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:imeOptions="actionNext"
+                android:visibility="gone"/>
         </TableRow>
 
         <TableRow>

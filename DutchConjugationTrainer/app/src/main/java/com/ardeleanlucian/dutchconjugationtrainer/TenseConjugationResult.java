@@ -35,6 +35,17 @@ public class TenseConjugationResult {
         this.zijVerb = zijVerb;
     }
 
+    // Method to set TextViews values
+    public void setValuesTextView(TextView IK_VERB,  TextView JIJ_VERB,    TextView HIJ_VERB,
+                                  TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB) {
+        IK_VERB.setText( ikVerb );
+        JIJ_VERB.setText( jijVerb );
+        HIJ_VERB.setText( hijVerb );
+        WIJ_VERB.setText( wijVerb );
+        JULLIE_VERB.setText( jullieVerb );
+        ZIJ_VERB.setText( zijVerb );
+    }
+
     // Method to display infinitive and translation
     public void displayVerb(TextView INFINITIVE, TextView TRANSLATION, boolean showTranslation) {
         INFINITIVE.setText( infinitive );
@@ -209,11 +220,32 @@ public class TenseConjugationResult {
         }
     }
 
-    public void displayInputFields(TextView IK,       TextView JIJ,         TextView HIJ,
-                                   TextView WIJ,      TextView JULLIE,      TextView ZIJ,
+    public void displayInputFields(TextView IK_VERB,           TextView JIJ_VERB,
+                                   TextView HIJ_VERB,          TextView WIJ_VERB,
+                                   TextView JULLIE_VERB,       TextView ZIJ_VERB,
                                    TextView IK_VERB_FIELD,     TextView JIJ_VERB_FIELD,
                                    TextView HIJ_VERB_FIELD,    TextView WIJ_VERB_FIELD,
                                    TextView JULLIE_VERB_FIELD, TextView ZIJ_VERB_FIELD) {
 
+        IK_VERB.setVisibility(View.GONE);
+        JIJ_VERB.setVisibility(View.GONE);
+        HIJ_VERB.setVisibility(View.GONE);
+        WIJ_VERB.setVisibility(View.GONE);
+        JULLIE_VERB.setVisibility(View.GONE);
+        ZIJ_VERB.setVisibility(View.GONE);
+
+        IK_VERB_FIELD.setVisibility(View.VISIBLE);
+        JIJ_VERB_FIELD.setVisibility(View.VISIBLE);
+        HIJ_VERB_FIELD.setVisibility(View.VISIBLE);
+        WIJ_VERB_FIELD.setVisibility(View.VISIBLE);
+        JULLIE_VERB_FIELD.setVisibility(View.VISIBLE);
+        ZIJ_VERB_FIELD.setVisibility(View.VISIBLE);
+
+        IK_VERB_FIELD.setText( "" );
+        JIJ_VERB_FIELD.setText( "" );
+        HIJ_VERB_FIELD.setText( "" );
+        WIJ_VERB_FIELD.setText( "" );
+        JULLIE_VERB_FIELD.setText( "" );
+        ZIJ_VERB_FIELD.setText( "" );
     }
 }

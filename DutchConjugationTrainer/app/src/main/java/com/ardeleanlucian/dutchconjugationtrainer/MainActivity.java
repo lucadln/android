@@ -2,6 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -112,8 +113,15 @@ public class MainActivity extends AppCompatActivity {
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
-                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
 
+                // Read verbs.txt and set conjugations
+                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
+                tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                         WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+
+                /* displayConjIndex is used in read-only mode to
+                *      know what conjugation to show at a certain
+                *      point (conjugation for ik, then for jij etc)*/
                 displayConjIndex = 0;
 
                 /* If the application is started for the first time
@@ -152,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
                                                                displayConjIndex);
                 } else {
                     // Display the input fields to write conjugation
-                    tenseConjugationResult.displayInputFields(IK, JIJ, HIJ, WIJ, JULLIE, ZIJ,
+                    tenseConjugationResult.displayInputFields(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                              WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
                                                               IK_VERB_FIELD,     JIJ_VERB_FIELD,
                                                               HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
                                                               JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
@@ -168,11 +177,25 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                        /* When focus is lost check that the text field
-                        * has valid values.
-                        */
+                String userInput;
+                /* When focus is lost check that the text field
+                 * has valid values. */
                 if (!hasFocus) {
-                    IK_VERB_FIELD.setEnabled(false);
+                    if ( (userInput = IK_VERB_FIELD.getText().toString()).matches( "" ) ) {
+                        // If the user didn't enter anything yet do nothing
+                     } else {
+                        /* If the user entered something then
+                        *      hide the EditText and display
+                        *      the input as a TextView */
+                        IK_VERB_FIELD.setVisibility(View.GONE);
+                        IK_VERB.setVisibility(View.VISIBLE);
+                        if ( userInput.equalsIgnoreCase( IK_VERB.getText().toString() ) ) {
+                            IK_VERB.setTextColor(Color.GREEN);
+                        } else {
+                            IK_VERB.setText(userInput);
+                            IK_VERB.setTextColor(Color.RED);
+                        }
+                    }
                 }
             }
         });
@@ -184,7 +207,11 @@ public class MainActivity extends AppCompatActivity {
         displayConjIndex = 0;
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
+
+        // Read file and set conjugations
         tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
+        tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
         // Get default values
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -203,10 +230,11 @@ public class MainActivity extends AppCompatActivity {
                     displayConjIndex);
         } else {
             // Display the input fields to write conjugation
-            tenseConjugationResult.displayInputFields(IK, JIJ, HIJ, WIJ, JULLIE, ZIJ,
-                    IK_VERB_FIELD,     JIJ_VERB_FIELD,
-                    HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
-                    JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
+            tenseConjugationResult.displayInputFields(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                                                      WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                                                      IK_VERB_FIELD,     JIJ_VERB_FIELD,
+                                                      HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
+                                                      JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
         }
     }
 
