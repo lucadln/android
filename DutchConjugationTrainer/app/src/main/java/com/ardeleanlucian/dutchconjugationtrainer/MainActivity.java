@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.content.Context;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                      IK_VERB, JIJ_VERB, HIJ_VERB, WIJ_VERB, JULLIE_VERB, ZIJ_VERB;
     private EditText IK_VERB_FIELD,  JIJ_VERB_FIELD,    HIJ_VERB_FIELD,
                      WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD;
+    private Button NEXT, SKIP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
         WIJ_VERB_FIELD = (EditText) findViewById(R.id.wij_verb_field);
         JULLIE_VERB_FIELD = (EditText) findViewById(R.id.jullie_verb_field);
         ZIJ_VERB_FIELD = (EditText) findViewById(R.id.zij_verb_field);
+
+        // Set variables for buttons
+        NEXT = (Button) findViewById(R.id.next);
+        SKIP = (Button) findViewById(R.id.skip);
 
         // Get other preferences from phone memory
         final SharedPreferences prefs = context.getSharedPreferences(
@@ -176,6 +182,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                             (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                             (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -184,6 +199,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -192,6 +216,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -200,6 +233,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -208,6 +250,15 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
@@ -216,16 +267,65 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
+                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
+                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
+                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                        SKIP.setVisibility(View.GONE);
+                        NEXT.setVisibility(View.VISIBLE);
+                    }
                 }
             }
         });
 
     }
 
+    /** Define actions to be taken when clicking on the 'Skip' button */
+    public void onClickSkip(View view) {
+        // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
+        displayConjIndex = 0;
+
+        VerbsFileReader verbsFileReader = new VerbsFileReader(context);
+
+        // Read file and set conjugations
+        tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
+        tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+
+        // Get default values
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+
+        // Display the infinitive and translation
+        tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
+
+        if (readOnlyPref) {
+            // Display conjugations
+            tenseConjugationResult.displayConjugations(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                    WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                    IK,   JIJ,    HIJ,
+                    WIJ,  JULLIE, ZIJ,
+                    displayConjIndex);
+        } else {
+            // Display the input fields to write conjugation
+            tenseConjugationResult.displayInputFields(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                    WIJ_VERB, JULLIE_VERB, ZIJ_VERB,
+                    IK_VERB_FIELD,     JIJ_VERB_FIELD,
+                    HIJ_VERB_FIELD,    WIJ_VERB_FIELD,
+                    JULLIE_VERB_FIELD, ZIJ_VERB_FIELD);
+        }
+    }
+
     /** Define actions to be taken when clicking on the 'Next' button */
     public void onClickNext(View view) {
         // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
         displayConjIndex = 0;
+
+        SKIP.setVisibility(View.VISIBLE);
+        NEXT.setVisibility(View.GONE);
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
@@ -297,6 +397,10 @@ public class MainActivity extends AppCompatActivity {
                                                            IK,       JIJ,         HIJ,
                                                            WIJ,      JULLIE,      ZIJ,
                                                            displayConjIndex);
+                if (displayConjIndex == 6){
+                    SKIP.setVisibility(View.GONE);
+                    NEXT.setVisibility(View.VISIBLE);
+                }
             }
         }
     }
