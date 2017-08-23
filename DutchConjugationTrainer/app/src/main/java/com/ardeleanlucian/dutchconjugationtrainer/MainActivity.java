@@ -144,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                     final Snackbar snackBar = Snackbar.make(view, infoTapScreen,
                             Snackbar.LENGTH_INDEFINITE);
 
+                    /* The snackbar message remains on the
+                     *   screen until is dismissed */
                     snackBar.setAction("Dismiss", new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

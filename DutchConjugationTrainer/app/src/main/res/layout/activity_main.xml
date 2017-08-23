@@ -194,7 +194,7 @@
                 android:id="@+id/zij_verb_field"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:inputType="text"
                 android:visibility="gone" />
         </TableRow>

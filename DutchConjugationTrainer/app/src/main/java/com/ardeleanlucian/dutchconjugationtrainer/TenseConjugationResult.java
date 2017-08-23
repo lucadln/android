@@ -264,6 +264,7 @@ public class TenseConjugationResult {
             INPUT_FIELD.setVisibility(View.GONE);
             CONJUGATION.setVisibility(View.VISIBLE);
             if ( userInput.equalsIgnoreCase( CONJUGATION.getText().toString() ) ) {
+                // Set color to green
                 CONJUGATION.setTextColor( Color.rgb( 0, 153, 0 ) );
             } else {
                 CONJUGATION.setText(userInput);
