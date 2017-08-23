@@ -29,7 +29,7 @@ public class VerbsFileReader {
         this.context = context;
     }
 
-    public TenseConjugationResult readFile(Context context, int position, String action) {
+    public TenseConjugationResult readFile(Context context, String selectedTense, String action) {
 
         // Define a variable for reading Shared Preferences.
         SharedPreferences prefs = context.getSharedPreferences(
@@ -61,36 +61,35 @@ public class VerbsFileReader {
                     }
                     infinitive = currentVerb;
                     translation = bufferedReader.readLine();
-                    switch (position) {
-                        // Skip reading lines in the 'verbs.txt' file if needed.
-                        case 0:
+                    switch (selectedTense) {
+                        case "Present":
                             break;
-                        case 1:
+                        case "Present Continuous":
                             for (int i = 0; i < 6; i++) {
                                 bufferedReader.readLine();
                             }
                             break;
-                        case 2:
+                        case "Simple Past":
                             for (int i = 0; i < 12; i++) {
                                 bufferedReader.readLine();
                             }
                             break;
-                        case 3:
+                        case "Past Perfect":
                             for (int i = 0; i < 18; i++) {
                                 bufferedReader.readLine();
                             }
                             break;
-                        case 4:
+                        case "Condtional":
                             for (int i = 0; i < 24; i++) {
                                 bufferedReader.readLine();
                             }
                             break;
-                        case 5:
+                        case "Conditional Perfect":
                             for (int i = 0; i < 30; i++) {
                                 bufferedReader.readLine();
                             }
                             break;
-                        case 6:
+                        case "Future":
                             for (int i = 0; i < 36; i++) {
                                 bufferedReader.readLine();
                             }

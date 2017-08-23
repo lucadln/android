@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
     private Context context;
     private TenseConjugationResult tenseConjugationResult;
-    private int spinnerPosition;
     private boolean showTranslationPref;
     private boolean readOnlyPref;
     private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
-    private String tense[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
-                              "Condtional", "Conditional Perfect", "Future" };
+
+    private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
+                                     "Condtional", "Conditional Perfect", "Future" };
+    private String selectedTense;
 
     private TextView INFINITVE, TRANSLATION,
                      IK,      JIJ,      HIJ,      WIJ,      JULLIE,      ZIJ,
@@ -93,33 +94,40 @@ public class MainActivity extends AppCompatActivity {
         // Get other preferences from phone memory
         final SharedPreferences prefs = context.getSharedPreferences(
                 "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
-        final String currentTenseKey = "com.ardeleanlucian.dutchconjugationtrainer.current_tense";
-        final String firstReadKey = "com.ardeleanlucian.dutchconjugationtrainer.first_read";
-        // Get the last used tense
-        spinnerPosition = prefs.getInt(currentTenseKey, 0);
+        final String selectedTenseKey
+                = "com.ardeleanlucian.dutchconjugationtrainer.selected_tense";
+        final String firstReadKey
+                = "com.ardeleanlucian.dutchconjugationtrainer.first_read";
+        // Get the last used tenseOptions
+        selectedTense = prefs.getString(selectedTenseKey, "present");
         // Check if application was run before in read-only mode
         firstTimeReadOnly = prefs.getBoolean(firstReadKey, true);
 
         // Set up the spinner
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(new MyAdapter(
-                toolbar.getContext(), tense));
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(new MyAdapter(toolbar.getContext(), tenseOptions));
 
-        spinner.setSelection(spinnerPosition);
+        // Find the index of the selected tense in tenseOptions array
+        for (int i = 0; i < tenseOptions.length; i++) {
+            if (selectedTense.equals(tenseOptions[i])) {
+                // Put back in place the last tense used by the user
+                spinner.setSelection(i);
+            }
+        }
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Save tense choice in phone memory.
-                spinnerPosition = position;
-                prefs.edit().putInt(currentTenseKey, position).apply();
+                // Save tenseOptions choice in phone memory.
+                selectedTense = spinner.getSelectedItem().toString();
+                prefs.edit().putString(selectedTenseKey, selectedTense).apply();
 
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
                 // Read verbs.txt and set conjugations
-                tenseConjugationResult = verbsFileReader.readFile(context, position, "none");
+                tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "none");
                 tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                          WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -284,13 +292,13 @@ public class MainActivity extends AppCompatActivity {
 
     /** Define actions to be taken when clicking on the 'Skip' button */
     public void onClickSkip(View view) {
-        // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
+        // Show no conjugations in read-only mode
         displayConjIndex = 0;
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -330,7 +338,7 @@ public class MainActivity extends AppCompatActivity {
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, spinnerPosition, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                  WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
