@@ -7,8 +7,6 @@ import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by Ardelean Lucian on 8/6/2017.
  */
@@ -23,6 +21,8 @@ public class TenseConjugationResult {
     private String wijVerb;
     private String jullieVerb;
     private String zijVerb;
+
+    private boolean correctVerbConjugation;
 
     public TenseConjugationResult(String infinitive, String translation,
                                   String ikVerb, String jijVerb, String hijVerb,
@@ -265,11 +265,17 @@ public class TenseConjugationResult {
             CONJUGATION.setVisibility(View.VISIBLE);
             if ( userInput.equalsIgnoreCase( CONJUGATION.getText().toString() ) ) {
                 // Set color to green
+                correctVerbConjugation = true;
                 CONJUGATION.setTextColor( Color.rgb( 0, 153, 0 ) );
             } else {
+                correctVerbConjugation = false;
                 CONJUGATION.setText(userInput);
                 CONJUGATION.setTextColor(Color.RED);
             }
         }
+    }
+
+    public boolean returnVerifiedResult() {
+        return correctVerbConjugation;
     }
 }

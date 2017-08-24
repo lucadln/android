@@ -30,18 +30,30 @@ public class Scores {
     }
 
 
-    public void validateConjugation() {
-        // TODO
+    public void resetScores() {
+        // Reset scores
+        correctAnswers = 0;
+        totalAnswers = 0;
+        // Save modifications in phone memory
+        prefs.edit().putInt(androidKeyForCorrectAnswers, correctAnswers).apply();
+        prefs.edit().putInt(androidKeyForTotalAnswers, totalAnswers).apply();
     }
 
 
-    public void updateNumberOfCorrectAnswers(String selectedTense) {
-        // TODO
-    }
-
-
-    public void updateTotalNumberOfAnswers(String selectedTense) {
-        // TODO
+    public void updateScores(boolean correctVerbConjugation, String selectedTense) {
+        // Get the current scores
+        getNumberOfCorrectAnswers(selectedTense);
+        getTotalNumberOfAnswers(selectedTense);
+        // Update the scores
+        if (correctVerbConjugation) {
+            correctAnswers++;
+            totalAnswers++;
+        } else {
+            totalAnswers++;
+        }
+        // Save the new scores in the phone memory
+        prefs.edit().putInt(androidKeyForCorrectAnswers, correctAnswers).apply();
+        prefs.edit().putInt(androidKeyForTotalAnswers, totalAnswers).apply();
     }
 
 
@@ -64,7 +76,7 @@ public class Scores {
     /* Method to set the shared preferences key
      *   for the number of correct answers */
     public void setAndroidKeyForCorrectAnswers(String selectedTense) {
-        androidKeyForCorrectAnswers = "com.ardeleanlucian.dutchconjugationtrainer"
+        androidKeyForCorrectAnswers = "com.ardeleanlucian.dutchconjugationtrainer.correct_"
                 + selectedTense.toLowerCase().replaceAll(" ", "_");
     }
 
@@ -72,7 +84,7 @@ public class Scores {
     /* Method to set the shared preferences key
      *   for the total number of conjugations */
     public void setAndroidKeyForTotalAnswers(String selectedTense) {
-        androidKeyForTotalAnswers = "com.ardeleanlucian.dutchconjugationtrainer"
+        androidKeyForTotalAnswers = "com.ardeleanlucian.dutchconjugationtrainer.total_"
                 + selectedTense.toLowerCase().replaceAll(" ", "_");
     }
 

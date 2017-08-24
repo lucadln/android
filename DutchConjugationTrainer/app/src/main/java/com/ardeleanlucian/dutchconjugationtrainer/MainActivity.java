@@ -33,10 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private boolean readOnlyPref;
     private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
+    private boolean correctVerbConjugation;
+    private Scores scores;
 
     private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                                      "Condtional", "Conditional Perfect", "Future" };
-    private String selectedTense;
+    private String currentlySelectedTense;
+    private String previouslySelectedTense;
+
 
     private TextView INFINITVE, TRANSLATION,
                      IK,      JIJ,      HIJ,      WIJ,      JULLIE,      ZIJ,
@@ -49,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         context = this;
+        scores = new Scores(context);
+
+        correctVerbConjugation = true;
 
         // Set preferences-menu default values when application is started for the first time
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -99,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         final String firstReadKey
                 = "com.ardeleanlucian.dutchconjugationtrainer.first_read";
         // Get the last used tenseOptions
-        selectedTense = prefs.getString(selectedTenseKey, "present");
+        currentlySelectedTense = prefs.getString(selectedTenseKey, "present");
         // Check if application was run before in read-only mode
         firstTimeReadOnly = prefs.getBoolean(firstReadKey, true);
 
@@ -109,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Find the index of the selected tense in tenseOptions array
         for (int i = 0; i < tenseOptions.length; i++) {
-            if (selectedTense.equals(tenseOptions[i])) {
+            if (currentlySelectedTense.equals(tenseOptions[i])) {
                 // Put back in place the last tense used by the user
                 spinner.setSelection(i);
             }
@@ -119,15 +127,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 // Save tenseOptions choice in phone memory.
-                selectedTense = spinner.getSelectedItem().toString();
-                prefs.edit().putString(selectedTenseKey, selectedTense).apply();
+                currentlySelectedTense = spinner.getSelectedItem().toString();
+                prefs.edit().putString(selectedTenseKey, currentlySelectedTense).apply();
+
+                /* If the user changes the tense after he
+                 *   got one conjugation wrong then this
+                 *   is registered as a wrong answer */
+                if (!correctVerbConjugation) {
+                    scores.updateScores(correctVerbConjugation, previouslySelectedTense);
+                }
+
+                /* Keep track of the previously selected tense.
+                 *   This will proove to be usefull when registering
+                 *   a wrong answer that was followed by a tense change */
+                previouslySelectedTense = currentlySelectedTense;
+
+                correctVerbConjugation = true;
 
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
                 // Read verbs.txt and set conjugations
-                tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "none");
+                tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "none");
                 tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                          WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -192,6 +214,14 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
+                    correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                              (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                              (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -200,6 +230,14 @@ public class MainActivity extends AppCompatActivity {
                              (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        /* If all the EditTexts are filled in
+                         *   and if the answers are correct then
+                         *   update the scores. If answers are not
+                         *   correct then scores will be updated
+                         *   when choosing a new verb */
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -209,6 +247,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -217,6 +262,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -226,6 +274,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -234,6 +289,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -243,6 +301,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -251,6 +316,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -260,6 +328,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -268,6 +343,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -277,6 +355,13 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
+                    if (!correctVerbConjugation) {
+                        // If one of the answers was already declared wrong do nothing
+                    } else {
+                        /* If the answer until now were correct but we got a wrong one,
+                         *   set them all to false */
+                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                    }
                     if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -285,6 +370,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        if (correctVerbConjugation) {
+                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        }
                     }
                 }
             }
@@ -297,10 +385,19 @@ public class MainActivity extends AppCompatActivity {
         // Show no conjugations in read-only mode
         displayConjIndex = 0;
 
+        /* If the user clicks on 'Skip' after he
+         *   got one conjugation wrong then this
+         *   is registered as a wrong answer */
+        if (!correctVerbConjugation) {
+            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+        }
+
+        correctVerbConjugation = true;
+
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -334,13 +431,22 @@ public class MainActivity extends AppCompatActivity {
         // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
         displayConjIndex = 0;
 
+        /* If the user clicks on 'Next' after he
+         *   got one conjugation wrong then this
+         *   is registered as a wrong answer */
+        if (!correctVerbConjugation) {
+            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+        }
+
+        correctVerbConjugation = true;
+
         SKIP.setVisibility(View.VISIBLE);
         NEXT.setVisibility(View.GONE);
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, selectedTense, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                  WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
