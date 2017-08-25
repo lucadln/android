@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.MainActivity">
     <item
-        android:id="@+id/action_preferences"
+        android:id="@+id/preferences"
         android:orderInCategory="100"
         android:title="Preferences" />
     <item

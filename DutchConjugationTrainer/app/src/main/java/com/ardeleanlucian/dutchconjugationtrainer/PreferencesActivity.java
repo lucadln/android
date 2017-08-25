@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Ardelean Lucian on 8/9/2017.
  */
 
-public class SettingsActivity extends AppCompatActivity {
+public class PreferencesActivity extends AppCompatActivity {
 
     public static final String KEY_SHOW_TRANS = "show_translation";
     public static final String KEY_READ_ONLY = "read_only";

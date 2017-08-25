@@ -63,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         // Get preferences from phone storage
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
-        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+        showTranslationPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_READ_ONLY, false);
 
         // Set up the action toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -181,8 +181,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Get default preferences values
                 SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
-                readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+                showTranslationPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_TRANS, true);
+                readOnlyPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_READ_ONLY, false);
 
                 // Display the infinitive and translation
                 tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
@@ -403,8 +403,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Get default values
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
-        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+        showTranslationPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_READ_ONLY, false);
 
         // Display the infinitive and translation
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
@@ -452,8 +452,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Get default values
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        showTranslationPref = sharedPrefs.getBoolean(SettingsActivity.KEY_SHOW_TRANS, true);
-        readOnlyPref = sharedPrefs.getBoolean(SettingsActivity.KEY_READ_ONLY, false);
+        showTranslationPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_TRANS, true);
+        readOnlyPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_READ_ONLY, false);
 
         // Display the infinitive and translation
         tenseConjugationResult.displayVerb(INFINITVE, TRANSLATION, showTranslationPref);
@@ -489,11 +489,15 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_preferences) {
-            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+        if (id == R.id.preferences) {
+            Intent displayPreferences = new Intent(MainActivity.this, PreferencesActivity.class);
             // Start new activity to display preferences
-            startActivity(i);
+            startActivity(displayPreferences);
+            return true;
+        } else if (id == R.id.scores) {
+            Intent displayScores = new Intent(MainActivity.this, ScoresActivity.class);
+            // Start new activity to display the scores
+            startActivity(displayScores);
             return true;
         }
         return super.onOptionsItemSelected(item);
