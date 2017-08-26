@@ -15,6 +15,9 @@ public class Scores {
     private String androidKeyForCorrectAnswers;
     private String androidKeyForTotalAnswers;
 
+    private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
+            "Condtional", "Conditional Perfect", "Future" };
+
     private int correctAnswers;
     private int totalAnswers;
 
@@ -31,12 +34,15 @@ public class Scores {
 
 
     public void resetScores() {
-        // Reset scores
-        correctAnswers = 0;
-        totalAnswers = 0;
-        // Save modifications in phone memory
-        prefs.edit().putInt(androidKeyForCorrectAnswers, correctAnswers).apply();
-        prefs.edit().putInt(androidKeyForTotalAnswers, totalAnswers).apply();
+        // Reset scores for each tense one by one
+        for (String tense : tenseOptions) {
+            // Construct the Shared Preferences key
+            setAndroidKeyForCorrectAnswers(tense);
+            setAndroidKeyForTotalAnswers(tense);
+            // Reset the scores
+            prefs.edit().putInt(androidKeyForCorrectAnswers, 0).apply();
+            prefs.edit().putInt(androidKeyForTotalAnswers, 0).apply();
+        }
     }
 
 
