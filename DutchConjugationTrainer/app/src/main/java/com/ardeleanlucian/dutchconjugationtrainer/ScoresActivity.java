@@ -1,9 +1,10 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
-import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 /**
  * Created by ardelean on 8/20/17.
@@ -20,13 +21,16 @@ public class ScoresActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Scores");
 
-        // Display the fragment as the main content.
-        getFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new ScoresActivity.ScoresFragment())
-                .commit();
+        setContentView(R.layout.scores_activity);
     }
 
-    public static class ScoresFragment extends Fragment {
-
+    /** Define actions to be taken when clicking on the 'Reset scores' button */
+    public void onClickReset(View view) {
+        Context context = view.getContext().getApplicationContext();
+        Scores scores = new Scores(context);
+        scores.resetScores();
+        Snackbar snackBar = Snackbar.make(view, "All scores have been reset!",
+                Snackbar.LENGTH_SHORT);
+        snackBar.show();
     }
 }
