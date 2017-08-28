@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -230,6 +232,9 @@ public class MainActivity extends AppCompatActivity {
                              (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(IK_VERB_FIELD.getWindowToken(), 0);
                         /* If all the EditTexts are filled in
                          *   and if the answers are correct then
                          *   update the scores. If answers are not
@@ -262,6 +267,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
@@ -289,6 +297,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(HIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
@@ -316,6 +327,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(WIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
@@ -343,6 +357,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
@@ -362,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
+                    if     ( (IK_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
                             (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
@@ -370,6 +387,9 @@ public class MainActivity extends AppCompatActivity {
                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(ZIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }

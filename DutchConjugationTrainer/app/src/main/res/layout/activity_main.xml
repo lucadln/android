@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ardeleanlucian.dutchconjugationtrainer.MainActivity">
+    tools:context="com.ardeleanlucian.dutchconjugationtrainer.MainActivity"
+    android:focusableInTouchMode="true">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -39,6 +40,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
