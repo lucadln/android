@@ -3,6 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
+
     <Button
         android:id="@+id/reset_scores"
         android:layout_width="match_parent"

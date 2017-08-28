@@ -14,10 +14,9 @@ public class Scores {
     private SharedPreferences prefs;
     private String androidKeyForCorrectAnswers;
     private String androidKeyForTotalAnswers;
-
-    private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
-            "Condtional", "Conditional Perfect", "Future" };
-
+    private String tenseOptions[] = {"Present", "Present Continuous",
+                                     "Simple Past", "Past Perfect",
+                                     "Condtional", "Conditional Perfect", "Future" };
     private int correctAnswers;
     private int totalAnswers;
 
@@ -32,6 +31,13 @@ public class Scores {
                 "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
     }
 
+    public float calculatePercentage(float correctAnswers, float totalAnswers) {
+        if (totalAnswers != 0) {
+            return (correctAnswers/totalAnswers*100f);
+        } else {
+            return 100f;
+        }
+    }
 
     public void resetScores() {
         // Reset scores for each tense one by one
