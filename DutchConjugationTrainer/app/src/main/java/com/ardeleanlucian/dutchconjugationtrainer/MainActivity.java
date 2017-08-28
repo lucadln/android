@@ -499,6 +499,11 @@ public class MainActivity extends AppCompatActivity {
             // Start new activity to display the scores
             startActivity(displayScores);
             return true;
+        } else if (id == R.id.about) {
+            Intent displayAbout = new Intent(MainActivity.this, AboutActivity.class);
+            // Start new activity to display the scores
+            startActivity(displayAbout);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
