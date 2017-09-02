@@ -132,6 +132,11 @@ public class MainActivity extends AppCompatActivity {
                 currentlySelectedTense = spinner.getSelectedItem().toString();
                 prefs.edit().putString(selectedTenseKey, currentlySelectedTense).apply();
 
+                // Make the focus thief not focusable
+                findViewById(R.id.focus_thief).setFocusable(false);
+                findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
+                IK_VERB_FIELD.requestFocus();
+
                 /* If the user changes the tense after he
                  *   got one conjugation wrong then this
                  *   is registered as a wrong answer */
@@ -223,26 +228,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
-                             (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                             (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                             (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                             (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                             (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(IK_VERB_FIELD.getWindowToken(), 0);
-                        /* If all the EditTexts are filled in
-                         *   and if the answers are correct then
-                         *   update the scores. If answers are not
-                         *   correct then scores will be updated
-                         *   when choosing a new verb */
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -259,20 +256,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
-                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(JIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -289,20 +284,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
-                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(HIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -319,20 +312,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
-                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(WIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -349,20 +340,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.    getVisibility() == View.GONE) &&
-                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -379,20 +368,18 @@ public class MainActivity extends AppCompatActivity {
                          *   set them all to false */
                         correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
                     }
-                    if     ( (IK_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (HIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (WIJ_VERB_FIELD.   getVisibility() == View.GONE) &&
-                            (JULLIE_VERB_FIELD.getVisibility() == View.GONE) &&
-                            (ZIJ_VERB_FIELD.   getVisibility() == View.GONE) ) {
+                    if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        // hide virtual keyboard
-                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(ZIJ_VERB_FIELD.getWindowToken(), 0);
                         if (correctVerbConjugation) {
                             scores.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
+                        // hide virtual keyboard
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
+                    } else if (getNumberOfFilledEditTexts() == 5) { // we have one more field to fill
+                        findViewById(R.id.focus_thief).setFocusable(true);
+                        findViewById(R.id.focus_thief).setFocusableInTouchMode(true);
                     }
                 }
             }
@@ -400,10 +387,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public int getNumberOfFilledEditTexts() {
+        int count = 0;
+        if (IK_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (JIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (HIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (WIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        return count;
+    }
+
     /** Define actions to be taken when clicking on the 'Skip' button */
     public void onClickSkip(View view) {
         // Show no conjugations in read-only mode
         displayConjIndex = 0;
+
+        // Make the focus thief not focusable
+        findViewById(R.id.focus_thief).setFocusable(false);
+        findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+        IK_VERB_FIELD.requestFocus();
 
         /* If the user clicks on 'Skip' after he
          *   got one conjugation wrong then this
@@ -450,6 +467,13 @@ public class MainActivity extends AppCompatActivity {
     public void onClickNext(View view) {
         // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
         displayConjIndex = 0;
+
+        // Make the focus thief not focusable
+        findViewById(R.id.focus_thief).setFocusable(false);
+        findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+        IK_VERB_FIELD.requestFocus();
 
         /* If the user clicks on 'Next' after he
          *   got one conjugation wrong then this
@@ -508,6 +532,11 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        // Make the focus thief not focusable
+        findViewById(R.id.focus_thief).setFocusable(false);
+        findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
+        IK_VERB_FIELD.requestFocus();
 
         if (id == R.id.preferences) {
             Intent displayPreferences = new Intent(MainActivity.this, PreferencesActivity.class);
