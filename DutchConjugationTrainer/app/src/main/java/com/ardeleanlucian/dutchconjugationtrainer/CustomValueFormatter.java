@@ -1,5 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.support.design.widget.Snackbar;
+
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;

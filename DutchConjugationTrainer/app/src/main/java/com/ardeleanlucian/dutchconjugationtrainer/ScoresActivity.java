@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -46,6 +47,17 @@ public class ScoresActivity extends AppCompatActivity {
 
         // Initialize bar chart
         HorizontalBarChart barChart = (HorizontalBarChart) findViewById(R.id.chart);
+        /**
+         * Set a custom renderer. This will allow
+         *   values to be displayed both inside
+         *   and outside the scores bars.
+         */
+        barChart.setRenderer(new CustomHorizontalBarChartRenderer(
+                barChart,
+                barChart.getAnimator(),
+                barChart.getViewPortHandler(),
+                percentages));
+        barChart.invalidate();
 
         // Get scores from phone storage
         obtainAllScores(scores);
@@ -103,14 +115,10 @@ public class ScoresActivity extends AppCompatActivity {
         // Hide graph legend
         barChart.getLegend().setEnabled(false);
 
-
-
         // Design
         dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
         data.setValueTextSize(13f);
         data.setValueTextColor(Color.DKGRAY);
-
-        barChart.invalidate();
     }
 
     /** Define actions to be taken when clicking on the 'Reset scores' button */
@@ -118,11 +126,12 @@ public class ScoresActivity extends AppCompatActivity {
         Context context = view.getContext().getApplicationContext();
         Scores scores = new Scores(context);
         scores.resetScores();
-        Snackbar snackBar = Snackbar.make(view, "All scores have been reset!",
-                Snackbar.LENGTH_SHORT);
 
         obtainAllScores(scores);
 
+        // Give user a confirmation message
+        Snackbar snackBar = Snackbar.make(view, "All scores have been reset!",
+                Snackbar.LENGTH_SHORT);
         snackBar.show();
     }
 
