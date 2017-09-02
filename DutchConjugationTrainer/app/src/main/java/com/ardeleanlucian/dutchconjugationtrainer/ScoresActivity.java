@@ -2,6 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,8 @@ public class ScoresActivity extends AppCompatActivity {
     private String[] tenseOptions = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
             "Condtional", "Conditional Perfect", "Future" };
     private float[] percentages = new float[tenseOptions.length];
+    private int[] correctAnswers = new int[tenseOptions.length];
+    private int[] totalAnswers = new int[tenseOptions.length];
     Scores scores;
 
     @Override
@@ -44,6 +47,7 @@ public class ScoresActivity extends AppCompatActivity {
         // Initialize bar chart
         HorizontalBarChart barChart = (HorizontalBarChart) findViewById(R.id.chart);
 
+        // Get scores from phone storage
         obtainAllScores(scores);
 
         // Create bars
@@ -62,9 +66,10 @@ public class ScoresActivity extends AppCompatActivity {
 
         // Create a data object from the dataSet
         BarData data = new BarData(dataSet);
-        // Format data as percentage
-        data.setValueFormatter(new PercentFormatter());
 
+        // Format data
+        data.setValueFormatter(new CustomValueFormatter(correctAnswers, totalAnswers));
+        
         // Make the chart use the acquired data
         barChart.setData(data);
 
@@ -83,6 +88,7 @@ public class ScoresActivity extends AppCompatActivity {
 
         // Set the maximum value that can be taken by the bars
         barChart.getAxisLeft().setAxisMaximum(100);
+        barChart.getAxisLeft().setAxisMinimum(0);
 
         // Bars are sliding in from left to right
         barChart.animateXY(1000, 1000);
@@ -96,6 +102,8 @@ public class ScoresActivity extends AppCompatActivity {
         barChart.getDescription().setEnabled(false);
         // Hide graph legend
         barChart.getLegend().setEnabled(false);
+
+
 
         // Design
         dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
@@ -122,9 +130,9 @@ public class ScoresActivity extends AppCompatActivity {
     public void obtainAllScores(Scores scores) {
 
         for (int i = 0; i < tenseOptions.length; i++) {
-            percentages[i] = scores.calculatePercentage(
-                    scores.getNumberOfCorrectAnswers(tenseOptions[i]),
-                    scores.getTotalNumberOfAnswers(tenseOptions[i]));
+            correctAnswers[i] = scores.getNumberOfCorrectAnswers(tenseOptions[i]);
+            totalAnswers[i] = scores.getTotalNumberOfAnswers(tenseOptions[i]);
+            percentages[i] = scores.calculatePercentage(correctAnswers[i], totalAnswers[i]);
         }
     }
 }
