@@ -39,9 +39,10 @@ public class ScoresActivity extends AppCompatActivity {
         scoresChart.setHorizontalBarChart();
     }
 
-    /** Define actions to be taken when clicking on the 'Reset scores' button */
     public void onClickReset(View view) {
         Context context = view.getContext().getApplicationContext();
+
+        // Reset scores
         (new Scores(context)).resetScores();
 
         // Give user a confirmation message
@@ -49,7 +50,7 @@ public class ScoresActivity extends AppCompatActivity {
                 Snackbar.LENGTH_SHORT);
         snackBar.show();
 
-        // Set and display the scores chart
+        // Set and display the updated scores chart
         ScoresChart scoresChart = new ScoresChart(findViewById(R.id.scores_activity));
         scoresChart.setHorizontalBarChart();
     }

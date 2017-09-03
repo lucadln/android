@@ -1,6 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -11,6 +12,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ardelean on 9/2/17.
@@ -25,6 +27,7 @@ public class ScoresChart {
     private float[] percentages = new float[tenseOptions.length];
     private int[] correctAnswers = new int[tenseOptions.length];
     private int[] totalAnswers = new int[tenseOptions.length];
+    List<Integer> colors = new ArrayList<>();
 
     /**
      * Constructor method
@@ -43,6 +46,7 @@ public class ScoresChart {
     public void setHorizontalBarChart() {
 
         obtainAllScores(scores);
+        setBarChartColors(percentages);
 
         /* Set a custom renderer. This helps to show chart labels either
         *      inside or outside the chart bars depending on their values */
@@ -67,6 +71,8 @@ public class ScoresChart {
         BarDataSet dataSet = new BarDataSet(yvalues, "Tenses");
         // Set data set values to be visible on the graph
         dataSet.setDrawValues(true);
+
+
 
         // Create a data object from the data set
         BarData data = new BarData(dataSet);
@@ -106,18 +112,65 @@ public class ScoresChart {
         barChart.getLegend().setEnabled(false);
 
         // Set colors and font style
-        dataSet.setColors(ColorTemplate.VORDIPLOM_COLORS);
+        dataSet.setColors(colors);
         data.setValueTextSize(13f);
         data.setValueTextColor(Color.DKGRAY);
     }
 
-    /** Obtain the scores for all tenses */
+    /**
+     * Obtain the scores for all tenses
+     *
+     * @param scores
+     */
     public void obtainAllScores(Scores scores) {
 
         for (int i = 0; i < tenseOptions.length; i++) {
             correctAnswers[i] = scores.getNumberOfCorrectAnswers(tenseOptions[i]);
             totalAnswers[i] = scores.getTotalNumberOfAnswers(tenseOptions[i]);
             percentages[i] = scores.calculatePercentage(correctAnswers[i], totalAnswers[i]);
+        }
+    }
+
+    /**
+     * Color the barchart depending on scores
+     *
+     * @param percentages
+     */
+    public void setBarChartColors(float[] percentages) {
+
+        int orange100 = Color.rgb(255, 123, 0);
+        int orange90  = Color.rgb(255, 140, 33);
+        int orange80  = Color.rgb(255, 157, 66);
+        int orange70  = Color.rgb(255, 168, 86);
+        int orange60  = Color.rgb(255, 179, 109);
+        int orange50  = Color.rgb(255, 191, 132);
+        int orange40  = Color.rgb(255, 207, 163);
+        int orange30  = Color.rgb(255, 220, 188);
+        int orange20  = Color.rgb(255, 229, 206);
+        int orange10  = Color.rgb(255, 243, 232);
+
+        for (int i = 0; i < percentages.length; i++) {
+            if        (percentages[i] <= 10) {
+                colors.add(orange10);
+            } else if (percentages[i] <= 20) {
+                colors.add(orange20);
+            } else if (percentages[i] <= 30) {
+                colors.add(orange30);
+            } else if (percentages[i] <= 40) {
+                colors.add(orange40);
+            } else if (percentages[i] <= 50) {
+                colors.add(orange50);
+            } else if (percentages[i] <= 60) {
+                colors.add(orange60);
+            } else if (percentages[i] <= 70) {
+                colors.add(orange70);
+            } else if (percentages[i] <= 80) {
+                colors.add(orange80);
+            } else if (percentages[i] <= 90) {
+                colors.add(orange90);
+            } else { // if (percentages[i] <= 100)
+                colors.add(orange100);
+            }
         }
     }
 }
