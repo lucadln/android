@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
     private boolean correctVerbConjugation;
-    private Scores scores;
+    private ScoresHandler scoresHandler;
 
     private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                                      "Condtional", "Conditional Perfect", "Future" };
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         context = this;
-        scores = new Scores(context);
+        scoresHandler = new ScoresHandler(context);
 
         correctVerbConjugation = true;
 
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                  *   got one conjugation wrong then this
                  *   is registered as a wrong answer */
                 if (!correctVerbConjugation) {
-                    scores.updateScores(correctVerbConjugation, previouslySelectedTense);
+                    scoresHandler.updateScores(correctVerbConjugation, previouslySelectedTense);
                 }
 
                 /* Keep track of the previously selected tense.
@@ -232,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -260,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -288,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -316,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -344,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -372,7 +371,7 @@ public class MainActivity extends AppCompatActivity {
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctVerbConjugation) {
-                            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -426,7 +425,7 @@ public class MainActivity extends AppCompatActivity {
          *   got one conjugation wrong then this
          *   is registered as a wrong answer */
         if (!correctVerbConjugation) {
-            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
         }
 
         correctVerbConjugation = true;
@@ -479,7 +478,7 @@ public class MainActivity extends AppCompatActivity {
          *   got one conjugation wrong then this
          *   is registered as a wrong answer */
         if (!correctVerbConjugation) {
-            scores.updateScores(correctVerbConjugation, currentlySelectedTense);
+            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
         }
 
         correctVerbConjugation = true;
@@ -545,12 +544,12 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.scores) {
             Intent displayScores = new Intent(MainActivity.this, ScoresActivity.class);
-            // Start new activity to display the scores
+            // Start new activity to display the scoresHandler
             startActivity(displayScores);
             return true;
         } else if (id == R.id.about) {
             Intent displayAbout = new Intent(MainActivity.this, AboutActivity.class);
-            // Start new activity to display the scores
+            // Start new activity to display the scoresHandler
             startActivity(displayAbout);
             return true;
         }

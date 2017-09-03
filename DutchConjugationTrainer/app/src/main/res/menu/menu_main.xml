@@ -7,7 +7,7 @@
         android:orderInCategory="100"
         android:title="Preferences" />
     <item
-        android:id="@+id/scores"
+        android:id="@+id/scoresHandler"
         android:orderInCategory="100"
         android:title="Scores" />
     <item

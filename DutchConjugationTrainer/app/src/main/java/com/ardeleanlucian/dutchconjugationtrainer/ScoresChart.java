@@ -1,7 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -9,7 +9,6 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,26 +17,20 @@ import java.util.List;
  * Created by ardelean on 9/2/17.
  */
 
-public class ScoresChart {
+public class ScoresChart extends ScoresHandler {
 
-    private Scores scores;
-    private String[] tenseOptions = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
-            "Condtional", "Conditional Perfect", "Future" };
     private HorizontalBarChart barChart;
-    private float[] percentages = new float[tenseOptions.length];
-    private int[] correctAnswers = new int[tenseOptions.length];
-    private int[] totalAnswers = new int[tenseOptions.length];
+
     List<Integer> colors = new ArrayList<>();
 
     /**
      * Constructor method
-     * @param view
      */
-    public ScoresChart(View view) {
+    public ScoresChart(View view, Context context) {
+        super(context);
 
         // Initialize the bar chart
         barChart = (HorizontalBarChart) view.findViewById(R.id.chart);
-        scores = new Scores(view.getContext());
     }
 
     /**
@@ -45,7 +38,7 @@ public class ScoresChart {
      */
     public void setHorizontalBarChart() {
 
-        obtainAllScores(scores);
+        obtainAllScores(scoresHandler);
         setBarChartColors(percentages);
 
         /* Set a custom renderer. This helps to show chart labels either
@@ -97,7 +90,7 @@ public class ScoresChart {
         barChart.getAxisLeft().setAxisMaximum(100);
         barChart.getAxisLeft().setAxisMinimum(0);
 
-        // Display scores inside the bars
+        // Display scoresHandler inside the bars
         barChart.setDrawValueAboveBar(false);
 
         // Animate chart so that bars are sliding from left to right
@@ -118,21 +111,21 @@ public class ScoresChart {
     }
 
     /**
-     * Obtain the scores for all tenses
+     * Obtain the scoresHandler for all tenses
      *
-     * @param scores
+     * @param scoresHandler
      */
-    public void obtainAllScores(Scores scores) {
+    public void obtainAllScores(ScoresHandler scoresHandler) {
 
         for (int i = 0; i < tenseOptions.length; i++) {
-            correctAnswers[i] = scores.getNumberOfCorrectAnswers(tenseOptions[i]);
-            totalAnswers[i] = scores.getTotalNumberOfAnswers(tenseOptions[i]);
-            percentages[i] = scores.calculatePercentage(correctAnswers[i], totalAnswers[i]);
+            correctAnswers[i] = scoresHandler.getNumberOfCorrectAnswers(tenseOptions[i]);
+            totalAnswers[i] = scoresHandler.getTotalNumberOfAnswers(tenseOptions[i]);
+            percentages[i] = scoresHandler.calculatePercentage(correctAnswers[i], totalAnswers[i]);
         }
     }
 
     /**
-     * Color the barchart depending on scores
+     * Color the barchart depending on scoresHandler
      *
      * @param percentages
      */
