@@ -1,7 +1,6 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.graphics.Color;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -9,7 +8,6 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,87 +16,85 @@ import java.util.List;
  * Created by ardelean on 9/2/17.
  */
 
-public class ScoresChart {
+public class ScoresChart extends ScoresHandler {
 
-    private Scores scores;
-    private String[] tenseOptions = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
-            "Condtional", "Conditional Perfect", "Future" };
+    /**
+     * Define the bar chart
+     */
     private HorizontalBarChart barChart;
-    private float[] percentages = new float[tenseOptions.length];
-    private int[] correctAnswers = new int[tenseOptions.length];
-    private int[] totalAnswers = new int[tenseOptions.length];
-    List<Integer> colors = new ArrayList<>();
+
+    /**
+     * Define a list of colors
+     */
+    List<Integer> colors;
+
 
     /**
      * Constructor method
-     * @param view
      */
     public ScoresChart(View view) {
+        super(view.getContext().getApplicationContext());
 
         // Initialize the bar chart
-        barChart = (HorizontalBarChart) view.findViewById(R.id.chart);
-        scores = new Scores(view.getContext());
+        barChart = view.findViewById(R.id.chart);
+
+        // Initialize the 'colors' variable
+        colors = new ArrayList<>();
+
+        // Obtain ratings for all tenses
+        setRatingsForAllTenses();
     }
 
     /**
-     * Method to set the HorizontalBarChart
+     * Method to set data and design for the bar chart
      */
-    public void setHorizontalBarChart() {
-
-        obtainAllScores(scores);
-        setBarChartColors(percentages);
-
+    public void disposeHorizontalBarChart() {
         /* Set a custom renderer. This helps to show chart labels either
-        *      inside or outside the chart bars depending on their values */
+         *   inside or outside the chart bars depending on their values */
         barChart.setRenderer(new CustomHorizontalBarChartRenderer(
                 barChart,
                 barChart.getAnimator(),
                 barChart.getViewPortHandler(),
-                percentages));
+                ratings));
         barChart.invalidate();
 
         // Add entry values for every tense
-        ArrayList<BarEntry> yvalues = new ArrayList<>();
-        yvalues.add(new BarEntry(0f, percentages[0]));
-        yvalues.add(new BarEntry(1f, percentages[1]));
-        yvalues.add(new BarEntry(2f, percentages[2]));
-        yvalues.add(new BarEntry(3f, percentages[3]));
-        yvalues.add(new BarEntry(4f, percentages[4]));
-        yvalues.add(new BarEntry(5f, percentages[5]));
-        yvalues.add(new BarEntry(6f, percentages[6]));
+        ArrayList<BarEntry> barEntries = new ArrayList<>();
+        for (int i = 0; i < numberOfTenses; i++) {
+            barEntries.add(new BarEntry((float) i, ratings[i]));
+        }
 
         // Create a data set from the entry values
-        BarDataSet dataSet = new BarDataSet(yvalues, "Tenses");
+        BarDataSet dataSet = new BarDataSet(barEntries, "Tenses");
         // Set data set values to be visible on the graph
         dataSet.setDrawValues(true);
-
-
 
         // Create a data object from the data set
         BarData data = new BarData(dataSet);
         // Make the chart use the acquired data
         barChart.setData(data);
+
         // Display data as <correctAnswers>/<totalAnswers>
         data.setValueFormatter(new CustomValueFormatter(correctAnswers, totalAnswers));
 
         // Create explanation labels for each bar
-        final ArrayList<String> xVals = new ArrayList<>();
-        xVals.add("Present");
-        xVals.add("Pres. Continuous");
-        xVals.add("Simple Past");
-        xVals.add("Past Perfect");
-        xVals.add("Conditional");
-        xVals.add("Cond. Perfect");
-        xVals.add("Future");
-        // Display explanation label
-        barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
+        final ArrayList<String> barLabels = new ArrayList<>();
+        barLabels.add("Present");
+        barLabels.add("Pres. Continuous");
+        barLabels.add("Simple Past");
+        barLabels.add("Past Perfect");
+        barLabels.add("Conditional");
+        barLabels.add("Cond. Perfect");
+        barLabels.add("Future");
+        // Display explanation labels
+        barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(barLabels));
 
         // Set the minimum and maximum bar values
         barChart.getAxisLeft().setAxisMaximum(100);
         barChart.getAxisLeft().setAxisMinimum(0);
 
-        // Display scores inside the bars
-        barChart.setDrawValueAboveBar(false);
+        // Set a color for each bar in the chart based on its value
+        setBarChartColors(ratings);
 
         // Animate chart so that bars are sliding from left to right
         barChart.animateXY(1000, 1000);
@@ -118,21 +114,7 @@ public class ScoresChart {
     }
 
     /**
-     * Obtain the scores for all tenses
-     *
-     * @param scores
-     */
-    public void obtainAllScores(Scores scores) {
-
-        for (int i = 0; i < tenseOptions.length; i++) {
-            correctAnswers[i] = scores.getNumberOfCorrectAnswers(tenseOptions[i]);
-            totalAnswers[i] = scores.getTotalNumberOfAnswers(tenseOptions[i]);
-            percentages[i] = scores.calculatePercentage(correctAnswers[i], totalAnswers[i]);
-        }
-    }
-
-    /**
-     * Color the barchart depending on scores
+     * Color the bars in the chart depending on their value
      *
      * @param percentages
      */
@@ -150,25 +132,25 @@ public class ScoresChart {
         int orange10  = Color.rgb(255, 243, 232);
 
         for (int i = 0; i < percentages.length; i++) {
-            if        (percentages[i] <= 10) {
+            if        (percentages[i] <= 10.0) {
                 colors.add(orange10);
-            } else if (percentages[i] <= 20) {
+            } else if (percentages[i] <= 20.0) {
                 colors.add(orange20);
-            } else if (percentages[i] <= 30) {
+            } else if (percentages[i] <= 30.0) {
                 colors.add(orange30);
-            } else if (percentages[i] <= 40) {
+            } else if (percentages[i] <= 40.0) {
                 colors.add(orange40);
-            } else if (percentages[i] <= 50) {
+            } else if (percentages[i] <= 50.0) {
                 colors.add(orange50);
-            } else if (percentages[i] <= 60) {
+            } else if (percentages[i] <= 60.0) {
                 colors.add(orange60);
-            } else if (percentages[i] <= 70) {
+            } else if (percentages[i] <= 70.0) {
                 colors.add(orange70);
-            } else if (percentages[i] <= 80) {
+            } else if (percentages[i] <= 80.0) {
                 colors.add(orange80);
-            } else if (percentages[i] <= 90) {
+            } else if (percentages[i] <= 90.0) {
                 colors.add(orange90);
-            } else { // if (percentages[i] <= 100)
+            } else { // if (percentages[i] > 90.0)
                 colors.add(orange100);
             }
         }
