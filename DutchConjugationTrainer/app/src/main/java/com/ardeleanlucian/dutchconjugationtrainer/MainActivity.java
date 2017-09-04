@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private ScoresHandler scoresHandler;
 
     private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
-                                     "Condtional", "Conditional Perfect", "Future" };
+                                     "Conditional", "Conditional Perfect", "Future" };
     private int currentSpinnerPosition;
     private int previousSpinnerPosition;
 
