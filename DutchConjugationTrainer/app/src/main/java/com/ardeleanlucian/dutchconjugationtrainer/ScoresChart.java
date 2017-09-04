@@ -49,6 +49,14 @@ public class ScoresChart extends ScoresHandler {
      * Method to set data and design for the bar chart
      */
     public void disposeHorizontalBarChart() {
+        /* Set a custom renderer. This helps to show chart labels either
+         *   inside or outside the chart bars depending on their values */
+        barChart.setRenderer(new CustomHorizontalBarChartRenderer(
+                barChart,
+                barChart.getAnimator(),
+                barChart.getViewPortHandler(),
+                ratings));
+        barChart.invalidate();
 
         // Add entry values for every tense
         ArrayList<BarEntry> barEntries = new ArrayList<>();
@@ -68,15 +76,6 @@ public class ScoresChart extends ScoresHandler {
 
         // Display data as <correctAnswers>/<totalAnswers>
         data.setValueFormatter(new CustomValueFormatter(correctAnswers, totalAnswers));
-
-        /* Set a custom renderer. This helps to show chart labels either
-        *      inside or outside the chart bars depending on their values */
-        barChart.setRenderer(new CustomHorizontalBarChartRenderer(
-                barChart,
-                barChart.getAnimator(),
-                barChart.getViewPortHandler(),
-                ratings));
-        barChart.invalidate();
 
         // Create explanation labels for each bar
         final ArrayList<String> barLabels = new ArrayList<>();
