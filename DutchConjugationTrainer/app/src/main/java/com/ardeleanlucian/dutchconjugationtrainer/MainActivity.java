@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean readOnlyPref;
     private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
-    private boolean correctVerbConjugation;
+    private boolean correctAnswer;
     private ScoresHandler scoresHandler;
 
     private String tenseOptions[] = {"Present", "Present Continuous", "Simple Past", "Past Perfect",
                                      "Condtional", "Conditional Perfect", "Future" };
-    private String currentlySelectedTense;
-    private String previouslySelectedTense;
+    private int currentSpinnerPosition;
+    private int previousSpinnerPosition;
 
 
     private TextView INFINITVE, TRANSLATION,
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         scoresHandler = new ScoresHandler(context);
 
-        correctVerbConjugation = true;
+        correctAnswer = true;
 
         // Set preferences-menu default values when application is started for the first time
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
@@ -103,12 +103,11 @@ public class MainActivity extends AppCompatActivity {
         // Get other preferences from phone memory
         final SharedPreferences prefs = context.getSharedPreferences(
                 "com.ardeleanlucian.dutchconjugationtrainer", Context.MODE_PRIVATE);
-        final String selectedTenseKey
+        final String lastTenseIndexKey
                 = "com.ardeleanlucian.dutchconjugationtrainer.selected_tense";
         final String firstReadKey
                 = "com.ardeleanlucian.dutchconjugationtrainer.first_read";
-        // Get the last used tenseOptions
-        currentlySelectedTense = prefs.getString(selectedTenseKey, "present");
+
         // Check if application was run before in read-only mode
         firstTimeReadOnly = prefs.getBoolean(firstReadKey, true);
 
@@ -116,20 +115,17 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new MyAdapter(toolbar.getContext(), tenseOptions));
 
-        // Find the index of the selected tense in tenseOptions array
-        for (int i = 0; i < tenseOptions.length; i++) {
-            if (currentlySelectedTense.equals(tenseOptions[i])) {
-                // Put back in place the last tense used by the user
-                spinner.setSelection(i);
-            }
-        }
+        /* Find the last spinner position before the application was stopped
+         *   and put it in place once more */
+        currentSpinnerPosition = prefs.getInt(lastTenseIndexKey, 0);
+        spinner.setSelection(currentSpinnerPosition);
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Save tenseOptions choice in phone memory.
-                currentlySelectedTense = spinner.getSelectedItem().toString();
-                prefs.edit().putString(selectedTenseKey, currentlySelectedTense).apply();
+                // Save spinner position in phone memory
+                currentSpinnerPosition = spinner.getSelectedItemPosition();
+                prefs.edit().putInt(lastTenseIndexKey, currentSpinnerPosition).apply();
 
                 // Make the focus thief not focusable
                 findViewById(R.id.focus_thief).setFocusable(false);
@@ -139,23 +135,23 @@ public class MainActivity extends AppCompatActivity {
                 /* If the user changes the tense after he
                  *   got one conjugation wrong then this
                  *   is registered as a wrong answer */
-                if (!correctVerbConjugation) {
-                    scoresHandler.updateScores(correctVerbConjugation, previouslySelectedTense);
+                if (!correctAnswer) {
+                    scoresHandler.updateNumberOfAnswers(correctAnswer, previousSpinnerPosition);
                 }
 
                 /* Keep track of the previously selected tense.
                  *   This will proove to be usefull when registering
                  *   a wrong answer that was followed by a tense change */
-                previouslySelectedTense = currentlySelectedTense;
+                previousSpinnerPosition = currentSpinnerPosition;
 
-                correctVerbConjugation = true;
+                correctAnswer = true;
 
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
                 // Read verbs.txt and set conjugations
-                tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "none");
+                tenseConjugationResult = verbsFileReader.readFile(context, currentSpinnerPosition, "none");
                 tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                          WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -220,18 +216,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -248,18 +244,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -276,18 +272,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -304,18 +300,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -332,18 +328,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -360,18 +356,18 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
-                    if (!correctVerbConjugation) {
+                    if (!correctAnswer) {
                         // If one of the answers was already declared wrong do nothing
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
-                        correctVerbConjugation = tenseConjugationResult.returnVerifiedResult();
+                        correctAnswer = tenseConjugationResult.returnVerifiedResult();
                     }
                     if (getNumberOfFilledEditTexts() == 6) { // all fields have been filled
                         SKIP.setVisibility(View.GONE);
                         NEXT.setVisibility(View.VISIBLE);
-                        if (correctVerbConjugation) {
-                            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+                        if (correctAnswer) {
+                            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -424,16 +420,16 @@ public class MainActivity extends AppCompatActivity {
         /* If the user clicks on 'Skip' after he
          *   got one conjugation wrong then this
          *   is registered as a wrong answer */
-        if (!correctVerbConjugation) {
-            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+        if (!correctAnswer) {
+            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
         }
 
-        correctVerbConjugation = true;
+        correctAnswer = true;
 
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, currentSpinnerPosition, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                 WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 
@@ -477,11 +473,11 @@ public class MainActivity extends AppCompatActivity {
         /* If the user clicks on 'Next' after he
          *   got one conjugation wrong then this
          *   is registered as a wrong answer */
-        if (!correctVerbConjugation) {
-            scoresHandler.updateScores(correctVerbConjugation, currentlySelectedTense);
+        if (!correctAnswer) {
+            scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
         }
 
-        correctVerbConjugation = true;
+        correctAnswer = true;
 
         SKIP.setVisibility(View.VISIBLE);
         NEXT.setVisibility(View.GONE);
@@ -489,7 +485,7 @@ public class MainActivity extends AppCompatActivity {
         VerbsFileReader verbsFileReader = new VerbsFileReader(context);
 
         // Read file and set conjugations
-        tenseConjugationResult = verbsFileReader.readFile(context, currentlySelectedTense, "next");
+        tenseConjugationResult = verbsFileReader.readFile(context, currentSpinnerPosition, "next");
         tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
                                                  WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
 

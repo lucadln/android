@@ -26,7 +26,6 @@ public class SharedPreferencesHandler {
      */
     int numberOfTenses;
 
-
     /**
      * Basic constructor method
      *
@@ -53,6 +52,9 @@ public class SharedPreferencesHandler {
 
         // Pass the numberOfTenses value to the object variable
         this.numberOfTenses = numberOfTenses;
+        // Initialize arrays for shared preferences keys
+        keysForCorrectAnswers = new String[numberOfTenses];
+        keysForTotalAnswers = new String[numberOfTenses];
 
         // Set android keys
         setAndroidKeysForCorrectAnswers();
@@ -82,48 +84,44 @@ public class SharedPreferencesHandler {
     }
 
     /**
-     * Method to get the number of correct answers for each available tense
+     * Method to get the number of correct answers for a certain tense
      *
+     * @param tenseIndex
      * @return
      */
-    public int[] getNumberOfCorrectAnswers() {
-        int[] numberOfCorrectAnswers = new int[numberOfTenses];
-        for (int i = 0; i < numberOfTenses; i++) {
-            numberOfCorrectAnswers[i] = preferences.getInt(keysForCorrectAnswers[i], 0);
-        }
+    public int getNumberOfCorrectAnswers(int tenseIndex) {
+        int numberOfCorrectAnswers = preferences.getInt(keysForCorrectAnswers[tenseIndex], 0);
         return numberOfCorrectAnswers;
     }
 
     /**
-     * Method to get the total number of answers for each available tense
+     * Method to get the total number of answers for a certain tense
      *
+     * @param tenseIndex
      * @return
      */
-    public int[] getTotalNumberOfAnswers() {
-        int[] totalNumberOfAnswers = new int[numberOfTenses];
-        for (int i = 0; i < numberOfTenses; i++) {
-            totalNumberOfAnswers[i] = preferences.getInt(keysForCorrectAnswers[i], 0);
-        }
+    public int getTotalNumberOfAnswers(int tenseIndex) {
+        int totalNumberOfAnswers = preferences.getInt(keysForTotalAnswers[tenseIndex], 0);
         return totalNumberOfAnswers;
     }
 
     /**
      * Method to update the number of correct answers in android Shared Preferences
      *
-     * @param tenseInUse
+     * @param tenseIndex
      * @param newValue
      */
-    public void updateNumberOfCorrectAnswers(int tenseInUse, int newValue) {
-        preferences.edit().putInt(keysForCorrectAnswers[tenseInUse], newValue).apply();
+    public void updateNumberOfCorrectAnswers(int tenseIndex, int newValue) {
+        preferences.edit().putInt(keysForCorrectAnswers[tenseIndex], newValue).apply();
     }
 
     /**
      * Method to update the total number of answers in android Shared Preferences
      *
-     * @param tenseInUse
+     * @param tenseIndex
      * @param newValue
      */
-    public void updateTotalNumberOfAnswers(int tenseInUse, int newValue) {
-        preferences.edit().putInt(keysForTotalAnswers[tenseInUse], newValue).apply();
+    public void updateTotalNumberOfAnswers(int tenseIndex, int newValue) {
+        preferences.edit().putInt(keysForTotalAnswers[tenseIndex], newValue).apply();
     }
 }

@@ -24,74 +24,160 @@ public class ScoresHandler extends Scores {
     }
 
     /**
-     * Method to set the number of correct answers for each available tense
+     * Set the number of correct answers for a particular tense
      *
-     * @return
+     * @param tenseIndex
      */
-    public void setNumberOfCorrectAnswers() {
-        correctAnswers = sharedPreferencesHandler.getNumberOfCorrectAnswers();
-    }
-
-
-    /**
-     * Method to set the total number of answers for each available tense
-     *
-     * @return
-     */
-    public void setTotalNumberOfAnswers() {
-        totalAnswers = sharedPreferencesHandler.getTotalNumberOfAnswers();
+    public void setNumberOfCorrectAnswers(int tenseIndex) {
+        correctAnswers[tenseIndex] = sharedPreferencesHandler.getNumberOfCorrectAnswers(tenseIndex);
     }
 
     /**
-     * Method to set the ratings for every tense. The rating is
-     *   calculated as (correct answers / total answers * 100)
+     * Set the total number of answers for a particular tense
+     *
+     * @param tenseIndex
      */
-    public void setRatings() {
+    public void setTotalNumberOfAnswers(int tenseIndex) {
+        totalAnswers[tenseIndex] = sharedPreferencesHandler.getTotalNumberOfAnswers(tenseIndex);
+    }
 
-        setNumberOfCorrectAnswers();
-        setTotalNumberOfAnswers();
-
-        // Iterate for each tense
-        for (int i = 0; i < tenses.length; i++) {
-            if (totalAnswers[i] == 0) {
-                ratings[i] = 100f;
-            } else {
-                ratings[i] = correctAnswers[i] / totalAnswers[i] * 100f;
-            }
+    /**
+     * Set the number of correct answers for all tenses
+     */
+    public void setNumberOfCorrectAnswersForAllTenses() {
+        for (int i = 0; i < numberOfTenses; i++) {
+            setNumberOfCorrectAnswers(i);
         }
     }
 
     /**
-     * Method to update ratings
+     * Set the total number of answers for all tenses
+     */
+    public void setTotalNumberOfAnswersForAllTenses() {
+        for (int i = 0; i < numberOfTenses; i++) {
+            setTotalNumberOfAnswers(i);
+        }
+    }
+
+    /**
+     * Get the number of correct answers for a particular tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public int getNumberOfCorrectAnswers(int tenseIndex) {
+        setNumberOfCorrectAnswers(tenseIndex);
+        return correctAnswers[tenseIndex];
+    }
+
+    /**
+     * Get the total number of answers for a particular tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public int getTotalNumberOfAnswers(int tenseIndex) {
+        setTotalNumberOfAnswers(tenseIndex);
+        return totalAnswers[tenseIndex];
+    }
+
+    /**
+     * Get the number of correct answers for all tenses
+     *
+     * @return
+     */
+    public int[] getNumberOfCorrectAnswersForAllTenses() {
+        setNumberOfCorrectAnswersForAllTenses();
+        return correctAnswers;
+    }
+
+    /**
+     * Get the total number of answers for all tenses
+     *
+     * @return
+     */
+    public int[] getTotalNumberOfAnswersForAllTenses() {
+        setTotalNumberOfAnswersForAllTenses();
+        return totalAnswers;
+    }
+
+    /**
+     * Method to calculate and set ratings for a particular tense
+     *
+     * @param tenseIndex
+     */
+    public void setRating(int tenseIndex) {
+        setNumberOfCorrectAnswers(tenseIndex);
+        setTotalNumberOfAnswers(tenseIndex);
+
+        if (totalAnswers[tenseIndex] == 0) {
+            ratings[tenseIndex] = 100f;
+        } else {
+            ratings[tenseIndex] = correctAnswers[tenseIndex] * 100f / totalAnswers[tenseIndex] ;
+        }
+    }
+
+    /**
+     * Method to set ratings for all tenses
+     */
+    public void setRatingsForAllTenses() {
+        for (int i = 0; i < numberOfTenses; i++) {
+            setRating(i);
+        }
+    }
+
+    /**
+     * Method to get ratings for a particular tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public float getRatings(int tenseIndex) {
+        setRating(tenseIndex);
+        return ratings[tenseIndex];
+    }
+
+    /**
+     * Method to get ratings for all tenses
+     *
+     * @return
+     */
+    public float[] getRatingsForAllTenses() {
+        setRatingsForAllTenses();
+        return ratings;
+    }
+
+    /**
+     * Method to update the number of given answers (correct and total answers)
      *
      * @param correctAnswer
-     * @param tenseInUse
+     * @param tenseIndex
      */
-    public void updateRatings(boolean correctAnswer, int tenseInUse) {
+    public void updateNumberOfAnswers(boolean correctAnswer, int tenseIndex) {
         // Obtain current scores
-        setNumberOfCorrectAnswers();
-        setTotalNumberOfAnswers();
+        setNumberOfCorrectAnswers(tenseIndex);
+        setTotalNumberOfAnswers(tenseIndex);
 
-        // Update scores
+        // Update object variables
         if (correctAnswer) {
-            correctAnswers[tenseInUse]++;
-            totalAnswers[tenseInUse]++;
+            correctAnswers[tenseIndex]++;
+            totalAnswers[tenseIndex]++;
         } else {
-            totalAnswers[tenseInUse]++;
+            totalAnswers[tenseIndex]++;
         }
 
-        // Save the new scores in the phone memory
-        sharedPreferencesHandler.updateNumberOfCorrectAnswers(tenseInUse, correctAnswers[tenseInUse]);
-        sharedPreferencesHandler.updateTotalNumberOfAnswers(tenseInUse, totalAnswers[tenseInUse]);
+        // Save the new numbers in the android Shared Preferences
+        sharedPreferencesHandler.updateNumberOfCorrectAnswers(tenseIndex, correctAnswers[tenseIndex]);
+        sharedPreferencesHandler.updateTotalNumberOfAnswers(tenseIndex, totalAnswers[tenseIndex]);
     }
 
     /**
      * Method to reset all ratings
      */
     public void resetScores() {
-        for (int i = 0; i < numberOfTenses; i++) {
-            sharedPreferencesHandler.updateNumberOfCorrectAnswers(i, 0);
-            sharedPreferencesHandler.updateTotalNumberOfAnswers(i, 0);
+        for (int tenseIndex = 0; tenseIndex < numberOfTenses; tenseIndex++) {
+            sharedPreferencesHandler.updateNumberOfCorrectAnswers(tenseIndex, 0);
+            sharedPreferencesHandler.updateTotalNumberOfAnswers(tenseIndex, 0);
         }
     }
 }

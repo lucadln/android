@@ -22,17 +22,16 @@ public class ScoresActivity extends AppCompatActivity {
         // Add an action bar and set navigation on it
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("ScoresHandler");
+        getSupportActionBar().setTitle("Scores");
 
         // Set and display the scores chart
         ScoresChart scoresChart = new ScoresChart(findViewById(R.id.scores_activity));
-        scoresChart.setHorizontalBarChart();
+        scoresChart.disposeHorizontalBarChart();
     }
 
     public void onClickReset(View view) {
+        // Get context and reset scores
         Context context = view.getContext().getApplicationContext();
-
-        // Reset scores
         (new ScoresHandler(context)).resetScores();
 
         // Give user a confirmation message
@@ -42,6 +41,6 @@ public class ScoresActivity extends AppCompatActivity {
 
         // Set and display the updated scores chart
         ScoresChart scoresChart = new ScoresChart(findViewById(R.id.scores_activity));
-        scoresChart.setHorizontalBarChart();
+        scoresChart.disposeHorizontalBarChart();
     }
 }
