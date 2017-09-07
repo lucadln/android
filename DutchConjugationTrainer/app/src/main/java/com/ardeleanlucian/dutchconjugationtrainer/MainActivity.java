@@ -228,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -256,6 +260,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -284,6 +292,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -312,6 +324,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -340,6 +356,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -368,6 +388,10 @@ public class MainActivity extends AppCompatActivity {
                         NEXT.setVisibility(View.VISIBLE);
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+                            // Increment the number of correct consecutive answers
+                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            // Reset the number of wrong consecutive answers
+                            ProgressFeedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -422,6 +446,10 @@ public class MainActivity extends AppCompatActivity {
          *   is registered as a wrong answer */
         if (!correctAnswer) {
             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+            // Reset the number of correct consecutive answers
+            ProgressFeedback.resetCorrectConsecutiveAnswers();
+            // Increment the number of wrong consecutive answers
+            ProgressFeedback.incrementWrongConsecutiveAnswers();
         }
 
         correctAnswer = true;
@@ -475,6 +503,10 @@ public class MainActivity extends AppCompatActivity {
          *   is registered as a wrong answer */
         if (!correctAnswer) {
             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
+            // Reset the number of correct consecutive answers
+            ProgressFeedback.resetCorrectConsecutiveAnswers();
+            // Increment the number of wrong consecutive answers
+            ProgressFeedback.incrementWrongConsecutiveAnswers();
         }
 
         correctAnswer = true;
