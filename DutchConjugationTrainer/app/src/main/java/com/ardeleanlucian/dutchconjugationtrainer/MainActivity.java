@@ -229,9 +229,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -261,9 +261,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -293,9 +293,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -325,9 +325,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -357,9 +357,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -389,9 +389,9 @@ public class MainActivity extends AppCompatActivity {
                         if (correctAnswer) {
                             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
                             // Increment the number of correct consecutive answers
-                            ProgressFeedback.incrementCorrectConsecutiveAnswers();
+                            Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
-                            ProgressFeedback.resetWrongConsecutiveAnswers();
+                            Feedback.resetWrongConsecutiveAnswers();
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -447,9 +447,9 @@ public class MainActivity extends AppCompatActivity {
         if (!correctAnswer) {
             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
             // Reset the number of correct consecutive answers
-            ProgressFeedback.resetCorrectConsecutiveAnswers();
+            Feedback.resetCorrectConsecutiveAnswers();
             // Increment the number of wrong consecutive answers
-            ProgressFeedback.incrementWrongConsecutiveAnswers();
+            Feedback.incrementWrongConsecutiveAnswers();
         }
 
         correctAnswer = true;
@@ -504,9 +504,9 @@ public class MainActivity extends AppCompatActivity {
         if (!correctAnswer) {
             scoresHandler.updateNumberOfAnswers(correctAnswer, currentSpinnerPosition);
             // Reset the number of correct consecutive answers
-            ProgressFeedback.resetCorrectConsecutiveAnswers();
+            Feedback.resetCorrectConsecutiveAnswers();
             // Increment the number of wrong consecutive answers
-            ProgressFeedback.incrementWrongConsecutiveAnswers();
+            Feedback.incrementWrongConsecutiveAnswers();
         }
 
         correctAnswer = true;

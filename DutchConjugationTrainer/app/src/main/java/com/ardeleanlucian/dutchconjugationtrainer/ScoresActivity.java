@@ -35,8 +35,8 @@ public class ScoresActivity extends AppCompatActivity {
         (new ScoresHandler(context)).resetScores();
 
         // Also reset the number of correct or wrong consecutive answers
-        ProgressFeedback.resetCorrectConsecutiveAnswers();
-        ProgressFeedback.resetWrongConsecutiveAnswers();
+        Feedback.resetCorrectConsecutiveAnswers();
+        Feedback.resetWrongConsecutiveAnswers();
 
         // Give user a confirmation message
         Snackbar snackBar = Snackbar.make(view, "All scores have been reset!",
