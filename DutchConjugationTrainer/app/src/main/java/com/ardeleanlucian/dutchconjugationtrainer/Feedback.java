@@ -60,39 +60,41 @@ public class Feedback extends ScoresHandler {
      * Method to decide if progress feedback is necessary
      *   (and if yes to call the corresponding feedback methods)
      */
-    public void giveFeedbackIfNecessary(View view, int tenseIndex) {
+    public void giveFeedbackIfNecessary(boolean giveFeedback, View view, int tenseIndex) {
 
-        /*
-         * Give feedback on correct consecutive answers
-         */
-        if (correctConsecutiveAnswers == 7) {
-            FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
-        } else if (correctConsecutiveAnswers == 15) {
-            FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
-        }
+        if (giveFeedback) {
+            /*
+             * Give feedback on correct consecutive answers
+             */
+            if (correctConsecutiveAnswers == 7) {
+                FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
+            } else if (correctConsecutiveAnswers == 15) {
+                FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
+            }
 
-        /*
-         * Give feedback on wrong consecutive answers
-         */
-        if (wrongConsecutiveAnswers == 7) {
-            FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
-        } else if (wrongConsecutiveAnswers == 15) {
-            FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
-        }
+            /*
+             * Give feedback on wrong consecutive answers
+             */
+            if (wrongConsecutiveAnswers == 7) {
+                FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
+            } else if (wrongConsecutiveAnswers == 15) {
+                FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
+            }
 
-        /*
-         * Give feedback on score variations
-         */
-        if (previousRatings == null) {
-            // If no reference rating is set yet then set it now
-            setPreviousRatings();
-        } else {
-            // If reference ratings exist then compare them with the current ratings
-            float variation = ratings[tenseIndex] - previousRatings[tenseIndex];
-            if ((conjugationsSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
-                FeedbackDisplay.informOnScoreVariation(view, ratings[tenseIndex], tenseIndex);
-                resetConjugationsSinceLastFeedback();
-                previousRatings = ratings;
+            /*
+             * Give feedback on score variations
+             */
+            if (previousRatings == null) {
+                // If no reference rating is set yet then set it now
+                setPreviousRatings();
+            } else {
+                // If reference ratings exist then compare them with the current ratings
+                float variation = ratings[tenseIndex] - previousRatings[tenseIndex];
+                if ((conjugationsSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
+                    FeedbackDisplay.informOnScoreVariation(view, ratings[tenseIndex], tenseIndex);
+                    resetConjugationsSinceLastFeedback();
+                    previousRatings = ratings;
+                }
             }
         }
     }

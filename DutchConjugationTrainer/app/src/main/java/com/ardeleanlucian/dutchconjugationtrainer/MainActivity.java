@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private TenseConjugationResult tenseConjugationResult;
     private boolean showTranslationPref;
     private boolean readOnlyPref;
+    private boolean giveFeedbackPref;
     private boolean firstTimeReadOnly;
     private int displayConjIndex = 0;
     private boolean correctAnswer;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         showTranslationPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_TRANS, true);
         readOnlyPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_READ_ONLY, false);
+        giveFeedbackPref = sharedPrefs.getBoolean(PreferencesActivity.KEY_SHOW_PERF, true);
 
         // Set up the action toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -233,8 +235,9 @@ public class MainActivity extends AppCompatActivity {
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
-                                    .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                    .giveFeedbackIfNecessary(giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -269,7 +272,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
                                     .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                            giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -304,7 +309,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
                                     .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                            giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -339,7 +346,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
                                     .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                            giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -374,7 +383,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
                                     .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                            giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -409,7 +420,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.resetWrongConsecutiveAnswers();
                             (new Feedback(findViewById(R.id.main_content).getContext()))
                                     .giveFeedbackIfNecessary(
-                                            findViewById(R.id.main_content), currentSpinnerPosition);
+                                            giveFeedbackPref,
+                                            findViewById(R.id.main_content),
+                                            currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -472,7 +485,9 @@ public class MainActivity extends AppCompatActivity {
             Feedback.incrementWrongConsecutiveAnswers();
             (new Feedback(findViewById(R.id.main_content).getContext()))
                     .giveFeedbackIfNecessary(
-                            findViewById(R.id.main_content), currentSpinnerPosition);
+                            giveFeedbackPref,
+                            findViewById(R.id.main_content),
+                            currentSpinnerPosition);
         }
 
         correctAnswer = true;
@@ -534,7 +549,9 @@ public class MainActivity extends AppCompatActivity {
             Feedback.incrementWrongConsecutiveAnswers();
             (new Feedback(findViewById(R.id.main_content).getContext()))
                     .giveFeedbackIfNecessary(
-                            findViewById(R.id.main_content), currentSpinnerPosition);
+                            giveFeedbackPref,
+                            findViewById(R.id.main_content),
+                            currentSpinnerPosition);
         }
 
         correctAnswer = true;
