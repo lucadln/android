@@ -232,6 +232,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -264,6 +267,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -296,6 +302,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -328,6 +337,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -360,6 +372,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -392,6 +407,9 @@ public class MainActivity extends AppCompatActivity {
                             Feedback.incrementCorrectConsecutiveAnswers();
                             // Reset the number of wrong consecutive answers
                             Feedback.resetWrongConsecutiveAnswers();
+                            (new Feedback(findViewById(R.id.main_content).getContext()))
+                                    .giveFeedbackIfNecessary(
+                                            findViewById(R.id.main_content), currentSpinnerPosition);
                         }
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -434,11 +452,13 @@ public class MainActivity extends AppCompatActivity {
         // Show no conjugations in read-only mode
         displayConjIndex = 0;
 
+        Feedback.incrementConjugationsSinceLastFeedback();
+
         // Make the focus thief not focusable
         findViewById(R.id.focus_thief).setFocusable(false);
         findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
         IK_VERB_FIELD.requestFocus();
 
         /* If the user clicks on 'Skip' after he
@@ -450,6 +470,9 @@ public class MainActivity extends AppCompatActivity {
             Feedback.resetCorrectConsecutiveAnswers();
             // Increment the number of wrong consecutive answers
             Feedback.incrementWrongConsecutiveAnswers();
+            (new Feedback(findViewById(R.id.main_content).getContext()))
+                    .giveFeedbackIfNecessary(
+                            findViewById(R.id.main_content), currentSpinnerPosition);
         }
 
         correctAnswer = true;
@@ -491,11 +514,13 @@ public class MainActivity extends AppCompatActivity {
         // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
         displayConjIndex = 0;
 
+        Feedback.incrementConjugationsSinceLastFeedback();
+
         // Make the focus thief not focusable
         findViewById(R.id.focus_thief).setFocusable(false);
         findViewById(R.id.focus_thief).setFocusableInTouchMode(false);
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+//        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
         IK_VERB_FIELD.requestFocus();
 
         /* If the user clicks on 'Next' after he
@@ -507,6 +532,9 @@ public class MainActivity extends AppCompatActivity {
             Feedback.resetCorrectConsecutiveAnswers();
             // Increment the number of wrong consecutive answers
             Feedback.incrementWrongConsecutiveAnswers();
+            (new Feedback(findViewById(R.id.main_content).getContext()))
+                    .giveFeedbackIfNecessary(
+                            findViewById(R.id.main_content), currentSpinnerPosition);
         }
 
         correctAnswer = true;

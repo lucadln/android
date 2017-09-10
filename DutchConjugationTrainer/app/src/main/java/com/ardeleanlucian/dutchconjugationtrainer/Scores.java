@@ -9,7 +9,7 @@ public class Scores {
     /**
      * The tense alternatives for verb conjugations
      */
-    protected final String tenses[] = {"Present",
+    protected static final String tenses[] = {"Present",
                                        "Present Continuous",
                                        "Simple Past",
                                        "Past Perfect",

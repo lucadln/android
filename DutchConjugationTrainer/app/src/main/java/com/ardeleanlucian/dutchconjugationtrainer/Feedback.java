@@ -1,24 +1,20 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
+import android.content.Context;
 import android.view.View;
 
 /**
  * Created by ardelean on 9/7/17.
  */
 
-public class Feedback {
+public class Feedback extends ScoresHandler {
 
     /**
      * Variable to hold reference score values. Whenever a new
      *   score will differ from the reference with more than 10
      *   percent, the user will be notified of this
      */
-    private static float[] previousScore;
-
-    /**
-     * Variable to hold the current user scores
-     */
-    private static float[] currentScore;
+    private static float[] previousRatings;
 
     /**
      * Variable to hold the number of correct consecutive answers
@@ -39,54 +35,66 @@ public class Feedback {
     private static int conjugationsSinceLastFeedback = 0;
 
     /**
-     * Static method to give feedback on the number of correct
-     *   consecutive answers
+     * Constructor method
+     *
+     * @param context
      */
-    public static void giveFeedbackOnCorrectConsecutiveAnswers(View view) {
-        // @TODO WIP
+    public Feedback(Context context) {
+        super(context);
+
+        setRatingsForAllTenses();
     }
 
     /**
-     * Static method to give feedback on the number of wrong
-     *   consecutive answers
+     * Method to set the previousRatings values
      */
-    public static void giveFeedbackOnWrongConsecutiveAnswers(View view) {
-        // @TODO WIP
+    public void setPreviousRatings() {
+        // Set reference ratings for future comparisons
+        previousRatings = new float[ratings.length];
+        for (int i = 0; i < ratings.length; i++) {
+            previousRatings[i] = (float) Math.floor(ratings[i] / 10) * 10;
+        }
     }
 
     /**
-     * Static method to give feedback on the score variation
-     */
-    public static void giveFeedbackOnScoreVariations() {
-        // @TODO WIP
-    }
-
-    /**
-     * Static method to decide if progress feedback is necessary
+     * Method to decide if progress feedback is necessary
      *   (and if yes to call the corresponding feedback methods)
      */
-    public static void giveFeedbackIfNecessary(View view) {
-        // @TODO WIP
+    public void giveFeedbackIfNecessary(View view, int tenseIndex) {
 
-        if (correctConsecutiveAnswers == 5) {
-            giveFeedbackOnCorrectConsecutiveAnswers(
-                    view, "correctConsecutiveAnswers", correctConsecutiveAnswers);
-        } else if (correctConsecutiveAnswers == 10) {
-            giveFeedbackOnCorrectConsecutiveAnswers(
-                    view, "correctConsecutiveAnswers", correctConsecutiveAnswers);
-            resetCorrectConsecutiveAnswers();
+        /*
+         * Give feedback on correct consecutive answers
+         */
+        if (correctConsecutiveAnswers == 7) {
+            FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
+        } else if (correctConsecutiveAnswers == 15) {
+            FeedbackDisplay.informOnCorrectConsecutiveAnswers(view, correctConsecutiveAnswers);
         }
 
-        if (wrongConsecutiveAnswers == 5) {
-            giveFeedbackOnWrongConsecutiveAnswers(
-                    view, "wrongConsecutiveAnswers", wrongConsecutiveAnswers);
-        } else if (wrongConsecutiveAnswers == 10) {
-            giveFeedbackOnWrongConsecutiveAnswers(
-                    view, "wrongConsecutiveAnswers", wrongConsecutiveAnswers);
-            resetWrongConsecutiveAnswers();
+        /*
+         * Give feedback on wrong consecutive answers
+         */
+        if (wrongConsecutiveAnswers == 7) {
+            FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
+        } else if (wrongConsecutiveAnswers == 15) {
+            FeedbackDisplay.informOnWrongConsecutiveAnswers(view, wrongConsecutiveAnswers);
         }
 
-        
+        /*
+         * Give feedback on score variations
+         */
+        if (previousRatings == null) {
+            // If no reference rating is set yet then set it now
+            setPreviousRatings();
+        } else {
+            // If reference ratings exist then compare them with the current ratings
+            float variation = ratings[tenseIndex] - previousRatings[tenseIndex];
+            if ((conjugationsSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
+                FeedbackDisplay.informOnScoreVariation(view, ratings[tenseIndex], tenseIndex);
+                resetConjugationsSinceLastFeedback();
+                previousRatings = ratings;
+            }
+        }
     }
 
     /**
@@ -123,4 +131,9 @@ public class Feedback {
     public static void incrementConjugationsSinceLastFeedback() {
         conjugationsSinceLastFeedback++;
     }
+
+    /**
+     * Static method to reset the number of conjugations given since last feedback
+     */
+    public static void resetConjugationsSinceLastFeedback() { conjugationsSinceLastFeedback = 0; }
 }
