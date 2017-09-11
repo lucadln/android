@@ -7,6 +7,12 @@ import android.view.View;
  * Created by ardelean on 9/7/17.
  */
 
+
+/**
+ * @ TODO Get rid of the simple incrementing and reset methods
+ * @ TODO Split the giveFeedbackIfNecessary in more methods and only use it as a method to call those
+ */
+
 public class Feedback extends ScoresHandler {
 
     /**
@@ -14,7 +20,7 @@ public class Feedback extends ScoresHandler {
      *   score will differ from the reference with more than 10
      *   percent, the user will be notified of this
      */
-    private static float[] previousRatings;
+    private static float[] referenceRatings;
 
     /**
      * Variable to hold the number of correct consecutive answers
@@ -29,10 +35,16 @@ public class Feedback extends ScoresHandler {
     private static int wrongConsecutiveAnswers = 0;
 
     /**
-     * Variable to old the number of conjugations the user entered
+     * Variable to hold the number of conjugations the user entered
      *    since the last time he received a progress feedback
      */
     private static int conjugationsSinceLastFeedback = 0;
+
+    /**
+     * Variable to hold the number of conjugated verbs for each
+     *   tense in particular
+     */
+    private static int[] numberOfConjugatedVerbs;
 
     /**
      * Constructor method
@@ -46,13 +58,13 @@ public class Feedback extends ScoresHandler {
     }
 
     /**
-     * Method to set the previousRatings values
+     * Method to set the referenceRatings values
      */
     public void setPreviousRatings() {
         // Set reference ratings for future comparisons
-        previousRatings = new float[ratings.length];
+        referenceRatings = new float[ratings.length];
         for (int i = 0; i < ratings.length; i++) {
-            previousRatings[i] = (float) Math.floor(ratings[i] / 10) * 10;
+            referenceRatings[i] = (float) Math.floor(ratings[i] / 10) * 10;
         }
     }
 
@@ -84,16 +96,16 @@ public class Feedback extends ScoresHandler {
             /*
              * Give feedback on score variations
              */
-            if (previousRatings == null) {
+            if (referenceRatings == null) {
                 // If no reference rating is set yet then set it now
                 setPreviousRatings();
             } else {
                 // If reference ratings exist then compare them with the current ratings
-                float variation = ratings[tenseIndex] - previousRatings[tenseIndex];
+                float variation = ratings[tenseIndex] - referenceRatings[tenseIndex];
                 if ((conjugationsSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
                     FeedbackDisplay.informOnScoreVariation(view, ratings[tenseIndex], tenseIndex);
                     resetConjugationsSinceLastFeedback();
-                    previousRatings = ratings;
+                    referenceRatings = ratings;
                 }
             }
         }
