@@ -69,12 +69,32 @@ public class Feedback extends ScoresHandler {
     }
 
     /**
+     * Method to set the number of conjugated verbs
+     */
+    public void setNumberOfConjugatedVerbs(Context context) {
+        SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
+        for (int i = 0; i < ratings.length; i++) {
+            numberOfConjugatedVerbs[i] = prefs.getNumberOfConjugations(i);
+        }
+    }
+
+    /**
+     * Method to update the number the conjugated verbs in
+     *   the android Shared Preferences
+     */
+    public void updateNumberOfConjugatedVerbs(Context context, int tenseIndex, int newValue) {
+        SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
+        prefs.updateNumberOfConjugations(tenseIndex, newValue);
+    }
+
+    /**
      * Method to decide if progress feedback is necessary
      *   (and if yes to call the corresponding feedback methods)
      */
     public void giveFeedbackIfNecessary(boolean giveFeedback, View view, int tenseIndex) {
 
         if (giveFeedback) {
+
             /*
              * Give feedback on correct consecutive answers
              */
@@ -108,6 +128,18 @@ public class Feedback extends ScoresHandler {
                     referenceRatings = ratings;
                 }
             }
+
+            /*
+             * Give feedback on the number of conjugated verbs
+             */
+            if (((numberOfConjugatedVerbs[tenseIndex] % 100) == 0)
+                    && (numberOfConjugatedVerbs[tenseIndex] != 0)) {
+                /**
+                 *
+                 * @TODO Display feedback activity
+                 */
+            }
+
         }
     }
 

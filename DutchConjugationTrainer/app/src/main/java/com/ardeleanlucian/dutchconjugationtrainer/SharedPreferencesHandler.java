@@ -22,6 +22,12 @@ public class SharedPreferencesHandler {
     String keysForTotalAnswers[];
 
     /**
+     * Variable to hold the keys for accessing the number of
+     *   conjugated verbs
+     */
+    String keysForNumberOfConjugations[];
+
+    /**
      * Variable to hold the number of tenses that the application handles
      */
     int numberOfTenses;
@@ -55,10 +61,23 @@ public class SharedPreferencesHandler {
         // Initialize arrays for shared preferences keys
         keysForCorrectAnswers = new String[numberOfTenses];
         keysForTotalAnswers = new String[numberOfTenses];
+        keysForNumberOfConjugations = new String[numberOfTenses];
 
         // Set android keys
         setAndroidKeysForCorrectAnswers();
         setAndroidKeysForTotalAnswers();
+        setAndroidKeysForNumberOfConjugations();
+    }
+
+    /**
+     * Method to set the shared preferences key
+     *   for the number of conjugated verbs
+     */
+    public void setAndroidKeysForNumberOfConjugations() {
+        for (int i = 0; i < numberOfTenses; i++) {
+            keysForNumberOfConjugations[i] = "com.ardeleanlucian.dutchconjugationtrainer_"
+                    + String.valueOf(i);
+        }
     }
 
     /**
@@ -84,6 +103,17 @@ public class SharedPreferencesHandler {
     }
 
     /**
+     * Method to get the number of conjugated verbs for a certain tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public int getNumberOfConjugations(int tenseIndex) {
+        int numberOfConjugations = preferences.getInt(keysForNumberOfConjugations[tenseIndex], 0);
+        return numberOfConjugations;
+    }
+
+    /**
      * Method to get the number of correct answers for a certain tense
      *
      * @param tenseIndex
@@ -103,6 +133,16 @@ public class SharedPreferencesHandler {
     public int getTotalNumberOfAnswers(int tenseIndex) {
         int totalNumberOfAnswers = preferences.getInt(keysForTotalAnswers[tenseIndex], 0);
         return totalNumberOfAnswers;
+    }
+
+    /**
+     * Method to update the number of conjugated verbs in android Shared Preferences
+     *
+     * @param tenseIndex
+     * @param newValue
+     */
+    public void updateNumberOfConjugations(int tenseIndex, int newValue) {
+        preferences.edit().putInt(keysForNumberOfConjugations[tenseIndex], newValue).apply();
     }
 
     /**
