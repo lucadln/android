@@ -239,6 +239,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -276,6 +281,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -313,6 +323,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -350,6 +365,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -387,6 +407,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -424,6 +449,11 @@ public class MainActivity extends AppCompatActivity {
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
                         }
+                        Feedback feedback = new Feedback(
+                                findViewById(R.id.main_content).getContext());
+                        feedback.incrementNumerOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
                         // hide virtual keyboard
                         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(JULLIE_VERB_FIELD.getWindowToken(), 0);
@@ -488,6 +518,12 @@ public class MainActivity extends AppCompatActivity {
                             giveFeedbackPref,
                             findViewById(R.id.main_content),
                             currentSpinnerPosition);
+            // Increment number of conjugated verbs
+            Feedback feedback = new Feedback(
+                    findViewById(R.id.main_content).getContext());
+            feedback.incrementNumerOfConjugations(
+                    findViewById(R.id.main_content).getContext(),
+                    currentSpinnerPosition);
         }
 
         correctAnswer = true;

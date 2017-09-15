@@ -55,6 +55,7 @@ public class Feedback extends ScoresHandler {
         super(context);
 
         setRatingsForAllTenses();
+        setNumberOfConjugatedVerbs(context);
     }
 
     /**
@@ -72,6 +73,7 @@ public class Feedback extends ScoresHandler {
      * Method to set the number of conjugated verbs
      */
     public void setNumberOfConjugatedVerbs(Context context) {
+        numberOfConjugatedVerbs = new int[ratings.length];
         SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
         for (int i = 0; i < ratings.length; i++) {
             numberOfConjugatedVerbs[i] = prefs.getNumberOfConjugations(i);
@@ -182,4 +184,12 @@ public class Feedback extends ScoresHandler {
      * Static method to reset the number of conjugations given since last feedback
      */
     public static void resetConjugationsSinceLastFeedback() { conjugationsSinceLastFeedback = 0; }
+
+    /**
+     * Method to increment the number of conjugated verbs
+     */
+    public void incrementNumerOfConjugations(Context context, int tenseIndex) {
+        numberOfConjugatedVerbs[tenseIndex]++;
+        updateNumberOfConjugatedVerbs(context, tenseIndex, numberOfConjugatedVerbs[tenseIndex]);
+    }
 }
