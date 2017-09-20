@@ -134,12 +134,12 @@ public class Feedback extends ScoresHandler {
             /*
              * Give feedback on the number of conjugated verbs
              */
-            if (((numberOfConjugatedVerbs[tenseIndex] % 100) == 0)
+            if (((numberOfConjugatedVerbs[tenseIndex] % 10) == 0)
                     && (numberOfConjugatedVerbs[tenseIndex] != 0)) {
                 /**
-                 *
                  * @TODO Display feedback activity
                  */
+
             }
 
         }
