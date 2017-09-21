@@ -10,4 +10,9 @@
         android:title="Read-only conjugations"
         android:summary="Writting conjugations not required"
         android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="give_feedback"
+        android:title="Give performance feedback"
+        android:summary="Occasional info on performance"
+        android:defaultValue="true"/>
 </PreferenceScreen>

@@ -13,6 +13,7 @@ public class PreferencesActivity extends AppCompatActivity {
 
     public static final String KEY_SHOW_TRANS = "show_translation";
     public static final String KEY_READ_ONLY = "read_only";
+    public static final String KEY_SHOW_PERF = "give_feedback";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -17,7 +17,7 @@ public class ScoresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Set the layout to use
-        setContentView(R.layout.scores_activity);
+        setContentView(R.layout.activity_scores);
 
         // Add an action bar and set navigation on it
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
