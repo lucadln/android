@@ -1,16 +1,11 @@
 package com.ardeleanlucian.dutchconjugationtrainer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 
 /**
  * Created by ardelean on 9/7/17.
- */
-
-
-/**
- * @ TODO Get rid of the simple incrementing and reset methods
- * @ TODO Split the giveFeedbackIfNecessary in more methods and only use it as a method to call those
  */
 
 public class Feedback extends ScoresHandler {
@@ -47,6 +42,14 @@ public class Feedback extends ScoresHandler {
     private static int[] numberOfConjugatedVerbs;
 
     /**
+     * Variable to hold the number of verbs that were conjugated since
+     *   the last milestone feedback. This is because once the user gets
+     *   a feedback he will not get another one until he conjugates a certain
+     *   number of verbs.
+     */
+    private static int[] conjugationsSinceLastMilestone;
+
+    /**
      * Constructor method
      *
      * @param context
@@ -56,6 +59,7 @@ public class Feedback extends ScoresHandler {
 
         setRatingsForAllTenses();
         setNumberOfConjugatedVerbs(context);
+        setConjugationsSinceLastMilestone(context);
     }
 
     /**
@@ -81,12 +85,28 @@ public class Feedback extends ScoresHandler {
     }
 
     /**
+     *
+     */
+    public void setConjugationsSinceLastMilestone(Context context) {
+        conjugationsSinceLastMilestone = new int[ratings.length];
+        SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
+        for (int i = 0; i < ratings.length; i++) {
+            conjugationsSinceLastMilestone[i] = prefs.getConjugationsSinceLastMilestone(i);
+        }
+    }
+
+    /**
      * Method to update the number the conjugated verbs in
      *   the android Shared Preferences
      */
     public void updateNumberOfConjugatedVerbs(Context context, int tenseIndex, int newValue) {
         SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
         prefs.updateNumberOfConjugations(tenseIndex, newValue);
+    }
+
+    public void updateConjugationsSinceLastMilestone(Context context, int tenseIndex, int newValue) {
+        SharedPreferencesHandler prefs = new SharedPreferencesHandler(context, ratings.length);
+        prefs.updateConjugationsSinceLastMilestone(tenseIndex, newValue);
     }
 
     /**
@@ -134,14 +154,42 @@ public class Feedback extends ScoresHandler {
             /*
              * Give feedback on the number of conjugated verbs
              */
-            if (((numberOfConjugatedVerbs[tenseIndex] % 10) == 0)
+            if (((numberOfConjugatedVerbs[tenseIndex] % 100) == 0)
                     && (numberOfConjugatedVerbs[tenseIndex] != 0)) {
-                /**
-                 * @TODO Display feedback activity
-                 */
 
+                Intent displayFeedback = new Intent(view.getContext(), FeedbackActivity.class);
+                displayFeedback.putExtra("feedbackMotivation", "numberOfConjugatedVerbs");
+                displayFeedback.putExtra("numberOfConjugatedVerbs", numberOfConjugatedVerbs[tenseIndex]);
+                displayFeedback.putExtra("tense", tenses[tenseIndex]);
+                view.getContext().startActivity(displayFeedback);
+            } else if (conjugationsSinceLastMilestone[tenseIndex] > 75) {
+
+                if (ratings[tenseIndex] == 100f) {
+                    Intent displayFeedback = new Intent(view.getContext(), FeedbackActivity.class);
+                    displayFeedback.putExtra("feedbackMotivation", "ratingEquals100");
+                    displayFeedback.putExtra("tense", tenses[tenseIndex]);
+                    view.getContext().startActivity(displayFeedback);
+                    updateConjugationsSinceLastMilestone(view.getContext(), tenseIndex, 0);
+                } else if (ratings[tenseIndex] > 90f) {
+                    Intent displayFeedback = new Intent(view.getContext(), FeedbackActivity.class);
+                    displayFeedback.putExtra("feedbackMotivation", "ratingOver90");
+                    displayFeedback.putExtra("tense", tenses[tenseIndex]);
+                    view.getContext().startActivity(displayFeedback);
+                    updateConjugationsSinceLastMilestone(view.getContext(), tenseIndex, 0);
+                } else if (ratings[tenseIndex] < 10f) {
+                    Intent displayFeedback = new Intent(view.getContext(), FeedbackActivity.class);
+                    displayFeedback.putExtra("feedbackMotivation", "ratingUnder10");
+                    displayFeedback.putExtra("tense", tenses[tenseIndex]);
+                    view.getContext().startActivity(displayFeedback);
+                    updateConjugationsSinceLastMilestone(view.getContext(), tenseIndex, 0);
+                } else if (ratings[tenseIndex] < 40f) {
+                    Intent displayFeedback = new Intent(view.getContext(), FeedbackActivity.class);
+                    displayFeedback.putExtra("feedbackMotivation", "ratingUnder40");
+                    displayFeedback.putExtra("tense", tenses[tenseIndex]);
+                    view.getContext().startActivity(displayFeedback);
+                    updateConjugationsSinceLastMilestone(view.getContext(), tenseIndex, 0);
+                }
             }
-
         }
     }
 
@@ -188,8 +236,13 @@ public class Feedback extends ScoresHandler {
     /**
      * Method to increment the number of conjugated verbs
      */
-    public void incrementNumerOfConjugations(Context context, int tenseIndex) {
+    public void incrementNumberOfConjugations(Context context, int tenseIndex) {
         numberOfConjugatedVerbs[tenseIndex]++;
         updateNumberOfConjugatedVerbs(context, tenseIndex, numberOfConjugatedVerbs[tenseIndex]);
+    }
+
+    public void incrementConjugationsSinceLastMilestone(Context context, int tenseIndex) {
+        conjugationsSinceLastMilestone[tenseIndex]++;
+        updateConjugationsSinceLastMilestone(context, tenseIndex, conjugationsSinceLastMilestone[tenseIndex]);
     }
 }

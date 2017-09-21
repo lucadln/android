@@ -10,6 +10,7 @@ public class ScoresHandler extends Scores {
 
     SharedPreferencesHandler sharedPreferencesHandler;
     int numberOfTenses;
+    Context context;
 
     /**
      * Constructor method
@@ -17,6 +18,7 @@ public class ScoresHandler extends Scores {
      * @param context
      */
     public ScoresHandler(Context context) {
+        this.context = context;
         numberOfTenses = tenses.length;
 
         // Create a new object to read shared preferences
@@ -175,9 +177,12 @@ public class ScoresHandler extends Scores {
      * Method to reset all ratings
      */
     public void resetScores() {
+        Feedback fdback = new Feedback(context);
         for (int tenseIndex = 0; tenseIndex < numberOfTenses; tenseIndex++) {
             sharedPreferencesHandler.updateNumberOfCorrectAnswers(tenseIndex, 0);
             sharedPreferencesHandler.updateTotalNumberOfAnswers(tenseIndex, 0);
+
+            fdback.updateConjugationsSinceLastMilestone(context, tenseIndex, 0);
         }
     }
 }

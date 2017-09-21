@@ -17,6 +17,6 @@ public class AboutActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("About");
 
-        setContentView(R.layout.about_activity);
+        setContentView(R.layout.activity_about);
     }
 }

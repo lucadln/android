@@ -241,7 +241,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
+                        feedback.incrementConjugationsSinceLastMilestone(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -283,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -325,7 +328,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
+                        feedback.incrementConjugationsSinceLastMilestone(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -367,7 +373,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
+                        feedback.incrementConjugationsSinceLastMilestone(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -409,7 +418,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
+                        feedback.incrementConjugationsSinceLastMilestone(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -451,7 +463,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
-                        feedback.incrementNumerOfConjugations(
+                        feedback.incrementNumberOfConjugations(
+                                findViewById(R.id.main_content).getContext(),
+                                currentSpinnerPosition);
+                        feedback.incrementConjugationsSinceLastMilestone(
                                 findViewById(R.id.main_content).getContext(),
                                 currentSpinnerPosition);
                         // hide virtual keyboard
@@ -521,7 +536,10 @@ public class MainActivity extends AppCompatActivity {
             // Increment number of conjugated verbs
             Feedback feedback = new Feedback(
                     findViewById(R.id.main_content).getContext());
-            feedback.incrementNumerOfConjugations(
+            feedback.incrementNumberOfConjugations(
+                    findViewById(R.id.main_content).getContext(),
+                    currentSpinnerPosition);
+            feedback.incrementConjugationsSinceLastMilestone(
                     findViewById(R.id.main_content).getContext(),
                     currentSpinnerPosition);
         }
