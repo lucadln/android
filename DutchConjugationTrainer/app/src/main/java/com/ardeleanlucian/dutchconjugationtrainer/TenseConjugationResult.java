@@ -48,6 +48,18 @@ public class TenseConjugationResult {
         ZIJ_VERB.setText( zijVerb );
     }
 
+    public void setBackUserValuesTextView(TextView IK_VERB,  TextView JIJ_VERB,    TextView HIJ_VERB,
+                                  TextView WIJ_VERB, TextView JULLIE_VERB, TextView ZIJ_VERB,
+                                  String IK, String JIJ, String HIJ, String WIJ, String JULLIE,
+                                  String ZIJ) {
+        IK_VERB.setText( IK );
+        JIJ_VERB.setText( JIJ );
+        HIJ_VERB.setText( HIJ );
+        WIJ_VERB.setText( WIJ );
+        JULLIE_VERB.setText( JULLIE );
+        ZIJ_VERB.setText( ZIJ );
+    }
+
     // Method to display infinitive and translation
     public void displayVerb(TextView INFINITIVE, TextView TRANSLATION, boolean showTranslation) {
         INFINITIVE.setText( infinitive );

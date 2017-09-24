@@ -3,6 +3,7 @@ package com.ardeleanlucian.dutchconjugationtrainer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                                      "Conditional", "Conditional Perfect", "Future" };
     private int currentSpinnerPosition;
     private int previousSpinnerPosition;
+    private FloatingActionButton showCorrectAnswerButton;
+    private FloatingActionButton showUserAnswerButton;
 
 
     private TextView INFINITVE, TRANSLATION,
@@ -51,10 +54,43 @@ public class MainActivity extends AppCompatActivity {
                      WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD;
     private Button NEXT, SKIP;
 
+    String userAnswerIk, userAnswerJij, userAnswerHij, userAnswerWij, userAnswerJullie, userAnswerZij;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        showCorrectAnswerButton = (FloatingActionButton) findViewById(R.id.show_correct_answer);
+        showUserAnswerButton = (FloatingActionButton) findViewById(R.id.show_user_answer);
+        showCorrectAnswerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCorrectAnswerButton.setVisibility(View.GONE);
+                showUserAnswerButton.setVisibility(View.VISIBLE);
+
+                userAnswerIk = IK_VERB.getText().toString();
+                userAnswerJij = JIJ_VERB.getText().toString();
+                userAnswerHij = HIJ_VERB.getText().toString();
+                userAnswerWij = WIJ_VERB.getText().toString();
+                userAnswerJullie = JULLIE_VERB.getText().toString();
+                userAnswerZij = ZIJ_VERB.getText().toString();
+
+                tenseConjugationResult.setValuesTextView(IK_VERB,  JIJ_VERB,    HIJ_VERB,
+                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB);
+            }
+        });
+        showUserAnswerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCorrectAnswerButton.setVisibility(View.VISIBLE);
+                showUserAnswerButton.setVisibility(View.GONE);
+
+                tenseConjugationResult.setBackUserValuesTextView(IK_VERB, JIJ_VERB, HIJ_VERB,
+                        WIJ_VERB, JULLIE_VERB, ZIJ_VERB, userAnswerIk, userAnswerJij, userAnswerHij,
+                        userAnswerWij, userAnswerJullie, userAnswerZij);
+            }
+        });
 
         context = this;
         scoresHandler = new ScoresHandler(context);
@@ -219,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(IK_VERB_FIELD, IK_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -238,6 +274,8 @@ public class MainActivity extends AppCompatActivity {
                                     .giveFeedbackIfNecessary(giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -263,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JIJ_VERB_FIELD, JIJ_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -283,6 +321,8 @@ public class MainActivity extends AppCompatActivity {
                                             giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -305,7 +345,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(HIJ_VERB_FIELD, HIJ_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -325,6 +365,8 @@ public class MainActivity extends AppCompatActivity {
                                             giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -350,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(WIJ_VERB_FIELD, WIJ_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -370,6 +412,8 @@ public class MainActivity extends AppCompatActivity {
                                             giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -395,7 +439,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(JULLIE_VERB_FIELD, JULLIE_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -415,6 +459,8 @@ public class MainActivity extends AppCompatActivity {
                                             giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -440,7 +486,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     tenseConjugationResult.handleInput(ZIJ_VERB_FIELD, ZIJ_VERB);
                     if (!correctAnswer) {
-                        // If one of the answers was already declared wrong do nothing
+                        //
                     } else {
                         /* If the answer until now were correct but we got a wrong one,
                          *   set them all to false */
@@ -460,6 +506,8 @@ public class MainActivity extends AppCompatActivity {
                                             giveFeedbackPref,
                                             findViewById(R.id.main_content),
                                             currentSpinnerPosition);
+                        } else {
+                            showCorrectAnswerButton.setVisibility(View.VISIBLE);
                         }
                         Feedback feedback = new Feedback(
                                 findViewById(R.id.main_content).getContext());
@@ -479,7 +527,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     public int getNumberOfFilledEditTexts() {
@@ -509,6 +556,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClickSkip(View view) {
         // Show no conjugations in read-only mode
         displayConjIndex = 0;
+
+        showCorrectAnswerButton.setVisibility(View.GONE);
+        showUserAnswerButton.setVisibility(View.GONE);
 
         Feedback.incrementConjugationsSinceLastFeedback();
 
@@ -582,6 +632,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClickNext(View view) {
         // Set displayConjIndex to 0 so no conjugation will be shown until a screen tap
         displayConjIndex = 0;
+
+        showCorrectAnswerButton.setVisibility(View.GONE);
+        showUserAnswerButton.setVisibility(View.GONE);
 
         Feedback.incrementConjugationsSinceLastFeedback();
 
