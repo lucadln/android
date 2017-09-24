@@ -218,6 +218,34 @@
         android:text=""
         tools:layout_editor_absoluteX="0dp" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/show_correct_answer"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:adjustViewBounds="false"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:elevation="0dp"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_menu_help"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/show_user_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
+        android:adjustViewBounds="false"
+        android:visibility="gone"
+        app:backgroundTint="@android:color/holo_orange_dark"
+        app:elevation="0dp"
+        app:fabSize="mini"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
     <Button
         android:id="@+id/next"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
