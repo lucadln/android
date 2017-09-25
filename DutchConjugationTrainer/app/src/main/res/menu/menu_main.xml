@@ -7,6 +7,10 @@
         android:orderInCategory="100"
         android:title="Preferences" />
     <item
+        android:id="@+id/tenses_info"
+        android:orderInCategory="100"
+        android:title="Tenses Info" />
+    <item
         android:id="@+id/scores"
         android:orderInCategory="100"
         android:title="Scores" />

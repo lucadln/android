@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:padding="3dp"
+        android:text="Present
+
+Used to describe present activities or general facts, routines, situations etc.
+
+Example: # I _work_ in a factory.
+
+
+Present continuous
+
+Generally used to refer to actions that are happening at the moment of speaking.
+
+Example: # I _am eating_.
+
+
+Simple past
+
+Used when talking about things that happened in the past and are now finished.
+
+Example: # When I was young I _had_ a dog.
+
+
+Past perfect
+
+Used for describing actions that happened in the past before another action.
+
+Example: # I _had studied_ dutch before the exam.
+
+
+Conditional
+
+Used for describing hypothetical situations.
+
+Example: # I _would learn_ dutch but I find it too hard.
+
+
+Conditional perfect
+
+Used to refer to hypothetical situations in the past.
+
+Example: # We _woudln't have missed_ the concert if we had taken a taxi.
+
+
+Future
+
+Used to express actions that will happen in a time 'later than now'.
+
+Example: # I _will learn_ dutch."
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
+
+</LinearLayout>

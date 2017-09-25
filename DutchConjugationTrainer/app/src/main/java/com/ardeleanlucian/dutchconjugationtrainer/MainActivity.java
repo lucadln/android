@@ -727,6 +727,10 @@ public class MainActivity extends AppCompatActivity {
             // Start new activity to display the scoresHandler
             startActivity(displayScores);
             return true;
+        } else if (id == R.id.tenses_info) {
+            //@TODO
+            Intent displayTensesInfo = new Intent(MainActivity.this, TensesInformationActivity.class);
+            startActivity(displayTensesInfo);
         } else if (id == R.id.about) {
             Intent displayAbout = new Intent(MainActivity.this, AboutActivity.class);
             // Start new activity to display the scoresHandler
