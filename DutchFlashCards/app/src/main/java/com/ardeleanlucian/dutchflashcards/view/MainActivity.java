@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.difficulty_easy:
                 return true;
-            case R.id.difficulty_medium:
+            case R.id.difficulty_moderate:
                 return true;
             case R.id.difficulty_hard:
                 return true;

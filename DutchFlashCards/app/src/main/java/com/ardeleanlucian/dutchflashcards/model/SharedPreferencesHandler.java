@@ -14,15 +14,15 @@ public class SharedPreferencesHandler {
     private final String PRIMARY_LANGUAGE_KEY = "com.ardeleanlucian.dutchflashcards.primary_language";
     private final String DIFFICULTY_LEVEL_KEY = "com.ardeleanlucian.dutchflashcards.difficulty_level";
     private final String LATEST_EASY_WORD_KEY = "com.ardeleanlucian.dutchflashcards.latest_easy_word";
-    private final String LATEST_MEDIUM_WORD_KEY = "com.ardeleanlucian.dutchflashcards.latest_medium_word";
+    private final String LATEST_MODERATE_WORD_KEY = "com.ardeleanlucian.dutchflashcards.latest_moderate_word";
     private final String LATEST_HARD_WORD_KEY = "com.ardeleanlucian.dutchflashcards.latest_hard_word";
 
     /**
      * Constructor method
+     *
      * @param context
      */
     public SharedPreferencesHandler(Context context) {
-
         prefs = context.getSharedPreferences(
                 "com.ardeleanlucian.dutchflashcards", Context.MODE_PRIVATE);
     }
@@ -39,15 +39,15 @@ public class SharedPreferencesHandler {
     }
 
     public String readLatestEasyWord() {
-        return prefs.getString(LATEST_EASY_WORD_KEY, "test"); //@TODO make this not be hardcoded
+        return prefs.getString(LATEST_EASY_WORD_KEY, "test"); //@TODO
     }
 
-    public String readLatestMediumWord() {
-        return prefs.getString(LATEST_MEDIUM_WORD_KEY, "test"); //@TODO make this not be hardcoded
+    public String readLatestModerateWord() {
+        return prefs.getString(LATEST_MODERATE_WORD_KEY, "test"); //@TODO
     }
 
     public String readLatestHardWord() {
-        return prefs.getString(LATEST_HARD_WORD_KEY, "test"); //@TODO make this not be hardcoded
+        return prefs.getString(LATEST_HARD_WORD_KEY, "test"); //@TODO
     }
 
     /**
@@ -66,8 +66,8 @@ public class SharedPreferencesHandler {
         prefs.edit().putString(LATEST_EASY_WORD_KEY, newValue).apply();
     }
 
-    public void writteLatestMediumWord(String newValue) {
-        prefs.edit().putString(LATEST_MEDIUM_WORD_KEY, newValue).apply();
+    public void writteLatestModerateWord(String newValue) {
+        prefs.edit().putString(LATEST_MODERATE_WORD_KEY, newValue).apply();
     }
     
     public void writteLatestHardWord(String newValue) {

@@ -20,8 +20,8 @@
                 android:id="@+id/difficulty_easy"
                 android:title="Easy" />
             <item
-                android:id="@+id/difficulty_medium"
-                android:title="Medium" />
+                android:id="@+id/difficulty_moderate"
+                android:title="Moderate" />
             <item
                 android:id="@+id/difficulty_hard"
                 android:title="Hard" />
