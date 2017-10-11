@@ -69,36 +69,39 @@ public class SharedPreferencesHandler {
      * Methods to update values in the android's Shared Preferences
      * @param newValue
      */
-    public void writtePrimaryLanguage(String newValue) {
+    public void writePrimaryLanguage(String newValue) {
         prefs.edit().putString(PRIMARY_LANGUAGE_KEY, newValue).apply();
     }
 
-    public void writteDifficultyLevel(String newValue) {
+    public void writeDifficultyLevel(String newValue) {
         prefs.edit().putString(DIFFICULTY_LEVEL_KEY, newValue).apply();
     }
 
-    public void writteLatestEasyWord(String newValue) {
+    public void writeLatestEasyWord(String newValue) {
         prefs.edit().putString(LATEST_EASY_WORD_KEY, newValue).apply();
     }
 
-    public void writteLatestModerateWord(String newValue) {
+    public void writeLatestModerateWord(String newValue) {
         prefs.edit().putString(LATEST_MODERATE_WORD_KEY, newValue).apply();
     }
     
-    public void writteLatestHardWord(String newValue) {
+    public void writeLatestHardWord(String newValue) {
         prefs.edit().putString(LATEST_HARD_WORD_KEY, newValue).apply();
     }
 
-    public void writteLatestWord(String newValue) {
+    public void writeLatestWord(String newValue) {
         String difficulty = readDifficultyLevel();
 
         switch (difficulty) {
             case "easy":
-                writteLatestEasyWord(newValue);
+                writeLatestEasyWord(newValue);
+                break;
             case "moderate":
-                writteLatestModerateWord(newValue);
+                writeLatestModerateWord(newValue);
+                break;
             case "hard":
-                writteLatestHardWord(newValue);
+                writeLatestHardWord(newValue);
+                break;
         }
     }
 }

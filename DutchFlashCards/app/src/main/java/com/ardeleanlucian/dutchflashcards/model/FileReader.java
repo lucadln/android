@@ -14,21 +14,17 @@ public class FileReader {
 
     private String dutchWord = "unknown";
     private String englishWord = "unknown";
-    private String latestDutchWord = "unknown";
     private String previousDutchWord = "unknown";
     private String previousEnglishWord = "unknown";
-    private String difficulty = "unknown";
 
     private Context context;
 
     /**
      * Constructor method
      */
-    public FileReader(Context context, String latestDutchWord, String difficulty) {
+    public FileReader(Context context) {
 
         this.context = context;
-        this.difficulty = difficulty;
-        this.latestDutchWord = latestDutchWord;
     }
 
     /**
@@ -36,7 +32,7 @@ public class FileReader {
      *
      * @param triggerAction
      */
-    public void readFile(String triggerAction) {
+    public void readFile(String triggerAction, String latestDutchWord, String difficulty) {
 
         String tempReader;
         boolean found = false;
@@ -109,7 +105,7 @@ public class FileReader {
 
             // Lastly, save the latest word in android's Shared Preferences
             SharedPreferencesHandler prefs = new SharedPreferencesHandler(context);
-            prefs.writteLatestWord(dutchWord);
+            prefs.writeLatestWord(dutchWord);
         } catch (IOException e) {
             e.printStackTrace();
         }

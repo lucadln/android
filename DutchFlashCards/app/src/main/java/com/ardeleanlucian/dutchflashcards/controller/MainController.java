@@ -30,9 +30,8 @@ public class MainController {
     public String[] getWordsPair(String triggerAction) {
 
         // Read file
-        FileReader fileReader = new FileReader(context,
-                prefs.readLatestWord(), prefs.readDifficultyLevel());
-        fileReader.readFile(triggerAction);
+        FileReader fileReader = new FileReader(context);
+        fileReader.readFile(triggerAction, prefs.readLatestWord(), prefs.readDifficultyLevel());
 
         return fileReader.getWordsPair();
     }
@@ -53,7 +52,7 @@ public class MainController {
      * Method to update the difficulty level in android's Shared Preferences
      */
     public void updateDifficulty(String newDifficulty) {
-        prefs.writteDifficultyLevel(newDifficulty);
+        prefs.writeDifficultyLevel(newDifficulty);
     }
 
     /**
@@ -62,9 +61,9 @@ public class MainController {
     public void updatePrimaryLanguage() {
         // Swap the value of the primary language
         if (prefs.readPrimaryLanguage().equals("dutch")) {
-            prefs.writtePrimaryLanguage("english");
+            prefs.writePrimaryLanguage("english");
         } else {
-            prefs.writtePrimaryLanguage("dutch");
+            prefs.writePrimaryLanguage("dutch");
         }
     }
 }
