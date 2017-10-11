@@ -76,12 +76,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.difficulty_easy:
                 mainController.updateDifficulty("easy");
+                toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
                 break;
             case R.id.difficulty_moderate:
                 mainController.updateDifficulty("moderate");
+                toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
                 break;
             case R.id.difficulty_hard:
                 mainController.updateDifficulty("hard");
+                toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
                 break;
             default:
                 return super.onOptionsItemSelected(item);

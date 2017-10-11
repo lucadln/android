@@ -12,8 +12,8 @@ import java.io.InputStreamReader;
 
 public class FileReader {
 
-    private String dutchWord;
-    private String englishWord;
+    private String dutchWord = "unknown";
+    private String englishWord = "unknown";
     private String latestDutchWord = "unknown";
     private String previousDutchWord = "unknown";
     private String previousEnglishWord = "unknown";
@@ -44,7 +44,7 @@ public class FileReader {
         try {
             // Open the file containing the words
             BufferedReader bufferedReader = new BufferedReader(
-                    new InputStreamReader(context.getAssets().open(difficulty + "words.txt")));
+                    new InputStreamReader(context.getAssets().open(difficulty + "_words.txt")));
 
             // Read file line by line until you find the latest dutch word.
             while (((tempReader = bufferedReader.readLine()) != null) && !found) {
@@ -64,7 +64,7 @@ public class FileReader {
                             bufferedReader.close();
                             bufferedReader = new BufferedReader(
                                     new InputStreamReader(context.getAssets()
-                                            .open(difficulty + "words.txt")));
+                                            .open(difficulty + "_words.txt")));
                             dutchWord = bufferedReader.readLine();
                         }
                         englishWord = bufferedReader.readLine();
@@ -85,10 +85,6 @@ public class FileReader {
                             englishWord = previousEnglishWord;
                         }
                     }
-
-                    // Save the latest word in android's Shared Preferences
-                    SharedPreferencesHandler prefs = new SharedPreferencesHandler(context);
-                    prefs.writteLatestWord(dutchWord);
                 }
 
                 // We didn't find the latest used dutch word. Save the
@@ -106,10 +102,14 @@ public class FileReader {
                 bufferedReader.close();
                 bufferedReader = new BufferedReader(
                         new InputStreamReader(context.getAssets()
-                                .open(difficulty + "words.txt")));
+                                .open(difficulty + "_words.txt")));
                 dutchWord = bufferedReader.readLine();
                 englishWord = bufferedReader.readLine();
             }
+
+            // Lastly, save the latest word in android's Shared Preferences
+            SharedPreferencesHandler prefs = new SharedPreferencesHandler(context);
+            prefs.writteLatestWord(dutchWord);
         } catch (IOException e) {
             e.printStackTrace();
         }
