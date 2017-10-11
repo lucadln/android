@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         previous.setOnClickListener(this);
         next.setOnClickListener(this);
+        findViewById(R.id.constraint_layout).setOnClickListener(this);
 
         displayWords(mainController.getWordsPair("getNextPair"), mainController.getPrimaryLanguage());
     }
@@ -51,10 +52,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
 
             case R.id.previous:
-                displayWords(mainController.getWordsPair("getPreviousPair"), mainController.getPrimaryLanguage());
+                displayWords(mainController.getWordsPair("getPreviousPair"),
+                        mainController.getPrimaryLanguage());
+                translation.setVisibility(View.INVISIBLE);
                 break;
             case R.id.next:
-                displayWords(mainController.getWordsPair("getNextPair"), mainController.getPrimaryLanguage());
+                displayWords(mainController.getWordsPair("getNextPair"),
+                        mainController.getPrimaryLanguage());
+                translation.setVisibility(View.INVISIBLE);
+                break;
+            case R.id.constraint_layout:
+                // If the translation is not visible, display it on
+                //   screen tap.
+                if (translation.getVisibility() != View.VISIBLE) {
+                    translation.setVisibility(View.VISIBLE);
+                }
+                // If translation is already displayed and the screen
+                //   is tapped then show the next word pair.
+                else {
+                    translation.setVisibility(View.INVISIBLE);
+                    displayWords(mainController.getWordsPair("getNextPair"),
+                            mainController.getPrimaryLanguage());
+                }
                 break;
             default:
                 break;
