@@ -32,7 +32,7 @@
         tools:layout_constraintTop_creator="1" />
 
     <TextView
-        android:id="@+id/word_translation"
+        android:id="@+id/translation"
         android:text="WORD_TRANSLATION"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

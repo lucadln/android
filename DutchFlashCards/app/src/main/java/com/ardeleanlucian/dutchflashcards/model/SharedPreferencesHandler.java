@@ -39,15 +39,30 @@ public class SharedPreferencesHandler {
     }
 
     public String readLatestEasyWord() {
-        return prefs.getString(LATEST_EASY_WORD_KEY, "test"); //@TODO
+        return prefs.getString(LATEST_EASY_WORD_KEY, "default");
     }
 
     public String readLatestModerateWord() {
-        return prefs.getString(LATEST_MODERATE_WORD_KEY, "test"); //@TODO
+        return prefs.getString(LATEST_MODERATE_WORD_KEY, "default");
     }
 
     public String readLatestHardWord() {
-        return prefs.getString(LATEST_HARD_WORD_KEY, "test"); //@TODO
+        return prefs.getString(LATEST_HARD_WORD_KEY, "default");
+    }
+
+    public String readLatestWord() {
+        String difficulty = readDifficultyLevel();
+
+        switch (difficulty) {
+            case "easy":
+                return readLatestEasyWord();
+            case "moderate":
+                return readLatestModerateWord();
+            case "hard":
+                return readLatestHardWord();
+            default:
+                return "Unknown difficulty '" + difficulty + "'.";
+        }
     }
 
     /**
@@ -72,5 +87,18 @@ public class SharedPreferencesHandler {
     
     public void writteLatestHardWord(String newValue) {
         prefs.edit().putString(LATEST_HARD_WORD_KEY, newValue).apply();
+    }
+
+    public void writteLatestWord(String newValue) {
+        String difficulty = readDifficultyLevel();
+
+        switch (difficulty) {
+            case "easy":
+                writteLatestEasyWord(newValue);
+            case "moderate":
+                writteLatestModerateWord(newValue);
+            case "hard":
+                writteLatestHardWord(newValue);
+        }
     }
 }

@@ -12,10 +12,10 @@ import android.widget.TextView;
 import com.ardeleanlucian.dutchflashcards.R;
 import com.ardeleanlucian.dutchflashcards.controller.MainController;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView word;
-    private TextView wordTranslation;
+    private TextView translation;
     private Button previous;
     private Button next;
     private Toolbar toolbar;
@@ -31,21 +31,34 @@ public class MainActivity extends AppCompatActivity {
         mainController = new MainController(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        String TEMP_DIFF = "Temp"; // Stub - to use a get_difficulty() method @TODO
-        toolbar.setTitle("Difficulty: " + TEMP_DIFF);
+        toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
         setSupportActionBar(toolbar);
 
         word = (TextView) findViewById(R.id.word);
-        wordTranslation = (TextView) findViewById(R.id.word_translation);
+        translation = (TextView) findViewById(R.id.translation);
         previous = (Button) findViewById(R.id.previous);
         next = (Button) findViewById(R.id.next);
 
-        previous.setOnClickListener(onClickPrevious);
-        next.setOnClickListener(onClickNext);
+        previous.setOnClickListener(this);
+        next.setOnClickListener(this);
 
-        // Get shared preferences
-        // Get words
-        // Display words
+        displayWords(mainController.getWordsPair("getNextPair"), mainController.getPrimaryLanguage());
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId()) {
+
+            case R.id.previous:
+                displayWords(mainController.getWordsPair("getPreviousPair"), mainController.getPrimaryLanguage());
+                break;
+            case R.id.next:
+                displayWords(mainController.getWordsPair("getNextPair"), mainController.getPrimaryLanguage());
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -54,34 +67,43 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private final View.OnClickListener onClickPrevious = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // @TODO
-        }
-    };
-
-    private final View.OnClickListener onClickNext = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            // @TODO
-        }
-    };
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.swap_languages:
-                return true;
+                mainController.updatePrimaryLanguage();
+                break;
             case R.id.difficulty_easy:
-                return true;
+                mainController.updateDifficulty("easy");
+                break;
             case R.id.difficulty_moderate:
-                return true;
+                mainController.updateDifficulty("moderate");
+                break;
             case R.id.difficulty_hard:
-                return true;
+                mainController.updateDifficulty("hard");
+                break;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+
+        displayWords(mainController.getWordsPair("getNextPair"), mainController
+                .getPrimaryLanguage());
+
+        return true;
+    }
+
+    private void displayWords(String[] wordsPair, String primaryLanguage) {
+
+        // If the primary language is dutch then display
+        //   the dutch word first and the english word
+        //   second (as translation).
+        if (primaryLanguage.equals("dutch")) {
+            word.setText(wordsPair[0]);
+            translation.setText(wordsPair[1]);
+        } else {
+            word.setText(wordsPair[1]);
+            translation.setText(wordsPair[0]);
         }
     }
 }
