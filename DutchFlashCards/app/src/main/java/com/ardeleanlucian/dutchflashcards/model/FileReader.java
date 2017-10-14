@@ -21,18 +21,20 @@ public class FileReader {
 
     /**
      * Constructor method
+     * @param context
      */
     public FileReader(Context context) {
-
         this.context = context;
     }
 
     /**
-     * Method to read next/previous dutch-english words pair
+     * Method to read next/previous dutch-english word pair
      *
      * @param triggerAction
+     * @param latestDutchWord
+     * @param difficulty
      */
-    public void readFile(String triggerAction, String latestDutchWord, String difficulty) {
+    public WordPair readFile(String triggerAction, String latestDutchWord, String difficulty) {
 
         String tempReader;
         boolean found = false;
@@ -52,8 +54,8 @@ public class FileReader {
                     bufferedReader.readLine();
                     found = true;
 
-                    // Get the next words pair
-                    if (triggerAction.equals("getNextPair")) {
+                    // Get the next word pair
+                    if (triggerAction.equals("nextPair")) {
                         // If we got to the end of the file then close it and
                         //   read it again from the beginning.
                         if ((dutchWord = bufferedReader.readLine()) == null) {
@@ -66,8 +68,8 @@ public class FileReader {
                         englishWord = bufferedReader.readLine();
                     }
 
-                    // Get the previous words pair
-                    else if (triggerAction.equals("getPreviousPair")) {
+                    // Get the previous word pair
+                    else if (triggerAction.equals("previousPair")) {
                         // If we are at the beginning of the file there are no
                         //   'previous' lines. Hence we will jump to the end
                         //   of the file instead.
@@ -84,7 +86,7 @@ public class FileReader {
                 }
 
                 // We didn't find the latest used dutch word. Save the
-                //   current dutch-english words pair and then continue
+                //   current dutch-english word pair and then continue
                 //   reading the file.
                 else {
                     previousDutchWord = tempReader;
@@ -109,9 +111,7 @@ public class FileReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
-    public String[] getWordsPair() {
-        return new String[] {dutchWord, englishWord};
+        return new WordPair(dutchWord, englishWord);
     }
 }
