@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.ardeleanlucian.dutchflashcards.R;
 import com.ardeleanlucian.dutchflashcards.controller.MainController;
+import com.ardeleanlucian.dutchflashcards.model.WordPair;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         next.setOnClickListener(this);
         findViewById(R.id.constraint_layout).setOnClickListener(this);
 
-        displayWords(mainController.getWordsPair("getNextPair"), mainController.getPrimaryLanguage());
+        mainController.readWordPair("nextPair");
+        displayWords(mainController.getDutchWord(),
+                mainController.getEnglishWord(), mainController.getPrimaryLanguage());
     }
 
     @Override
@@ -52,13 +55,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
 
             case R.id.previous:
-                displayWords(mainController.getWordsPair("getPreviousPair"),
-                        mainController.getPrimaryLanguage());
+                mainController.readWordPair("previousPair");
+                displayWords(mainController.getDutchWord(),
+                        mainController.getEnglishWord(), mainController.getPrimaryLanguage());
                 translation.setVisibility(View.INVISIBLE);
                 break;
             case R.id.next:
-                displayWords(mainController.getWordsPair("getNextPair"),
-                        mainController.getPrimaryLanguage());
+                mainController.readWordPair("nextPair");
+                displayWords(mainController.getDutchWord(),
+                        mainController.getEnglishWord(), mainController.getPrimaryLanguage());
                 translation.setVisibility(View.INVISIBLE);
                 break;
             case R.id.constraint_layout:
@@ -71,8 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //   is tapped then show the next word pair.
                 else {
                     translation.setVisibility(View.INVISIBLE);
-                    displayWords(mainController.getWordsPair("getNextPair"),
-                            mainController.getPrimaryLanguage());
+                    mainController.readWordPair("nextPair");
+                    displayWords(mainController.getDutchWord(),
+                            mainController.getEnglishWord(), mainController.getPrimaryLanguage());
                 }
                 break;
             default:
@@ -109,23 +115,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return super.onOptionsItemSelected(item);
         }
 
-        displayWords(mainController.getWordsPair("getNextPair"), mainController
-                .getPrimaryLanguage());
+        mainController.readWordPair("nextPair");
+        displayWords(mainController.getDutchWord(),
+                mainController.getEnglishWord(), mainController.getPrimaryLanguage());
 
         return true;
     }
 
-    private void displayWords(String[] wordsPair, String primaryLanguage) {
+    private void displayWords(String dutchWord, String englishWord, String primaryLanguage) {
 
         // If the primary language is dutch then display
         //   the dutch word first and the english word
         //   second (as translation).
         if (primaryLanguage.equals("dutch")) {
-            word.setText(wordsPair[0]);
-            translation.setText(wordsPair[1]);
+            word.setText(dutchWord);
+            translation.setText(englishWord);
         } else {
-            word.setText(wordsPair[1]);
-            translation.setText(wordsPair[0]);
+            word.setText(englishWord);
+            translation.setText(dutchWord);
         }
     }
 }

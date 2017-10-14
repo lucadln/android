@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.ardeleanlucian.dutchflashcards.model.FileReader;
 import com.ardeleanlucian.dutchflashcards.model.SharedPreferencesHandler;
+import com.ardeleanlucian.dutchflashcards.model.WordPair;
 
 /**
  * Created by ardelean on 10/8/17.
@@ -11,8 +12,9 @@ import com.ardeleanlucian.dutchflashcards.model.SharedPreferencesHandler;
 
 public class MainController {
 
-    Context context;
-    SharedPreferencesHandler prefs;
+    private Context context;
+    private SharedPreferencesHandler prefs;
+    private WordPair wordPair;
 
     /**
      * Constructor method
@@ -24,16 +26,31 @@ public class MainController {
     }
 
     /**
-     * @param triggerAction
-     * @return the next/previous pair of words depending on the trigger action
+     * Obtain a WordPair object that holds both the dutch and english word
+     *
+     * @param triggerAction specifies whether to read the next
+     *                      or previous word pair from the file
      */
-    public String[] getWordsPair(String triggerAction) {
+    public void readWordPair(String triggerAction) {
 
         // Read file
         FileReader fileReader = new FileReader(context);
-        fileReader.readFile(triggerAction, prefs.readLatestWord(), prefs.readDifficultyLevel());
+        wordPair = fileReader
+                .readFile(triggerAction, prefs.readLatestWord(), prefs.readDifficultyLevel());
+    }
 
-        return fileReader.getWordsPair();
+    /**
+     * Getter for the dutch word
+     */
+    public String getDutchWord() {
+        return wordPair.getDutchWord();
+    }
+
+    /**
+     * Getter for the english word
+     */
+    public String getEnglishWord() {
+        return wordPair.getEnglishWord();
     }
 
     /**
