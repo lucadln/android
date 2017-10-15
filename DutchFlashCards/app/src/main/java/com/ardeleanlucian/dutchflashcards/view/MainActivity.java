@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.ardeleanlucian.dutchflashcards.R;
 import com.ardeleanlucian.dutchflashcards.controller.MainController;
-import com.ardeleanlucian.dutchflashcards.model.WordPair;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

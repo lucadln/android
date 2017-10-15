@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="56dp"
+        android:background="@color/bar_color"
+        android:backgroundTint="@color/bar_color"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/bar_title_color"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <TextView
         android:id="@+id/word"
-        android:text="WORD"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:lineSpacingExtra="12sp"
+        android:text="WORD"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -34,19 +39,33 @@
 
     <TextView
         android:id="@+id/translation"
-        android:text="WORD_TRANSLATION"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:text="WORD_TRANSLATION"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/word"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:visibility="invisible"/>
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/lineSeparator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="58dp"
+        android:background="@android:color/background_dark"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/next"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -54,11 +73,14 @@
         android:layout_marginRight="8dp"
         android:allowUndo="false"
         android:text="NEXT"
+        android:textColor="@android:color/background_dark"
+        android:textColorLink="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/previous"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -66,6 +88,8 @@
         android:layout_marginStart="8dp"
         android:allowUndo="false"
         android:text="PREVIOUS"
+        android:textColor="@android:color/background_dark"
+        android:textColorLink="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
