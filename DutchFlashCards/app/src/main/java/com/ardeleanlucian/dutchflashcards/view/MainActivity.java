@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ardeleanlucian.dutchflashcards.R;
 import com.ardeleanlucian.dutchflashcards.controller.MainController;
@@ -97,18 +98,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (item.getItemId()) {
             case R.id.swap_languages:
                 mainController.updatePrimaryLanguage();
+                // Inform user about changes
+                String swapLanguagesMessage = "The main language is now set to "
+                        + mainController.getPrimaryLanguage() + "!";
+                Toast.makeText(this, swapLanguagesMessage, Toast.LENGTH_LONG).show();
                 break;
             case R.id.difficulty_easy:
                 mainController.updateDifficulty("easy");
                 toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
+                // Inform user about changes
+                Toast.makeText(
+                        this, "The difficulty is now set to easy!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.difficulty_moderate:
                 mainController.updateDifficulty("moderate");
                 toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
+                // Inform user about changes
+                Toast.makeText(
+                        this, "The difficulty is now set to moderate!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.difficulty_hard:
                 mainController.updateDifficulty("hard");
                 toolbar.setTitle("Difficulty: " + mainController.getDifficulty());
+                // Inform user about changes
+                Toast.makeText(
+                        this, "The difficulty is now set to hard!", Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);

@@ -5,14 +5,14 @@
     <!-- Swap languages action button -->
     <item
         android:id="@+id/swap_languages"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_swap_languages"
         android:title="Swap languages"
         app:showAsAction="always"/>
 
     <!-- Change difficulty action button -->
     <item
         android:id="@+id/change_difficulty"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_select_difficulty"
         android:title="Change difficulty"
         app:showAsAction="always">
         <menu>
