@@ -2,13 +2,22 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
+import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
+import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
+import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TableLayout TABLE_LAYOUT;
 
     private Button NEXT;
     private Button SKIP;
@@ -35,17 +44,68 @@ public class MainActivity extends AppCompatActivity {
     private EditText JULLIE_VERB_FIELD;
     private EditText ZIJ_VERB_FIELD;
 
+    private MainController controller;
+
+    /**
+     * Actions to be taken on activity creation
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeLayoutElements();
+
+        controller = new MainController(this);
+
+        // Set up the toolbar
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        // Set up the spinner
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
+        spinner.setSelection(controller.getSpinnerPosition());
+
+        SKIP.setOnClickListener(onClickSkip);
+        NEXT.setOnClickListener(onClickNext);
+        TABLE_LAYOUT.setOnClickListener(onTapScreen);
     }
 
     /**
-     * Method to initialize layout elements
+     * Actions to be taken when the user clicks on the 'Skip' button
      */
+    private final View.OnClickListener onClickSkip = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    };
+
+    /**
+     * Actions to be taken when the user clicks on the 'Next' button
+     */
+    private final View.OnClickListener onClickNext = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //@TODO
+        }
+    };
+
+    /**
+     * Actions to be taken when the user taps the screen
+     */
+    private final View.OnClickListener onTapScreen = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          //@TODO
+        }
+    };
+
     private void initializeLayoutElements() {
+        TABLE_LAYOUT = (TableLayout) findViewById(R.id.table_layout);
+
         NEXT = (Button) findViewById(R.id.next);
         SKIP = (Button) findViewById(R.id.skip);
 
