@@ -1,7 +1,9 @@
-package com.ardeleanlucian.dutchconjugationtrainer;
+package com.ardeleanlucian.dutchconjugationtrainer.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.ardeleanlucian.dutchconjugationtrainer.R;
 
 public class MainActivity extends AppCompatActivity {
 
