@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         SKIP.setOnClickListener(onClickSkip);
         NEXT.setOnClickListener(onClickNext);
         TABLE_LAYOUT.setOnClickListener(onTapScreen);
+
+
     }
 
     /**
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            //@TODO
         }
     };
 
@@ -105,17 +107,6 @@ public class MainActivity extends AppCompatActivity {
           //@TODO
         }
     };
-
-    /**
-     * Inflate menu in the toolbar
-     * @param menu
-     * @return
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
 
     /**
      * Select actions on menu selection
@@ -146,6 +137,17 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Inflate menu in the toolbar
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
     private void initializeLayoutElements() {
