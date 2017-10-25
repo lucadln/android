@@ -17,6 +17,7 @@ import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
+import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         NEXT.setOnClickListener(onClickNext);
         TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
-
+        displayConjugationSection(controller.getNextVerb());
     }
 
     /**
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     /**
-     * Select actions on menu selection
+     * Actions to be taken on menu selection
      * @param item
      * @return
      */
@@ -140,6 +141,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Method to display the conjugation section. This is
+     *   conditioned by the application mode: 'read-only'
+     *   or 'write'.
+     *
+     * @param nextVerb
+     */
+    private void displayConjugationSection(Verb nextVerb) {
+        //@TODO
+        // if read-only ...
+        // else if not read-only ...
+
+        // temp. just display the first verb
+
+    }
+
+    /**
      * Inflate menu in the toolbar
      * @param menu
      * @return
@@ -150,6 +167,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Initialize layout elements
+     */
     private void initializeLayoutElements() {
         TABLE_LAYOUT = (TableLayout) findViewById(R.id.table_layout);
 

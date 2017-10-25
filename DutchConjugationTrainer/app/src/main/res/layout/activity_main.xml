@@ -66,8 +66,8 @@
             <TextView
                 android:id="@+id/ik_verb_text"
                 android:padding="3dip"
-                android:text="ik_verb"
-                android:visibility="gone" />
+                android:text="ik_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/ik_verb_field"
@@ -89,8 +89,8 @@
             <TextView
                 android:id="@+id/jij_verb_text"
                 android:padding="3dip"
-                android:text="jij_verb"
-                android:visibility="gone" />
+                android:text="jij_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/jij_verb_field"
@@ -112,8 +112,8 @@
             <TextView
                 android:id="@+id/hij_verb_text"
                 android:padding="3dip"
-                android:text="hij_verb"
-                android:visibility="gone" />
+                android:text="hij_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/hij_verb_field"
@@ -135,8 +135,8 @@
             <TextView
                 android:id="@+id/wij_verb_text"
                 android:padding="3dip"
-                android:text="wij_verb"
-                android:visibility="gone" />
+                android:text="wij_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/wij_verb_field"
@@ -158,8 +158,8 @@
             <TextView
                 android:id="@+id/jullie_verb_text"
                 android:padding="3dip"
-                android:text="jullie_verb"
-                android:visibility="gone" />
+                android:text="jullie_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/jullie_verb_field"
@@ -181,8 +181,8 @@
             <TextView
                 android:id="@+id/zij_verb_text"
                 android:padding="3dip"
-                android:text="zij_verb"
-                android:visibility="gone" />
+                android:text="zij_verb"/>
+                <!-- android:visibility="gone" -->
 
             <EditText
                 android:id="@+id/zij_verb_field"
