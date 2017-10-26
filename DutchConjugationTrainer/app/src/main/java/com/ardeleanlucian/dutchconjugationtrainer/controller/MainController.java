@@ -13,14 +13,11 @@ public class MainController {
     private int spinnerPosition;
     private Context context;
 
-    private Verb nextVerb;
-
     /**
      * Constructor method
      * @param context
      */
     public MainController(Context context) {
-        //@TODO
         this.context = context;
     }
 
@@ -28,7 +25,12 @@ public class MainController {
         return spinnerPosition;
     }
 
-    public Verb getNextVerb() {
-        return nextVerb;
+    /**
+     * Method to read and return the next verb from the verbs file
+     *
+     * @return a Verb object
+     */
+    public Verb obtainNextVerb() {
+        return new Verb(toString(), toString(), new String[0][0]); // return something @TODO
     }
 }

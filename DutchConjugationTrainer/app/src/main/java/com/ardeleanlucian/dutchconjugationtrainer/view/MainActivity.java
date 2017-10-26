@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         NEXT.setOnClickListener(onClickNext);
         TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
-        displayConjugationSection(controller.getNextVerb());
+        displayConjugationSection(controller.obtainNextVerb());
     }
 
     /**
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         // if read-only ...
         // else if not read-only ...
 
-        // temp. just display the first verb
+        // temp. just display the first verb conjugated in the present tense
 
     }
 
