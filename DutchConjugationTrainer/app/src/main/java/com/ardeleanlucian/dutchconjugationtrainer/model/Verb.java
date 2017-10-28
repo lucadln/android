@@ -10,40 +10,56 @@ package com.ardeleanlucian.dutchconjugationtrainer.model;
 public class Verb {
 
     private String verbInfinitive;
-    private String verbInfinitiveTranslation;
+    private String verbTranslation;
     private String verbConjugation[][];
 
     /**
      * Constructor method
      *
      * @param verbInfinitive
-     * @param verbInfinitiveTranslation
+     * @param verbTranslation
      * @param verbConjugation
      */
-    public Verb(String verbInfinitive, String verbInfinitiveTranslation, String[][] verbConjugation) {
+    public Verb(String verbInfinitive, String verbTranslation, String[][] verbConjugation) {
         setVerbInfinitive(verbInfinitive);
-        setVerbInfinitiveTranslation(verbInfinitiveTranslation);
+        setVerbTranslation(verbTranslation);
         setVerbConjugation(verbConjugation);
     }
 
-    public void setVerbConjugation(String[][] verbConjugation) {
-        this.verbConjugation = verbConjugation; // @TODO - May break because not initialized?
-    }
-
-    public void setVerbInfinitiveTranslation(String verbInfinitiveTranslation) {
-        this.verbInfinitiveTranslation = verbInfinitiveTranslation;
-    }
-
+    /**
+     * Set the infinitive verb
+     *
+     * @param verbInfinitive
+     */
     public void setVerbInfinitive(String verbInfinitive) {
         this.verbInfinitive = verbInfinitive;
+    }
+
+    /**
+     * Set the translation for the verb
+     *
+     * @param verbConjugation
+     */
+    public void setVerbConjugation(String[][] verbConjugation) {
+        this.verbConjugation = new String[7][6];
+        this.verbConjugation = verbConjugation.clone();
+    }
+
+    /**
+     * Set the verb conjugation for all tenses
+     *
+     * @param verbTranslation
+     */
+    public void setVerbTranslation(String verbTranslation) {
+        this.verbTranslation = verbTranslation;
     }
 
     public String getVerbInfinitive() {
         return verbInfinitive;
     }
 
-    public String getVerbInfinitiveTranslation() {
-        return verbInfinitiveTranslation;
+    public String getVerbTranslation() {
+        return verbTranslation;
     }
 
     public String[][] getVerbConjugation() {

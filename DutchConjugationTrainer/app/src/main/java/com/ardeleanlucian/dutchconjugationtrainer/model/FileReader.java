@@ -32,15 +32,18 @@ public class FileReader {
 
         boolean found = false;
 
-        String tempReader = "unknown";
+        String tempReader;
         String currentVerb = "denken"; //@TODO make it so that this is taken from the SharedPreferences
 
         try {
             // Open file
             BufferedReader bufferedReader = new BufferedReader(
                     new InputStreamReader(context.getAssets().open("verbs.txt")));
+            // Start reading
             while (((tempReader = bufferedReader.readLine()) != null) && !found) {
                 if (tempReader.equals(currentVerb)) {
+                    found = true;
+
                     // Skip lines to get the next verb. Those
                     //   lines represent the conjugation of the
                     //   current verb.
@@ -56,9 +59,13 @@ public class FileReader {
                         currentVerb = bufferedReader.readLine();
                     }
                     //@TODO Save the new currentVerb in the android's SharedPreferences
-                    //@TODO Now the currentVerb is our infinitive. BTW do we need the currentVerb variable in this case?
-                    //@TODO .. anyways, we can continue reading the translation and then the conjugation
-                    //@TODO .. finally we return a new Verb object by using that
+                    infinitive = currentVerb;
+                    translation = bufferedReader.readLine();
+                    for (int i = 0; i < 7; i++) {
+                        for (int j = 0; j < 6; j++) {
+                            conjugation[i][j] = bufferedReader.readLine();
+                        }
+                    }
                 }
             }
 

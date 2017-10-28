@@ -145,15 +145,22 @@ public class MainActivity extends AppCompatActivity {
      *   conditioned by the application mode: 'read-only'
      *   or 'write'.
      *
-     * @param nextVerb
+     * @param verb
      */
-    private void displayConjugationSection(Verb nextVerb) {
+    private void displayConjugationSection(Verb verb) {
         //@TODO
         // if read-only ...
         // else if not read-only ...
 
         // temp. just display the first verb conjugated in the present tense
-
+        INFINITIVE.setText(verb.getVerbInfinitive());
+        TRANSLATION.setText(verb.getVerbTranslation());
+        IK_VERB_TEXT.setText(verb.getVerbConjugation()[0][0]);
+        JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][1]);
+        HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][2]);
+        WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][3]);
+        JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[0][4]);
+        ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][5]);
     }
 
     /**

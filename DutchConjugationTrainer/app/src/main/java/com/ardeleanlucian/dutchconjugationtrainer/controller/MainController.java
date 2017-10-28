@@ -2,6 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer.controller;
 
 import android.content.Context;
 
+import com.ardeleanlucian.dutchconjugationtrainer.model.FileReader;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 /**
@@ -31,6 +32,7 @@ public class MainController {
      * @return a Verb object
      */
     public Verb obtainNextVerb() {
-        return new Verb(toString(), toString(), new String[0][0]); // return something @TODO
+        FileReader fileReader = new FileReader();
+        return fileReader.readNextVerb(context);
     }
 }
