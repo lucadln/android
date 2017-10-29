@@ -28,12 +28,12 @@ public class FileReader {
      *
      * @return a Verb object containing its infinitive, translation and conjugation
      */
-    public Verb readNextVerb(Context context) {
+    public Verb readNextVerb(Context context, SharedPreferencesHandler prefsHandler) {
 
         boolean found = false;
 
         String tempReader;
-        String currentVerb = "denken"; //@TODO make it so that this is taken from the SharedPreferences
+        String currentVerb = prefsHandler.getCurrentVerb();
 
         try {
             // Open file
@@ -58,7 +58,9 @@ public class FileReader {
                                 new InputStreamReader(context.getAssets().open("verbs.txt")));
                         currentVerb = bufferedReader.readLine();
                     }
-                    //@TODO Save the new currentVerb in the android's SharedPreferences
+                    // Save the new value in the android's SharedPreferences
+                    prefsHandler.setCurrentVerb(currentVerb);
+
                     infinitive = currentVerb;
                     translation = bufferedReader.readLine();
                     for (int i = 0; i < 7; i++) {

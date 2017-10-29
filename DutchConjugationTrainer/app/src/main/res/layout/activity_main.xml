@@ -66,8 +66,8 @@
             <TextView
                 android:id="@+id/ik_verb_text"
                 android:padding="3dip"
-                android:text="ik_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="ik_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/ik_verb_field"
@@ -84,13 +84,14 @@
                 android:id="@+id/jij"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="jij" />
+                android:text="jij"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/jij_verb_text"
                 android:padding="3dip"
-                android:text="jij_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="jij_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/jij_verb_field"
@@ -107,13 +108,14 @@
                 android:id="@+id/hij"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="hij/zij" />
+                android:text="hij/zij"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/hij_verb_text"
                 android:padding="3dip"
-                android:text="hij_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="hij_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/hij_verb_field"
@@ -130,13 +132,14 @@
                 android:id="@+id/wij"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="wij" />
+                android:text="wij"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/wij_verb_text"
                 android:padding="3dip"
-                android:text="wij_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="wij_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/wij_verb_field"
@@ -153,13 +156,14 @@
                 android:id="@+id/jullie"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="jullie" />
+                android:text="jullie"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/jullie_verb_text"
                 android:padding="3dip"
-                android:text="jullie_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="jullie_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/jullie_verb_field"
@@ -176,13 +180,14 @@
                 android:id="@+id/zij"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="zij" />
+                android:text="zij"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/zij_verb_text"
                 android:padding="3dip"
-                android:text="zij_verb"/>
-                <!-- android:visibility="gone" -->
+                android:text="zij_verb"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/zij_verb_field"
@@ -207,6 +212,7 @@
     <Button
         android:id="@+id/next"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
@@ -219,6 +225,7 @@
     <Button
         android:id="@+id/skip"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:textColor="@color/colorAccent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"

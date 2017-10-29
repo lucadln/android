@@ -3,6 +3,7 @@ package com.ardeleanlucian.dutchconjugationtrainer.controller;
 import android.content.Context;
 
 import com.ardeleanlucian.dutchconjugationtrainer.model.FileReader;
+import com.ardeleanlucian.dutchconjugationtrainer.model.SharedPreferencesHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 /**
@@ -11,8 +12,9 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 public class MainController {
 
-    private int spinnerPosition;
     private Context context;
+
+    SharedPreferencesHandler sharedPreferencesHandler;
 
     /**
      * Constructor method
@@ -20,10 +22,7 @@ public class MainController {
      */
     public MainController(Context context) {
         this.context = context;
-    }
-
-    public int getSpinnerPosition() {
-        return spinnerPosition;
+        sharedPreferencesHandler = new SharedPreferencesHandler(context);
     }
 
     /**
@@ -33,6 +32,24 @@ public class MainController {
      */
     public Verb obtainNextVerb() {
         FileReader fileReader = new FileReader();
-        return fileReader.readNextVerb(context);
+        return fileReader.readNextVerb(context, sharedPreferencesHandler);
+    }
+
+    /**
+     * Method to read and return the spinner index
+     *
+     * @return the spinner index
+     */
+    public int obtainSpinnerIndex() {
+        return sharedPreferencesHandler.getSpinnerIndex();
+    }
+
+    /**
+     * Method to update the value of the spinner index in the android's memory
+     *
+     * @param newValue
+     */
+    public void updateSpinnerPosition(int newValue) {
+        sharedPreferencesHandler.setSpinnerIndex(newValue);
     }
 }

@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -19,7 +20,11 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Verb currentVerb;
 
     private TableLayout TABLE_LAYOUT;
 
@@ -50,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
     private MainController controller;
 
+    private Spinner spinner;
+
+    private boolean readOnlyMode;
+
+    /**
+     * displayConjIndex is used in read-only mode to
+     *   know what conjugation to show at a certain
+     *   point (conjugation for ik, then for jij etc) */
+    private int conjugationIndex = 0;
+
     /**
      * Actions to be taken on activity creation
      * @param savedInstanceState
@@ -68,16 +83,41 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Set up the spinner
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
-        spinner.setSelection(controller.getSpinnerPosition());
+        spinner.setSelection(controller.obtainSpinnerIndex());
+        spinner.setOnItemSelectedListener(onSpinnerSelection);
 
         SKIP.setOnClickListener(onClickSkip);
         NEXT.setOnClickListener(onClickNext);
         TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
-        displayConjugationSection(controller.obtainNextVerb());
+        currentVerb = controller.obtainNextVerb();
+        displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
     }
+
+    /**
+     * Actions to be taken when the user selects a new tense
+     *   through the spinner menu
+     */
+    private final Spinner.OnItemSelectedListener onSpinnerSelection
+            = new Spinner.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            int newSpinnerIndex = spinner.getSelectedItemPosition();
+
+            // Save the new position in android's SharedPreferences
+            controller.updateSpinnerPosition(newSpinnerIndex);
+
+            // Display the conjugations corresponding to the current tense selection
+            conjugationIndex = 0;
+            displayConjugationSection(currentVerb, newSpinnerIndex);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+        }
+    };
 
     /**
      * Actions to be taken when the user clicks on the 'Skip' button
@@ -85,7 +125,11 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //@TODO
+            conjugationIndex = 0;
+
+            // Obtain and display the next verb
+            currentVerb = controller.obtainNextVerb();
+            displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
         }
     };
 
@@ -95,17 +139,48 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            //@TODO
+            conjugationIndex = 0;
+
+            // Obtain and display the next verb
+            currentVerb = controller.obtainNextVerb();
+            displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
         }
     };
 
     /**
-     * Actions to be taken when the user taps the screen
+     * Actions to be taken when the user taps the screen.
+     *   Only important when in read-only mode. Doesn't
+     *   play any role otherwise.
      */
     private final View.OnClickListener onTapScreen = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-          //@TODO
+            /* If the user opted for the read-only option
+             *   then show the conjugation one by one for
+             *   every person (ik, jij, hij...) on screen tap */
+//            if (readOnlyMode) {
+                if (conjugationIndex == 0) {
+                    IK_VERB_TEXT.setVisibility(View.VISIBLE);
+                    JIJ.setVisibility(View.VISIBLE);
+                } else if (conjugationIndex == 1) {
+                    JIJ_VERB_TEXT.setVisibility(View.VISIBLE);
+                    HIJ.setVisibility(View.VISIBLE);
+                } else if (conjugationIndex == 2) {
+                    HIJ_VERB_TEXT.setVisibility(View.VISIBLE);
+                    WIJ.setVisibility(View.VISIBLE);
+                } else if (conjugationIndex == 3) {
+                    WIJ_VERB_TEXT.setVisibility(View.VISIBLE);
+                    JULLIE.setVisibility(View.VISIBLE);
+                } else if (conjugationIndex == 4) {
+                    JULLIE_VERB_TEXT.setVisibility(View.VISIBLE);
+                    ZIJ.setVisibility(View.VISIBLE);
+                } else if (conjugationIndex == 5) {
+                    ZIJ_VERB_TEXT.setVisibility(View.VISIBLE);
+                    SKIP.setVisibility(GONE);
+                    NEXT.setVisibility(View.VISIBLE);
+                }
+                conjugationIndex++;
+//            }
         }
     };
 
@@ -147,20 +222,34 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param verb
      */
-    private void displayConjugationSection(Verb verb) {
+    private void displayConjugationSection(Verb verb, int spinnerIndex) {
         //@TODO
-        // if read-only ...
-        // else if not read-only ...
+        // if read-only...
+        // else if not read-only...
 
-        // temp. just display the first verb conjugated in the present tense
+        // read only case...
+        // Hide conjugations for the newly displayed word
+        //@TODO find logic to work with both read-only and write-mode
+        IK_VERB_TEXT.setVisibility(GONE);
+        JIJ_VERB_TEXT.setVisibility(GONE);
+        HIJ_VERB_TEXT.setVisibility(GONE);
+        WIJ_VERB_TEXT.setVisibility(GONE);
+        JULLIE_VERB_TEXT.setVisibility(GONE);
+        ZIJ_VERB_TEXT.setVisibility(GONE);
+        JIJ.setVisibility(View.INVISIBLE);
+        HIJ.setVisibility(View.INVISIBLE);
+        WIJ.setVisibility(View.INVISIBLE);
+        JULLIE.setVisibility(View.INVISIBLE);
+        ZIJ.setVisibility(View.INVISIBLE);
+
         INFINITIVE.setText(verb.getVerbInfinitive());
         TRANSLATION.setText(verb.getVerbTranslation());
-        IK_VERB_TEXT.setText(verb.getVerbConjugation()[0][0]);
-        JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][1]);
-        HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][2]);
-        WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][3]);
-        JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[0][4]);
-        ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[0][5]);
+        IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+        JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+        HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+        WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+        JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+        ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
     }
 
     /**
