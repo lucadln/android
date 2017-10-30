@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * displayConjIndex is used in read-only mode to
      *   know what conjugation to show at a certain
-     *   point (conjugation for ik, then for jij etc) */
+     *   point (conjugation for ik at index 0,
+     *   then for jij at index 1 and so on) */
     private int conjugationIndex = 0;
 
     /**

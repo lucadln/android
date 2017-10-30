@@ -20,7 +20,7 @@ public class FileReader {
      * Constructor method
      */
     public FileReader() {
-        conjugation = new String[7][6]; //@TODO make it so that it is not hardcoded
+        conjugation = new String[7][6]; //@TODO make it so that the size is not hardcoded
     }
 
     /**
