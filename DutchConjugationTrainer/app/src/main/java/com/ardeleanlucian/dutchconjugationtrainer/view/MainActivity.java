@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             /* If the user opted for the read-only option
              *   then show the conjugation one by one for
              *   every person (ik, jij, hij...) on screen tap */
-//            if (readOnlyMode) {
+            if (readOnlyMode = controller.obtainReadOnlyPreference()) {
                 if (conjugationIndex == 0) {
                     IK_VERB_TEXT.setVisibility(View.VISIBLE);
                     JIJ.setVisibility(View.VISIBLE);
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                     NEXT.setVisibility(View.VISIBLE);
                 }
                 conjugationIndex++;
-//            }
+            }
         }
     };
 
@@ -231,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
         // read only case...
         // Hide conjugations for the newly displayed word
         //@TODO find logic to work with both read-only and write-mode
+
         IK_VERB_TEXT.setVisibility(GONE);
         JIJ_VERB_TEXT.setVisibility(GONE);
         HIJ_VERB_TEXT.setVisibility(GONE);

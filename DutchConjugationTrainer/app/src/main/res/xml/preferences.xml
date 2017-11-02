@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:key="show_translation"
+        android:key="com.ardeleanlucian.dutchconjugationtrainer.show_translation"
         android:title="Show translation"
         android:summary="For the infinitive form"
         android:defaultValue="true" />
     <CheckBoxPreference
-        android:key="read_only"
+        android:key="com.ardeleanlucian.dutchconjugationtrainer.read_only"
         android:title="Read-only conjugations"
         android:summary="If true, writing conjugations is not required"
         android:defaultValue="false" />
     <CheckBoxPreference
-        android:key="give_feedback"
+        android:key="com.ardeleanlucian.dutchconjugationtrainer.give_feedback"
         android:title="Give performance feedback"
         android:summary="Occasional information on performance"
         android:defaultValue="true"/>

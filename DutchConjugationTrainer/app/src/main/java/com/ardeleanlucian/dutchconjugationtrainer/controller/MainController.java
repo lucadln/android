@@ -36,12 +36,52 @@ public class MainController {
     }
 
     /**
-     * Method to read and return the spinner index
-     *
+     * @return read only preference
+     */
+    public boolean obtainReadOnlyPreference() { return sharedPreferencesHandler.isReadOnly(); }
+
+    /**
+     * @return show translation preference
+     */
+    public boolean obtainShowTranslationPreference() { return sharedPreferencesHandler.isTranslationDisplayed(); }
+
+    /**
+     * @return give feedback preference
+     */
+    public boolean obtainGiveFeedbackPreference() { return sharedPreferencesHandler.isFeedbackGiven(); }
+
+    /**
      * @return the spinner index
      */
     public int obtainSpinnerIndex() {
         return sharedPreferencesHandler.getSpinnerIndex();
+    }
+
+    /**
+     * Update the value of the readOnly preference in the android's memory
+     *
+     * @param newValue
+     */
+    public void updateReadOnlyPreference(boolean newValue) {
+        sharedPreferencesHandler.setIfReadOnly(newValue);
+    }
+
+    /**
+     * Update the value of the showTranslation preference in the android's memory
+     *
+     * @param newValue
+     */
+    public void updateShowTranslationPreference(boolean newValue) {
+        sharedPreferencesHandler.setIfTranslationDisplayed(newValue);
+    }
+
+    /**
+     * Update the giveFeedback preference in the android's memory
+     *
+     * @param newValue
+     */
+    public void updateGiveFeedbackPreference(boolean newValue) {
+        sharedPreferencesHandler.setIfFeedbackGiven(newValue);
     }
 
     /**
