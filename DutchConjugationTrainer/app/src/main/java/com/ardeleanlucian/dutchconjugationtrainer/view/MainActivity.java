@@ -21,8 +21,10 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
 
     private Verb currentVerb;
 
@@ -94,7 +96,27 @@ public class MainActivity extends AppCompatActivity {
         TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
         currentVerb = controller.obtainNextVerb();
-        displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
+        setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
+        resetConjugationSectionVisibility(readOnlyMode = controller.obtainReadOnlyPreference(),
+                controller.obtainShowTranslationPreference());
+    }
+
+    @Override
+    public void onFocusChange(View v, boolean hasFocus) {
+        switch(v.getId()){
+            case R.id.ik_verb_field:
+                break;
+            case R.id.jij_verb_field:
+                break;
+            case R.id.hij_verb_field:
+                break;
+            case R.id.wij_verb_field:
+                break;
+            case R.id.jullie_verb_field:
+                break;
+            case R.id.zij_verb_field:
+                break;
+        }
     }
 
     /**
@@ -112,7 +134,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
-            displayConjugationSection(currentVerb, newSpinnerIndex);
+            clearFields();
+            setTextViewValues(currentVerb, newSpinnerIndex);
         }
 
         @Override
@@ -126,11 +149,13 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            resetConjugationSectionVisibility(readOnlyMode, controller.obtainShowTranslationPreference());
+            clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
-            displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
+            setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
         }
     };
 
@@ -140,11 +165,13 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            resetConjugationSectionVisibility(readOnlyMode, controller.obtainShowTranslationPreference());
+            clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
-            displayConjugationSection(currentVerb, controller.obtainSpinnerIndex());
+            setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
         }
     };
 
@@ -161,24 +188,24 @@ public class MainActivity extends AppCompatActivity {
              *   every person (ik, jij, hij...) on screen tap */
             if (readOnlyMode = controller.obtainReadOnlyPreference()) {
                 if (conjugationIndex == 0) {
-                    IK_VERB_TEXT.setVisibility(View.VISIBLE);
-                    JIJ.setVisibility(View.VISIBLE);
+                    IK_VERB_TEXT.setVisibility(VISIBLE);
+                    JIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 1) {
-                    JIJ_VERB_TEXT.setVisibility(View.VISIBLE);
-                    HIJ.setVisibility(View.VISIBLE);
+                    JIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    HIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 2) {
-                    HIJ_VERB_TEXT.setVisibility(View.VISIBLE);
-                    WIJ.setVisibility(View.VISIBLE);
+                    HIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    WIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 3) {
-                    WIJ_VERB_TEXT.setVisibility(View.VISIBLE);
-                    JULLIE.setVisibility(View.VISIBLE);
+                    WIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    JULLIE.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 4) {
-                    JULLIE_VERB_TEXT.setVisibility(View.VISIBLE);
-                    ZIJ.setVisibility(View.VISIBLE);
+                    JULLIE_VERB_TEXT.setVisibility(VISIBLE);
+                    ZIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 5) {
-                    ZIJ_VERB_TEXT.setVisibility(View.VISIBLE);
+                    ZIJ_VERB_TEXT.setVisibility(VISIBLE);
                     SKIP.setVisibility(GONE);
-                    NEXT.setVisibility(View.VISIBLE);
+                    NEXT.setVisibility(VISIBLE);
                 }
                 conjugationIndex++;
             }
@@ -217,41 +244,94 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method to display the conjugation section. This is
-     *   conditioned by the application mode: 'read-only'
-     *   or 'write'.
+     * Method to clear all values from the layout fields
+     */
+    private void clearFields() {
+        IK_VERB_FIELD.setText( "" );
+        JIJ_VERB_FIELD.setText( "" );
+        HIJ_VERB_FIELD.setText( "" );
+        WIJ_VERB_FIELD.setText( "" );
+        JULLIE_VERB_FIELD.setText( "" );
+        ZIJ_VERB_FIELD.setText( "" );
+    }
+
+    /**
+     * Method to reset the conjugation visibility depending
+     *   on the play mode (read-only or write).
+     *
+     * @param readOnly
+     */
+    private void resetConjugationSectionVisibility(boolean readOnly, boolean showTranslation) {
+        if (showTranslation) {
+            TRANSLATION.setVisibility(VISIBLE);
+        } else {
+            TRANSLATION.setVisibility(INVISIBLE);
+        }
+        if (readOnly) {
+            IK.setVisibility(VISIBLE);
+            JIJ.setVisibility(INVISIBLE);
+            HIJ.setVisibility(INVISIBLE);
+            WIJ.setVisibility(INVISIBLE);
+            JULLIE.setVisibility(INVISIBLE);
+            ZIJ.setVisibility(INVISIBLE);
+
+            IK_VERB_TEXT.setVisibility(INVISIBLE);
+            JIJ_VERB_TEXT.setVisibility(INVISIBLE);
+            HIJ_VERB_TEXT.setVisibility(INVISIBLE);
+            WIJ_VERB_TEXT.setVisibility(INVISIBLE);
+            JULLIE_VERB_TEXT.setVisibility(INVISIBLE);
+            ZIJ_VERB_TEXT.setVisibility(INVISIBLE);
+
+            IK_VERB_FIELD.setVisibility(GONE);
+            JIJ_VERB_FIELD.setVisibility(GONE);
+            HIJ_VERB_FIELD.setVisibility(GONE);
+            WIJ_VERB_FIELD.setVisibility(GONE);
+            JULLIE_VERB_FIELD.setVisibility(GONE);
+            ZIJ_VERB_FIELD.setVisibility(GONE);
+        } else {
+            IK.setVisibility(VISIBLE);
+            JIJ.setVisibility(VISIBLE);
+            HIJ.setVisibility(VISIBLE);
+            WIJ.setVisibility(VISIBLE);
+            JULLIE.setVisibility(VISIBLE);
+            ZIJ.setVisibility(VISIBLE);
+
+            IK_VERB_TEXT.setVisibility(GONE);
+            JIJ_VERB_TEXT.setVisibility(GONE);
+            HIJ_VERB_TEXT.setVisibility(GONE);
+            WIJ_VERB_TEXT.setVisibility(GONE);
+            JULLIE_VERB_TEXT.setVisibility(GONE);
+            ZIJ_VERB_TEXT.setVisibility(GONE);
+
+            IK_VERB_FIELD.setVisibility(VISIBLE);
+            JIJ_VERB_FIELD.setVisibility(VISIBLE);
+            HIJ_VERB_FIELD.setVisibility(VISIBLE);
+            WIJ_VERB_FIELD.setVisibility(VISIBLE);
+            JULLIE_VERB_FIELD.setVisibility(VISIBLE);
+            ZIJ_VERB_FIELD.setVisibility(VISIBLE);
+        }
+    }
+
+    /**
+     * Method to set the values for the TextViews in the layout.
+     *   Only important in the read-only mode.
      *
      * @param verb
+     * @param spinnerIndex
      */
-    private void displayConjugationSection(Verb verb, int spinnerIndex) {
-        //@TODO
-        // if read-only...
-        // else if not read-only...
-
-        // read only case...
-        // Hide conjugations for the newly displayed word
-        //@TODO find logic to work with both read-only and write-mode
-
-        IK_VERB_TEXT.setVisibility(GONE);
-        JIJ_VERB_TEXT.setVisibility(GONE);
-        HIJ_VERB_TEXT.setVisibility(GONE);
-        WIJ_VERB_TEXT.setVisibility(GONE);
-        JULLIE_VERB_TEXT.setVisibility(GONE);
-        ZIJ_VERB_TEXT.setVisibility(GONE);
-        JIJ.setVisibility(View.INVISIBLE);
-        HIJ.setVisibility(View.INVISIBLE);
-        WIJ.setVisibility(View.INVISIBLE);
-        JULLIE.setVisibility(View.INVISIBLE);
-        ZIJ.setVisibility(View.INVISIBLE);
-
+    private void setTextViewValues(Verb verb, int spinnerIndex) {
         INFINITIVE.setText(verb.getVerbInfinitive());
         TRANSLATION.setText(verb.getVerbTranslation());
-        IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
-        JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
-        HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
-        WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
-        JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
-        ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
+
+        if (controller.obtainReadOnlyPreference()) {
+
+            IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+            JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+            HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+            WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+            JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+            ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
+        }
     }
 
     /**

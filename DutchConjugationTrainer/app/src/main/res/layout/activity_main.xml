@@ -61,7 +61,8 @@
                 android:id="@+id/ik"
                 android:gravity="right"
                 android:padding="3dip"
-                android:text="ik" />
+                android:text="ik"
+                android:visibility="invisible"/>
 
             <TextView
                 android:id="@+id/ik_verb_text"
