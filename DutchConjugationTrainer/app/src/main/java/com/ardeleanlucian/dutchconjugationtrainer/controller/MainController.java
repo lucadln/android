@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.ardeleanlucian.dutchconjugationtrainer.model.FileReader;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SharedPreferencesHandler;
+import com.ardeleanlucian.dutchconjugationtrainer.model.UserAnswer;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 /**
@@ -91,5 +92,18 @@ public class MainController {
      */
     public void updateSpinnerPosition(int newValue) {
         sharedPreferencesHandler.setSpinnerIndex(newValue);
+    }
+
+    /**
+     * Method to check if the newly inputted answer is correct
+     * @param conjugationIndex
+     * @param answer
+     * @param verb
+     * @return
+     */
+    public boolean checkIfAnswerCorrect(int conjugationIndex, String answer, Verb verb) {
+        UserAnswer userAnswer = new UserAnswer();
+
+        return userAnswer.isAnswerCorrect(obtainSpinnerIndex(), conjugationIndex, answer, verb);
     }
 }
