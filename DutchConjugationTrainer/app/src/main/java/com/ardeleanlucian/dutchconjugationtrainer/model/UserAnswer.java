@@ -6,15 +6,6 @@ package com.ardeleanlucian.dutchconjugationtrainer.model;
 
 public class UserAnswer {
 
-    private static boolean[] correctConjugation;
-
-    /**
-     * Constructor method
-     */
-    public UserAnswer() {
-        correctConjugation = new boolean[6];
-    }
-
     /**
      * Checks whether a certain conjugation was done correctly or not
      *
@@ -32,23 +23,7 @@ public class UserAnswer {
         } else {
             answerCorrect = false;
         }
-        correctConjugation[conjugationIndex] = answerCorrect;
 
         return answerCorrect;
-    }
-
-    /**
-     *
-     * @return a boolean value to show whether the conjugation
-     *         for a certain verb in a certain tense was done
-     *         correctly or not for all the persons (ik, jij ...)
-     */
-    public boolean isEntireConjugationCorrect() {
-        for (int i = 0; i < 5; i++) {
-            if (!correctConjugation[i]) {
-                return false;
-            }
-        }
-        return true;
     }
 }

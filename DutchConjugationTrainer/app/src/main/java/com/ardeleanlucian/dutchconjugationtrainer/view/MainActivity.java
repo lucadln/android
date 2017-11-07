@@ -110,18 +110,10 @@ public class MainActivity extends AppCompatActivity {
     View.OnFocusChangeListener onFocusChangeListener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            TextView textViewList[] = { IK_VERB_TEXT,
-                    JIJ_VERB_TEXT,
-                    HIJ_VERB_TEXT,
-                    WIJ_VERB_TEXT,
-                    JULLIE_VERB_TEXT,
-                    ZIJ_VERB_TEXT };
-            EditText editTextList[] = { IK_VERB_FIELD,
-                    JIJ_VERB_FIELD,
-                    HIJ_VERB_FIELD,
-                    WIJ_VERB_FIELD,
-                    JULLIE_VERB_FIELD,
-                    ZIJ_VERB_FIELD };
+            TextView textViewList[] = { IK_VERB_TEXT, JIJ_VERB_TEXT, HIJ_VERB_TEXT,
+                    WIJ_VERB_TEXT, JULLIE_VERB_TEXT, ZIJ_VERB_TEXT };
+            EditText editTextList[] = { IK_VERB_FIELD, JIJ_VERB_FIELD, HIJ_VERB_FIELD,
+                    WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD };
             int conjugationIndex;
             String answer;
 
