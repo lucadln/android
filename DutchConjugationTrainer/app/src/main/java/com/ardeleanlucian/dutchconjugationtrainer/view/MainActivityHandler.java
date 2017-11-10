@@ -49,8 +49,6 @@ public class MainActivityHandler {
     public EditText JULLIE_VERB_FIELD;
     public EditText ZIJ_VERB_FIELD;
 
-    public Spinner spinner;
-
     public MainActivityHandler(Context context) {
         this.context = context;
         initializeLayoutElements();

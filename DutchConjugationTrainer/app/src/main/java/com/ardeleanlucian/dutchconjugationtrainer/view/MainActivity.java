@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private Verb currentVerb;
     private MainController controller;
     private boolean readOnlyMode;
+    private MainActivityHandler mainActivityHandler;
+    private Spinner spinner;
 
     /**
      * displayConjIndex is used in read-only mode to
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MainActivityHandler mainActivityHandler = new MainActivityHandler(this);
+        mainActivityHandler = new MainActivityHandler(this);
 
         mainActivityHandler.initializeLayoutElements();
 
@@ -59,18 +61,18 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Set up the spinner
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
         spinner.setSelection(controller.obtainSpinnerIndex());
         spinner.setOnItemSelectedListener(onSpinnerSelection);
 
-        SKIP.setOnClickListener(onClickSkip);
-        NEXT.setOnClickListener(onClickNext);
-        TABLE_LAYOUT.setOnClickListener(onTapScreen);
+        mainActivityHandler.SKIP.setOnClickListener(onClickSkip);
+        mainActivityHandler.NEXT.setOnClickListener(onClickNext);
+        mainActivityHandler.TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
         currentVerb = controller.obtainNextVerb();
         setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
-        resetConjugationSectionVisibility(
+        mainActivityHandler.resetConjugationSectionVisibility(
                 readOnlyMode = controller.obtainReadOnlyPreference(),
                 controller.obtainShowTranslationPreference());
         setOnFocusChangeListenerForEditTexts();
@@ -85,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
     View.OnFocusChangeListener onFocusChangeListener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            TextView textViewList[] = { IK_VERB_TEXT, JIJ_VERB_TEXT, HIJ_VERB_TEXT,
-                    WIJ_VERB_TEXT, JULLIE_VERB_TEXT, ZIJ_VERB_TEXT };
-            EditText editTextList[] = { IK_VERB_FIELD, JIJ_VERB_FIELD, HIJ_VERB_FIELD,
-                    WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD };
+            TextView textViewList[] = { mainActivityHandler.IK_VERB_TEXT, mainActivityHandler.JIJ_VERB_TEXT, mainActivityHandler.HIJ_VERB_TEXT,
+                    mainActivityHandler.WIJ_VERB_TEXT, mainActivityHandler.JULLIE_VERB_TEXT, mainActivityHandler.ZIJ_VERB_TEXT };
+            EditText editTextList[] = { mainActivityHandler.IK_VERB_FIELD, mainActivityHandler.JIJ_VERB_FIELD, mainActivityHandler.HIJ_VERB_FIELD,
+                    mainActivityHandler.WIJ_VERB_FIELD, mainActivityHandler.JULLIE_VERB_FIELD, mainActivityHandler.ZIJ_VERB_FIELD };
             int conjugationIndex;
             String answer;
 
@@ -131,8 +133,8 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (getNumberOfFilledEditTexts() == 6) {
-                    SKIP.setVisibility(View.GONE);
-                    NEXT.setVisibility(View.VISIBLE);
+                    mainActivityHandler.SKIP.setVisibility(View.GONE);
+                    mainActivityHandler.NEXT.setVisibility(View.VISIBLE);
                 }
             }
         }
@@ -153,8 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
-            resetConjugationSectionVisibility(readOnlyMode, controller.obtainShowTranslationPreference());
-            clearFields();
+            mainActivityHandler.resetConjugationSectionVisibility(readOnlyMode, controller.obtainShowTranslationPreference());
+            mainActivityHandler.clearFields();
             setTextViewValues(currentVerb, newSpinnerIndex);
         }
 
@@ -169,14 +171,14 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            clearFields();
+            mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
             setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
 
-            resetConjugationSectionVisibility(
+            mainActivityHandler.resetConjugationSectionVisibility(
                     readOnlyMode, controller.obtainShowTranslationPreference());
         }
     };
@@ -187,14 +189,14 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            clearFields();
+            mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
             setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
 
-            resetConjugationSectionVisibility(
+            mainActivityHandler.resetConjugationSectionVisibility(
                     readOnlyMode, controller.obtainShowTranslationPreference());
 
         }
@@ -213,24 +215,24 @@ public class MainActivity extends AppCompatActivity {
              *   every person (ik, jij, hij...) on   screen tap */
             if (readOnlyMode = controller.obtainReadOnlyPreference()) {
                 if (conjugationIndex == 0) {
-                    IK_VERB_TEXT.setVisibility(VISIBLE);
-                    JIJ.setVisibility(VISIBLE);
+                    mainActivityHandler.IK_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.JIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 1) {
-                    JIJ_VERB_TEXT.setVisibility(VISIBLE);
-                    HIJ.setVisibility(VISIBLE);
+                    mainActivityHandler.JIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.HIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 2) {
-                    HIJ_VERB_TEXT.setVisibility(VISIBLE);
-                    WIJ.setVisibility(VISIBLE);
+                    mainActivityHandler.HIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.WIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 3) {
-                    WIJ_VERB_TEXT.setVisibility(VISIBLE);
-                    JULLIE.setVisibility(VISIBLE);
+                    mainActivityHandler.WIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.JULLIE.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 4) {
-                    JULLIE_VERB_TEXT.setVisibility(VISIBLE);
-                    ZIJ.setVisibility(VISIBLE);
+                    mainActivityHandler.JULLIE_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.ZIJ.setVisibility(VISIBLE);
                 } else if (conjugationIndex == 5) {
-                    ZIJ_VERB_TEXT.setVisibility(VISIBLE);
-                    SKIP.setVisibility(GONE);
-                    NEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.ZIJ_VERB_TEXT.setVisibility(VISIBLE);
+                    mainActivityHandler.SKIP.setVisibility(GONE);
+                    mainActivityHandler.NEXT.setVisibility(VISIBLE);
                 }
                 conjugationIndex++;
             }
@@ -281,34 +283,34 @@ public class MainActivity extends AppCompatActivity {
 
     public int getNumberOfFilledEditTexts() {
         int count = 0;
-        if (IK_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.IK_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
-        if (JIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.JIJ_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
-        if (HIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.HIJ_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
-        if (WIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.WIJ_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
-        if (JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
-        if (ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (mainActivityHandler.ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
             count++;
         }
         return count;
     }
 
-    setOnFocusChangeListenerForEditTexts() {
-        IK_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-        JIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-        HIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-        WIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-        JULLIE_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-        ZIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+    private void setOnFocusChangeListenerForEditTexts() {
+        mainActivityHandler.IK_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+        mainActivityHandler.JIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+        mainActivityHandler.HIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+        mainActivityHandler.WIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+        mainActivityHandler.JULLIE_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
+        mainActivityHandler.ZIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
     }
 
     /**
@@ -319,17 +321,17 @@ public class MainActivity extends AppCompatActivity {
      * @param spinnerIndex
      */
     private void setTextViewValues(Verb verb, int spinnerIndex) {
-        INFINITIVE.setText(verb.getVerbInfinitive());
-        TRANSLATION.setText(verb.getVerbTranslation());
+        mainActivityHandler.INFINITIVE.setText(verb.getVerbInfinitive());
+        mainActivityHandler.TRANSLATION.setText(verb.getVerbTranslation());
 
         if (controller.obtainReadOnlyPreference()) {
 
-            IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
-            JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
-            HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
-            WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
-            JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
-            ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
+            mainActivityHandler.IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+            mainActivityHandler.JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+            mainActivityHandler.HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+            mainActivityHandler.WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+            mainActivityHandler.JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+            mainActivityHandler.ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
         }
     }
 }
