@@ -4,25 +4,19 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
-import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
-import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 import static android.view.View.GONE;
-import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private MainController controller;
     private boolean readOnlyMode;
     private MainActivityHandler mainActivityHandler;
-    private Spinner spinner;
 
     /**
      * displayConjIndex is used in read-only mode to
@@ -48,34 +41,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mainActivityHandler = new MainActivityHandler(this);
-
         mainActivityHandler.initializeLayoutElements();
-
         controller = new MainController(this);
 
-        // Set up the toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(mainActivityHandler.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Set up the spinner
-        spinner = (Spinner) findViewById(R.id.spinner);
-        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
-        spinner.setSelection(controller.obtainSpinnerIndex());
-        spinner.setOnItemSelectedListener(onSpinnerSelection);
-
-        mainActivityHandler.SKIP.setOnClickListener(onClickSkip);
-        mainActivityHandler.NEXT.setOnClickListener(onClickNext);
-        mainActivityHandler.TABLE_LAYOUT.setOnClickListener(onTapScreen);
-
         currentVerb = controller.obtainNextVerb();
-        setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
-        mainActivityHandler.resetConjugationSectionVisibility(
-                readOnlyMode = controller.obtainReadOnlyPreference(),
-                controller.obtainShowTranslationPreference());
-        setOnFocusChangeListenerForEditTexts();
+        mainActivityHandler.setTextViewValues(
+                currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
+
+        setListenersForLayoutElements();
     }
 
     /**
@@ -87,10 +64,6 @@ public class MainActivity extends AppCompatActivity {
     View.OnFocusChangeListener onFocusChangeListener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            TextView textViewList[] = { mainActivityHandler.IK_VERB_TEXT, mainActivityHandler.JIJ_VERB_TEXT, mainActivityHandler.HIJ_VERB_TEXT,
-                    mainActivityHandler.WIJ_VERB_TEXT, mainActivityHandler.JULLIE_VERB_TEXT, mainActivityHandler.ZIJ_VERB_TEXT };
-            EditText editTextList[] = { mainActivityHandler.IK_VERB_FIELD, mainActivityHandler.JIJ_VERB_FIELD, mainActivityHandler.HIJ_VERB_FIELD,
-                    mainActivityHandler.WIJ_VERB_FIELD, mainActivityHandler.JULLIE_VERB_FIELD, mainActivityHandler.ZIJ_VERB_FIELD };
             int conjugationIndex;
             String answer;
 
@@ -118,21 +91,21 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            answer = editTextList[conjugationIndex].getText().toString();
+            answer = mainActivityHandler.editTextList[conjugationIndex].getText().toString();
             // Only continue processing stuff if the input field was filled in
             if (!answer.equals( "" )) {
                 // Hide the field and show a read-only text instead
-                editTextList[conjugationIndex].setVisibility(GONE);
-                textViewList[conjugationIndex].setVisibility(VISIBLE);
-                textViewList[conjugationIndex].setText(answer);
+                mainActivityHandler.editTextList[conjugationIndex].setVisibility(GONE);
+                mainActivityHandler.textViewList[conjugationIndex].setVisibility(VISIBLE);
+                mainActivityHandler.textViewList[conjugationIndex].setText(answer);
 
                 if (controller.checkIfAnswerCorrect(conjugationIndex, answer, currentVerb)) {
-                    textViewList[conjugationIndex].setTextColor(Color.rgb( 0, 153, 0 ));
+                    mainActivityHandler.textViewList[conjugationIndex].setTextColor(Color.rgb( 0, 153, 0 ));
                 } else {
-                    textViewList[conjugationIndex].setTextColor(Color.RED);
+                    mainActivityHandler.textViewList[conjugationIndex].setTextColor(Color.RED);
                 }
 
-                if (getNumberOfFilledEditTexts() == 6) {
+                if (mainActivityHandler.getNumberOfFilledEditTexts() == 6) {
                     mainActivityHandler.SKIP.setVisibility(View.GONE);
                     mainActivityHandler.NEXT.setVisibility(View.VISIBLE);
                 }
@@ -144,20 +117,22 @@ public class MainActivity extends AppCompatActivity {
      * Actions to be taken when the user selects a new tense
      *   through the spinner menu
      */
-    private final Spinner.OnItemSelectedListener onSpinnerSelection
+    public final Spinner.OnItemSelectedListener onSpinnerSelection
             = new Spinner.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            int newSpinnerIndex = spinner.getSelectedItemPosition();
+            int newSpinnerIndex = mainActivityHandler.spinner.getSelectedItemPosition();
 
             // Save the new position in android's SharedPreferences
             controller.updateSpinnerPosition(newSpinnerIndex);
 
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
-            mainActivityHandler.resetConjugationSectionVisibility(readOnlyMode, controller.obtainShowTranslationPreference());
+            mainActivityHandler.resetConjugationSectionVisibility(
+                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
-            setTextViewValues(currentVerb, newSpinnerIndex);
+            mainActivityHandler.setTextViewValues(
+                    currentVerb, newSpinnerIndex, controller.obtainReadOnlyPreference());
         }
 
         @Override
@@ -176,10 +151,11 @@ public class MainActivity extends AppCompatActivity {
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
-            setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
+            mainActivityHandler.setTextViewValues(
+                    currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
             mainActivityHandler.resetConjugationSectionVisibility(
-                    readOnlyMode, controller.obtainShowTranslationPreference());
+                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
         }
     };
 
@@ -194,10 +170,11 @@ public class MainActivity extends AppCompatActivity {
 
             // Obtain and display the next verb
             currentVerb = controller.obtainNextVerb();
-            setTextViewValues(currentVerb, controller.obtainSpinnerIndex());
+            mainActivityHandler.setTextViewValues(
+                    currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
             mainActivityHandler.resetConjugationSectionVisibility(
-                    readOnlyMode, controller.obtainShowTranslationPreference());
+                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
 
         }
     };
@@ -281,57 +258,20 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public int getNumberOfFilledEditTexts() {
-        int count = 0;
-        if (mainActivityHandler.IK_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        if (mainActivityHandler.JIJ_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        if (mainActivityHandler.HIJ_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        if (mainActivityHandler.WIJ_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        if (mainActivityHandler.JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        if (mainActivityHandler.ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
-            count++;
-        }
-        return count;
-    }
+    /**
+     * Set listeners for layout elements
+     */
+    private void setListenersForLayoutElements() {
+        mainActivityHandler.spinner.setOnItemSelectedListener(onSpinnerSelection);
+        mainActivityHandler.SKIP.setOnClickListener(onClickSkip);
+        mainActivityHandler.NEXT.setOnClickListener(onClickNext);
+        mainActivityHandler.TABLE_LAYOUT.setOnClickListener(onTapScreen);
 
-    private void setOnFocusChangeListenerForEditTexts() {
         mainActivityHandler.IK_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.JIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.HIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.WIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.JULLIE_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.ZIJ_VERB_FIELD.setOnFocusChangeListener(onFocusChangeListener);
-    }
-
-    /**
-     * Method to set the values for the TextViews in the layout.
-     *   Only important in the read-only mode.
-     *
-     * @param verb
-     * @param spinnerIndex
-     */
-    private void setTextViewValues(Verb verb, int spinnerIndex) {
-        mainActivityHandler.INFINITIVE.setText(verb.getVerbInfinitive());
-        mainActivityHandler.TRANSLATION.setText(verb.getVerbTranslation());
-
-        if (controller.obtainReadOnlyPreference()) {
-
-            mainActivityHandler.IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
-            mainActivityHandler.JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
-            mainActivityHandler.HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
-            mainActivityHandler.WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
-            mainActivityHandler.JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
-            mainActivityHandler.ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
-        }
     }
 }

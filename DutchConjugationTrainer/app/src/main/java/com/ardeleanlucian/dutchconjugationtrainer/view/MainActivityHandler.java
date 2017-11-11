@@ -2,6 +2,8 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -9,6 +11,10 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
+import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
+import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
+import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
+import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 import static android.view.View.GONE;
 import static android.view.View.INVISIBLE;
@@ -49,6 +55,19 @@ public class MainActivityHandler {
     public EditText JULLIE_VERB_FIELD;
     public EditText ZIJ_VERB_FIELD;
 
+    public Spinner spinner;
+    public Toolbar toolbar;
+
+    TextView textViewList[] = { IK_VERB_TEXT,  JIJ_VERB_TEXT,    HIJ_VERB_TEXT,
+                                WIJ_VERB_TEXT, JULLIE_VERB_TEXT, ZIJ_VERB_TEXT };
+    EditText editTextList[] = { IK_VERB_FIELD,  JIJ_VERB_FIELD,    HIJ_VERB_FIELD,
+                                WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD };
+
+    /**
+     * Constructor method
+     * 
+     * @param context
+     */
     public MainActivityHandler(Context context) {
         this.context = context;
         initializeLayoutElements();
@@ -84,6 +103,12 @@ public class MainActivityHandler {
         WIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.wij_verb_field);
         JULLIE_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.jullie_verb_field);
         ZIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.zij_verb_field);
+
+        toolbar = (Toolbar) ((Activity) context).findViewById(R.id.toolbar);
+
+        spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
+        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
+        spinner.setSelection((new MainController(context)).obtainSpinnerIndex());
     }
 
     /**
@@ -95,12 +120,14 @@ public class MainActivityHandler {
     public void resetConjugationSectionVisibility(boolean readOnly, boolean showTranslation) {
         SKIP.setVisibility(VISIBLE);
         NEXT.setVisibility(GONE);
+
         if (showTranslation) {
             TRANSLATION.setVisibility(VISIBLE);
         } else {
             TRANSLATION.setVisibility(INVISIBLE);
         }
-        if (readOnly) {
+
+         if (readOnly == true) {
             IK.setVisibility(VISIBLE);
             JIJ.setVisibility(INVISIBLE);
             HIJ.setVisibility(INVISIBLE);
@@ -155,5 +182,52 @@ public class MainActivityHandler {
         WIJ_VERB_FIELD.setText( "" );
         JULLIE_VERB_FIELD.setText( "" );
         ZIJ_VERB_FIELD.setText( "" );
+    }
+
+    /**
+     * Method to set the values for the TextViews in the layout.
+     *
+     * @param verb
+     * @param spinnerIndex
+     */
+    public void setTextViewValues(Verb verb, int spinnerIndex, boolean readOnly) {
+
+        INFINITIVE.setText(verb.getVerbInfinitive());
+        TRANSLATION.setText(verb.getVerbTranslation());
+
+        if (readOnly) {
+            IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+            JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+            HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+            WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+            JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+            ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
+        }
+    }
+
+    /**
+     * @return the current number of filled edit texts
+     */
+    public int getNumberOfFilledEditTexts() {
+        int count = 0;
+        if (IK_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (JIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (HIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (WIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        if (ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
+            count++;
+        }
+        return count;
     }
 }
