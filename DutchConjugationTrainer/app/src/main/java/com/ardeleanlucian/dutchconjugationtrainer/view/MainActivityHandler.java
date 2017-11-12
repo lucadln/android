@@ -2,6 +2,7 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -28,40 +29,35 @@ public class MainActivityHandler {
 
     private Context context;
 
-    public TableLayout TABLE_LAYOUT;
+    private TableLayout TABLE_LAYOUT;
 
-    public Button NEXT;
-    public Button SKIP;
+    private Button NEXT;
+    private Button SKIP;
 
-    public TextView INFINITIVE;
-    public TextView TRANSLATION;
-    public TextView IK;
-    public TextView JIJ;
-    public TextView HIJ;
-    public TextView WIJ;
-    public TextView JULLIE;
-    public TextView ZIJ;
-    public TextView IK_VERB_TEXT;
-    public TextView JIJ_VERB_TEXT;
-    public TextView HIJ_VERB_TEXT;
-    public TextView WIJ_VERB_TEXT;
-    public TextView JULLIE_VERB_TEXT;
-    public TextView ZIJ_VERB_TEXT;
+    private TextView INFINITIVE;
+    private TextView TRANSLATION;
+    private TextView IK;
+    private TextView JIJ;
+    private TextView HIJ;
+    private TextView WIJ;
+    private TextView JULLIE;
+    private TextView ZIJ;
+    private TextView IK_VERB_TEXT;
+    private TextView JIJ_VERB_TEXT;
+    private TextView HIJ_VERB_TEXT;
+    private TextView WIJ_VERB_TEXT;
+    private TextView JULLIE_VERB_TEXT;
+    private TextView ZIJ_VERB_TEXT;
 
-    public EditText IK_VERB_FIELD;
-    public EditText JIJ_VERB_FIELD;
-    public EditText HIJ_VERB_FIELD;
-    public EditText WIJ_VERB_FIELD;
-    public EditText JULLIE_VERB_FIELD;
-    public EditText ZIJ_VERB_FIELD;
+    private EditText IK_VERB_FIELD;
+    private EditText JIJ_VERB_FIELD;
+    private EditText HIJ_VERB_FIELD;
+    private EditText WIJ_VERB_FIELD;
+    private EditText JULLIE_VERB_FIELD;
+    private EditText ZIJ_VERB_FIELD;
 
-    public Spinner spinner;
-    public Toolbar toolbar;
-
-    TextView textViewList[] = { IK_VERB_TEXT,  JIJ_VERB_TEXT,    HIJ_VERB_TEXT,
-                                WIJ_VERB_TEXT, JULLIE_VERB_TEXT, ZIJ_VERB_TEXT };
-    EditText editTextList[] = { IK_VERB_FIELD,  JIJ_VERB_FIELD,    HIJ_VERB_FIELD,
-                                WIJ_VERB_FIELD, JULLIE_VERB_FIELD, ZIJ_VERB_FIELD };
+    private Spinner spinner;
+    private Toolbar toolbar;
 
     /**
      * Constructor method
@@ -195,14 +191,12 @@ public class MainActivityHandler {
         INFINITIVE.setText(verb.getVerbInfinitive());
         TRANSLATION.setText(verb.getVerbTranslation());
 
-        if (readOnly) {
-            IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
-            JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
-            HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
-            WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
-            JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
-            ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
-        }
+        IK_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+        JIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+        HIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+        WIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+        JULLIE_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+        ZIJ_VERB_TEXT.setText(verb.getVerbConjugation()[spinnerIndex][5]);
     }
 
     /**
@@ -229,5 +223,221 @@ public class MainActivityHandler {
             count++;
         }
         return count;
+    }
+
+    public TableLayout getTableLayout() {
+        return TABLE_LAYOUT;
+    }
+
+    public void setTableLayout(TableLayout TABLE_LAYOUT) {
+        this.TABLE_LAYOUT = TABLE_LAYOUT;
+    }
+
+    public Button getNext() {
+        return NEXT;
+    }
+
+    public void setNext(Button NEXT) {
+        this.NEXT = NEXT;
+    }
+
+    public Button getSkip() {
+        return SKIP;
+    }
+
+    public void setSkip(Button SKIP) {
+        this.SKIP = SKIP;
+    }
+
+    public TextView getInfinitive() {
+        return INFINITIVE;
+    }
+
+    public void setInfinitive(TextView INFINITIVE) {
+        this.INFINITIVE = INFINITIVE;
+    }
+
+    public TextView getTranslation() {
+        return TRANSLATION;
+    }
+
+    public void setTranslation(TextView TRANSLATION) {
+        this.TRANSLATION = TRANSLATION;
+    }
+
+    public TextView getIk() {
+        return IK;
+    }
+
+    public void setIk(TextView IK) {
+        this.IK = IK;
+    }
+
+    public TextView getJij() {
+        return JIJ;
+    }
+
+    public void setJij(TextView JIJ) {
+        this.JIJ = JIJ;
+    }
+
+    public TextView getHij() {
+        return HIJ;
+    }
+
+    public void setHij(TextView HIJ) {
+        this.HIJ = HIJ;
+    }
+
+    public TextView getWij() {
+        return WIJ;
+    }
+
+    public void setWij(TextView WIJ) {
+        this.WIJ = WIJ;
+    }
+
+    public TextView getJullie() {
+        return JULLIE;
+    }
+
+    public void setJullie(TextView JULLIE) {
+        this.JULLIE = JULLIE;
+    }
+
+    public TextView getZij() {
+        return ZIJ;
+    }
+
+    public void setZij(TextView ZIJ) {
+        this.ZIJ = ZIJ;
+    }
+
+    public TextView getIkVerbText() {
+        return IK_VERB_TEXT;
+    }
+
+    public void setIkVerbText(TextView IK_VERB_TEXT) {
+        this.IK_VERB_TEXT = IK_VERB_TEXT;
+    }
+
+    public TextView getJijVerbText() {
+        return JIJ_VERB_TEXT;
+    }
+
+    public void setJijVerbText(TextView JIJ_VERB_TEXT) {
+        this.JIJ_VERB_TEXT = JIJ_VERB_TEXT;
+    }
+
+    public TextView getHijVerbText() {
+        return HIJ_VERB_TEXT;
+    }
+
+    public void setHijVerbText(TextView HIJ_VERB_TEXT) {
+        this.HIJ_VERB_TEXT = HIJ_VERB_TEXT;
+    }
+
+    public TextView getWijVerbText() {
+        return WIJ_VERB_TEXT;
+    }
+
+    public void setWijVerbText(TextView WIJ_VERB_TEXT) {
+        this.WIJ_VERB_TEXT = WIJ_VERB_TEXT;
+    }
+
+    public TextView getJullieVerbText() {
+        return JULLIE_VERB_TEXT;
+    }
+
+    public void setJullieVerbText(TextView JULLIE_VERB_TEXT) {
+        this.JULLIE_VERB_TEXT = JULLIE_VERB_TEXT;
+    }
+
+    public TextView getZijVerbText() {
+        return ZIJ_VERB_TEXT;
+    }
+
+    public void setZijVerbText(TextView ZIJ_VERB_TEXT) {
+        this.ZIJ_VERB_TEXT = ZIJ_VERB_TEXT;
+    }
+
+    public EditText getIkVerbField() {
+        return IK_VERB_FIELD;
+    }
+
+    public void setIkVerbField(EditText IK_VERB_FIELD) {
+        this.IK_VERB_FIELD = IK_VERB_FIELD;
+    }
+
+    public EditText getJijVerbField() {
+        return JIJ_VERB_FIELD;
+    }
+
+    public void setJijVerbField(EditText JIJ_VERB_FIELD) {
+        this.JIJ_VERB_FIELD = JIJ_VERB_FIELD;
+    }
+
+    public EditText getHijVerbField() {
+        return HIJ_VERB_FIELD;
+    }
+
+    public void setHijVerbField(EditText HIJ_VERB_FIELD) {
+        this.HIJ_VERB_FIELD = HIJ_VERB_FIELD;
+    }
+
+    public EditText getWijVerbField() {
+        return WIJ_VERB_FIELD;
+    }
+
+    public void setWijVerbField(EditText WIJ_VERB_FIELD) {
+        this.WIJ_VERB_FIELD = WIJ_VERB_FIELD;
+    }
+
+    public EditText getJullieVerbField() {
+        return JULLIE_VERB_FIELD;
+    }
+
+    public void setJullieVerbField(EditText JULLIE_VERB_FIELD) {
+        this.JULLIE_VERB_FIELD = JULLIE_VERB_FIELD;
+    }
+
+    public EditText getZijVerbField() {
+        return ZIJ_VERB_FIELD;
+    }
+
+    public void setZijVerbField(EditText ZIJ_VERB_FIELD) {
+        this.ZIJ_VERB_FIELD = ZIJ_VERB_FIELD;
+    }
+
+    public Spinner getSpinner() {
+        return spinner;
+    }
+
+    public void setSpinner(Spinner spinner) {
+        this.spinner = spinner;
+    }
+
+    public Toolbar getToolbar() {
+        return toolbar;
+    }
+
+    public void setToolbar(Toolbar toolbar) {
+        this.toolbar = toolbar;
+    }
+
+    public void setVisibility(View view, int visibility) {
+        view.setVisibility(visibility);
+    }
+
+    public void setTextViewAnswer(TextView textView, String answer) {
+        textView.setText(answer);
+    }
+
+    public void setTextViewColor(TextView textView, String color) {
+        if (color.equals("green")) {
+            textView.setTextColor(Color.rgb( 0, 153, 0 ));
+        } else if (color.equals("red")) {
+            textView.setTextColor(Color.RED);
+        }
     }
 }
