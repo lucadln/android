@@ -14,8 +14,9 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 public class MainController {
 
     private Context context;
-
-    SharedPreferencesHandler sharedPreferencesHandler;
+    private SharedPreferencesHandler sharedPreferencesHandler;
+    private UserAnswer userAnswer;
+    private Verb verb;
 
     /**
      * Constructor method
@@ -27,13 +28,18 @@ public class MainController {
     }
 
     /**
-     * Method to read and return the next verb from the verbs file
-     *
-     * @return a Verb object
+     * @return the verb in use
      */
-    public Verb obtainNextVerb() {
+    public Verb getVerb() {
+        return verb;
+    }
+
+    /**
+     * Method to read the next verb from the verbs file
+     */
+    private void obtainNextVerb() {
         FileReader fileReader = new FileReader();
-        return fileReader.readNextVerb(context, sharedPreferencesHandler);
+        this.verb = fileReader.readNextVerb(context, sharedPreferencesHandler);
     }
 
     /**
@@ -98,12 +104,63 @@ public class MainController {
      * Method to check if the newly inputted answer is correct
      * @param conjugationIndex
      * @param answer
-     * @param verb
      * @return
      */
-    public boolean checkIfAnswerCorrect(int conjugationIndex, String answer, Verb verb) {
-        UserAnswer userAnswer = new UserAnswer();
+    public boolean checkIfAnswerCorrect(int conjugationIndex, String answer) {
+        boolean answerCorrectness = userAnswer.isAnswerInputCorrect(conjugationIndex, answer);
+        userAnswer.updateConjugationStatus(answerCorrectness);
 
-        return userAnswer.isAnswerCorrect(obtainSpinnerIndex(), conjugationIndex, answer, verb);
+        return answerCorrectness;
+    }
+
+    public void onCreate() {
+        //@TODO
+        obtainNextVerb();
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+
+        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
+        int ncp = userAnswer.getNumberOfConjugatedPositions();
+    };
+
+    public void onClickNext() {
+        //@TODO ADD SCORES HERE
+        obtainNextVerb();
+        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
+        int ncp = userAnswer.getNumberOfConjugatedPositions();
+
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+    public void onClickSkip() {
+        //@TODO ADD SCORES HERE
+        obtainNextVerb();
+        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
+        int ncp = userAnswer.getNumberOfConjugatedPositions();
+
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+    public void onSpinnerSelection() {
+        //@TODO ADD SCORES HERE
+        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
+        int ncp = userAnswer.getNumberOfConjugatedPositions();
+
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+    public void onMenuSelection() {
+        //@TODO ADD SCORES HERE
+        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
+        int ncp = userAnswer.getNumberOfConjugatedPositions();
+
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+    public void onFieldFocusChange() {
+        //@TODO
+    }
+
+    public void onScreenTap() {
+        //@TODO
     }
 }

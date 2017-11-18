@@ -20,10 +20,8 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Verb currentVerb;
     private MainController controller;
     private MainActivityHandler mainActivityHandler;
-
     /**
      * displayConjIndex is used in read-only mode to
      *   know what conjugation to show at a certain
@@ -41,15 +39,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mainActivityHandler = new MainActivityHandler(this);
         mainActivityHandler.initializeLayoutElements();
-        controller = new MainController(this);
 
+        //@TODO Try to move this to the handler class
         setSupportActionBar(mainActivityHandler.getToolbar());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        currentVerb = controller.obtainNextVerb();
-        mainActivityHandler.setTextViewValues(
-                currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
+        controller = new MainController(this);
+        controller.onCreate();
+        mainActivityHandler.setTextViewValues(controller.getVerb(),
+                controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
+        // @TODO Set this from the handler class
         setListenersForLayoutElements();
     }
 
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     mainActivityHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     mainActivityHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
-                    if (controller.checkIfAnswerCorrect(conjugationIndex, answer, currentVerb)) {
+                    if (controller.checkIfAnswerCorrect(conjugationIndex, answer)) {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "green");
                     } else {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "red");
@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
             mainActivityHandler.resetConjugationSectionVisibility(
                     controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
-            mainActivityHandler.setTextViewValues(
-                    currentVerb, newSpinnerIndex, controller.obtainReadOnlyPreference());
+            mainActivityHandler.setTextViewValues(controller.getVerb(),
+                    newSpinnerIndex, controller.obtainReadOnlyPreference());
         }
 
         @Override
@@ -159,13 +159,14 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            controller.onClickSkip();
+
             mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
-            currentVerb = controller.obtainNextVerb();
-            mainActivityHandler.setTextViewValues(
-                    currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
+            mainActivityHandler.setTextViewValues(controller.getVerb(),
+                    controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
             mainActivityHandler.resetConjugationSectionVisibility(
                     controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
@@ -178,13 +179,14 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            controller.onClickNext();
+
             mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
-            currentVerb = controller.obtainNextVerb();
-            mainActivityHandler.setTextViewValues(
-                    currentVerb, controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
+            mainActivityHandler.setTextViewValues(controller.getVerb(),
+                    controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
             mainActivityHandler.resetConjugationSectionVisibility(
                     controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
