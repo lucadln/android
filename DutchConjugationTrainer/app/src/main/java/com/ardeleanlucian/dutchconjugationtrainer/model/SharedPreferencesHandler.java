@@ -20,6 +20,9 @@ public class SharedPreferencesHandler {
     static final String SHOW_TRANSLATION_KEY = "com.ardeleanlucian.dutchconjugationtrainer.show_translation";
     static final String READ_ONLY_KEY = "com.ardeleanlucian.dutchconjugationtrainer.read_only";
     static final String GIVE_FEEDBACK_KEY = "com.ardeleanlucian.dutchconjugationtrainer.give_feedback";
+    static final String CORRECT_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.correct_conjugations_";
+    static final String TOTAL_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.total_conjugations_";
+    static final String CONJUGATIONS_COUNT_SINCE_MILESTONE_KEY = "com.ardeleanlucian.dutchconjugationtrainer.conjugations_since_milestone_";
 
     /**
      * Constructor method
@@ -111,5 +114,53 @@ public class SharedPreferencesHandler {
      */
     public void setCurrentVerb(String newValue) {
         sharedPreferences.edit().putString(CURRENT_VERB_KEY, newValue).apply();
+    }
+
+    /**
+     * Method to get the number of correct answers for a certain tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public int getNumberOfCorrectAnswers(int tenseIndex) { // @TODO rename to 'obtainCorrectConjugatedVerbsCount'
+        int numberOfCorrectAnswers = sharedPreferences.getInt(
+                CORRECT_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), 0);
+        return numberOfCorrectAnswers;
+    }
+
+    /**
+     * Method to get the total number of answers for a certain tense
+     *
+     * @param tenseIndex
+     * @return
+     */
+    public int getTotalNumberOfAnswers(int tenseIndex) { // @TODO rename to 'obtainTotalConjugatedVerbsCount'
+        int totalNumberOfAnswers = sharedPreferences.getInt(
+                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), 0);
+        return totalNumberOfAnswers;
+    }
+
+    /**
+     * Method to update the number of correct answers in android Shared Preferences
+     *
+     * @param tenseIndex
+     * @param newValue
+     */
+    // @TODO rename to updateCorrectConjugatedVerbsCount
+    public void updateNumberOfCorrectAnswers(int tenseIndex, int newValue) {
+        sharedPreferences.edit().putInt(
+                CORRECT_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), newValue).apply();
+    }
+
+    /**
+     * Method to update the total number of answers in android Shared Preferences
+     *
+     * @param tenseIndex
+     * @param newValue
+     */
+    // @TODO rename to updateTotalConjugatedVerbsCount
+    public void updateTotalNumberOfAnswers(int tenseIndex, int newValue) {
+        sharedPreferences.edit().putInt(
+                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), newValue).apply();
     }
 }

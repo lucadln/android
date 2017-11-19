@@ -117,16 +117,11 @@ public class MainController {
         //@TODO
         obtainNextVerb();
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
-
-        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
-        int ncp = userAnswer.getNumberOfConjugatedPositions();
     };
 
     public void onClickNext() {
         //@TODO ADD SCORES HERE
         obtainNextVerb();
-        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
-        int ncp = userAnswer.getNumberOfConjugatedPositions();
 
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
@@ -134,26 +129,19 @@ public class MainController {
     public void onClickSkip() {
         //@TODO ADD SCORES HERE
         obtainNextVerb();
-        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
-        int ncp = userAnswer.getNumberOfConjugatedPositions();
 
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onSpinnerSelection() {
         //@TODO ADD SCORES HERE
-        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
-        int ncp = userAnswer.getNumberOfConjugatedPositions();
 
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onMenuSelection() {
         //@TODO ADD SCORES HERE
-        boolean vcc = userAnswer.isVerbCorrectlyConjugated();
-        int ncp = userAnswer.getNumberOfConjugatedPositions();
 
-        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onFieldFocusChange() {
