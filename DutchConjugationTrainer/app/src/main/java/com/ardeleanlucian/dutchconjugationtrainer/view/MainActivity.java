@@ -36,20 +36,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Initialize layout
         setContentView(R.layout.activity_main);
         mainActivityHandler = new MainActivityHandler(this);
         mainActivityHandler.initializeLayoutElements();
-
         //@TODO Try to move this to the handler class
         setSupportActionBar(mainActivityHandler.getToolbar());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        // Handle the onCreate event with the help of a controller
         controller = new MainController(this);
         controller.onCreate();
+
+        // Set the textView values
         mainActivityHandler.setTextViewValues(controller.getVerb(),
                 controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
 
-        // @TODO Set this from the handler class
+        // @TODO Set listeners for layout elements directly from the handler class if possible -- ask @Robert?
         setListenersForLayoutElements();
     }
 
