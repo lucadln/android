@@ -36,8 +36,8 @@ public class UserAnswer {
     }
 
     /**
-     * Method to update the conjugation correctness for a verb in a
-     *   given tense
+     * Method to update the conjugation status (correct/incorrect)
+     *   for a verb in a given tense
      *
      * @param answerCorrectness
      */

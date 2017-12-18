@@ -113,7 +113,7 @@ public class MainController {
         return answerCorrectness;
     }
 
-    public void onCreate() {
+    public void onActivityCreate() {
         //@TODO
         obtainNextVerb();
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);

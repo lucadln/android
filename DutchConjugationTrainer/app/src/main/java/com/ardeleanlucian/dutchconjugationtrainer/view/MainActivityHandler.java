@@ -66,7 +66,6 @@ public class MainActivityHandler {
      */
     public MainActivityHandler(Context context) {
         this.context = context;
-        initializeLayoutElements();
     }
 
     /**
@@ -186,7 +185,7 @@ public class MainActivityHandler {
      * @param verb
      * @param spinnerIndex
      */
-    public void setTextViewValues(Verb verb, int spinnerIndex, boolean readOnly) {
+    public void setTextViewValues(Verb verb, int spinnerIndex) {
 
         INFINITIVE.setText(verb.getVerbInfinitive());
         TRANSLATION.setText(verb.getVerbTranslation());

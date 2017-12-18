@@ -16,17 +16,17 @@ import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
-import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MainController controller;
+    private MainController mainController;
     private MainActivityHandler mainActivityHandler;
+
     /**
      * displayConjIndex is used in read-only mode to
      *   know what conjugation to show at a certain
-     *   point (conjugation for ik at index 0,
-     *   then for jij at index 1 and so on) */
+     *   point (conjugation for 'ik' at index 0,
+     *   then for 'jij' at index 1 and so on...) */
     private int conjugationIndex = 0;
 
     /**
@@ -41,17 +41,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mainActivityHandler = new MainActivityHandler(this);
         mainActivityHandler.initializeLayoutElements();
-        //@TODO Try to move this to the handler class
+
         setSupportActionBar(mainActivityHandler.getToolbar());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Handle the onCreate event with the help of a controller
-        controller = new MainController(this);
-        controller.onCreate();
+        // Pass the 'onActivityCreate' event to the activity's controller
+        mainController = new MainController(this);
+        mainController.onActivityCreate();
 
         // Set the textView values
-        mainActivityHandler.setTextViewValues(controller.getVerb(),
-                controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
+        mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
 
         // @TODO Set listeners for layout elements directly from the handler class if possible -- ask @Robert?
         setListenersForLayoutElements();
@@ -66,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
     View.OnFocusChangeListener onFocusChangeListener = new View.OnFocusChangeListener() {
         @Override
         public void onFocusChange(View v, boolean hasFocus) {
-            TextView textViewList[] = { mainActivityHandler.getIkVerbText(),
+            TextView textViewList[] = {
+                    mainActivityHandler.getIkVerbText(),
                     mainActivityHandler.getJijVerbText(),
                     mainActivityHandler.getHijVerbText(),
                     mainActivityHandler.getWijVerbText(),
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     mainActivityHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     mainActivityHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
-                    if (controller.checkIfAnswerCorrect(conjugationIndex, answer)) {
+                    if (mainController.checkIfAnswerCorrect(conjugationIndex, answer)) {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "green");
                     } else {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "red");
@@ -138,18 +138,17 @@ public class MainActivity extends AppCompatActivity {
             = new Spinner.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-            int newSpinnerIndex = mainActivityHandler.getSpinner().getSelectedItemPosition();
+            int spinnerIndex = mainActivityHandler.getSpinner().getSelectedItemPosition();
 
             // Save the new position in android's SharedPreferences
-            controller.updateSpinnerPosition(newSpinnerIndex);
+            mainController.updateSpinnerPosition(spinnerIndex);
 
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
             mainActivityHandler.resetConjugationSectionVisibility(
-                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
+                    mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
-            mainActivityHandler.setTextViewValues(controller.getVerb(),
-                    newSpinnerIndex, controller.obtainReadOnlyPreference());
+            mainActivityHandler.setTextViewValues(mainController.getVerb(), spinnerIndex);
         }
 
         @Override
@@ -163,17 +162,15 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            controller.onClickSkip();
+            mainController.onClickSkip();
 
             mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
-            mainActivityHandler.setTextViewValues(controller.getVerb(),
-                    controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
-
+            mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
             mainActivityHandler.resetConjugationSectionVisibility(
-                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
+                    mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
         }
     };
 
@@ -183,17 +180,15 @@ public class MainActivity extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            controller.onClickNext();
+            mainController.onClickNext();
 
             mainActivityHandler.clearFields();
             conjugationIndex = 0;
 
             // Obtain and display the next verb
-            mainActivityHandler.setTextViewValues(controller.getVerb(),
-                    controller.obtainSpinnerIndex(), controller.obtainReadOnlyPreference());
-
+            mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
             mainActivityHandler.resetConjugationSectionVisibility(
-                    controller.obtainReadOnlyPreference(), controller.obtainShowTranslationPreference());
+                    mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
 
         }
     };
@@ -208,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             /* If the user opted for the read-only option
              *   then show the conjugation one by one for
-             *   every person (ik, jij, hij...) on   screen tap */
-            if (controller.obtainReadOnlyPreference()) {
+             *   every person (ik, jij, hij...) on screen tap */
+            if (mainController.obtainReadOnlyPreference()) {
                 if (conjugationIndex == 0) {
                     mainActivityHandler.getIkVerbText().setVisibility(VISIBLE);
                     mainActivityHandler.getJij().setVisibility(VISIBLE);
