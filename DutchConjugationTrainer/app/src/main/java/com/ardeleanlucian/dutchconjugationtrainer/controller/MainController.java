@@ -106,11 +106,17 @@ public class MainController {
      * @param answer
      * @return
      */
+    // @TODO checkIfAnswerCorrect to be changed with something like onFocusChange?
+    // @TODO is it correct to do both a return and an update for the conjugation status?
     public boolean checkIfAnswerCorrect(int conjugationIndex, String answer) {
         boolean answerCorrectness = userAnswer.isAnswerInputCorrect(conjugationIndex, answer);
         userAnswer.updateConjugationStatus(answerCorrectness);
 
         return answerCorrectness;
+    }
+
+    public void onFieldFocusChange() {
+        //@TODO
     }
 
     public void onActivityCreate() {
@@ -122,14 +128,12 @@ public class MainController {
     public void onClickNext() {
         //@TODO ADD SCORES HERE
         obtainNextVerb();
-
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onClickSkip() {
         //@TODO ADD SCORES HERE
         obtainNextVerb();
-
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
@@ -142,10 +146,6 @@ public class MainController {
     public void onMenuSelection() {
         //@TODO ADD SCORES HERE
 
-    }
-
-    public void onFieldFocusChange() {
-        //@TODO
     }
 
     public void onScreenTap() {

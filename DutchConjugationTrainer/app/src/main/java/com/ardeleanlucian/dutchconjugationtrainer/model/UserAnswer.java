@@ -8,7 +8,7 @@ public class UserAnswer {
 
     private Verb verb;
     private int spinnerPosition;
-    private int numberOfConjugatedPositions = 0;
+    private int numberOfConjugatedPersons = 0;
     private boolean verbConjugationCorrectness = true;
 
     public UserAnswer(int spinnerPosition, Verb verb) {
@@ -17,7 +17,7 @@ public class UserAnswer {
     }
 
     /**
-     * Checks whether a certain conjugation was done correctly or not
+     * Checks whether an answer (a conjugation of a certain person in a certain tense) is correct
      *
      * @param conjugationIndex
      * @param answer
@@ -41,8 +41,9 @@ public class UserAnswer {
      *
      * @param answerCorrectness
      */
+    // @TODO is this correct?
     public void updateConjugationStatus(boolean answerCorrectness) {
-        numberOfConjugatedPositions++;
+        numberOfConjugatedPersons++;
         // If the verb is correctly conjugated so far
         //   then check the current answer. If not then
         //   it doesn't matter what the current answer is since
@@ -53,17 +54,16 @@ public class UserAnswer {
     }
 
     /**
-     * @return the number of conjugated positions (ik, jij, ...)
+     * @return the number of conjugated persons (ik, jij, ...)
      *         for a certain verb in a certain tense
      */
-    public int getNumberOfConjugatedPositions() {
-        return numberOfConjugatedPositions;
+    public int getNumberOfConjugatedPersons() {
+        return numberOfConjugatedPersons;
     }
 
     /**
      * @return a boolean value which represents the correctness
-     *         of the conjugation so far for a certain verb in a
-     *         certain tense
+     *         of the conjugation of a verb in a certain tense
      */
     public boolean isVerbCorrectlyConjugated() {
         return verbConjugationCorrectness;

@@ -24,7 +24,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.MainActivity"/>
         </activity>
-        <activity android:name=".view.ScoresActivity"
+        <activity android:name=".view.ScoreActivity"
             android:parentActivityName=".view.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

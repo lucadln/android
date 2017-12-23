@@ -21,9 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     private MainController mainController;
     private MainActivityHandler mainActivityHandler;
-
     /**
-     * displayConjIndex is used in read-only mode to
+     * conjugationIndex is used in read-only mode to
      *   know what conjugation to show at a certain
      *   point (conjugation for 'ik' at index 0,
      *   then for 'jij' at index 1 and so on...) */
@@ -45,14 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mainActivityHandler.getToolbar());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        // Pass the 'onActivityCreate' event to the activity's controller
+        // Pass the 'onActivityCreate' event to the activity controller
         mainController = new MainController(this);
         mainController.onActivityCreate();
 
         // Set the textView values
         mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
-
-        // @TODO Set listeners for layout elements directly from the handler class if possible -- ask @Robert?
+        // Set listeners for elements in the current activity
         setListenersForLayoutElements();
     }
 
@@ -79,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     mainActivityHandler.getWijVerbField(),
                     mainActivityHandler.getJullieVerbField(),
                     mainActivityHandler.getZijVerbField()};
-
             int conjugationIndex;
             String answer;
 
@@ -107,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            if (conjugationIndex != -1) {
+            if (conjugationIndex != -1) { // If one of the text fields looses focus...
+                // Get text field content
                 answer = editTextList[conjugationIndex].getText().toString();
-                // Only continue processing stuff if the input field was filled in
-                if (!answer.equals("")) {
+                if (!answer.equals("")) { // If the text field was filled in...
                     // Hide the field and show a read-only text instead
                     mainActivityHandler.setVisibility(editTextList[conjugationIndex], GONE);
                     mainActivityHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
@@ -149,6 +146,13 @@ public class MainActivity extends AppCompatActivity {
                     mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
             mainActivityHandler.setTextViewValues(mainController.getVerb(), spinnerIndex);
+
+            mainController.onSpinnerSelection();
+            // @TODO if the user had an answer wrong then
+            // @TODO   count this as a wrong answer already
+            // @TODO   for the whole verb. if the user had
+            // @TODO   the whole verb  correctly conjugated
+            // @TODO   then make this count! Maybe this already works?
         }
 
         @Override
@@ -246,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(displaySettings);
                 return true;
             case R.id.scores:
-                Intent displayScores = new Intent(MainActivity.this, ScoresActivity.class);
+                Intent displayScores = new Intent(MainActivity.this, ScoreActivity.class);
                 startActivity(displayScores);
                 return true;
             case R.id.tense_info:
@@ -259,6 +263,8 @@ public class MainActivity extends AppCompatActivity {
                  return true;
         }
         return super.onOptionsItemSelected(item);
+
+        // @TODO Register scores when changing view
     }
 
     /**

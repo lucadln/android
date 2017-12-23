@@ -14,7 +14,7 @@ import com.ardeleanlucian.dutchconjugationtrainer.controller.ScoresController;
  * Created by ardelean on 10/19/17.
  */
 
-public class ScoresActivity extends AppCompatActivity {
+public class ScoreActivity extends AppCompatActivity {
 
     Button RESET_SCORES;
 
@@ -37,8 +37,8 @@ public class ScoresActivity extends AppCompatActivity {
         // Set and display the scores chart
         //@TODO doesn't 'this' work the same as argument
         //@TODO instead of findviewById.... ?
-        ScoresChart scoresChart = new ScoresChart(findViewById(R.id.scores_layout));
-        scoresChart.disposeHorizontalBarChart();
+        ScoreChart scoreChart = new ScoreChart(findViewById(R.id.scores_layout));
+        scoreChart.disposeHorizontalBarChart();
 
         RESET_SCORES = (Button) findViewById(R.id.reset_scores);
         RESET_SCORES.setOnClickListener(onClickReset);
@@ -64,8 +64,8 @@ public class ScoresActivity extends AppCompatActivity {
             snackBar.show();
 
             // Set and display the updated scores chart
-            ScoresChart scoresChart = new ScoresChart(findViewById(R.id.scores_layout));
-            scoresChart.disposeHorizontalBarChart();
+            ScoreChart scoreChart = new ScoreChart(findViewById(R.id.scores_layout));
+            scoreChart.disposeHorizontalBarChart();
         }
     };
 }

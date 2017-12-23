@@ -18,7 +18,7 @@ import java.util.List;
  * Created by ardelean on 11/19/17.
  */
 
-public class ScoresChart extends ScoresController {
+public class ScoreChart extends ScoresController {
 
     /**
      * Define the bar chart
@@ -34,7 +34,7 @@ public class ScoresChart extends ScoresController {
      * Constructor method
      * @param view
      */
-    public ScoresChart(View view) {
+    public ScoreChart(View view) {
         super(view.getContext().getApplicationContext());
 
         // Initialize the bar chart

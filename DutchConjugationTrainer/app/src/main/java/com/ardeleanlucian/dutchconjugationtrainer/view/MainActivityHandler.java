@@ -199,7 +199,7 @@ public class MainActivityHandler {
     }
 
     /**
-     * @return the current number of filled edit texts
+     * @return the number of filled edit texts
      */
     public int getNumberOfFilledEditTexts() {
         int count = 0;
