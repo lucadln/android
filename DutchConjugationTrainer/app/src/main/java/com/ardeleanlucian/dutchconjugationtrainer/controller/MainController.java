@@ -3,6 +3,7 @@ package com.ardeleanlucian.dutchconjugationtrainer.controller;
 import android.content.Context;
 
 import com.ardeleanlucian.dutchconjugationtrainer.model.FileReader;
+import com.ardeleanlucian.dutchconjugationtrainer.model.ScoreHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SharedPreferencesHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.UserAnswer;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
@@ -17,6 +18,8 @@ public class MainController {
     private SharedPreferencesHandler sharedPreferencesHandler;
     private UserAnswer userAnswer;
     private Verb verb;
+    private boolean answerCorrectness;
+    private ScoreHandler scoreHandler;
 
     /**
      * Constructor method
@@ -25,6 +28,7 @@ public class MainController {
     public MainController(Context context) {
         this.context = context;
         sharedPreferencesHandler = new SharedPreferencesHandler(context);
+        scoreHandler = new ScoreHandler(sharedPreferencesHandler);
     }
 
     /**
@@ -101,54 +105,79 @@ public class MainController {
     }
 
     /**
-     * Method to check if the newly inputted answer is correct
+     * Actions to take when a textfield item looses focus
      * @param conjugationIndex
      * @param answer
-     * @return
      */
-    // @TODO checkIfAnswerCorrect to be changed with something like onFocusChange?
-    // @TODO is it correct to do both a return and an update for the conjugation status?
-    public boolean checkIfAnswerCorrect(int conjugationIndex, String answer) {
-        boolean answerCorrectness = userAnswer.isAnswerInputCorrect(conjugationIndex, answer);
+    public void onFieldFocusChange(int conjugationIndex, String answer) {
+        answerCorrectness = userAnswer.isAnswerInputCorrect(conjugationIndex, answer);
         userAnswer.updateConjugationStatus(answerCorrectness);
-
-        return answerCorrectness;
-    }
-
-    public void onFieldFocusChange() {
-        //@TODO
     }
 
     public void onActivityCreate() {
-        //@TODO
         obtainNextVerb();
-        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     };
 
     public void onClickNext() {
-        //@TODO ADD SCORES HERE
+        if (userAnswer.isVerbCorrectlyConjugated()) {
+            // Increment the correct and total conjugation count
+            scoreHandler.incrementCorrectConjugationsCount();
+            scoreHandler.incrementTotalConjugationsCount();
+        } else {
+            // Increment the total conjugation count
+            scoreHandler.incrementTotalConjugationsCount();
+        }
+
+        // Bring on the next verb and prepare a new userAnswer object
         obtainNextVerb();
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onClickSkip() {
-        //@TODO ADD SCORES HERE
+        if (!userAnswer.isVerbCorrectlyConjugated()) {
+            // Increment the total conjugation count
+            scoreHandler.incrementTotalConjugationsCount();
+        }
+
+        // Bring on the next verb and prepare a new userAnswer object
         obtainNextVerb();
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onSpinnerSelection() {
-        //@TODO ADD SCORES HERE
+        if (userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getNumberOfConjugatedPersons() == 6) {
+                // Increment the correct and total conjugation count
+                scoreHandler.incrementCorrectConjugationsCount();
+                scoreHandler.incrementTotalConjugationsCount();
+            }
+        } else {
+            scoreHandler.incrementTotalConjugationsCount();
+        }
 
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     public void onMenuSelection() {
-        //@TODO ADD SCORES HERE
+        if (userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getNumberOfConjugatedPersons() == 6) {
+                // Increment the correct and total conjugation count
+                scoreHandler.incrementCorrectConjugationsCount();
+                scoreHandler.incrementTotalConjugationsCount();
+            }
+        } else {
+            scoreHandler.incrementTotalConjugationsCount();
+        }
 
     }
 
     public void onScreenTap() {
-        //@TODO
+    }
+
+    /**
+     * Returns whether the newly inputted field is correctly conjugated
+     */
+    public boolean isAnswerCorrect() {
+        return answerCorrectness;
     }
 }

@@ -16,12 +16,13 @@ public class Score {
             "Past Perfect",
             "Condtional",
             "Conditional Perfect",
-            "Future" };
+            "Future"
+    };
 
     /**
      * The number of correct conjugated verbs for each tense in particular
      */
-    protected int[] correctConjugatedVerbs = new int[tenses.length];
+    protected int[] correctlyConjugatedVerbs = new int[tenses.length];
 
     /**
      * The total number of conjugated verbs for each tense in particular

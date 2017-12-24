@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.view.View;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
-import com.ardeleanlucian.dutchconjugationtrainer.controller.ScoresController;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -18,15 +17,14 @@ import java.util.List;
  * Created by ardelean on 11/19/17.
  */
 
-public class ScoreChart extends ScoresController {
+public class ScoreChart {
 
     /**
      * Define the bar chart
      */
     private HorizontalBarChart barChart;
-
     /**
-     * Define a list of colors
+     * Define a list of colors to be used in the bar chart
      */
     List<Integer> colors;
 
@@ -35,35 +33,32 @@ public class ScoreChart extends ScoresController {
      * @param view
      */
     public ScoreChart(View view) {
-        super(view.getContext().getApplicationContext());
 
         // Initialize the bar chart
         barChart = view.findViewById(R.id.chart);
 
         // Initialize the <colors> variable
         colors = new ArrayList<>();
-
-        // Obtain ratings for all tenses @TODO what is this? obtain ratings or set ratings?
-        setRatingsForAllTenses();
     }
 
     /**
      * Method to set data and design for the bar chart
      */
-    public void disposeHorizontalBarChart() {
+    public void disposeHorizontalBarChart(
+            float[] scores, int[] correctConjugationsCount, int[] totalConjugationsCount) {
         /* Set a custom renderer. This helps to show chart labels either
          *   inside or outside the chart bars depending on their values */
         barChart.setRenderer(new CustomHorizontalBarChartRenderer(
                 barChart,
                 barChart.getAnimator(),
                 barChart.getViewPortHandler(),
-                rating));
+                scores));
         barChart.invalidate();
 
         // Add entry values for every tense
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        for (int i = 0; i < tenses.length; i++) {
-            barEntries.add(new BarEntry((float) i, rating[i]));
+        for (int i = 0; i < 7; i++) {
+            barEntries.add(new BarEntry((float) i, scores[i]));
         }
 
         // Create a data set from the entry values
@@ -77,7 +72,8 @@ public class ScoreChart extends ScoresController {
         barChart.setData(data);
 
         // Display data as <correctAnswers>/<totalAnswers>
-        data.setValueFormatter(new CustomValueFormatter(correctConjugatedVerbs, totalConjugatedVerbs));
+        data.setValueFormatter(new CustomValueFormatter(
+                correctConjugationsCount, totalConjugationsCount));
 
         // Create explanation labels for each bar
         final ArrayList<String> barLabels = new ArrayList<>();
@@ -96,7 +92,7 @@ public class ScoreChart extends ScoresController {
         barChart.getAxisLeft().setAxisMinimum(0);
 
         // Set a color for each bar in the chart based on its value
-        setBarChartColors(rating);
+        setBarChartColors(scores);
 
         // Animate chart so that bars are sliding from left to right
         barChart.animateXY(1000, 1000);

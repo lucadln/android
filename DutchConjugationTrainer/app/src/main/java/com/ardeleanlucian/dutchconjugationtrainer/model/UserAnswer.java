@@ -41,7 +41,6 @@ public class UserAnswer {
      *
      * @param answerCorrectness
      */
-    // @TODO is this correct?
     public void updateConjugationStatus(boolean answerCorrectness) {
         numberOfConjugatedPersons++;
         // If the verb is correctly conjugated so far

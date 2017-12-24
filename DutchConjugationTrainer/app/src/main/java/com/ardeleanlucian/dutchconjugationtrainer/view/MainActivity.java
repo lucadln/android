@@ -107,13 +107,14 @@ public class MainActivity extends AppCompatActivity {
             if (conjugationIndex != -1) { // If one of the text fields looses focus...
                 // Get text field content
                 answer = editTextList[conjugationIndex].getText().toString();
+                mainController.onFieldFocusChange(conjugationIndex, answer);
                 if (!answer.equals("")) { // If the text field was filled in...
                     // Hide the field and show a read-only text instead
                     mainActivityHandler.setVisibility(editTextList[conjugationIndex], GONE);
                     mainActivityHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     mainActivityHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
-                    if (mainController.checkIfAnswerCorrect(conjugationIndex, answer)) {
+                    if (mainController.isAnswerCorrect()) {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "green");
                     } else {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "red");
@@ -148,11 +149,6 @@ public class MainActivity extends AppCompatActivity {
             mainActivityHandler.setTextViewValues(mainController.getVerb(), spinnerIndex);
 
             mainController.onSpinnerSelection();
-            // @TODO if the user had an answer wrong then
-            // @TODO   count this as a wrong answer already
-            // @TODO   for the whole verb. if the user had
-            // @TODO   the whole verb  correctly conjugated
-            // @TODO   then make this count! Maybe this already works?
         }
 
         @Override
@@ -242,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        mainController.onMenuSelection();
 
         switch (id) {
 

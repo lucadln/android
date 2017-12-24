@@ -20,7 +20,7 @@ public class SharedPreferencesHandler {
     static final String SHOW_TRANSLATION_KEY = "com.ardeleanlucian.dutchconjugationtrainer.show_translation";
     static final String READ_ONLY_KEY = "com.ardeleanlucian.dutchconjugationtrainer.read_only";
     static final String GIVE_FEEDBACK_KEY = "com.ardeleanlucian.dutchconjugationtrainer.give_feedback";
-    static final String CORRECT_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.correct_conjugations_";
+    static final String CORRECTLY_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.correct_conjugations_";
     static final String TOTAL_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.total_conjugations_";
     static final String CONJUGATIONS_COUNT_SINCE_MILESTONE_KEY = "com.ardeleanlucian.dutchconjugationtrainer.conjugations_since_milestone_";
 
@@ -117,50 +117,74 @@ public class SharedPreferencesHandler {
     }
 
     /**
-     * Method to get the number of correct answers for a certain tense
-     *
-     * @param tenseIndex
-     * @return
+     * @return correct conjugations for the tense in use
      */
-    public int getNumberOfCorrectAnswers(int tenseIndex) { // @TODO rename to 'obtainCorrectConjugatedVerbsCount'
-        int numberOfCorrectAnswers = sharedPreferences.getInt(
-                CORRECT_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), 0);
-        return numberOfCorrectAnswers;
+    public int getCorrectConjugationsCount() {
+        return sharedPreferences.getInt(
+                CORRECTLY_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(getSpinnerIndex()), 0);
     }
 
     /**
-     * Method to get the total number of answers for a certain tense
-     *
-     * @param tenseIndex
-     * @return
+     * @param spinnerIndex
+     * @return correct conjugations for a certain tense given by the spinnerIndex parameter
      */
-    public int getTotalNumberOfAnswers(int tenseIndex) { // @TODO rename to 'obtainTotalConjugatedVerbsCount'
-        int totalNumberOfAnswers = sharedPreferences.getInt(
-                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), 0);
-        return totalNumberOfAnswers;
+    public int getCorrectConjugationsCount(int spinnerIndex) {
+        return sharedPreferences.getInt(
+                CORRECTLY_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(spinnerIndex), 0);
     }
 
     /**
-     * Method to update the number of correct answers in android Shared Preferences
-     *
-     * @param tenseIndex
+     * @return the total number of correctly conjugated verbs for the tense in use
+     */
+    public int getTotalConjugationsCount() {
+        return sharedPreferences.getInt(
+                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(getSpinnerIndex()), 0);
+    }
+
+    /**
+     * @return the total number of correctly conjugated verbs for a certain tense
+     *           given by the spinnerIndex parameter
+     */
+    public int getTotalConjugationsCount(int spinnerIndex) {
+        return sharedPreferences.getInt(
+                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(spinnerIndex), 0);
+    }
+
+    /**
+     * Method to update the number of correctly conjugated verbs in the android's Shared Preferences
      * @param newValue
      */
-    // @TODO rename to updateCorrectConjugatedVerbsCount
-    public void updateNumberOfCorrectAnswers(int tenseIndex, int newValue) {
-        sharedPreferences.edit().putInt(
-                CORRECT_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), newValue).apply();
+    public void updateCorrectConjugationsCount(int newValue) {
+        sharedPreferences.edit().putInt(CORRECTLY_CONJUGATED_VERBS_COUNT_KEY
+                        + String.valueOf(getSpinnerIndex()), newValue).apply();
     }
 
     /**
-     * Method to update the total number of answers in android Shared Preferences
-     *
-     * @param tenseIndex
+     * Method to reset the number of correctly conjugated verbs in the android's Shared Prefrences
+     * @param newValue
+     * @param spinnerIndex
+     */
+    public void resetCorrectConjugationsCount(int newValue, int spinnerIndex) {
+        sharedPreferences.edit().putInt(CORRECTLY_CONJUGATED_VERBS_COUNT_KEY
+                + String.valueOf(spinnerIndex), newValue).apply();
+    }
+
+    /**
+     * Method to update the total number of conjugated verbs in android's Shared Preferences
      * @param newValue
      */
-    // @TODO rename to updateTotalConjugatedVerbsCount
-    public void updateTotalNumberOfAnswers(int tenseIndex, int newValue) {
-        sharedPreferences.edit().putInt(
-                TOTAL_CONJUGATED_VERBS_COUNT_KEY + String.valueOf(tenseIndex), newValue).apply();
+    public void updateTotalConjugationsCount(int newValue) {
+        sharedPreferences.edit().putInt(TOTAL_CONJUGATED_VERBS_COUNT_KEY
+                + String.valueOf(getSpinnerIndex()), newValue).apply();
+    }
+
+    /**
+     * Method to reset the number of correctly conjugated verbs in the android's Shared Prefrences
+     * @param newValue
+     * @param spinnerIndex
+     */
+    public void resetTotalConjugationsCount(int newValue, int spinnerIndex) {
+        sharedPreferences.edit().putInt(TOTAL_CONJUGATED_VERBS_COUNT_KEY
+                + String.valueOf(spinnerIndex), newValue).apply();
     }
 }

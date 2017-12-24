@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
-import com.ardeleanlucian.dutchconjugationtrainer.controller.ScoresController;
+import com.ardeleanlucian.dutchconjugationtrainer.controller.ScoreController;
 
 /**
  * Created by ardelean on 10/19/17.
@@ -16,6 +16,7 @@ import com.ardeleanlucian.dutchconjugationtrainer.controller.ScoresController;
 
 public class ScoreActivity extends AppCompatActivity {
 
+    ScoreController scoreController;
     Button RESET_SCORES;
 
     /**
@@ -38,10 +39,15 @@ public class ScoreActivity extends AppCompatActivity {
         //@TODO doesn't 'this' work the same as argument
         //@TODO instead of findviewById.... ?
         ScoreChart scoreChart = new ScoreChart(findViewById(R.id.scores_layout));
-        scoreChart.disposeHorizontalBarChart();
+        scoreChart.disposeHorizontalBarChart(
+                scoreController.getScores(),
+                scoreController.getCorrectConjugationsCount(),
+                scoreController.getTotalConjugationsCount());
 
         RESET_SCORES = (Button) findViewById(R.id.reset_scores);
         RESET_SCORES.setOnClickListener(onClickReset);
+
+        scoreController = new ScoreController(this);
     }
 
     /**
@@ -50,13 +56,8 @@ public class ScoreActivity extends AppCompatActivity {
     private final View.OnClickListener onClickReset = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            // Get context and reset scores
-            Context context = view.getContext().getApplicationContext();
-            (new ScoresController(context)).resetScores();
-
-            // Also reset the number of correct or wrong consecutive answers
-            //        Feedback.resetCorrectConsecutiveAnswers(); @TODO when plugin in the feedback part
-            //        Feedback.resetWrongConsecutiveAnswers(); @TODO when plugin in the feedback part
+            // Pass the onClick event to the activity controller
+            scoreController.onClickReset();
 
             // Give user a confirmation message
             Snackbar snackBar = Snackbar.make(view, "All scores have been reset!",
@@ -65,7 +66,9 @@ public class ScoreActivity extends AppCompatActivity {
 
             // Set and display the updated scores chart
             ScoreChart scoreChart = new ScoreChart(findViewById(R.id.scores_layout));
-            scoreChart.disposeHorizontalBarChart();
+            scoreChart.disposeHorizontalBarChart(scoreController.getScores(),
+                    scoreController.getCorrectConjugationsCount(),
+                    scoreController.getTotalConjugationsCount());
         }
     };
 }
