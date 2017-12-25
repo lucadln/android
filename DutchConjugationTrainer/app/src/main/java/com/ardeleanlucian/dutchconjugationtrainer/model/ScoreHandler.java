@@ -1,5 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer.model;
 
+import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
+
 /**
  * Created by ardelean on 12/23/17.
  */

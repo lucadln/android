@@ -22,7 +22,7 @@ public class SharedPreferencesHandler {
     static final String GIVE_FEEDBACK_KEY = "com.ardeleanlucian.dutchconjugationtrainer.give_feedback";
     static final String CORRECTLY_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.correct_conjugations_";
     static final String TOTAL_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.total_conjugations_";
-    static final String CONJUGATIONS_COUNT_SINCE_MILESTONE_KEY = "com.ardeleanlucian.dutchconjugationtrainer.conjugations_since_milestone_";
+    static final String CONJUGATIONS_COUNT_SINCE_LAST_MILESTONE_KEY = "com.ardeleanlucian.dutchconjugationtrainer.conjugations_since_last_milestone_";
 
     /**
      * Constructor method
@@ -186,5 +186,26 @@ public class SharedPreferencesHandler {
     public void resetTotalConjugationsCount(int newValue, int spinnerIndex) {
         sharedPreferences.edit().putInt(TOTAL_CONJUGATED_VERBS_COUNT_KEY
                 + String.valueOf(spinnerIndex), newValue).apply();
+    }
+
+    /**
+     * @param spinnerIndex
+     * @return the number of conjugated verbs since the last milestone
+     *           for a certain tense given by the spinnerIndex parameter
+     */
+    public int getConjugationsCountSinceLastMilestone(int spinnerIndex) {
+        return sharedPreferences.getInt(
+                CONJUGATIONS_COUNT_SINCE_LAST_MILESTONE_KEY + String.valueOf(spinnerIndex), 0);
+    }
+
+    /**
+     * Method to update the number of conjugations that were done for
+     *   a certain tense given by the spinnerIndex parameter
+     * @param newValue
+     * @param spinnerIndex
+     */
+    public void updateConjugationsCountSinceLastMilestone(int newValue, int spinnerIndex) {
+        sharedPreferences.edit().putInt(
+                CONJUGATIONS_COUNT_SINCE_LAST_MILESTONE_KEY + String.valueOf(spinnerIndex), newValue);
     }
 }

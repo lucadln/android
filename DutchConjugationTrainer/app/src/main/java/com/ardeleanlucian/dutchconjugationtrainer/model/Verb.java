@@ -9,6 +9,19 @@ package com.ardeleanlucian.dutchconjugationtrainer.model;
 
 public class Verb {
 
+    /**
+     * The tenses in which the verbs can be conjugated
+     */
+    public static final String tenses[] = {
+            "Present",
+            "Present Continuous",
+            "Simple Past",
+            "Past Perfect",
+            "Condtional",
+            "Conditional Perfect",
+            "Future"
+    };
+
     private String verbInfinitive;
     private String verbTranslation;
     private String verbConjugation[][];
