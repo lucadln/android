@@ -138,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             int spinnerIndex = mainActivityHandler.getSpinner().getSelectedItemPosition();
 
+            mainController.onSpinnerSelection();
+
             // Save the new position in android's SharedPreferences
             mainController.updateSpinnerPosition(spinnerIndex);
 
@@ -147,8 +149,6 @@ public class MainActivity extends AppCompatActivity {
                     mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
             mainActivityHandler.setTextViewValues(mainController.getVerb(), spinnerIndex);
-
-            mainController.onSpinnerSelection();
         }
 
         @Override
@@ -260,8 +260,6 @@ public class MainActivity extends AppCompatActivity {
                  return true;
         }
         return super.onOptionsItemSelected(item);
-
-        // @TODO Register scores when changing view
     }
 
     /**

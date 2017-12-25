@@ -1,6 +1,5 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -36,9 +35,8 @@ public class ScoreActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Scores");
 
         // Set and display the scores chart
-        //@TODO doesn't 'this' work the same as argument
-        //@TODO instead of findviewById.... ?
         ScoreChart scoreChart = new ScoreChart(findViewById(R.id.scores_layout));
+        scoreController = new ScoreController(this);
         scoreChart.disposeHorizontalBarChart(
                 scoreController.getScores(),
                 scoreController.getCorrectConjugationsCount(),
@@ -46,8 +44,6 @@ public class ScoreActivity extends AppCompatActivity {
 
         RESET_SCORES = (Button) findViewById(R.id.reset_scores);
         RESET_SCORES.setOnClickListener(onClickReset);
-
-        scoreController = new ScoreController(this);
     }
 
     /**

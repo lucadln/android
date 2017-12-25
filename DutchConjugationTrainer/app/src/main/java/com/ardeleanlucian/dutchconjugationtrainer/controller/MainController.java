@@ -29,6 +29,7 @@ public class MainController {
         this.context = context;
         sharedPreferencesHandler = new SharedPreferencesHandler(context);
         scoreHandler = new ScoreHandler(sharedPreferencesHandler);
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
     /**
@@ -154,7 +155,6 @@ public class MainController {
         } else {
             scoreHandler.incrementTotalConjugationsCount();
         }
-
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 

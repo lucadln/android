@@ -24,15 +24,16 @@ public class UserAnswer {
      * @return
      */
     public boolean isAnswerInputCorrect(int conjugationIndex, String answer) {
-        boolean answerCorrectness;
-
-        if (answer.equalsIgnoreCase(verb.getVerbConjugation()[spinnerPosition][conjugationIndex])) {
-            answerCorrectness = true;
+        if (!answer.equals("")) {
+            numberOfConjugatedPersons++;
+            if (answer.equalsIgnoreCase(verb.getVerbConjugation()[spinnerPosition][conjugationIndex])) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            answerCorrectness = false;
+            return true;
         }
-
-        return answerCorrectness;
     }
 
     /**
@@ -42,7 +43,6 @@ public class UserAnswer {
      * @param answerCorrectness
      */
     public void updateConjugationStatus(boolean answerCorrectness) {
-        numberOfConjugatedPersons++;
         // If the verb is correctly conjugated so far
         //   then check the current answer. If not then
         //   it doesn't matter what the current answer is since

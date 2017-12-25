@@ -115,7 +115,7 @@ public class ScoreHandler extends Score {
      */
     public float[] getAllScores() {
         float[] scores = new float[7];
-        for (int spinnerIndex = 0; spinnerIndex < 8; spinnerIndex++) {
+        for (int spinnerIndex = 0; spinnerIndex < 7; spinnerIndex++) {
             scores[spinnerIndex] = getScoreForTense(spinnerIndex);
         }
 
@@ -126,7 +126,7 @@ public class ScoreHandler extends Score {
      * Method to reset the scores for all tenses
      */
     public void resetScores() {
-        for (int spinnerPosition = 0; spinnerPosition < 8; spinnerPosition++) {
+        for (int spinnerPosition = 0; spinnerPosition < 7; spinnerPosition++) {
             sharedPreferencesHandler.resetCorrectConjugationsCount(0, spinnerPosition);
             sharedPreferencesHandler.resetTotalConjugationsCount(0, spinnerPosition);
         }
