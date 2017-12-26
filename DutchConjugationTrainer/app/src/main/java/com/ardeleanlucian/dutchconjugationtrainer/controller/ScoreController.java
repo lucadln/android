@@ -2,9 +2,12 @@ package com.ardeleanlucian.dutchconjugationtrainer.controller;
 
 import android.content.Context;
 
+import com.ardeleanlucian.dutchconjugationtrainer.model.Feedback;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
 import com.ardeleanlucian.dutchconjugationtrainer.model.ScoreHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SharedPreferencesHandler;
+
+import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
 
 /**
  * Created by ardelean on 11/19/17.
@@ -32,9 +35,13 @@ public class ScoreController extends Score {
     public void onClickReset() {
         scoreHandler.resetScores();
 
-        // Also reset the number of correct or wrong consecutive answers
-        //        Feedback.resetCorrectConsecutiveConjugationsCount(); @TODO when plugin in the feedback part
-        //        Feedback.resetWrongConsecutiveConjugationsCount(); @TODO when plugin in the feedback part
+        // Reset the number of correct or wrong consecutive answers
+        Feedback.resetCorrectConsecutiveConjugationsCount();
+        Feedback.resetWrongConsecutiveConjugationsCount();
+        Feedback.resetConjugationsCountSinceLastFeedback();
+        for (int spinnerIndex = 0; spinnerIndex < tenses.length; spinnerIndex++) {
+            (new Feedback(context)).updateConjugationsCountSinceLastMilestone(spinnerIndex, 0);
+        }
     }
 
     /**
