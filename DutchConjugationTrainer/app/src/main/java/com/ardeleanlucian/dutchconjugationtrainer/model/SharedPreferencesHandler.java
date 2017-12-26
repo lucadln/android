@@ -206,6 +206,6 @@ public class SharedPreferencesHandler {
      */
     public void updateConjugationsCountSinceLastMilestone(int newValue, int spinnerIndex) {
         sharedPreferences.edit().putInt(
-                CONJUGATIONS_COUNT_SINCE_LAST_MILESTONE_KEY + String.valueOf(spinnerIndex), newValue);
+                CONJUGATIONS_COUNT_SINCE_LAST_MILESTONE_KEY + String.valueOf(spinnerIndex), newValue).apply();
     }
 }

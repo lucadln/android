@@ -52,6 +52,28 @@ public class MainActivity extends AppCompatActivity {
         mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
         // Set listeners for elements in the current activity
         setListenersForLayoutElements();
+
+        // @TODO
+        /* If the application is started for the first time
+                 *   in read-only mode then instruct the user to tap
+                 *   screen for conjugation */
+//        if ((firstTimeReadOnly) && (readOnlyPref)) {
+//            String infoTapScreen = "Tap screen for conjugation";
+//            final Snackbar snackBar = Snackbar.make(view, infoTapScreen,
+//                    Snackbar.LENGTH_INDEFINITE);
+//
+//                    /* The snackbar message remains on the
+//                     *   screen until is dismissed */
+//            snackBar.setAction("Dismiss", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    snackBar.dismiss();
+//                    prefs.edit().putBoolean(firstReadKey, false).apply();
+//                    firstTimeReadOnly = false;
+//                }
+//            });
+//            snackBar.show();
+//        }
     }
 
     /**

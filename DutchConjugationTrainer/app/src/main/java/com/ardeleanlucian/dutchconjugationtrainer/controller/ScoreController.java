@@ -33,8 +33,8 @@ public class ScoreController extends Score {
         scoreHandler.resetScores();
 
         // Also reset the number of correct or wrong consecutive answers
-        //        Feedback.resetCorrectConsecutiveAnswers(); @TODO when plugin in the feedback part
-        //        Feedback.resetWrongConsecutiveAnswers(); @TODO when plugin in the feedback part
+        //        Feedback.resetCorrectConsecutiveConjugationsCount(); @TODO when plugin in the feedback part
+        //        Feedback.resetWrongConsecutiveConjugationsCount(); @TODO when plugin in the feedback part
     }
 
     /**

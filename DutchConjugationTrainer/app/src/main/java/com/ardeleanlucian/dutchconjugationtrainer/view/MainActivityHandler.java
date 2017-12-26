@@ -102,7 +102,7 @@ public class MainActivityHandler {
         toolbar = (Toolbar) ((Activity) context).findViewById(R.id.toolbar);
 
         spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
-        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Score.tenses));
+        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Verb.tenses));
         spinner.setSelection((new MainController(context)).obtainSpinnerIndex());
     }
 
