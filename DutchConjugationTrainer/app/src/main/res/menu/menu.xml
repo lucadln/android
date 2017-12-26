@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.MainActivity">
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="100"
+        android:title="Settings" />
+    <item
+        android:id="@+id/tense_info"
+        android:orderInCategory="100"
+        android:title="Tense info" />
+    <item
+        android:id="@+id/scores"
+        android:orderInCategory="100"
+        android:title="Scores" />
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:title="About" />
+</menu>

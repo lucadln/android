@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scores_activity">
+    android:id="@+id/scores_layout">
 
     <com.github.mikephil.charting.charts.HorizontalBarChart
         android:id="@+id/chart"
@@ -13,6 +13,5 @@
         android:id="@+id/reset_scores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClickReset"
         android:text="Reset scores" />
 </LinearLayout>
