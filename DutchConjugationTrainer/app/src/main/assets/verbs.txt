@@ -12,6 +12,12 @@ is aan het denken
 zijn aan het denken
 zijn aan het denken
 zijn aan het denken
+heb gedacht
+hebt gedacht
+heeft gedacht
+hebben gedacht
+hebben gedacht
+hebben gedacht
 dacht
 dacht
 dacht
@@ -56,6 +62,12 @@ is aan het blijven
 zijn aan het blijven
 zijn aan het blijven
 zijn aan het blijven
+ben gebleven
+bent gebleven
+is gebleven
+zijn gebleven
+zijn gebleven
+zijn gebleven
 bleef
 bleef
 bleef
@@ -100,6 +112,12 @@ is aan het kijken
 zijn aan het kijken
 zijn aan het kijken
 zijn aan het kijken
+heb gekeken
+hebt gekeken
+heeft gekeken
+hebben gekeken
+hebben gekeken
+hebben gekeken
 keek
 keek
 keek
@@ -144,6 +162,12 @@ is aan het informeren
 zijn aan het informeren
 zijn aan het informeren
 zijn aan het informeren
+heb geïnformeerd
+hebt geïnformeerd
+heeft geïnformeerd
+hebben geïnformeerd
+hebben geïnformeerd
+hebben geïnformeerd
 informeerde
 informeerde
 informeerde
@@ -188,6 +212,12 @@ is aan het wassen
 zijn aan het wassen
 zijn aan het wassen
 zijn aan het wassen
+heb gewast
+hebt gewast
+heeft gewast
+hebben gewast
+hebben gewast
+hebben gewast
 waste
 waste
 waste
@@ -232,6 +262,12 @@ is aan het eindigen
 zijn aan het eindigen
 zijn aan het eindigen
 zijn aan het eindigen
+heb geëindigd
+hebt geëindigd
+heeft geëindigd
+hebben geëindigd
+hebben geëindigd
+hebben geëindigd
 eindigde
 eindigde
 eindigde
@@ -276,6 +312,12 @@ is aan het verschijnen
 zijn aan het verschijnen
 zijn aan het verschijnen
 zijn aan het verschijnen
+ben verschenen
+bent verschenen
+is verschenen
+zijn verschenen
+zijn verschenen
+zijn verschenen
 verscheen
 verscheen
 verscheen
@@ -320,6 +362,12 @@ is aan het bekendmaken
 zijn aan het bekendmaken
 zijn aan het bekendmaken
 zijn aan het bekendmaken
+heb bekendgemaakt
+hebt bekendgemaakt
+heeft bekendgemaakt
+hebben bekendgemaakt
+hebben bekendgemaakt
+hebben bekendgemaakt
 maakte bekend
 maakte bekend
 maakte bekend
@@ -364,6 +412,12 @@ is aan het vrezen
 zijn aan het vrezen
 zijn aan het vrezen
 zijn aan het vrezen
+heb gevreesd
+hebt gevreesd
+heeft gevreesd
+hebben gevreesd
+hebben gevreesd
+hebben gevreesd
 vreesde
 vreesde
 vreesde
@@ -408,6 +462,12 @@ is aan het winnen
 zijn aan het winnen
 zijn aan het winnen
 zijn aan het winnen
+heb gewonnen
+hebt gewonnen
+heeft gewonnen
+hebben gewonnen
+hebben gewonnen
+hebben gewonnen
 won
 won
 won
@@ -452,6 +512,12 @@ is aan het zoenen
 zijn aan het zoenen
 zijn aan het zoenen
 zijn aan het zoenen
+heb gezoend
+hebt gezoend
+heeft gezoend
+hebben gezoend
+hebben gezoend
+hebben gezoend
 zoende
 zoende
 zoende
@@ -496,6 +562,12 @@ is aan het garanderen
 zijn aan het garanderen
 zijn aan het garanderen
 zijn aan het garanderen
+heb gegarandeerd
+hebt gegarandeerd
+heeft gegarandeerd
+hebben gegarandeerd
+hebben gegarandeerd
+hebben gegarandeerd
 garandeerde
 garandeerde
 garandeerde
@@ -540,6 +612,12 @@ is aan het bedragen
 zijn aan het bedragen
 zijn aan het bedragen
 zijn aan het bedragen
+heb gedragen
+hebt gedragen
+heeft gedragen
+hebben gedragen
+hebben gedragen
+hebben gedragen
 gedroeg
 gedroeg
 gedroeg
@@ -584,6 +662,12 @@ is aan het beledigen
 zijn aan het beledigen
 zijn aan het beledigen
 zijn aan het beledigen
+heb beledigd
+hebt beledigd
+heeft beledigd
+hebben beledigd
+hebben beledigd
+hebben beledigd
 beledigde
 beledigde
 beledigde
@@ -628,6 +712,12 @@ is aan het heten
 zijn aan het heten
 zijn aan het heten
 zijn aan het heten
+heb geheten
+hebt geheten
+heeft geheten
+hebben geheten
+hebben geheten
+hebben geheten
 heette
 heette
 heette
@@ -672,6 +762,12 @@ is aan het klagen
 zijn aan het klagen
 zijn aan het klagen
 zijn aan het klagen
+heb geklaagd
+hebt geklaagd
+heeft geklaagd
+hebben geklaagd
+hebben geklaagd
+hebben geklaagd
 klaagde
 klaagde
 klaagde
@@ -716,6 +812,12 @@ is aan het vechten
 zijn aan het vechten
 zijn aan het vechten
 zijn aan het vechten
+heb gevochten
+hebt gevochten
+heeft gevochten
+hebben gevochten
+hebben gevochten
+hebben gevochten
 vocht
 vocht
 vocht
@@ -760,6 +862,12 @@ is aan het testen
 zijn aan het testen
 zijn aan het testen
 zijn aan het testen
+heb getest
+hebt getest
+heeft getest
+hebben getest
+hebben getest
+hebben getest
 testte
 testte
 testte
@@ -804,6 +912,12 @@ is aan het verdienen
 zijn aan het verdienen
 zijn aan het verdienen
 zijn aan het verdienen
+heb verdiend
+hebt verdiend
+heeft verdiend
+hebben verdiend
+hebben verdiend
+hebben verdiend
 verdiende
 verdiende
 verdiende
@@ -848,6 +962,12 @@ is aan het beschrijven
 zijn aan het beschrijven
 zijn aan het beschrijven
 zijn aan het beschrijven
+heb beschreven
+hebt beschreven
+heeft beschreven
+hebben beschreven
+hebben beschreven
+hebben beschreven
 beschreef
 beschreef
 beschreef
@@ -892,6 +1012,12 @@ is aan het weigeren
 zijn aan het weigeren
 zijn aan het weigeren
 zijn aan het weigeren
+heb geweigerd
+hebt geweigerd
+heeft geweigerd
+hebben geweigerd
+hebben geweigerd
+hebben geweigerd
 weigerde
 weigerde
 weigerde
@@ -936,6 +1062,12 @@ is aan het besteden
 zijn aan het besteden
 zijn aan het besteden
 zijn aan het besteden
+heb besteed
+hebt besteed
+heeft besteed
+hebben besteed
+hebben besteed
+hebben besteed
 besteedde
 besteedde
 besteedde
@@ -980,6 +1112,12 @@ is aan het draaien
 zijn aan het draaien
 zijn aan het draaien
 zijn aan het draaien
+heb gedraaid
+hebt gedraaid
+heeft gedraaid
+hebben gedraaid
+hebben gedraaid
+hebben gedraaid
 draaide
 draaide
 draaide
@@ -1024,6 +1162,12 @@ is aan het veroordelen
 zijn aan het veroordelen
 zijn aan het veroordelen
 zijn aan het veroordelen
+heb veroordeeld
+hebt veroordeeld
+heeft veroordeeld
+hebben veroordeeld
+hebben veroordeeld
+hebben veroordeeld
 veroordeelde
 veroordeelde
 veroordeelde
@@ -1068,6 +1212,12 @@ is aan het duwen
 zijn aan het duwen
 zijn aan het duwen
 zijn aan het duwen
+heb geduwd
+hebt geduwd
+heeft geduwd
+hebben geduwd
+hebben geduwd
+hebben geduwd
 duwde
 duwde
 duwde
@@ -1112,6 +1262,12 @@ is aan het werpen
 zijn aan het werpen
 zijn aan het werpen
 zijn aan het werpen
+heb geworpen
+hebt geworpen
+heeft geworpen
+hebben geworpen
+hebben geworpen
+hebben geworpen
 wierp
 wierp
 wierp
@@ -1156,6 +1312,12 @@ is aan het overwegen
 zijn aan het overwegen
 zijn aan het overwegen
 zijn aan het overwegen
+heb overwogen
+hebt overwogen
+heeft overwogen
+hebben overwogen
+hebben overwogen
+hebben overwogen
 overwoog
 overwoog
 overwoog
@@ -1200,6 +1362,12 @@ is aan het ontwijken
 zijn aan het ontwijken
 zijn aan het ontwijken
 zijn aan het ontwijken
+heb ontweken
+hebt ontweken
+heeft ontweken
+hebben ontweken
+hebben ontweken
+hebben ontweken
 ontweek
 ontweek
 ontweek
@@ -1244,6 +1412,12 @@ is aan het blijken
 zijn aan het blijken
 zijn aan het blijken
 zijn aan het blijken
+heb gebleken
+hebt gebleken
+heeft gebleken
+hebben gebleken
+hebben gebleken
+hebben gebleken
 bleek
 bleek
 bleek
@@ -1288,6 +1462,12 @@ is aan het stoppen
 zijn aan het stoppen
 zijn aan het stoppen
 zijn aan het stoppen
+heb gestopt
+hebt gestopt
+heeft gestopt
+hebben gestopt
+hebben gestopt
+hebben gestopt
 stopte
 stopte
 stopte
@@ -1318,50 +1498,6 @@ zal stoppen
 zullen stoppen
 zullen stoppen
 zullen stoppen
-kijken
-(to watch)
-kijk
-kijkt
-kijkt
-kijken
-kijken
-kijken
-ben aan het kijken
-bent aan het kijken
-is aan het kijken
-zijn aan het kijken
-zijn aan het kijken
-zijn aan het kijken
-keek
-keek
-keek
-keken
-keken
-keken
-had gekeken
-had gekeken
-had gekeken
-hadden gekeken
-hadden gekeken
-hadden gekeken
-zou kijken
-zou kijken
-zou kijken
-zouden kijken
-zouden kijken
-zouden kijken
-zou gekeken hebben
-zou gekeken hebben
-zou gekeken hebben
-zouden gekeken hebben
-zouden gekeken hebben
-zouden gekeken hebben
-zal kijken
-zult kijken
-zal kijken
-zullen kijken
-zullen kijken
-zullen kijken
 feliciteren
 (to congratulate)
 feliciteer
@@ -1376,6 +1512,12 @@ is aan het feliciteren
 zijn aan het feliciteren
 zijn aan het feliciteren
 zijn aan het feliciteren
+heb gefeliciteerd
+hebt gefeliciteerd
+heeft gefeliciteerd
+hebben gefeliciteerd
+hebben gefeliciteerd
+hebben gefeliciteerd
 feliciteerde
 feliciteerde
 feliciteerde
@@ -1420,6 +1562,12 @@ is aan het kussen
 zijn aan het kussen
 zijn aan het kussen
 zijn aan het kussen
+heb gekust
+hebt gekust
+heeft gekust
+hebben gekust
+hebben gekust
+hebben gekust
 kuste
 kuste
 kuste
@@ -1464,6 +1612,12 @@ is aan het luisteren
 zijn aan het luisteren
 zijn aan het luisteren
 zijn aan het luisteren
+heb geluisterd
+hebt geluisterd
+heeft geluisterd
+hebben geluisterd
+hebben geluisterd
+hebben geluisterd
 luisterde
 luisterde
 luisterde
@@ -1508,6 +1662,12 @@ is aan het rusten
 zijn aan het rusten
 zijn aan het rusten
 zijn aan het rusten
+heb gerust
+hebt gerust
+heeft gerust
+hebben gerust
+hebben gerust
+hebben gerust
 rustte
 rustte
 rustte
@@ -1552,6 +1712,12 @@ is aan het wensen
 zijn aan het wensen
 zijn aan het wensen
 zijn aan het wensen
+heb gewenst
+hebt gewenst
+heeft gewenst
+hebben gewenst
+hebben gewenst
+hebben gewenst
 wenste
 wenste
 wenste
@@ -1596,6 +1762,12 @@ is aan het behandelen
 zijn aan het behandelen
 zijn aan het behandelen
 zijn aan het behandelen
+heb behandeld
+hebt behandeld
+heeft behandeld
+hebben behandeld
+hebben behandeld
+hebben behandeld
 behandelde
 behandelde
 behandelde
@@ -1640,6 +1812,12 @@ is aan het leggen
 zijn aan het leggen
 zijn aan het leggen
 zijn aan het leggen
+heb gelegd
+hebt gelegd
+heeft gelegd
+hebben gelegd
+hebben gelegd
+hebben gelegd
 legde
 legde
 legde
@@ -1684,6 +1862,12 @@ is aan het indienen
 zijn aan het indienen
 zijn aan het indienen
 zijn aan het indienen
+heb ingediend
+hebt ingediend
+heeft ingediend
+hebben ingediend
+hebben ingediend
+hebben ingediend
 diende in
 diende in
 diende in
@@ -1728,6 +1912,12 @@ is aan het sterven
 zijn aan het sterven
 zijn aan het sterven
 zijn aan het sterven
+ben gestorven
+bent gestorven
+is gestorven
+zijn gestorven
+zijn gestorven
+zijn gestorven
 stierf
 stierf
 stierf
@@ -1772,6 +1962,12 @@ is aan het gebruiken
 zijn aan het gebruiken
 zijn aan het gebruiken
 zijn aan het gebruiken
+heb gebruikt
+hebt gebruikt
+heeft gebruikt
+hebben gebruikt
+hebben gebruikt
+hebben gebruikt
 gebruikte
 gebruikte
 gebruikte
@@ -1816,6 +2012,12 @@ is aan het communiceren
 zijn aan het communiceren
 zijn aan het communiceren
 zijn aan het communiceren
+heb gecommuniceerd
+hebt gecommuniceerd
+heeft gecommuniceerd
+hebben gecommuniceerd
+hebben gecommuniceerd
+hebben gecommuniceerd
 communiceerde
 communiceerde
 communiceerde
@@ -1860,6 +2062,12 @@ is aan het bijten
 zijn aan het bijten
 zijn aan het bijten
 zijn aan het bijten
+heb gebeten
+hebt gebeten
+heeft gebeten
+hebben gebeten
+hebben gebeten
+hebben gebeten
 beet
 beet
 beet
@@ -1904,6 +2112,12 @@ is aan het vertrouwen
 zijn aan het vertrouwen
 zijn aan het vertrouwen
 zijn aan het vertrouwen
+heb vertrouwd
+hebt vertrouwd
+heeft vertrouwd
+hebben vertrouwd
+hebben vertrouwd
+hebben vertrouwd
 vertrouwde
 vertrouwde
 vertrouwde
@@ -1948,6 +2162,12 @@ is aan het verkopen
 zijn aan het verkopen
 zijn aan het verkopen
 zijn aan het verkopen
+heb verkocht
+hebt verkocht
+heeft verkocht
+hebben verkocht
+hebben verkocht
+hebben verkocht
 verkocht
 verkocht
 verkocht
@@ -1992,6 +2212,12 @@ is aan het ontwikkelen
 zijn aan het ontwikkelen
 zijn aan het ontwikkelen
 zijn aan het ontwikkelen
+heb ontwikkeld
+hebt ontwikkeld
+heeft ontwikkeld
+hebben ontwikkeld
+hebben ontwikkeld
+hebben ontwikkeld
 ontwikkelde
 ontwikkelde
 ontwikkelde
@@ -2036,6 +2262,12 @@ is aan het vergelijken
 zijn aan het vergelijken
 zijn aan het vergelijken
 zijn aan het vergelijken
+heb vergeleken
+hebt vergeleken
+heeft vergeleken
+hebben vergeleken
+hebben vergeleken
+hebben vergeleken
 vergeleek
 vergeleek
 vergeleek
@@ -2080,6 +2312,12 @@ is aan het dromen
 zijn aan het dromen
 zijn aan het dromen
 zijn aan het dromen
+heb gedroomd
+hebt gedroomd
+heeft gedroomd
+hebben gedroomd
+hebben gedroomd
+hebben gedroomd
 droomde
 droomde
 droomde
@@ -2124,6 +2362,12 @@ is aan het begrijpen
 zijn aan het begrijpen
 zijn aan het begrijpen
 zijn aan het begrijpen
+heb begrepen
+hebt begrepen
+heeft begrepen
+hebben begrepen
+hebben begrepen
+hebben begrepen
 begreep
 begreep
 begreep
