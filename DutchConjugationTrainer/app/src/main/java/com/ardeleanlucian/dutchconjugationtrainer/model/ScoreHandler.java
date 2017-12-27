@@ -38,8 +38,8 @@ public class ScoreHandler extends Score {
      * @return the number of correct conjugations for all tenses
      */
     public int[] getAllCorrectConjugationsCount() {
-        int[] correctConjugations = new int[7];
-        for (int spinnerIndex = 0; spinnerIndex < 7; spinnerIndex++) {
+        int[] correctConjugations = new int[tenses.length];
+        for (int spinnerIndex = 0; spinnerIndex < tenses.length; spinnerIndex++) {
             correctConjugations[spinnerIndex] = getCorrectTenseConjugationsCount(spinnerIndex);
         }
         return correctConjugations;
@@ -79,8 +79,8 @@ public class ScoreHandler extends Score {
      * @return the total number of conjugated verbs for all tenses
      */
     public int[] getAllTotalConjugationsCount() {
-        int[] totalConjugationsCount = new int[7];
-        for (int spinnerIndex = 0; spinnerIndex < 7; spinnerIndex++) {
+        int[] totalConjugationsCount = new int[tenses.length];
+        for (int spinnerIndex = 0; spinnerIndex < tenses.length; spinnerIndex++) {
             totalConjugationsCount[spinnerIndex] = getTotalTenseConjugationsCount(spinnerIndex);
         }
         return totalConjugationsCount;
@@ -116,8 +116,8 @@ public class ScoreHandler extends Score {
      * @return the scores for all tenses
      */
     public float[] getAllScores() {
-        float[] scores = new float[7];
-        for (int spinnerIndex = 0; spinnerIndex < 7; spinnerIndex++) {
+        float[] scores = new float[tenses.length];
+        for (int spinnerIndex = 0; spinnerIndex < tenses.length; spinnerIndex++) {
             scores[spinnerIndex] = getScoreForTense(spinnerIndex);
         }
 
@@ -128,7 +128,7 @@ public class ScoreHandler extends Score {
      * Method to reset the scores for all tenses
      */
     public void resetScores() {
-        for (int spinnerPosition = 0; spinnerPosition < 7; spinnerPosition++) {
+        for (int spinnerPosition = 0; spinnerPosition < tenses.length; spinnerPosition++) {
             sharedPreferencesHandler.resetCorrectConjugationsCount(0, spinnerPosition);
             sharedPreferencesHandler.resetTotalConjugationsCount(0, spinnerPosition);
         }

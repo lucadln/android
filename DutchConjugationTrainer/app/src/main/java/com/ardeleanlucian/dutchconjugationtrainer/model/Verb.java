@@ -15,6 +15,7 @@ public class Verb {
     public static final String tenses[] = {
             "Present",
             "Present Continuous",
+            "Present Perfect",
             "Simple Past",
             "Past Perfect",
             "Conditional",
@@ -54,7 +55,7 @@ public class Verb {
      * @param verbConjugation
      */
     public void setVerbConjugation(String[][] verbConjugation) {
-        this.verbConjugation = new String[7][6];
+        this.verbConjugation = new String[tenses.length][6];
         this.verbConjugation = verbConjugation.clone();
     }
 
