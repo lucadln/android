@@ -49,7 +49,7 @@ public class FileReader {
                     // Skip lines to get the next verb. Those
                     //   lines represent the conjugation of the
                     //   current verb.
-                    for (int i = 0; i <= tenses.length * 6 ; i++) {
+                    for (int i = 0; i <= tenses.length * 6; i++) {
                         bufferedReader.readLine();
                     }
                     if ((currentVerb = bufferedReader.readLine()) == null) {
