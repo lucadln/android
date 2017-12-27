@@ -17,7 +17,7 @@ public class Verb {
             "Present Continuous",
             "Simple Past",
             "Past Perfect",
-            "Condtional",
+            "Conditional",
             "Conditional Perfect",
             "Future"
     };
