@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
+
 /**
  * Created by ardelean on 10/15/17.
  */
@@ -20,7 +22,7 @@ public class FileReader {
      * Constructor method
      */
     public FileReader() {
-        conjugation = new String[7][6]; //@TODO make it so that the size is not hardcoded
+        conjugation = new String[tenses.length][6];
     }
 
     /**
@@ -47,7 +49,7 @@ public class FileReader {
                     // Skip lines to get the next verb. Those
                     //   lines represent the conjugation of the
                     //   current verb.
-                    for (int i = 0; i < 43; i++) {
+                    for (int i = 0; i <= tenses.length * 6 ; i++) {
                         bufferedReader.readLine();
                     }
                     if ((currentVerb = bufferedReader.readLine()) == null) {
@@ -63,7 +65,7 @@ public class FileReader {
 
                     infinitive = currentVerb;
                     translation = bufferedReader.readLine();
-                    for (int i = 0; i < 7; i++) {
+                    for (int i = 0; i < tenses.length; i++) {
                         for (int j = 0; j < 6; j++) {
                             conjugation[i][j] = bufferedReader.readLine();
                         }

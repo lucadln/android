@@ -13,6 +13,8 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
+
 /**
  * Created by ardelean on 11/19/17.
  */
@@ -57,7 +59,7 @@ public class ScoreChart {
 
         // Add entry values for every tense
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < tenses.length; i++) {
             barEntries.add(new BarEntry((float) i, scores[i]));
         }
 
@@ -79,6 +81,7 @@ public class ScoreChart {
         final ArrayList<String> barLabels = new ArrayList<>();
         barLabels.add("Present");
         barLabels.add("Pres. Continuous");
+        barLabels.add("Pres. Perfect");
         barLabels.add("Simple Past");
         barLabels.add("Past Perfect");
         barLabels.add("Conditional");

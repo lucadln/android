@@ -4,6 +4,8 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.formatter.IValueFormatter;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
+import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
+
 /**
  * Created by ardelean on 9/2/17.
  */
@@ -17,7 +19,7 @@ public class CustomValueFormatter implements IValueFormatter {
     // Constructor
     public CustomValueFormatter(int[] correctAnswers, int[] totalAnswers) {
 
-        int numberOfTenses = correctAnswers.length;
+        int numberOfTenses = tenses.length;
 
         this.correctAnswers = new int[numberOfTenses];
         this.totalAnswers = new int[numberOfTenses];
@@ -46,6 +48,8 @@ public class CustomValueFormatter implements IValueFormatter {
             index = 5;
         } else if (entry.toString().contains("x: 6.0")) {
             index = 6;
+        } else if (entry.toString().contains("x: 7.0")) {
+            index = 7;
         } else {
             return null;
         }
