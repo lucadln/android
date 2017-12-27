@@ -48,8 +48,6 @@ public class CustomValueFormatter implements IValueFormatter {
             index = 5;
         } else if (entry.toString().contains("x: 6.0")) {
             index = 6;
-        } else if (entry.toString().contains("x: 7.0")) {
-            index = 7;
         } else {
             return null;
         }

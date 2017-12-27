@@ -6,12 +6,6 @@ denkt
 denken
 denken
 denken
-ben aan het denken
-bent aan het denken
-is aan het denken
-zijn aan het denken
-zijn aan het denken
-zijn aan het denken
 heb gedacht
 hebt gedacht
 heeft gedacht
@@ -56,12 +50,6 @@ blijft
 blijven
 blijven
 blijven
-ben aan het blijven
-bent aan het blijven
-is aan het blijven
-zijn aan het blijven
-zijn aan het blijven
-zijn aan het blijven
 ben gebleven
 bent gebleven
 is gebleven
@@ -106,12 +94,6 @@ kijkt
 kijken
 kijken
 kijken
-ben aan het kijken
-bent aan het kijken
-is aan het kijken
-zijn aan het kijken
-zijn aan het kijken
-zijn aan het kijken
 heb gekeken
 hebt gekeken
 heeft gekeken
@@ -156,12 +138,6 @@ informeert
 informeren
 informeren
 informeren
-ben aan het informeren
-bent aan het informeren
-is aan het informeren
-zijn aan het informeren
-zijn aan het informeren
-zijn aan het informeren
 heb geïnformeerd
 hebt geïnformeerd
 heeft geïnformeerd
@@ -206,12 +182,6 @@ wast
 wassen
 wassen
 wassen
-ben aan het wassen
-bent aan het wassen
-is aan het wassen
-zijn aan het wassen
-zijn aan het wassen
-zijn aan het wassen
 heb gewast
 hebt gewast
 heeft gewast
@@ -256,12 +226,6 @@ eindigt
 eindigen
 eindigen
 eindigen
-ben aan het eindigen
-bent aan het eindigen
-is aan het eindigen
-zijn aan het eindigen
-zijn aan het eindigen
-zijn aan het eindigen
 heb geëindigd
 hebt geëindigd
 heeft geëindigd
@@ -306,12 +270,6 @@ verschijnt
 verschijnen
 verschijnen
 verschijnen
-ben aan het verschijnen
-bent aan het verschijnen
-is aan het verschijnen
-zijn aan het verschijnen
-zijn aan het verschijnen
-zijn aan het verschijnen
 ben verschenen
 bent verschenen
 is verschenen
@@ -356,12 +314,6 @@ maakt bekend
 maken bekend
 maken bekend
 maken bekend
-ben aan het bekendmaken
-bent aan het bekendmaken
-is aan het bekendmaken
-zijn aan het bekendmaken
-zijn aan het bekendmaken
-zijn aan het bekendmaken
 heb bekendgemaakt
 hebt bekendgemaakt
 heeft bekendgemaakt
@@ -406,12 +358,6 @@ vreest
 vrezen
 vrezen
 vrezen
-ben aan het vrezen
-bent aan het vrezen
-is aan het vrezen
-zijn aan het vrezen
-zijn aan het vrezen
-zijn aan het vrezen
 heb gevreesd
 hebt gevreesd
 heeft gevreesd
@@ -456,12 +402,6 @@ wint
 winnen
 winnen
 winnen
-ben aan het winnen
-bent aan het winnen
-is aan het winnen
-zijn aan het winnen
-zijn aan het winnen
-zijn aan het winnen
 heb gewonnen
 hebt gewonnen
 heeft gewonnen
@@ -506,12 +446,6 @@ zoent
 zoenen
 zoenen
 zoenen
-ben aan het zoenen
-bent aan het zoenen
-is aan het zoenen
-zijn aan het zoenen
-zijn aan het zoenen
-zijn aan het zoenen
 heb gezoend
 hebt gezoend
 heeft gezoend
@@ -556,12 +490,6 @@ garandeert
 garanderen
 garanderen
 garanderen
-ben aan het garanderen
-bent aan het garanderen
-is aan het garanderen
-zijn aan het garanderen
-zijn aan het garanderen
-zijn aan het garanderen
 heb gegarandeerd
 hebt gegarandeerd
 heeft gegarandeerd
@@ -606,12 +534,6 @@ gedraagt
 gedragen
 gedragen
 gedragen
-ben aan het bedragen
-bent aan het bedragen
-is aan het bedragen
-zijn aan het bedragen
-zijn aan het bedragen
-zijn aan het bedragen
 heb gedragen
 hebt gedragen
 heeft gedragen
@@ -656,12 +578,6 @@ beledigt
 beledigen
 beledigen
 beledigen
-ben aan het beledigen
-bent aan het beledigen
-is aan het beledigen
-zijn aan het beledigen
-zijn aan het beledigen
-zijn aan het beledigen
 heb beledigd
 hebt beledigd
 heeft beledigd
@@ -706,12 +622,6 @@ heet
 heten
 heten
 heten
-ben aan het heten
-bent aan het heten
-is aan het heten
-zijn aan het heten
-zijn aan het heten
-zijn aan het heten
 heb geheten
 hebt geheten
 heeft geheten
@@ -756,12 +666,6 @@ klaagt
 klagen
 klagen
 klagen
-ben aan het klagen
-bent aan het klagen
-is aan het klagen
-zijn aan het klagen
-zijn aan het klagen
-zijn aan het klagen
 heb geklaagd
 hebt geklaagd
 heeft geklaagd
@@ -806,12 +710,6 @@ vecht
 vechten
 vechten
 vechten
-ben aan het vechten
-bent aan het vechten
-is aan het vechten
-zijn aan het vechten
-zijn aan het vechten
-zijn aan het vechten
 heb gevochten
 hebt gevochten
 heeft gevochten
@@ -856,12 +754,6 @@ test
 testen
 testen
 testen
-ben aan het testen
-bent aan het testen
-is aan het testen
-zijn aan het testen
-zijn aan het testen
-zijn aan het testen
 heb getest
 hebt getest
 heeft getest
@@ -906,12 +798,6 @@ verdient
 verdienen
 verdienen
 verdienen
-ben aan het verdienen
-bent aan het verdienen
-is aan het verdienen
-zijn aan het verdienen
-zijn aan het verdienen
-zijn aan het verdienen
 heb verdiend
 hebt verdiend
 heeft verdiend
@@ -956,12 +842,6 @@ beschrijft
 beschrijven
 beschrijven
 beschrijven
-ben aan het beschrijven
-bent aan het beschrijven
-is aan het beschrijven
-zijn aan het beschrijven
-zijn aan het beschrijven
-zijn aan het beschrijven
 heb beschreven
 hebt beschreven
 heeft beschreven
@@ -1006,12 +886,6 @@ weigert
 weigeren
 weigeren
 weigeren
-ben aan het weigeren
-bent aan het weigeren
-is aan het weigeren
-zijn aan het weigeren
-zijn aan het weigeren
-zijn aan het weigeren
 heb geweigerd
 hebt geweigerd
 heeft geweigerd
@@ -1056,12 +930,6 @@ besteedt
 besteden
 besteden
 besteden
-ben aan het besteden
-bent aan het besteden
-is aan het besteden
-zijn aan het besteden
-zijn aan het besteden
-zijn aan het besteden
 heb besteed
 hebt besteed
 heeft besteed
@@ -1106,12 +974,6 @@ draait
 draaien
 draaien
 draaien
-ben aan het draaien
-bent aan het draaien
-is aan het draaien
-zijn aan het draaien
-zijn aan het draaien
-zijn aan het draaien
 heb gedraaid
 hebt gedraaid
 heeft gedraaid
@@ -1156,12 +1018,6 @@ veroordeelt
 veroordelen
 veroordelen
 veroordelen
-ben aan het veroordelen
-bent aan het veroordelen
-is aan het veroordelen
-zijn aan het veroordelen
-zijn aan het veroordelen
-zijn aan het veroordelen
 heb veroordeeld
 hebt veroordeeld
 heeft veroordeeld
@@ -1206,12 +1062,6 @@ duwt
 duwen
 duwen
 duwen
-ben aan het duwen
-bent aan het duwen
-is aan het duwen
-zijn aan het duwen
-zijn aan het duwen
-zijn aan het duwen
 heb geduwd
 hebt geduwd
 heeft geduwd
@@ -1256,12 +1106,6 @@ werpt
 werpen
 werpen
 werpen
-ben aan het werpen
-bent aan het werpen
-is aan het werpen
-zijn aan het werpen
-zijn aan het werpen
-zijn aan het werpen
 heb geworpen
 hebt geworpen
 heeft geworpen
@@ -1306,12 +1150,6 @@ overweegt
 overwegen
 overwegen
 overwegen
-ben aan het overwegen
-bent aan het overwegen
-is aan het overwegen
-zijn aan het overwegen
-zijn aan het overwegen
-zijn aan het overwegen
 heb overwogen
 hebt overwogen
 heeft overwogen
@@ -1356,12 +1194,6 @@ ontwijkt
 ontwijken
 ontwijken
 ontwijken
-ben aan het ontwijken
-bent aan het ontwijken
-is aan het ontwijken
-zijn aan het ontwijken
-zijn aan het ontwijken
-zijn aan het ontwijken
 heb ontweken
 hebt ontweken
 heeft ontweken
@@ -1406,12 +1238,6 @@ blijkt
 blijken
 blijken
 blijken
-ben aan het blijken
-bent aan het blijken
-is aan het blijken
-zijn aan het blijken
-zijn aan het blijken
-zijn aan het blijken
 heb gebleken
 hebt gebleken
 heeft gebleken
@@ -1456,12 +1282,6 @@ stopt
 stoppen
 stoppen
 stoppen
-ben aan het stoppen
-bent aan het stoppen
-is aan het stoppen
-zijn aan het stoppen
-zijn aan het stoppen
-zijn aan het stoppen
 heb gestopt
 hebt gestopt
 heeft gestopt
@@ -1506,12 +1326,6 @@ feliciteert
 feliciteren
 feliciteren
 feliciteren
-ben aan het feliciteren
-bent aan het feliciteren
-is aan het feliciteren
-zijn aan het feliciteren
-zijn aan het feliciteren
-zijn aan het feliciteren
 heb gefeliciteerd
 hebt gefeliciteerd
 heeft gefeliciteerd
@@ -1556,12 +1370,6 @@ kust
 kussen
 kussen
 kussen
-ben aan het kussen
-bent aan het kussen
-is aan het kussen
-zijn aan het kussen
-zijn aan het kussen
-zijn aan het kussen
 heb gekust
 hebt gekust
 heeft gekust
@@ -1606,12 +1414,6 @@ luistert
 luisteren
 luisteren
 luisteren
-ben aan het luisteren
-bent aan het luistern
-is aan het luisteren
-zijn aan het luisteren
-zijn aan het luisteren
-zijn aan het luisteren
 heb geluisterd
 hebt geluisterd
 heeft geluisterd
@@ -1656,12 +1458,6 @@ rust
 rusten
 rusten
 rusten
-ben aan het rusten
-bent aan het rusten
-is aan het rusten
-zijn aan het rusten
-zijn aan het rusten
-zijn aan het rusten
 heb gerust
 hebt gerust
 heeft gerust
@@ -1706,12 +1502,6 @@ wenst
 wensen
 wensen
 wensen
-ben aan het wensen
-bent aan het wensen
-is aan het wensen
-zijn aan het wensen
-zijn aan het wensen
-zijn aan het wensen
 heb gewenst
 hebt gewenst
 heeft gewenst
@@ -1756,12 +1546,6 @@ behandelt
 behandelen
 behandelen
 behandelen
-ben aan het behandelen
-bent aan het behandelen
-is aan het behandelen
-zijn aan het behandelen
-zijn aan het behandelen
-zijn aan het behandelen
 heb behandeld
 hebt behandeld
 heeft behandeld
@@ -1806,12 +1590,6 @@ legt
 leggen
 leggen
 leggen
-ben aan het leggen
-bent aan het leggen
-is aan het leggen
-zijn aan het leggen
-zijn aan het leggen
-zijn aan het leggen
 heb gelegd
 hebt gelegd
 heeft gelegd
@@ -1856,12 +1634,6 @@ dient in
 dienen in
 dienen in
 dienen in
-ben aan het indienen
-bent aan het indienen
-is aan het indienen
-zijn aan het indienen
-zijn aan het indienen
-zijn aan het indienen
 heb ingediend
 hebt ingediend
 heeft ingediend
@@ -1906,12 +1678,6 @@ sterft
 sterven
 sterven
 sterven
-ben aan het sterven
-bent aan het sterven
-is aan het sterven
-zijn aan het sterven
-zijn aan het sterven
-zijn aan het sterven
 ben gestorven
 bent gestorven
 is gestorven
@@ -1956,12 +1722,6 @@ gebruikt
 gebruiken
 gebruiken
 gebruiken
-ben aan het gebruiken
-bent aan het gebruiken
-is aan het gebruiken
-zijn aan het gebruiken
-zijn aan het gebruiken
-zijn aan het gebruiken
 heb gebruikt
 hebt gebruikt
 heeft gebruikt
@@ -2006,12 +1766,6 @@ communiceert
 communiceren
 communiceren
 communiceren
-ben aan het communiceren
-bent aan het communiceren
-is aan het communiceren
-zijn aan het communiceren
-zijn aan het communiceren
-zijn aan het communiceren
 heb gecommuniceerd
 hebt gecommuniceerd
 heeft gecommuniceerd
@@ -2056,12 +1810,6 @@ bijt
 bijten
 bijten
 bijten
-ben aan het bijten
-bent aan het bijten
-is aan het bijten
-zijn aan het bijten
-zijn aan het bijten
-zijn aan het bijten
 heb gebeten
 hebt gebeten
 heeft gebeten
@@ -2106,12 +1854,6 @@ vertrouwt
 vertrouwen
 vertrouwen
 vertrouwen
-ben aan het vertrouwen
-bent aan het vertrouwen
-is aan het vertrouwen
-zijn aan het vertrouwen
-zijn aan het vertrouwen
-zijn aan het vertrouwen
 heb vertrouwd
 hebt vertrouwd
 heeft vertrouwd
@@ -2156,12 +1898,6 @@ verkoopt
 verkopen
 verkopen
 verkopen
-ben aan het verkopen
-bent aan het verkopen
-is aan het verkopen
-zijn aan het verkopen
-zijn aan het verkopen
-zijn aan het verkopen
 heb verkocht
 hebt verkocht
 heeft verkocht
@@ -2206,12 +1942,6 @@ ontwikkelt
 ontwikkelen
 ontwikkelen
 ontwikkelen
-ben aan het ontwikkelen
-bent aan het ontwikkelen
-is aan het ontwikkelen
-zijn aan het ontwikkelen
-zijn aan het ontwikkelen
-zijn aan het ontwikkelen
 heb ontwikkeld
 hebt ontwikkeld
 heeft ontwikkeld
@@ -2256,12 +1986,6 @@ vergelijkt
 vergelijken
 vergelijken
 vergelijken
-ben aan het vergelijken
-bent aan het vergelijken
-is aan het vergelijken
-zijn aan het vergelijken
-zijn aan het vergelijken
-zijn aan het vergelijken
 heb vergeleken
 hebt vergeleken
 heeft vergeleken
@@ -2306,12 +2030,6 @@ droomt
 dromen
 dromen
 dromen
-ben aan het dromen
-bent aan het dromen
-is aan het dromen
-zijn aan het dromen
-zijn aan het dromen
-zijn aan het dromen
 heb gedroomd
 hebt gedroomd
 heeft gedroomd
@@ -2356,12 +2074,6 @@ begrijpt
 begrijpen
 begrijpen
 begrijpen
-ben aan het begrijpen
-bent aan het begrijpen
-is aan het begrijpen
-zijn aan het begrijpen
-zijn aan het begrijpen
-zijn aan het begrijpen
 heb begrepen
 hebt begrepen
 heeft begrepen
@@ -2398,3 +2110,1191 @@ zal begrijpen
 zullen begrijpen
 zullen begrijpen
 zullen begrijpen
+kiezen
+(to choose)
+kies
+kiest
+kiest
+kiezen
+kiezen
+kiezen
+heb gekozen
+hebt gekozen
+heeft gekozen
+hebben gekozen
+hebben gekozen
+hebben gekozen
+koos
+koos
+koos
+kozen
+kozen
+kozen
+had gekozen
+had gekozen
+had gekozen
+hadden gekozen
+hadden gekozen
+hadden gekozen
+zou kiezen
+zou kiezen
+zou kiezen
+zouden kiezen
+zouden kiezen
+zouden kiezen
+zou gekozen hebben
+zou gekozen hebben
+zou gekozen hebben
+zouden gekozen hebben
+zouden gekozen hebben
+zouden gekozen hebben
+zal kiezen
+zult kiezen
+zal kiezen
+zullen kiezen
+zullen kiezen
+zullen kiezen
+delen
+(to share)
+deel
+deelt
+deelt
+delen
+delen
+delen
+heb gedeeld
+hebt gedeeld
+heeft gedeeld
+hebben gedeeld
+hebben gedeeld
+hebben gedeeld
+deelde
+deelde
+deelde
+deelden
+deelden
+deelden
+had gedeeld
+had gedeeld
+had gedeeld
+hadden gedeeld
+hadden gedeeld
+hadden gedeeld
+zou delen
+zou delen
+zou delen
+zouden delen
+zouden delen
+zouden delen
+zou gedeeld hebben
+zou gedeeld hebben
+zou gedeeld hebben
+zouden gedeeld hebben
+zouden gedeeld hebben
+zouden gedeeld hebben
+zal delen
+zult delen
+zal delen
+zullen delen
+zullen delen
+zullen delen
+haten
+(to hate)
+haat
+haat
+haat
+haten
+haten
+haten
+heb gehaat
+hebt gehaat
+heeft gehaat
+hebben gehaat
+hebben gehaat
+hebben gehaat
+haatte
+haatte
+haatte
+haatten
+haatten
+haatten
+had gehaat
+had gehaat
+had gehaat
+hadden gehaat
+hadden gehaat
+hadden gehaat
+zou haten
+zou haten
+zou haten
+zouden haten
+zouden haten
+zouden haten
+zou gehaat hebben
+zou gehaat hebben
+zou gehaat hebben
+zouden gehaat hebben
+zouden gehaat hebben
+zouden gehaat hebben
+zal haten
+zult haten
+zal haten
+zullen haten
+zullen haten
+zullen haten
+lachen
+(to laugh)
+lach
+lacht
+lacht
+lachen
+lachen
+lachen
+heb gelachen
+hebt gelachen
+heeft gelachen
+hebben gelachen
+hebben gelachen
+hebben gelachen
+lachte
+lachte
+lachte
+lachten
+lachten
+lachten
+had gelachen
+had gelachen
+had gelachen
+hadden gelachen
+hadden gelachen
+hadden gelachen
+zou lachen
+zou lachen
+zou lachen
+zouden lachen
+zouden lachen
+zouden lachen
+zou gelachen hebben
+zou gelachen hebben
+zou gelachen hebben
+zouden gelachen hebben
+zouden gelachen hebben
+zouden gelachen hebben
+zal lachen
+zult lachen
+zal lachen
+zullen lachen
+zullen lachen
+zullen lachen
+schijnen
+(to shine)
+schijn
+schijnt
+schijnt
+schijnen
+schijnen
+schijnen
+heb geschenen
+hebt geschenen
+heeft geschenen
+hebben geschenen
+hebben geschenen
+hebben geschenen
+scheen
+scheen
+scheen
+schenen
+schenen
+schenen
+had geschenen
+had geschenen
+had geschenen
+hadden geschenen
+hadden geschenen
+hadden geschenen
+zou schijnen
+zou schijnen
+zou schijnen
+zouden schijnen
+zouden schijnen
+zouden schijnen
+zou geschenen hebben
+zou geschenen hebben
+zou geschenen hebben
+zouden geschenen hebben
+zouden geschenen hebben
+zouden geschenen hebben
+zal schijnen
+zult schijnen
+zal schijnen
+zullen schijnen
+zullen schijnen
+zullen schijnen
+bouwen
+(to build)
+bouw
+bouwt
+bouwt
+bouwen
+bouwen
+bouwen
+heb gebouwd
+hebt gebouwd
+heeft gebouwd
+hebben gebouwd
+hebben gebouwd
+hebben gebouwd
+bouwde
+bouwde
+bouwde
+bouwden
+bouwden
+bouwden
+had gebouwd
+had gebouwd
+had gebouwd
+hadden gebouwd
+hadden gebouwd
+hadden gebouwd
+zou bouwen
+zou bouwen
+zou bouwen
+zouden bouwen
+zouden bouwen
+zouden bouwen
+zou gebouwd hebben
+zou gebouwd hebben
+zou gebouwd hebben
+zouden gebouwd hebben
+zouden gebouwd hebben
+zouden gebouwd hebben
+zal bouwen
+zult bouwen
+zal bouwen
+zullen bouwen
+zullen bouwen
+zullen bouwen
+herinneren
+(to remember)
+inner her
+innert her
+innert her
+inneren her
+inneren her
+inneren her
+heb hergeïnnerd
+hebt hergeïnnerd
+heeft hergeïnnerd
+hebben hergeïnnerd
+hebben hergeïnnerd
+hebben hergeïnnerd
+innerde her
+innerde her
+innerde her
+innerden her
+innerden her
+innerden her
+had hergeïnnerd
+had hergeïnnerd
+had hergeïnnerd
+hadden hergeïnnerd
+hadden hergeïnnerd
+hadden hergeïnnerd
+zou herinneren
+zou herinneren
+zou herinneren
+zouden herinneren
+zouden herinneren
+zouden herinneren
+zou hergeïnnerd hebben
+zou hergeïnnerd hebben
+zou hergeïnnerd hebben
+zouden hergeïnnerd hebben
+zouden hergeïnnerd hebben
+zouden hergeïnnerd hebben
+zal herinneren
+zult herinneren
+zal herinneren
+zullen herinneren
+zullen herinneren
+zullen herinneren
+aanbieden
+(to offer)
+bied aan
+biedt aan
+biedt aan
+bieden aan
+bieden aan
+bieden aan
+heb aangeboden
+hebt aangeboden
+heeft aangeboden
+hebben aangeboden
+hebben aangeboden
+hebben aangeboden
+bood aan
+bood aan
+bood aan
+boden aan
+boden aan
+boden aan
+had aangeboden
+had aangeboden
+had aangeboden
+hadden aangeboden
+hadden aangeboden
+hadden aangeboden
+zou aanbieden
+zou aanbieden
+zou aanbieden
+zouden aanbieden
+zouden aanbieden
+zouden aanbieden
+zou aangeboden hebben
+zou aangeboden hebben
+zou aangeboden hebben
+zouden aangeboden hebben
+zouden aangeboden hebben
+zouden aangeboden hebben
+zal aanbieden
+zult aanbieden
+zal aanbieden
+zullen aanbieden
+zullen aanbieden
+zullen aanbieden
+doorgaan
+(to continue)
+ga door
+gaat door
+gaat door
+gaan door
+gaan door
+gaan door
+ben doorgegaan
+bent doorgegaan
+is doorgegaan
+zijn doorgegaan
+zijn doorgegaan
+zijn doorgegaan
+ging door
+ging door
+ging door
+gingen door
+gingen door
+gingen door
+was doorgegaan
+was doorgegaan
+was doorgegaan
+waren doorgegaan
+waren doorgegaan
+waren doorgegaan
+zou doorgaan
+zou doorgaan
+zou doorgaan
+zouden doorgaan
+zouden doorgaan
+zouden doorgaan
+zou doorgegaan zijn
+zou doorgegaan zijn
+zou doorgegaan zijn
+zouden doorgegaan zijn
+zouden doorgegaan zijn
+zouden doorgegaan zijn
+zal doorgaan
+zult doorgaan
+zal doorgaan
+zullen doorgaan
+zullen doorgaan
+zullen doorgaan
+ontmoeten
+(to meet)
+ontmoet
+ontmoet
+ontmoet
+ontmoeten
+ontmoeten
+ontmoeten
+heb ontmoet
+hebt ontmoet
+heeft ontmoet
+hebben ontmoet
+hebben ontmoet
+hebben ontmoet
+ontmoette
+ontmoette
+ontmoette
+ontmoetten
+ontmoetten
+ontmoetten
+had ontmoet
+had ontmoet
+had ontmoet
+hadden ontmoet
+hadden ontmoet
+hadden ontmoet
+zou ontmoeten
+zou ontmoeten
+zou ontmoeten
+zouden ontmoeten
+zouden ontmoeten
+zouden ontmoeten
+zou ontmoet hebben
+zou ontmoet hebben
+zou ontmoet hebben
+zouden ontmoet hebben
+zouden ontmoet hebben
+zouden ontmoet hebben
+zal ontmoeten
+zult ontmoeten
+zal ontmoeten
+zullen ontmoeten
+zullen ontmoeten
+zullen ontmoeten
+betalen
+(to pay)
+betaal
+betaalt
+betaalt
+betalen
+betalen
+betalen
+heb betaald
+hebt betaald
+heeft betaald
+hebben betaald
+hebben betaald
+hebben betaald
+betaalde
+betaalde
+betaalde
+betaalden
+betaalden
+betaalden
+had betaald
+had betaald
+had betaald
+hadden betaald
+hadden betaald
+hadden betaald
+zou betalen
+zou betalen
+zou betalen
+zouden betalen
+zouden betalen
+zouden betalen
+zou betaald hebben
+zou betaald hebben
+zou betaald hebben
+zouden betaald hebben
+zouden betaald hebben
+zouden betaald hebben
+zal betalen
+zult betalen
+zal betalen
+zullen betalen
+zullen betalen
+zullen betalen
+staan
+(to stand)
+sta
+staat
+staat
+staan
+staan
+staan
+heb gestaan
+hebt gestaan
+heeft gestaan
+hebben gestaan
+hebben gestaan
+hebben gestaan
+stond
+stond
+stond
+stonden
+stonden
+stonden
+had gestaan
+had gestaan
+had gestaan
+hadden gestaan
+hadden gestaan
+hadden gestaan
+zou staan
+zou staan
+zou staan
+zouden staan
+zouden staan
+zouden staan
+zou gestaan hebben
+zou gestaan hebben
+zou gestaan hebben
+zouden gestaan hebben
+zouden gestaan hebben
+zouden gestaan hebben
+zal staan
+zult staan
+zal staan
+zullen staan
+zullen staan
+zullen staan
+spelen
+(to play)
+speel
+speelt
+speelt
+spelen
+spelen
+spelen
+heb gespeeld
+hebt gespeeld
+heeft gespeeld
+hebben gespeeld
+hebben gespeeld
+hebben gespeeld
+speelde
+speelde
+speelde
+speelden
+speelden
+speelden
+had gespeeld
+had gespeeld
+had gespeeld
+hadden gespeeld
+hadden gespeeld
+hadden gespeeld
+zou spelen
+zou spelen
+zou spelen
+zouden spelen
+zouden spelen
+zouden spelen
+zou gespeeld hebben
+zou gespeeld hebben
+zou gespeeld hebben
+zouden gespeeld hebben
+zouden gespeeld hebben
+zouden gespeeld hebben
+zal spelen
+zult spelen
+zal spelen
+zullen spelen
+zullen spelen
+zullen spelen
+proberen
+(to try)
+probeer
+probeert
+probeert
+proberen
+proberen
+proberen
+heb geprobeerd
+hebt geprobeerd
+heeft geprobeerd
+hebben geprobeerd
+hebben geprobeerd
+hebben geprobeerd
+probeerde
+probeerde
+probeerde
+probeerden
+probeerden
+probeerden
+had geprobeerd
+had geprobeerd
+had geprobeerd
+hadden geprobeerd
+hadden geprobeerd
+hadden geprobeerd
+zou proberen
+zou proberen
+zou proberen
+zouden proberen
+zouden proberen
+zouden proberen
+zou geprobeerd hebben
+zou geprobeerd hebben
+zou geprobeerd hebben
+zouden geprobeerd hebben
+zouden geprobeerd hebben
+zouden geprobeerd hebben
+zal proberen
+zult proberen
+zal proberen
+zullen proberen
+zullen proberen
+zullen proberen
+willen
+(to want)
+wil
+wilt
+wil
+willen
+willen
+willen
+heb gewild
+hebt gewild
+heeft gewild
+hebben gewild
+hebben gewild
+hebben gewild
+wou
+wou
+wou
+wouden
+wouden
+wouden
+had gewild
+had gewild
+had gewild
+hadden gewild
+hadden gewild
+hadden gewild
+zou willen
+zou willen
+zou willen
+zouden willen
+zouden willen
+zouden willen
+zou gewild hebben
+zou gewild hebben
+zou gewild hebben
+zouden gewild hebben
+zouden gewild hebben
+zouden gewild hebben
+zal willen
+zult willen
+zal willen
+zullen willen
+zullen willen
+zullen willen
+bewegen
+(to move)
+beweeg
+beweegt
+beweegt
+bewegen
+bewegen
+bewegen
+heb bewogen
+hebt bewogen
+heeft bewogen
+hebben bewogen
+hebben bewogen
+hebben bewogen
+bewoog
+bewoog
+bewoog
+bewogen
+bewogen
+bewogen
+had bewogen
+had bewogen
+had bewogen
+hadden bewogen
+hadden bewogen
+hadden bewogen
+zou bewegen
+zou bewegen
+zou bewegen
+zouden bewegen
+zouden bewegen
+zouden bewegen
+zou bewogen hebben
+zou bewogen hebben
+zou bewogen hebben
+zouden bewogen hebben
+zouden bewogen hebben
+zouden bewogen hebben
+zal bewegen
+zult bewegen
+zal bewegen
+zullen bewegen
+zullen bewegen
+zullen bewegen
+bedoelen
+(to mean)
+bedoel
+bedoelt
+bedoelt
+bedoelen
+bedoelen
+bedoelen
+heb bedoeld
+hebt bedoeld
+heeft bedoeld
+hebben bedoeld
+hebben bedoeld
+hebben bedoeld
+bedoelde
+bedoelde
+bedoelde
+bedoelden
+bedoelden
+bedoelden
+had bedoeld
+had bedoeld
+had bedoeld
+hadden bedoeld
+hadden bedoeld
+hadden bedoeld
+zou bedoelen
+zou bedoelen
+zou bedoelen
+zouden bedoelen
+zouden bedoelen
+zouden bedoelen
+zou bedoeld hebben
+zou bedoeld hebben
+zou bedoeld hebben
+zouden bedoeld hebben
+zouden bedoeld hebben
+zouden bedoeld hebben
+zal bedoelen
+zult bedoelen
+zal bedoelen
+zullen bedoelen
+zullen bedoelen
+zullen bedoelen
+redden
+(to save)
+red
+redt
+redt
+redden
+redden
+redden
+heb gered
+hebt gered
+heeft gered
+hebben gered
+hebben gered
+hebben gered
+redde
+redde
+redde
+redden
+redden
+redden
+had gered
+had gered
+had gered
+hadden gered
+hadden gered
+hadden gered
+zou redden
+zou redden
+zou redden
+zouden redden
+zouden redden
+zouden redden
+zou gered hebben
+zou gered hebben
+zou gered hebben
+zouden gered hebben
+zouden gered hebben
+zouden gered hebben
+zal redden
+zult redden
+zal redden
+zullen redden
+zullen redden
+zullen redden
+scheiden
+(to divorce)
+scheid
+scheidt
+scheidt
+scheiden
+scheiden
+scheiden
+heb gescheiden
+hebt gescheiden
+heeft gescheiden
+hebben gescheiden
+hebben gescheiden
+hebben gescheiden
+scheidde
+scheidde
+scheidde
+scheidden
+scheidden
+scheidden
+had gescheiden
+had gescheiden
+had gescheiden
+hadden gescheiden
+hadden gescheiden
+hadden gescheiden
+zou scheiden
+zou scheiden
+zou scheiden
+zouden scheiden
+zouden scheiden
+zouden scheiden
+zou gescheiden hebben
+zou gescheiden hebben
+zou gescheiden hebben
+zouden gescheiden hebben
+zouden gescheiden hebben
+zouden gescheiden hebben
+zal scheiden
+zult scheiden
+zal scheiden
+zullen scheiden
+zullen scheiden
+zullen scheiden
+trouwen
+(to marry)
+trouw
+trouwt
+trouwt
+trouwen
+trouwen
+trouwen
+heb getrouwd
+hebt getrouwd
+heeft getrouwd
+hebben getrouwd
+hebben getrouwd
+hebben getrouwd
+trouwde
+trouwde
+trouwde
+trouwden
+trouwden
+trouwden
+had getrouwd
+had getrouwd
+had getrouwd
+hadden getrouwd
+hadden getrouwd
+hadden getrouwd
+zou trouwen
+zou trouwen
+zou trouwen
+zouden trouwen
+zouden trouwen
+zouden trouwen
+zou getrouwd hebben
+zou getrouwd hebben
+zou getrouwd hebben
+zouden getrouwd hebben
+zouden getrouwd hebben
+zouden getrouwd hebben
+zal trouwen
+zult trouwen
+zal trouwen
+zullen trouwen
+zullen trouwen
+zullen trouwen
+solliciteren
+(to apply)
+solliciteer
+solliciteert
+solliciteert
+solliciteren
+solliciteren
+solliciteren
+heb gesolliciteerd
+hebt gesolliciteerd
+heeft gesolliciteerd
+hebben gesolliciteerd
+hebben gesolliciteerd
+hebben gesolliciteerd
+solliciteerde
+solliciteerde
+solliciteerde
+solliciteerden
+solliciteerden
+solliciteerden
+had gesolliciteerd
+had gesolliciteerd
+had gesolliciteerd
+hadden gesolliciteerd
+hadden gesolliciteerd
+hadden gesolliciteerd
+zou solliciteren
+zou solliciteren
+zou solliciteren
+zouden solliciteren
+zouden solliciteren
+zouden solliciteren
+zou gesolliciteerd hebben
+zou gesolliciteerd hebben
+zou gesolliciteerd hebben
+zouden gesolliciteerd hebben
+zouden gesolliciteerd hebben
+zouden gesolliciteerd hebben
+zal solliciteren
+zult solliciteren
+zal solliciteren
+zullen solliciteren
+zullen solliciteren
+zullen solliciteren
+vinden
+(to find)
+vind
+vindt
+vindt
+vinden
+vinden
+vinden
+heb gevonden
+hebt gevonden
+heeft gevonden
+hebben gevonden
+hebben gevonden
+hebben gevonden
+vond
+vond
+vond
+vonden
+vonden
+vonden
+had gevonden
+had gevonden
+had gevonden
+hadden gevonden
+hadden gevonden
+hadden gevonden
+zou vinden
+zou vinden
+zou vinden
+zouden vinden
+zouden vinden
+zouden vinden
+zou gevonden hebben
+zou gevonden hebben
+zou gevonden hebben
+zouden gevonden hebben
+zouden gevonden hebben
+zouden gevonden hebben
+zal vinden
+zult vinden
+zal vinden
+zullen vinden
+zullen vinden
+zullen vinden
+helpen
+(to help)
+help
+helpt
+helpt
+helpen
+helpen
+helpen
+heb geholpen
+hebt geholpen
+heeft geholpen
+hebben geholpen
+hebben geholpen
+hebben geholpen
+hielp
+hielp
+hielp
+hielpen
+hielpen
+hielpen
+had geholpen
+had geholpen
+had geholpen
+hadden geholpen
+hadden geholpen
+hadden geholpen
+zou helpen
+zou helpen
+zou helpen
+zouden helpen
+zouden helpen
+zouden helpen
+zou geholpen hebben
+zou geholpen hebben
+zou geholpen hebben
+zouden geholpen hebben
+zouden geholpen hebben
+zouden geholpen hebben
+zal helpen
+zult helpen
+zal helpen
+zullen helpen
+zullen helpen
+zullen helpen
+splitsen
+(to split)
+splits
+splitst
+splitst
+splitsen
+splitsen
+splitsen
+heb gesplitst
+hebt gesplitst
+heeft gesplitst
+hebben gesplitst
+hebben gesplitst
+hebben gesplitst
+splitste
+splitste
+splitste
+splitsten
+splitsten
+splitsten
+had gesplitst
+had gesplitst
+had gesplitst
+hadden gesplitst
+hadden gesplitst
+hadden gesplitst
+zou splitsen
+zou splitsen
+zou splitsen
+zouden splitsen
+zouden splitsen
+zouden splitsen
+zou gesplitst hebben
+zou gesplitst hebben
+zou gesplitst hebben
+zouden gesplitst hebben
+zouden gesplitst hebben
+zouden gesplitst hebben
+zal splitsen
+zult splitsen
+zal splitsen
+zullen splitsen
+zullen splitsen
+zullen splitsen
+zijn
+(to be)
+ben
+bent
+is
+zijn
+zijn
+zijn
+ben geweest
+bent geweest
+is geweest
+zijn geweest
+zijn geweest
+zijn geweest
+was
+was
+was
+waren
+waren
+waren
+was geweest
+was geweest
+was geweest
+waren geweest
+waren geweest
+waren geweest
+zou zijn
+zou zijn
+zou zijn
+zouden zijn
+zouden zijn
+zouden zijn
+zou geweest zijn
+zou geweest zijn
+zou geweest zijn
+zouden geweest zijn
+zouden geweest zijn
+zouden geweest zijn
+zal zijn
+zult zijn
+zal zijn
+zullen zijn
+zullen zijn
+zullen zijn
+hebben
+(to have)
+heb
+hebt
+heeft
+hebben
+hebben
+hebben
+heb gehad
+hebt gehad
+heeft gehad
+hebben gehad
+hebben gehad
+hebben gehad
+had
+had
+had
+hadden
+hadden
+hadden
+had gehad
+had gehad
+had gehad
+hadden gehad
+hadden gehad
+hadden gehad
+zou hebben
+zou hebben
+zou hebben
+zouden hebben
+zouden hebben
+zouden hebben
+zou gehad hebben
+zou gehad hebben
+zou gehad hebben
+zouden gehad hebben
+zouden gehad hebben
+zouden gehad hebben
+zal hebben
+zult hebben
+zal hebben
+zullen hebben
+zullen hebben
+zullen hebben
+zien
+(to see)
+zie
+ziet
+ziet
+zien
+zien
+zien
+heb gezien
+hebt gezien
+heeft gezien
+hebben gezien
+hebben gezien
+hebben gezien
+zag
+zag
+zag
+zagen
+zagen
+zagen
+had gezien
+had gezien
+had gezien
+hadden gezien
+hadden gezien
+hadden gezien
+zou zien
+zou zien
+zou zien
+zouden zien
+zouden zien
+zouden zien
+zou gezien hebben
+zou gezien hebben
+zou gezien hebben
+zouden gezien hebben
+zouden gezien hebben
+zouden gezien hebben
+zal zien
+zult zien
+zal zien
+zullen zien
+zullen zien
+zullen zien

@@ -14,7 +14,6 @@ public class Verb {
      */
     public static final String tenses[] = {
             "Present",
-            "Present Continuous",
             "Present Perfect",
             "Simple Past",
             "Past Perfect",

@@ -80,7 +80,6 @@ public class ScoreChart {
         // Create explanation labels for each bar
         final ArrayList<String> barLabels = new ArrayList<>();
         barLabels.add("Present");
-        barLabels.add("Pres. Continuous");
         barLabels.add("Pres. Perfect");
         barLabels.add("Simple Past");
         barLabels.add("Past Perfect");
