@@ -3298,3 +3298,5151 @@ zal zien
 zullen zien
 zullen zien
 zullen zien
+zeggen
+(to say)
+zeg
+zegt
+zegt
+zeggen
+zeggen
+zeggen
+heb gezegd
+hebt gezegd
+heeft gezegd
+hebben gezegd
+hebben gezegd
+hebben gezegd
+zei
+zei
+zei
+zeien
+zeien
+zeien
+had gezegd
+had gezegd
+had gezegd
+hadden gezegd
+hadden gezegd
+hadden gezegd
+zou zeggen
+zou zeggen
+zou zeggen
+zouden zeggen
+zouden zeggen
+zouden zeggen
+zou gezegd hebben
+zou gezegd hebben
+zou gezegd hebben
+zouden gezegd hebben
+zouden gezegd hebben
+zouden gezegd hebben
+zal zeggen
+zult zeggen
+zal zeggen
+zullen zeggen
+zullen zeggen
+zullen zeggen
+houden
+(to hold)
+houd
+houdt
+houdt
+houden
+houden
+houden
+heb gehouden
+hebt gehouden
+heeft gehouden
+hebben gehouden
+hebben gehouden
+hebben gehouden
+hield
+hield
+hield
+hielden
+hielden
+hielden
+had gehouden
+had gehouden
+had gehouden
+hadden gehouden
+hadden gehouden
+hadden gehouden
+zou houden
+zou houden
+zou houden
+zouden houden
+zouden houden
+zouden houden
+zou gehouden hebben
+zou gehouden hebben
+zou gehouden hebben
+zouden gehouden hebben
+zouden gehouden hebben
+zouden gehouden hebben
+zal houden
+zult houden
+zal houden
+zullen houden
+zullen houden
+zullen houden
+mogen
+(be allowed to)
+mag
+mag
+mag
+mogen
+mogen
+mogen
+heb gemoogd
+hebt gemoogd
+heeft gemoogd
+hebben gemoogd
+hebben gemoogd
+hebben gemoogd
+mocht
+mocht
+mocht
+mochten
+mochten
+mochten
+had gemoogd
+had gemoogd
+had gemoogd
+hadden gemoogd
+hadden gemoogd
+hadden gemoogd
+zou mogen
+zou mogen
+zou mogen
+zouden mogen
+zouden mogen
+zouden mogen
+zou gemoogd hebben
+zou gemoogd hebben
+zou gemoogd hebben
+zouden gemoogd hebben
+zouden gemoogd hebben
+zouden gemoogd hebben
+zal mogen
+zult mogen
+zal mogen
+zullen mogen
+zullen mogen
+zullen mogen
+leiden
+(to lead)
+leid
+leidt
+leidt
+leiden
+leiden
+leiden
+heb geleid
+hebt geleid
+heeft geleid
+hebben geleid
+hebben geleid
+hebben geleid
+leidde
+leidde
+leidde
+leidden
+leidden
+leidden
+had geleid
+had geleid
+had geleid
+hadden geleid
+hadden geleid
+hadden geleid
+zou leiden
+zou leiden
+zou leiden
+zouden leiden
+zouden leiden
+zouden leiden
+zou geleid hebben
+zou geleid hebben
+zou geleid hebben
+zouden geleid hebben
+zouden geleid hebben
+zouden geleid hebben
+zal leiden
+zult leiden
+zal leiden
+zullen leiden
+zullen leiden
+zullen leiden
+zetten
+(to set)
+zet
+zet
+zet
+zetten
+zetten
+zetten
+heb gezet
+hebt gezet
+heeft gezet
+hebben gezet
+hebben gezet
+hebben gezet
+zette
+zette
+zette
+zetten
+zetten
+zetten
+had gezet
+had gezet
+had gezet
+hadden gezet
+hadden gezet
+hadden gezet
+zou zetten
+zou zetten
+zou zetten
+zouden zetten
+zouden zetten
+zouden zetten
+zou gezet hebben
+zou gezet hebben
+zou gezet hebben
+zouden gezet hebben
+zouden gezet hebben
+zouden gezet hebben
+zal zetten
+zult zetten
+zal zetten
+zullen zetten
+zullen zetten
+zullen zetten
+huilen
+(to cry)
+huil
+huilt
+huilt
+huilen
+huilen
+huilen
+heb gehuild
+hebt gehuild
+heeft gehuild
+hebben gehuild
+hebben gehuild
+hebben gehuild
+huilde
+huilde
+huilde
+huilden
+huilden
+huilden
+had gehuild
+had gehuild
+had gehuild
+hadden gehuild
+hadden gehuild
+hadden gehuild
+zou huilen
+zou huilen
+zou huilen
+zouden huilen
+zouden huilen
+zouden huilen
+zou gehuild hebben
+zou gehuild hebben
+zou gehuild hebben
+zouden gehuild hebben
+zouden gehuild hebben
+zouden gehuild hebben
+zal huilen
+zult huilen
+zal huilen
+zullen huilen
+zullen huilen
+zullen huilen
+afwijzen
+(to decline)
+wijs af
+wijst af
+wijst af
+wijzen af
+wijzen af
+wijzen af
+heb afgewezen
+hebt afgewezen
+heeft afgewezen
+hebben afgewezen
+hebben afgewezen
+hebben afgewezen
+wees af
+wees af
+wees af
+wezen af
+wezen af
+wezen af
+had afgewezen
+had afgewezen
+had afgewezen
+hadden afgewezen
+hadden afgewezen
+hadden afgewezen
+zou afwijzen
+zou afwijzen
+zou afwijzen
+zouden afwijzen
+zouden afwijzen
+zouden afwijzen
+zou afgewezen hebben
+zou afgewezen hebben
+zou afgewezen hebben
+zouden afgewezen hebben
+zouden afgewezen hebben
+zouden afgewezen hebben
+zal afwijzen
+zult afwijzen
+zal afwijzen
+zullen afwijzen
+zullen afwijzen
+zullen afwijzen
+laten
+(to let)
+laat
+laat
+laat
+laten
+laten
+laten
+heb gelaten
+hebt gelaten
+heeft gelaten
+hebben gelaten
+hebben gelaten
+hebben gelaten
+liet
+liet
+liet
+lieten
+lieten
+lieten
+had gelaten
+had gelaten
+had gelaten
+hadden gelaten
+hadden gelaten
+hadden gelaten
+zou laten
+zou laten
+zou laten
+zouden laten
+zouden laten
+zouden laten
+zou gelaten hebben
+zou gelaten hebben
+zou gelaten hebben
+zouden gelaten hebben
+zouden gelaten hebben
+zouden gelaten hebben
+zal laten
+zult laten
+zal laten
+zullen laten
+zullen laten
+zullen laten
+gaan
+(to go)
+ga
+gaat
+gaat
+gaan
+gaan
+gaan
+ben gegaan
+bent gegaan
+is gegaan
+zijn gegaan
+zijn gegaan
+zijn gegaan
+ging
+ging
+ging
+gingen
+gingen
+gingen
+was gegaan
+was gegaan
+was gegaan
+waren gegaan
+waren gegaan
+waren gegaan
+zou gaan
+zou gaan
+zou gaan
+zouden gaan
+zouden gaan
+zouden gaan
+zou gegaan zijn
+zou gegaan zijn
+zou gegaan zijn
+zouden gegaan zijn
+zouden gegaan zijn
+zouden gegaan zijn
+zal gaan
+zult gaan
+zal gaan
+zullen gaan
+zullen gaan
+zullen gaan
+komen
+(to come)
+kom
+komt
+komt
+komen
+komen
+komen
+ben gekomen
+bent gekomen
+is gekomen
+zijn gekomen
+zijn gekomen
+zijn gekomen
+kwam
+kwam
+kwam
+kwamen
+kwamen
+kwamen
+was gekomen
+was gekomen
+was gekomen
+waren gekomen
+waren gekomen
+waren gekomen
+zou komen
+zou komen
+zou komen
+zouden komen
+zouden komen
+zouden komen
+zou gekomen zijn
+zou gekomen zijn
+zou gekomen zijn
+zouden gekomen zijn
+zouden gekomen zijn
+zouden gekomen zijn
+zal komen
+zult komen
+zal komen
+zullen komen
+zullen komen
+zullen komen
+nemen
+(to take)
+neem
+neemt
+neemt
+nemen
+nemen
+nemen
+heb genomen
+hebt genomen
+heeft genomen
+hebben genomen
+hebben genomen
+hebben genomen
+nam
+nam
+nam
+namen
+namen
+namen
+had genomen
+had genomen
+had genomen
+hadden genomen
+hadden genomen
+hadden genomen
+zou nemen
+zou nemen
+zou nemen
+zouden nemen
+zouden nemen
+zouden nemen
+zou genomen hebben
+zou genomen hebben
+zou genomen hebben
+zouden genomen hebben
+zouden genomen hebben
+zouden genomen hebben
+zal nemen
+zult nemen
+zal nemen
+zullen nemen
+zullen nemen
+zullen nemen
+beleven
+(to experience)
+beleef
+beleeft
+beleeft
+beleven
+beleven
+beleven
+heb beleefd
+hebt beleefd
+heeft beleefd
+hebben beleefd
+hebben beleefd
+hebben beleefd
+beleefde
+beleefde
+beleefde
+beleefden
+beleefden
+beleefden
+had beleefd
+had beleefd
+had beleefd
+hadden beleefd
+hadden beleefd
+hadden beleefd
+zou beleven
+zou beleven
+zou beleven
+zouden beleven
+zouden beleven
+zouden beleven
+zou beleefd hebben
+zou beleefd hebben
+zou beleefd hebben
+zouden beleefd hebben
+zouden beleefd hebben
+zouden beleefd hebben
+zal beleven
+zult beleven
+zal beleven
+zullen beleven
+zullen beleven
+zullen beleven
+lijken
+(to look)
+lijk
+lijkt
+lijkt
+lijken
+lijken
+lijken
+heb geleken
+hebt geleken
+heeft geleken
+hebben geleken
+hebben geleken
+hebben geleken
+leek
+leek
+leek
+leken
+leken
+leken
+had geleken
+had geleken
+had geleken
+hadden geleken
+hadden geleken
+hadden geleken
+zou lijken
+zou lijken
+zou lijken
+zouden lijken
+zouden lijken
+zouden lijken
+zou geleken hebben
+zou geleken hebben
+zou geleken hebben
+zouden geleken hebben
+zouden geleken hebben
+zouden geleken hebben
+zal lijken
+zult lijken
+zal lijken
+zullen lijken
+zullen lijken
+zullen lijken
+vragen
+(to ask)
+vraag
+vraagt
+vraagt
+vragen
+vragen
+vragen
+heb gevraagd
+hebt gevraagd
+heeft gevraagd
+hebben gevraagd
+hebben gevraagd
+hebben gevraagd
+vroeg
+vroeg
+vroeg
+vroegen
+vroegen
+vroegen
+had gevraagd
+had gevraagd
+had gevraagd
+hadden gevraagd
+hadden gevraagd
+hadden gevraagd
+zou vragen
+zou vragen
+zou vragen
+zouden vragen
+zouden vragen
+zouden vragen
+zou gevraagd hebben
+zou gevraagd hebben
+zou gevraagd hebben
+zouden gevraagd hebben
+zouden gevraagd hebben
+zouden gevraagd hebben
+zal vragen
+zult vragen
+zal vragen
+zullen vragen
+zullen vragen
+zullen vragen
+brengen
+(to bring)
+breng
+brengt
+brengt
+brengen
+brengen
+brengen
+heb gebracht
+hebt gebracht
+heeft gebracht
+hebben gebracht
+hebben gebracht
+hebben gebracht
+bracht
+bracht
+bracht
+brachten
+brachten
+brachten
+had gebracht
+had gebracht
+had gebracht
+hadden gebracht
+hadden gebracht
+hadden gebracht
+zou brengen
+zou brengen
+zou brengen
+zouden brengen
+zouden brengen
+zouden brengen
+zou gebracht hebben
+zou gebracht hebben
+zou gebracht hebben
+zouden gebracht hebben
+zouden gebracht hebben
+zouden gebracht hebben
+zal brengen
+zult brengen
+zal brengen
+zullen brengen
+zullen brengen
+zullen brengen
+verwekken
+(to procreate)
+verwek
+verwekt
+verwekt
+verwekken
+verwekken
+verwekken
+heb verwekt
+hebt verwekt
+heeft verwekt
+hebben verwekt
+hebben verwekt
+hebben verwekt
+verwekte
+verwekte
+verwekte
+verwekten
+verwekten
+verwekten
+had verwekt
+had verwekt
+had verwekt
+hadden verwekt
+hadden verwekt
+hadden verwekt
+zou verwekken
+zou verwekken
+zou verwekken
+zouden verwekken
+zouden verwekken
+zouden verwekken
+zou verwekt hebben
+zou verwekt hebben
+zou verwekt hebben
+zouden verwekt hebben
+zouden verwekt hebben
+zouden verwekt hebben
+zal verwekken
+zult verwekken
+zal verwekken
+zullen verwekken
+zullen verwekken
+zullen verwekken
+vergeten
+(to forget)
+vergeet
+vergeet
+vergeet
+vergeten
+vergeten
+vergeten
+heb vergeten
+hebt vergeten
+heeft vergeten
+hebben vergeten
+hebben vergeten
+hebben vergeten
+vergat
+vergat
+vergat
+vergaten
+vergaten
+vergaten
+had vergeten
+had vergeten
+had vergeten
+hadden vergeten
+hadden vergeten
+hadden vergeten
+zou vergeten
+zou vergeten
+zou vergeten
+zouden vergeten
+zouden vergeten
+zouden vergeten
+zou vergeten hebben
+zou vergeten hebben
+zou vergeten hebben
+zouden vergeten hebben
+zouden vergeten hebben
+zouden vergeten hebben
+zal vergeten
+zult vergeten
+zal vergeten
+zullen vergeten
+zullen vergeten
+zullen vergeten
+vergeven
+(to forgive)
+vergeef
+vergeeft
+vergeeft
+vergeven
+vergeven
+vergeven
+heb vergeven
+hebt vergeven
+heeft vergeven
+hebben vergeven
+hebben vergeven
+hebben vergeven
+vergaf
+vergaf
+vergaf
+vergaven
+vergaven
+vergaven
+had vergeven
+had vergeven
+had vergeven
+hadden vergeven
+hadden vergeven
+hadden vergeven
+zou vergeven
+zou vergeven
+zou vergeven
+zouden vergeven
+zouden vergeven
+zouden vergeven
+zou vergeven hebben
+zou vergeven hebben
+zou vergeven hebben
+zouden vergeven hebben
+zouden vergeven hebben
+zouden vergeven hebben
+zal vergeven
+zult vergeven
+zal vergeven
+zullen vergeven
+zullen vergeven
+zullen vergeven
+zitten
+(to sit)
+zit
+zit
+zit
+zitten
+zitten
+zitten
+heb gezeten
+hebt gezeten
+heeft gezeten
+hebben gezeten
+hebben gezeten
+hebben gezeten
+zat
+zat
+zat
+zaten
+zaten
+zaten
+had gezeten
+had gezeten
+had gezeten
+hadden gezeten
+hadden gezeten
+hadden gezeten
+zou zitten
+zou zitten
+zou zitten
+zouden zitten
+zouden zitten
+zouden zitten
+zou gezeten hebben
+zou gezeten hebben
+zou gezeten hebben
+zouden gezeten hebben
+zouden gezeten hebben
+zouden gezeten hebben
+zal zitten
+zult zitten
+zal zitten
+zullen zitten
+zullen zitten
+zullen zitten
+binden
+(to bind)
+bind
+bindt
+bindt
+binden
+binden
+binden
+heb gebonden
+hebt gebonden
+heeft gebonden
+hebben gebonden
+hebben gebonden
+hebben gebonden
+bond
+bond
+bond
+bonden
+bonden
+bonden
+had gebonden
+had gebonden
+had gebonden
+hadden gebonden
+hadden gebonden
+hadden gebonden
+zou binden
+zou binden
+zou binden
+zouden binden
+zouden binden
+zouden binden
+zou gebonden hebben
+zou gebonden hebben
+zou gebonden hebben
+zouden gebonden hebben
+zouden gebonden hebben
+zouden gebonden hebben
+zal binden
+zult binden
+zal binden
+zullen binden
+zullen binden
+zullen binden
+voorbereiden
+(to prepare)
+bereid voor
+bereidt voor
+bereidt voor
+bereiden voor
+bereiden voor
+bereiden voor
+heb voorbereid
+hebt voorbereid
+heeft voorbereid
+hebben voorbereid
+hebben voorbereid
+hebben voorbereid
+bereidde voor
+bereidde voor
+bereidde voor
+bereidden voor
+bereidden voor
+bereidden voor
+had voorbereid
+had voorbereid
+had voorbereid
+hadden voorbereid
+hadden voorbereid
+hadden voorbereid
+zou voorbereiden
+zou voorbereiden
+zou voorbereiden
+zouden voorbereiden
+zouden voorbereiden
+zouden voorbereiden
+zou voorbereid hebben
+zou voorbereid hebben
+zou voorbereid hebben
+zouden voorbereid hebben
+zouden voorbereid hebben
+zouden voorbereid hebben
+zal voorbereiden
+zult voorbereiden
+zal voorbereiden
+zullen voorbereiden
+zullen voorbereiden
+zullen voorbereiden
+ontkennen
+(to deny)
+ontken
+ontkent
+ontkent
+ontkennen
+ontkennen
+ontkennen
+heb ontkend
+hebt ontkend
+heeft ontkend
+hebben ontkend
+hebben ontkend
+hebben ontkend
+ontkende
+ontkende
+ontkende
+ontkenden
+ontkenden
+ontkenden
+had ontkend
+had ontkend
+had ontkend
+hadden ontkend
+hadden ontkend
+hadden ontkend
+zou ontkennen
+zou ontkennen
+zou ontkennen
+zouden ontkennen
+zouden ontkennen
+zouden ontkennen
+zou ontkend hebben
+zou ontkend hebben
+zou ontkend hebben
+zouden ontkend hebben
+zouden ontkend hebben
+zouden ontkend hebben
+zal ontkennen
+zult ontkennen
+zal ontkennen
+zullen ontkennen
+zullen ontkennen
+zullen ontkennen
+bevelen
+(to order)
+beveel
+beveelt
+beveelt
+bevelen
+bevelen
+bevelen
+heb bevolen
+hebt bevolen
+heeft bevolen
+hebben bevolen
+hebben bevolen
+hebben bevolen
+beval
+beval
+beval
+bevalen
+bevalen
+bevalen
+had bevolen
+had bevolen
+had bevolen
+hadden bevolen
+hadden bevolen
+hadden bevolen
+zou bevelen
+zou bevelen
+zou bevelen
+zouden bevelen
+zouden bevelen
+zouden bevelen
+zou bevolen hebben
+zou bevolen hebben
+zou bevolen hebben
+zouden bevolen hebben
+zouden bevolen hebben
+zouden bevolen hebben
+zal bevelen
+zult bevelen
+zal bevelen
+zullen bevelen
+zullen bevelen
+zullen bevelen
+treffen
+(to meet)
+tref
+treft
+treft
+treffen
+treffen
+treffen
+heb getroffen
+hebt getroffen
+heeft getroffen
+hebben getroffen
+hebben getroffen
+hebben getroffen
+trof
+trof
+trof
+troffen
+troffen
+troffen
+had getroffen
+had getroffen
+had getroffen
+hadden getroffen
+hadden getroffen
+hadden getroffen
+zou treffen
+zou treffen
+zou treffen
+zouden treffen
+zouden treffen
+zouden treffen
+zou getroffen hebben
+zou getroffen hebben
+zou getroffen hebben
+zouden getroffen hebben
+zouden getroffen hebben
+zouden getroffen hebben
+zal treffen
+zult treffen
+zal treffen
+zullen treffen
+zullen treffen
+zullen treffen
+kunnen
+(to be able)
+kan
+kunt
+kan
+kunnen
+kunnen
+kunnen
+heb gekund
+hebt gekund
+heeft gekund
+hebben gekund
+hebben gekund
+hebben gekund
+kon
+kon
+kon
+konden
+konden
+konden
+had gekund
+had gekund
+had gekund
+hadden gekund
+hadden gekund
+hadden gekund
+zou kunnen
+zou kunnen
+zou kunnen
+zouden kunnen
+zouden kunnen
+zouden kunnen
+zou gekund hebben
+zou gekund hebben
+zou gekund hebben
+zouden gekund hebben
+zouden gekund hebben
+zouden gekund hebben
+zal kunnen
+zult kunnen
+zal kunnen
+zullen kunnen
+zullen kunnen
+zullen kunnen
+waarschuwen
+(to warn)
+waarschuw
+waarschuwt
+waarschuwt
+waarschuwen
+waarschuwen
+waarschuwen
+heb waarschuwd
+hebt waarschuwd
+heeft waarschuwd
+hebben waarschuwd
+hebben waarschuwd
+hebben waarschuwd
+waarschuwde
+waarschuwde
+waarschuwde
+waarschuwden
+waarschuwden
+waarschuwden
+had waarschuwd
+had waarschuwd
+had waarschuwd
+hadden waarschuwd
+hadden waarschuwd
+hadden waarschuwd
+zou waarschuwen
+zou waarschuwen
+zou waarschuwen
+zouden waarschuwen
+zouden waarschuwen
+zouden waarschuwen
+zou waarschuwd hebben
+zou waarschuwd hebben
+zou waarschuwd hebben
+zouden waarschuwd hebben
+zouden waarschuwd hebben
+zouden waarschuwd hebben
+zal waarschuwen
+zult waarschuwen
+zal waarschuwen
+zullen waarschuwen
+zullen waarschuwen
+zullen waarschuwen
+toepassen
+(to apply)
+pas toe
+past toe
+past toe
+passen toe
+passen toe
+passen toe
+heb toegepast
+hebt toegepast
+heeft toegepast
+hebben toegepast
+hebben toegepast
+hebben toegepast
+paste toe
+paste toe
+paste toe
+pasten toe
+pasten toe
+pasten toe
+had toegepast
+had toegepast
+had toegepast
+hadden toegepast
+hadden toegepast
+hadden toegepast
+zou toepassen
+zou toepassen
+zou toepassen
+zouden toepassen
+zouden toepassen
+zouden toepassen
+zou toegepast hebben
+zou toegepast hebben
+zou toegepast hebben
+zouden toegepast hebben
+zouden toegepast hebben
+zouden toegepast hebben
+zal toepassen
+zult toepassen
+zal toepassen
+zullen toepassen
+zullen toepassen
+zullen toepassen
+melden
+(to report)
+meld
+meldt
+meldt
+melden
+melden
+melden
+heb gemeld
+hebt gemeld
+heeft gemeld
+hebben gemeld
+hebben gemeld
+hebben gemeld
+meldde
+meldde
+meldde
+meldden
+meldden
+meldden
+had gemeld
+had gemeld
+had gemeld
+hadden gemeld
+hadden gemeld
+hadden gemeld
+zou melden
+zou melden
+zou melden
+zouden melden
+zouden melden
+zouden melden
+zou gemeld hebben
+zou gemeld hebben
+zou gemeld hebben
+zouden gemeld hebben
+zouden gemeld hebben
+zouden gemeld hebben
+zal melden
+zult melden
+zal melden
+zullen melden
+zullen melden
+zullen melden
+beloven
+(to promise)
+beloof
+belooft
+belooft
+beloven
+beloven
+beloven
+heb beloofd
+hebt beloofd
+heeft beloofd
+hebben beloofd
+hebben beloofd
+hebben beloofd
+beloofde
+beloofde
+beloofde
+beloofden
+beloofden
+beloofden
+had beloofd
+had beloofd
+had beloofd
+hadden beloofd
+hadden beloofd
+hadden beloofd
+zou beloven
+zou beloven
+zou beloven
+zouden beloven
+zouden beloven
+zouden beloven
+zou beloofd hebben
+zou beloofd hebben
+zou beloofd hebben
+zouden beloofd hebben
+zouden beloofd hebben
+zouden beloofd hebben
+zal beloven
+zult beloven
+zal beloven
+zullen beloven
+zullen beloven
+zullen beloven
+beschouwen
+(to consider)
+beschouw
+beschouwt
+beschouwt
+beschouwen
+beschouwen
+beschouwen
+heb beschouwd
+hebt beschouwd
+heeft beschouwd
+hebben beschouwd
+hebben beschouwd
+hebben beschouwd
+beschouwde
+beschouwde
+beschouwde
+beschouwden
+beschouwden
+beschouwden
+had beschouwd
+had beschouwd
+had beschouwd
+hadden beschouwd
+hadden beschouwd
+hadden beschouwd
+zou beschouwen
+zou beschouwen
+zou beschouwen
+zouden beschouwen
+zouden beschouwen
+zouden beschouwen
+zou beschouwd hebben
+zou beschouwd hebben
+zou beschouwd hebben
+zouden beschouwd hebben
+zouden beschouwd hebben
+zouden beschouwd hebben
+zal beschouwen
+zult beschouwen
+zal beschouwen
+zullen beschouwen
+zullen beschouwen
+zullen beschouwen
+herkennen
+(to recognize)
+ken her
+kent her
+kent her
+kennen her
+kennen her
+kennen her
+heb hergekend
+hebt hergekend
+heeft hergekend
+hebben hergekend
+hebben hergekend
+hebben hergekend
+kende her
+kende her
+kende her
+kenden her
+kenden her
+kenden her
+had hergekend
+had hergekend
+had hergekend
+hadden hergekend
+hadden hergekend
+hadden hergekend
+zou herkennen
+zou herkennen
+zou herkennen
+zouden herkennen
+zouden herkennen
+zouden herkennen
+zou hergekend hebben
+zou hergekend hebben
+zou hergekend hebben
+zouden hergekend hebben
+zouden hergekend hebben
+zouden hergekend hebben
+zal herkennen
+zult herkennen
+zal herkennen
+zullen herkennen
+zullen herkennen
+zullen herkennen
+groeien
+(to grow)
+groei
+groeit
+groeit
+groeien
+groeien
+groeien
+ben gegroeid
+bent gegroeid
+is gegroeid
+zijn gegroeid
+zijn gegroeid
+zijn gegroeid
+groeide
+groeide
+groeide
+groeiden
+groeiden
+groeiden
+was gegroeid
+was gegroeid
+was gegroeid
+waren gegroeid
+waren gegroeid
+waren gegroeid
+zou groeien
+zou groeien
+zou groeien
+zouden groeien
+zouden groeien
+zouden groeien
+zou gegroeid zijn
+zou gegroeid zijn
+zou gegroeid zijn
+zouden gegroeid zijn
+zouden gegroeid zijn
+zouden gegroeid zijn
+zal groeien
+zult groeien
+zal groeien
+zullen groeien
+zullen groeien
+zullen groeien
+kennen
+(to know)
+ken
+kent
+kent
+kennen
+kennen
+kennen
+heb gekend
+hebt gekend
+heeft gekend
+hebben gekend
+hebben gekend
+hebben gekend
+kende
+kende
+kende
+kenden
+kenden
+kenden
+had gekend
+had gekend
+had gekend
+hadden gekend
+hadden gekend
+hadden gekend
+zou kennen
+zou kennen
+zou kennen
+zouden kennen
+zouden kennen
+zouden kennen
+zou gekend hebben
+zou gekend hebben
+zou gekend hebben
+zouden gekend hebben
+zouden gekend hebben
+zouden gekend hebben
+zal kennen
+zult kennen
+zal kennen
+zullen kennen
+zullen kennen
+zullen kennen
+profiteren
+(a profita)
+profiteer
+profiteert
+profiteert
+profiteren
+profiteren
+profiteren
+heb geprofiteerd
+hebt geprofiteerd
+heeft geprofiteerd
+hebben geprofiteerd
+hebben geprofiteerd
+hebben geprofiteerd
+profiteerde
+profiteerde
+profiteerde
+profiteerden
+profiteerden
+profiteerden
+had geprofiteerd
+had geprofiteerd
+had geprofiteerd
+hadden geprofiteerd
+hadden geprofiteerd
+hadden geprofiteerd
+zou profiteren
+zou profiteren
+zou profiteren
+zouden profiteren
+zouden profiteren
+zouden profiteren
+zou geprofiteerd hebben
+zou geprofiteerd hebben
+zou geprofiteerd hebben
+zouden geprofiteerd hebben
+zouden geprofiteerd hebben
+zouden geprofiteerd hebben
+zal profiteren
+zult profiteren
+zal profiteren
+zullen profiteren
+zullen profiteren
+zullen profiteren
+lopen
+(to walk)
+loop
+loopt
+loopt
+lopen
+lopen
+lopen
+heb gelopen
+hebt gelopen
+heeft gelopen
+hebben gelopen
+hebben gelopen
+hebben gelopen
+liep
+liep
+liep
+liepen
+liepen
+liepen
+had gelopen
+had gelopen
+had gelopen
+hadden gelopen
+hadden gelopen
+hadden gelopen
+zou lopen
+zou lopen
+zou lopen
+zouden lopen
+zouden lopen
+zouden lopen
+zou gelopen hebben
+zou gelopen hebben
+zou gelopen hebben
+zouden gelopen hebben
+zouden gelopen hebben
+zouden gelopen hebben
+zal lopen
+zult lopen
+zal lopen
+zullen lopen
+zullen lopen
+zullen lopen
+raken
+(to hit)
+raak
+raakt
+raakt
+raken
+raken
+raken
+heb geraakt
+hebt geraakt
+heeft geraakt
+hebben geraakt
+hebben geraakt
+hebben geraakt
+raakte
+raakte
+raakte
+raakten
+raakten
+raakten
+had geraakt
+had geraakt
+had geraakt
+hadden geraakt
+hadden geraakt
+hadden geraakt
+zou raken
+zou raken
+zou raken
+zouden raken
+zouden raken
+zouden raken
+zou geraakt hebben
+zou geraakt hebben
+zou geraakt hebben
+zouden geraakt hebben
+zouden geraakt hebben
+zouden geraakt hebben
+zal raken
+zult raken
+zal raken
+zullen raken
+zullen raken
+zullen raken
+repareren
+(to fix)
+repareer
+repareert
+repareert
+repareren
+repareren
+repareren
+heb gerepareerd
+hebt gerepareerd
+heeft gerepareerd
+hebben gerepareerd
+hebben gerepareerd
+hebben gerepareerd
+repareerde
+repareerde
+repareerde
+repareerden
+repareerden
+repareerden
+had gerepareerd
+had gerepareerd
+had gerepareerd
+hadden gerepareerd
+hadden gerepareerd
+hadden gerepareerd
+zou repareren
+zou repareren
+zou repareren
+zouden repareren
+zouden repareren
+zouden repareren
+zou gerepareerd hebben
+zou gerepareerd hebben
+zou gerepareerd hebben
+zouden gerepareerd hebben
+zouden gerepareerd hebben
+zouden gerepareerd hebben
+zal repareren
+zult repareren
+zal repareren
+zullen repareren
+zullen repareren
+zullen repareren
+wachten
+(to wait)
+wacht
+wacht
+wacht
+wachten
+wachten
+wachten
+heb gewacht
+hebt gewacht
+heeft gewacht
+hebben gewacht
+hebben gewacht
+hebben gewacht
+wachtte
+wachtte
+wachtte
+wachtten
+wachtten
+wachtten
+had gewacht
+had gewacht
+had gewacht
+hadden gewacht
+hadden gewacht
+hadden gewacht
+zou wachten
+zou wachten
+zou wachten
+zouden wachten
+zouden wachten
+zouden wachten
+zou gewacht hebben
+zou gewacht hebben
+zou gewacht hebben
+zouden gewacht hebben
+zouden gewacht hebben
+zouden gewacht hebben
+zal wachten
+zult wachten
+zal wachten
+zullen wachten
+zullen wachten
+zullen wachten
+vertellen
+(to tell)
+vertel
+vertelt
+vertelt
+vertellen
+vertellen
+vertellen
+heb verteld
+hebt verteld
+heeft verteld
+hebben verteld
+hebben verteld
+hebben verteld
+vertelde
+vertelde
+vertelde
+vertelden
+vertelden
+vertelden
+had verteld
+had verteld
+had verteld
+hadden verteld
+hadden verteld
+hadden verteld
+zou vertellen
+zou vertellen
+zou vertellen
+zouden vertellen
+zouden vertellen
+zouden vertellen
+zou verteld hebben
+zou verteld hebben
+zou verteld hebben
+zouden verteld hebben
+zouden verteld hebben
+zouden verteld hebben
+zal vertellen
+zult vertellen
+zal vertellen
+zullen vertellen
+zullen vertellen
+zullen vertellen
+bespieden
+(to spy)
+bespied
+bespiedt
+bespiedt
+bespieden
+bespieden
+bespieden
+heb bespied
+hebt bespied
+heeft bespied
+hebben bespied
+hebben bespied
+hebben bespied
+bespiedde
+bespiedde
+bespiedde
+bespiedden
+bespiedden
+bespiedden
+had bespied
+had bespied
+had bespied
+hadden bespied
+hadden bespied
+hadden bespied
+zou bespieden
+zou bespieden
+zou bespieden
+zouden bespieden
+zouden bespieden
+zouden bespieden
+zou bespied hebben
+zou bespied hebben
+zou bespied hebben
+zouden bespied hebben
+zouden bespied hebben
+zouden bespied hebben
+zal bespieden
+zult bespieden
+zal bespieden
+zullen bespieden
+zullen bespieden
+zullen bespieden
+meten
+(to measure)
+meet
+meet
+meet
+meten
+meten
+meten
+heb gemeten
+hebt gemeten
+heeft gemeten
+hebben gemeten
+hebben gemeten
+hebben gemeten
+mat
+mat
+mat
+maten
+maten
+maten
+had gemeten
+had gemeten
+had gemeten
+hadden gemeten
+hadden gemeten
+hadden gemeten
+zou meten
+zou meten
+zou meten
+zouden meten
+zouden meten
+zouden meten
+zou gemeten hebben
+zou gemeten hebben
+zou gemeten hebben
+zouden gemeten hebben
+zouden gemeten hebben
+zouden gemeten hebben
+zal meten
+zult meten
+zal meten
+zullen meten
+zullen meten
+zullen meten
+toevoegen
+(to add)
+voeg toe
+voegt toe
+voegt toe
+voegen toe
+voegen toe
+voegen toe
+heb toegevoegd
+hebt toegevoegd
+heeft toegevoegd
+hebben toegevoegd
+hebben toegevoegd
+hebben toegevoegd
+voegde toe
+voegde toe
+voegde toe
+voegden toe
+voegden toe
+voegden toe
+had toegevoegd
+had toegevoegd
+had toegevoegd
+hadden toegevoegd
+hadden toegevoegd
+hadden toegevoegd
+zou toevoegen
+zou toevoegen
+zou toevoegen
+zouden toevoegen
+zouden toevoegen
+zouden toevoegen
+zou toegevoegd hebben
+zou toegevoegd hebben
+zou toegevoegd hebben
+zouden toegevoegd hebben
+zouden toegevoegd hebben
+zouden toegevoegd hebben
+zal toevoegen
+zult toevoegen
+zal toevoegen
+zullen toevoegen
+zullen toevoegen
+zullen toevoegen
+schieten
+(to shoot)
+schiet
+schiet
+schiet
+schieten
+schieten
+schieten
+heb geschoten
+hebt geschoten
+heeft geschoten
+hebben geschoten
+hebben geschoten
+hebben geschoten
+schoot
+schoot
+schoot
+schoten
+schoten
+schoten
+had geschoten
+had geschoten
+had geschoten
+hadden geschoten
+hadden geschoten
+hadden geschoten
+zou schieten
+zou schieten
+zou schieten
+zouden schieten
+zouden schieten
+zouden schieten
+zou geschoten hebben
+zou geschoten hebben
+zou geschoten hebben
+zouden geschoten hebben
+zouden geschoten hebben
+zouden geschoten hebben
+zal schieten
+zult schieten
+zal schieten
+zullen schieten
+zullen schieten
+zullen schieten
+betekenen
+(to mean)
+beteken
+betekent
+betekent
+betekenen
+betekenen
+betekenen
+heb betekend
+hebt betekend
+heeft betekend
+hebben betekend
+hebben betekend
+hebben betekend
+betekende
+betekende
+betekende
+betekenden
+betekenden
+betekenden
+had betekend
+had betekend
+had betekend
+hadden betekend
+hadden betekend
+hadden betekend
+zou betekenen
+zou betekenen
+zou betekenen
+zouden betekenen
+zouden betekenen
+zouden betekenen
+zou betekend hebben
+zou betekend hebben
+zou betekend hebben
+zouden betekend hebben
+zouden betekend hebben
+zouden betekend hebben
+zal betekenen
+zult betekenen
+zal betekenen
+zullen betekenen
+zullen betekenen
+zullen betekenen
+bevestigen
+(to confirm)
+bevestig
+bevestigt
+bevestigt
+bevestigen
+bevestigen
+bevestigen
+heb bevestigd
+hebt bevestigd
+heeft bevestigd
+hebben bevestigd
+hebben bevestigd
+hebben bevestigd
+bevestigde
+bevestigde
+bevestigde
+bevestigden
+bevestigden
+bevestigden
+had bevestigd
+had bevestigd
+had bevestigd
+hadden bevestigd
+hadden bevestigd
+hadden bevestigd
+zou bevestigen
+zou bevestigen
+zou bevestigen
+zouden bevestigen
+zouden bevestigen
+zouden bevestigen
+zou bevestigd hebben
+zou bevestigd hebben
+zou bevestigd hebben
+zouden bevestigd hebben
+zouden bevestigd hebben
+zouden bevestigd hebben
+zal bevestigen
+zult bevestigen
+zal bevestigen
+zullen bevestigen
+zullen bevestigen
+zullen bevestigen
+rijden
+(to ride/drive)
+rijd
+jij
+hij
+wij
+jullie
+zij
+heb gereden
+hebt gereden
+heeft gereden
+hebben gereden
+hebben gereden
+hebben gereden
+reed
+reed
+reed
+reden
+reden
+reden
+had gereden
+had gereden
+had gereden
+hadden gereden
+hadden gereden
+hadden gereden
+zou rijden
+zou rijden
+zou rijden
+zouden rijden
+zouden rijden
+zouden rijden
+zou gereden hebben
+zou gereden hebben
+zou gereden hebben
+zouden gereden hebben
+zouden gereden hebben
+zouden gereden hebben
+zal rijden
+zult rijden
+zal rijden
+zullen rijden
+zullen rijden
+zullen rijden
+bestellen
+(to order)
+bestel
+bestelt
+bestelt
+bestellen
+bestellen
+bestellen
+heb besteld
+hebt besteld
+heeft besteld
+hebben besteld
+hebben besteld
+hebben besteld
+bestelde
+bestelde
+bestelde
+bestelden
+bestelden
+bestelden
+had besteld
+had besteld
+had besteld
+hadden besteld
+hadden besteld
+hadden besteld
+zou bestellen
+zou bestellen
+zou bestellen
+zouden bestellen
+zouden bestellen
+zouden bestellen
+zou besteld hebben
+zou besteld hebben
+zou besteld hebben
+zouden besteld hebben
+zouden besteld hebben
+zouden besteld hebben
+zal bestellen
+zult bestellen
+zal bestellen
+zullen bestellen
+zullen bestellen
+zullen bestellen
+kopen
+(to buy)
+koop
+koopt
+koopt
+kopen
+kopen
+kopen
+heb gekocht
+hebt gekocht
+heeft gekocht
+hebben gekocht
+hebben gekocht
+hebben gekocht
+kocht
+kocht
+kocht
+kochten
+kochten
+kochten
+had gekocht
+had gekocht
+had gekocht
+hadden gekocht
+hadden gekocht
+hadden gekocht
+zou kopen
+zou kopen
+zou kopen
+zouden kopen
+zouden kopen
+zouden kopen
+zou gekocht hebben
+zou gekocht hebben
+zou gekocht hebben
+zouden gekocht hebben
+zouden gekocht hebben
+zouden gekocht hebben
+zal kopen
+zult kopen
+zal kopen
+zullen kopen
+zullen kopen
+zullen kopen
+krijgen
+(to recieve)
+krijg
+krijgt
+krijgt
+krijgen
+krijgen
+krijgen
+heb gekregen
+hebt gekregen
+heeft gekregen
+hebben gekregen
+hebben gekregen
+hebben gekregen
+kreeg
+kreeg
+kreeg
+kregen
+kregen
+kregen
+had gekregen
+had gekregen
+had gekregen
+hadden gekregen
+hadden gekregen
+hadden gekregen
+zou krijgen
+zou krijgen
+zou krijgen
+zouden krijgen
+zouden krijgen
+zouden krijgen
+zou gekregen hebben
+zou gekregen hebben
+zou gekregen hebben
+zouden gekregen hebben
+zouden gekregen hebben
+zouden gekregen hebben
+zal krijgen
+zult krijgen
+zal krijgen
+zullen krijgen
+zullen krijgen
+zullen krijgen
+eten
+(to eat)
+eet
+eet
+eet
+eten
+eten
+eten
+heb geëten
+hebt geëten
+heeft geëten
+hebben geëten
+hebben geëten
+hebben geëten
+at
+at
+at
+aten
+aten
+aten
+had geëten
+had geëten
+had geëten
+hadden geëten
+hadden geëten
+hadden geëten
+zou eten
+zou eten
+zou eten
+zouden eten
+zouden eten
+zouden eten
+zou geëten hebben
+zou geëten hebben
+zou geëten hebben
+zouden geëten hebben
+zouden geëten hebben
+zouden geëten hebben
+zal eten
+zult eten
+zal eten
+zullen eten
+zullen eten
+zullen eten
+drinken
+(to drink)
+drink
+drinkt
+drinkt
+drinken
+drinken
+drinken
+heb gedronken
+hebt gedronken
+heeft gedronken
+hebben gedronken
+hebben gedronken
+hebben gedronken
+dronk
+dronk
+dronk
+dronken
+dronken
+dronken
+had gedronken
+had gedronken
+had gedronken
+hadden gedronken
+hadden gedronken
+hadden gedronken
+zou drinken
+zou drinken
+zou drinken
+zouden drinken
+zouden drinken
+zouden drinken
+zou gedronken hebben
+zou gedronken hebben
+zou gedronken hebben
+zouden gedronken hebben
+zouden gedronken hebben
+zouden gedronken hebben
+zal drinken
+zult drinken
+zal drinken
+zullen drinken
+zullen drinken
+zullen drinken
+horen
+(to hear)
+hoor
+hoort
+hoort
+horen
+horen
+horen
+heb gehoord
+hebt gehoord
+heeft gehoord
+hebben gehoord
+hebben gehoord
+hebben gehoord
+hoorde
+hoorde
+hoorde
+hoorden
+hoorden
+hoorden
+had gehoord
+had gehoord
+had gehoord
+hadden gehoord
+hadden gehoord
+hadden gehoord
+zou horen
+zou horen
+zou horen
+zouden horen
+zouden horen
+zouden horen
+zou gehoord hebben
+zou gehoord hebben
+zou gehoord hebben
+zouden gehoord hebben
+zouden gehoord hebben
+zouden gehoord hebben
+zal horen
+zult horen
+zal horen
+zullen horen
+zullen horen
+zullen horen
+weten
+(to know)
+weet
+weet
+weet
+weten
+weten
+weten
+heb geweten
+hebt geweten
+heeft geweten
+hebben geweten
+hebben geweten
+hebben geweten
+wist
+wist
+wist
+wisten
+wisten
+wisten
+had geweten
+had geweten
+had geweten
+hadden geweten
+hadden geweten
+hadden geweten
+zou weten
+zou weten
+zou weten
+zouden weten
+zouden weten
+zouden weten
+zou geweten hebben
+zou geweten hebben
+zou geweten hebben
+zouden geweten hebben
+zouden geweten hebben
+zouden geweten hebben
+zal weten
+zult weten
+zal weten
+zullen weten
+zullen weten
+zullen weten
+leren
+(to learn)
+leer
+leert
+leert
+leren
+leren
+leren
+heb geleerd
+hebt geleerd
+heeft geleerd
+hebben geleerd
+hebben geleerd
+hebben geleerd
+leerde
+leerde
+leerde
+leerden
+leerden
+leerden
+had geleerd
+had geleerd
+had geleerd
+hadden geleerd
+hadden geleerd
+hadden geleerd
+zou leren
+zou leren
+zou leren
+zouden leren
+zouden leren
+zouden leren
+zou geleerd hebben
+zou geleerd hebben
+zou geleerd hebben
+zouden geleerd hebben
+zouden geleerd hebben
+zouden geleerd hebben
+zal leren
+zult leren
+zal leren
+zullen leren
+zullen leren
+zullen leren
+slapen
+(to sleep)
+slaap
+slaapt
+slaapt
+slapen
+slapen
+slapen
+heb geslapen
+hebt geslapen
+heeft geslapen
+hebben geslapen
+hebben geslapen
+hebben geslapen
+sliep
+sliep
+sliep
+sliepen
+sliepen
+sliepen
+had geslapen
+had geslapen
+had geslapen
+hadden geslapen
+hadden geslapen
+hadden geslapen
+zou slapen
+zou slapen
+zou slapen
+zouden slapen
+zouden slapen
+zouden slapen
+zou geslapen hebben
+zou geslapen hebben
+zou geslapen hebben
+zouden geslapen hebben
+zouden geslapen hebben
+zouden geslapen hebben
+zal slapen
+zult slapen
+zal slapen
+zullen slapen
+zullen slapen
+zullen slapen
+lezen
+(to read)
+lees
+leest
+leest
+lezen
+lezen
+lezen
+heb gelezen
+hebt gelezen
+heeft gelezen
+hebben gelezen
+hebben gelezen
+hebben gelezen
+las
+las
+las
+lazen
+lazen
+lazen
+had gelezen
+had gelezen
+had gelezen
+hadden gelezen
+hadden gelezen
+hadden gelezen
+zou lezen
+zou lezen
+zou lezen
+zouden lezen
+zouden lezen
+zouden lezen
+zou gelezen hebben
+zou gelezen hebben
+zou gelezen hebben
+zouden gelezen hebben
+zouden gelezen hebben
+zouden gelezen hebben
+zal lezen
+zult lezen
+zal lezen
+zullen lezen
+zullen lezen
+zullen lezen
+schrijven
+(to write)
+schrijf
+schrijft
+schrijft
+schrijven
+schrijven
+schrijven
+heb geschreven
+hebt geschreven
+heeft geschreven
+hebben geschreven
+hebben geschreven
+hebben geschreven
+schreef
+schreef
+schreef
+schreven
+schreven
+schreven
+had geschreven
+had geschreven
+had geschreven
+hadden geschreven
+hadden geschreven
+hadden geschreven
+zou schrijven
+zou schrijven
+zou schrijven
+zouden schrijven
+zouden schrijven
+zouden schrijven
+zou geschreven hebben
+zou geschreven hebben
+zou geschreven hebben
+zouden geschreven hebben
+zouden geschreven hebben
+zouden geschreven hebben
+zal schrijven
+zult schrijven
+zal schrijven
+zullen schrijven
+zullen schrijven
+zullen schrijven
+spreken
+(to speak)
+spreek
+spreekt
+spreekt
+spreken
+spreken
+spreken
+heb gesproken
+hebt gesproken
+heeft gesproken
+hebben gesproken
+hebben gesproken
+hebben gesproken
+sprak
+sprak
+sprak
+spraken
+spraken
+spraken
+had gesproken
+had gesproken
+had gesproken
+hadden gesproken
+hadden gesproken
+hadden gesproken
+zou spreken
+zou spreken
+zou spreken
+zouden spreken
+zouden spreken
+zouden spreken
+zou gesproken hebben
+zou gesproken hebben
+zou gesproken hebben
+zouden gesproken hebben
+zouden gesproken hebben
+zouden gesproken hebben
+zal spreken
+zult spreken
+zal spreken
+zullen spreken
+zullen spreken
+zullen spreken
+denken
+(to think)
+denk
+denkt
+denkt
+denken
+denken
+denken
+heb gedacht
+hebt gedacht
+heeft gedacht
+hebben gedacht
+hebben gedacht
+hebben gedacht
+dacht
+dacht
+dacht
+dachten
+dachten
+dachten
+had gedacht
+had gedacht
+had gedacht
+hadden gedacht
+hadden gedacht
+hadden gedacht
+zou denken
+zou denken
+zou denken
+zouden denken
+zouden denken
+zouden denken
+zou gedacht hebben
+zou gedacht hebben
+zou gedacht hebben
+zouden gedacht hebben
+zouden gedacht hebben
+zouden gedacht hebben
+zal denken
+zult denken
+zal denken
+zullen denken
+zullen denken
+zullen denken
+werken
+(to work)
+werk
+werkt
+werkt
+werken
+werken
+werken
+heb gewerkt
+jij
+gewrocht
+heeft gewerkt
+wij
+gewrocht
+werkte
+werkte
+werkte
+werkten
+werkten
+werkten
+had gewerkt
+jij
+gewrocht
+had gewerkt
+wij
+gewrocht
+zou werken
+zou werken
+zou werken
+zouden werken
+zouden werken
+zouden werken
+zou gewerkt
+jij
+gewrocht hebben
+zou gewerkt
+wij
+gewrocht hebben
+zal werken
+zult werken
+zal werken
+zullen werken
+zullen werken
+zullen werken
+reizen
+(to travel)
+reis
+reist
+reist
+reizen
+reizen
+reizen
+heb gereisd
+hebt gereisd
+heeft gereisd
+hebben gereisd
+hebben gereisd
+hebben gereisd
+reisde
+reisde
+reisde
+reisden
+reisden
+reisden
+had gereisd
+had gereisd
+had gereisd
+hadden gereisd
+hadden gereisd
+hadden gereisd
+zou reizen
+zou reizen
+zou reizen
+zouden reizen
+zouden reizen
+zouden reizen
+zou gereisd hebben
+zou gereisd hebben
+zou gereisd hebben
+zouden gereisd hebben
+zouden gereisd hebben
+zouden gereisd hebben
+zal reizen
+zult reizen
+zal reizen
+zullen reizen
+zullen reizen
+zullen reizen
+koken
+(to cook)
+kook
+kookt
+kookt
+koken
+koken
+koken
+heb gekookt
+hebt gekookt
+heeft gekookt
+hebben gekookt
+hebben gekookt
+hebben gekookt
+kookte
+kookte
+kookte
+kookten
+kookten
+kookten
+had gekookt
+had gekookt
+had gekookt
+hadden gekookt
+hadden gekookt
+hadden gekookt
+zou koken
+zou koken
+zou koken
+zouden koken
+zouden koken
+zouden koken
+zou gekookt hebben
+zou gekookt hebben
+zou gekookt hebben
+zouden gekookt hebben
+zouden gekookt hebben
+zouden gekookt hebben
+zal koken
+zult koken
+zal koken
+zullen koken
+zullen koken
+zullen koken
+zingen
+(to sing)
+zing
+zingt
+zingt
+zingen
+zingen
+zingen
+heb gezongen
+hebt gezongen
+heeft gezongen
+hebben gezongen
+hebben gezongen
+hebben gezongen
+zong
+zong
+zong
+zongen
+zongen
+zongen
+had gezongen
+had gezongen
+had gezongen
+hadden gezongen
+hadden gezongen
+hadden gezongen
+zou zingen
+zou zingen
+zou zingen
+zouden zingen
+zouden zingen
+zouden zingen
+zou gezongen hebben
+zou gezongen hebben
+zou gezongen hebben
+zouden gezongen hebben
+zouden gezongen hebben
+zouden gezongen hebben
+zal zingen
+zult zingen
+zal zingen
+zullen zingen
+zullen zingen
+zullen zingen
+dansen
+(to dance)
+dans
+danst
+danst
+dansen
+dansen
+dansen
+heb gedanst
+hebt gedanst
+heeft gedanst
+hebben gedanst
+hebben gedanst
+hebben gedanst
+danste
+danste
+danste
+dansten
+dansten
+dansten
+had gedanst
+had gedanst
+had gedanst
+hadden gedanst
+hadden gedanst
+hadden gedanst
+zou dansen
+zou dansen
+zou dansen
+zouden dansen
+zouden dansen
+zouden dansen
+zou gedanst hebben
+zou gedanst hebben
+zou gedanst hebben
+zouden gedanst hebben
+zouden gedanst hebben
+zouden gedanst hebben
+zal dansen
+zult dansen
+zal dansen
+zullen dansen
+zullen dansen
+zullen dansen
+wonen
+(to live/reside)
+woon
+woont
+woont
+wonen
+wonen
+wonen
+heb gewoond
+hebt gewoond
+heeft gewoond
+hebben gewoond
+hebben gewoond
+hebben gewoond
+woonde
+woonde
+woonde
+woonden
+woonden
+woonden
+had gewoond
+had gewoond
+had gewoond
+hadden gewoond
+hadden gewoond
+hadden gewoond
+zou wonen
+zou wonen
+zou wonen
+zouden wonen
+zouden wonen
+zouden wonen
+zou gewoond hebben
+zou gewoond hebben
+zou gewoond hebben
+zouden gewoond hebben
+zouden gewoond hebben
+zouden gewoond hebben
+zal wonen
+zult wonen
+zal wonen
+zullen wonen
+zullen wonen
+zullen wonen
+doen
+(to do)
+doe
+doet
+doet
+doen
+doen
+doen
+heb gedaan
+hebt gedaan
+heeft gedaan
+hebben gedaan
+hebben gedaan
+hebben gedaan
+deed
+deed
+deed
+deden
+deden
+deden
+had gedaan
+had gedaan
+had gedaan
+hadden gedaan
+hadden gedaan
+hadden gedaan
+zou doen
+zou doen
+zou doen
+zouden doen
+zouden doen
+zouden doen
+zou gedaan hebben
+zou gedaan hebben
+zou gedaan hebben
+zouden gedaan hebben
+zouden gedaan hebben
+zouden gedaan hebben
+zal doen
+zult doen
+zal doen
+zullen doen
+zullen doen
+zullen doen
+beginnen
+(to start)
+begin
+begint
+begint
+beginnen
+beginnen
+beginnen
+ben begonnen
+bent begonnen
+is begonnen
+zijn begonnen
+zijn begonnen
+zijn begonnen
+begon
+begon
+begon
+begonnen
+begonnen
+begonnen
+was begonnen
+was begonnen
+was begonnen
+waren begonnen
+waren begonnen
+waren begonnen
+zou beginnen
+zou beginnen
+zou beginnen
+zouden beginnen
+zouden beginnen
+zouden beginnen
+zou begonnen zijn
+zou begonnen zijn
+zou begonnen zijn
+zouden begonnen zijn
+zouden begonnen zijn
+zouden begonnen zijn
+zal beginnen
+zult beginnen
+zal beginnen
+zullen beginnen
+zullen beginnen
+zullen beginnen
+geloven
+(to believe)
+geloof
+gelooft
+gelooft
+geloven
+geloven
+geloven
+heb geloofd
+hebt geloofd
+heeft geloofd
+hebben geloofd
+hebben geloofd
+hebben geloofd
+geloofde
+geloofde
+geloofde
+geloofden
+geloofden
+geloofden
+had geloofd
+had geloofd
+had geloofd
+hadden geloofd
+hadden geloofd
+hadden geloofd
+zou geloven
+zou geloven
+zou geloven
+zouden geloven
+zouden geloven
+zouden geloven
+zou geloofd hebben
+zou geloofd hebben
+zou geloofd hebben
+zouden geloofd hebben
+zouden geloofd hebben
+zouden geloofd hebben
+zal geloven
+zult geloven
+zal geloven
+zullen geloven
+zullen geloven
+zullen geloven
+lenen
+(to borrow)
+leen
+leent
+leent
+lenen
+lenen
+lenen
+heb geleend
+hebt geleend
+heeft geleend
+hebben geleend
+hebben geleend
+hebben geleend
+leende
+leende
+leende
+leenden
+leenden
+leenden
+had geleend
+had geleend
+had geleend
+hadden geleend
+hadden geleend
+hadden geleend
+zou lenen
+zou lenen
+zou lenen
+zouden lenen
+zouden lenen
+zouden lenen
+zou geleend hebben
+zou geleend hebben
+zou geleend hebben
+zouden geleend hebben
+zouden geleend hebben
+zouden geleend hebben
+zal lenen
+zult lenen
+zal lenen
+zullen lenen
+zullen lenen
+zullen lenen
+bellen
+(to dial)
+bel
+belt
+belt
+bellen
+bellen
+bellen
+heb gebeld
+hebt gebeld
+heeft gebeld
+hebben gebeld
+hebben gebeld
+hebben gebeld
+belde
+belde
+belde
+belden
+belden
+belden
+had gebeld
+had gebeld
+had gebeld
+hadden gebeld
+hadden gebeld
+hadden gebeld
+zou bellen
+zou bellen
+zou bellen
+zouden bellen
+zouden bellen
+zouden bellen
+zou gebeld hebben
+zou gebeld hebben
+zou gebeld hebben
+zouden gebeld hebben
+zouden gebeld hebben
+zouden gebeld hebben
+zal bellen
+zult bellen
+zal bellen
+zullen bellen
+zullen bellen
+zullen bellen
+vallen
+(to fall)
+val
+valt
+valt
+vallen
+vallen
+vallen
+ben gevallen
+bent gevallen
+is gevallen
+zijn gevallen
+zijn gevallen
+zijn gevallen
+viel
+viel
+viel
+vielen
+vielen
+vielen
+was gevallen
+was gevallen
+was gevallen
+waren gevallen
+waren gevallen
+waren gevallen
+zou vallen
+zou vallen
+zou vallen
+zouden vallen
+zouden vallen
+zouden vallen
+zou gevallen zijn
+zou gevallen zijn
+zou gevallen zijn
+zouden gevallen zijn
+zouden gevallen zijn
+zouden gevallen zijn
+zal vallen
+zult vallen
+zal vallen
+zullen vallen
+zullen vallen
+zullen vallen
+voelen
+(to feel)
+voel
+voelt
+voelt
+voelen
+voelen
+voelen
+heb gevoeld
+hebt gevoeld
+heeft gevoeld
+hebben gevoeld
+hebben gevoeld
+hebben gevoeld
+voelde
+voelde
+voelde
+voelden
+voelden
+voelden
+had gevoeld
+had gevoeld
+had gevoeld
+hadden gevoeld
+hadden gevoeld
+hadden gevoeld
+zou voelen
+zou voelen
+zou voelen
+zouden voelen
+zouden voelen
+zouden voelen
+zou gevoeld hebben
+zou gevoeld hebben
+zou gevoeld hebben
+zouden gevoeld hebben
+zouden gevoeld hebben
+zouden gevoeld hebben
+zal voelen
+zult voelen
+zal voelen
+zullen voelen
+zullen voelen
+zullen voelen
+volgen
+(to follow)
+volg
+volgt
+volgt
+volgen
+volgen
+volgen
+heb gevolgd
+hebt gevolgd
+heeft gevolgd
+hebben gevolgd
+hebben gevolgd
+hebben gevolgd
+volgde
+volgde
+volgde
+volgden
+volgden
+volgden
+had gevolgd
+had gevolgd
+had gevolgd
+hadden gevolgd
+hadden gevolgd
+hadden gevolgd
+zou volgen
+zou volgen
+zou volgen
+zouden volgen
+zouden volgen
+zouden volgen
+zou gevolgd hebben
+zou gevolgd hebben
+zou gevolgd hebben
+zouden gevolgd hebben
+zouden gevolgd hebben
+zouden gevolgd hebben
+zal volgen
+zult volgen
+zal volgen
+zullen volgen
+zullen volgen
+zullen volgen
+maken
+(to make)
+maak
+maakt
+maakt
+maken
+maken
+maken
+heb gemaakt
+hebt gemaakt
+heeft gemaakt
+hebben gemaakt
+hebben gemaakt
+hebben gemaakt
+maakte
+maakte
+maakte
+maakten
+maakten
+maakten
+had gemaakt
+had gemaakt
+had gemaakt
+hadden gemaakt
+hadden gemaakt
+hadden gemaakt
+zou maken
+zou maken
+zou maken
+zouden maken
+zouden maken
+zouden maken
+zou gemaakt hebben
+zou gemaakt hebben
+zou gemaakt hebben
+zouden gemaakt hebben
+zouden gemaakt hebben
+zouden gemaakt hebben
+zal maken
+zult maken
+zal maken
+zullen maken
+zullen maken
+zullen maken
+sluiten
+(to close)
+sluit
+sluit
+sluit
+sluiten
+sluiten
+sluiten
+heb gesloten
+hebt gesloten
+heeft gesloten
+hebben gesloten
+hebben gesloten
+hebben gesloten
+sloot
+sloot
+sloot
+sloten
+sloten
+sloten
+had gesloten
+had gesloten
+had gesloten
+hadden gesloten
+hadden gesloten
+hadden gesloten
+zou sluiten
+zou sluiten
+zou sluiten
+zouden sluiten
+zouden sluiten
+zouden sluiten
+zou gesloten hebben
+zou gesloten hebben
+zou gesloten hebben
+zouden gesloten hebben
+zouden gesloten hebben
+zouden gesloten hebben
+zal sluiten
+zult sluiten
+zal sluiten
+zullen sluiten
+zullen sluiten
+zullen sluiten
+snijden
+(to cut)
+snijd
+jij
+hij
+wij
+jullie
+zij
+heb gesneden
+hebt gesneden
+heeft gesneden
+hebben gesneden
+hebben gesneden
+hebben gesneden
+sneed
+sneed
+sneed
+sneden
+sneden
+sneden
+had gesneden
+had gesneden
+had gesneden
+hadden gesneden
+hadden gesneden
+hadden gesneden
+zou snijden
+zou snijden
+zou snijden
+zouden snijden
+zouden snijden
+zouden snijden
+zou gesneden hebben
+zou gesneden hebben
+zou gesneden hebben
+zouden gesneden hebben
+zouden gesneden hebben
+zouden gesneden hebben
+zal snijden
+zult snijden
+zal snijden
+zullen snijden
+zullen snijden
+zullen snijden
+verdwijnen
+(to disappear)
+verdwijn
+verdwijnt
+verdwijnt
+verdwijnen
+verdwijnen
+verdwijnen
+ben verdwenen
+bent verdwenen
+is verdwenen
+zijn verdwenen
+zijn verdwenen
+zijn verdwenen
+verdween
+verdween
+verdween
+verdwenen
+verdwenen
+verdwenen
+was verdwenen
+was verdwenen
+was verdwenen
+waren verdwenen
+waren verdwenen
+waren verdwenen
+zou verdwijnen
+zou verdwijnen
+zou verdwijnen
+zouden verdwijnen
+zouden verdwijnen
+zouden verdwijnen
+zou verdwenen zijn
+zou verdwenen zijn
+zou verdwenen zijn
+zouden verdwenen zijn
+zouden verdwenen zijn
+zouden verdwenen zijn
+zal verdwijnen
+zult verdwijnen
+zal verdwijnen
+zullen verdwijnen
+zullen verdwijnen
+zullen verdwijnen
+dreigen
+(to threaten)
+dreig
+dreigt
+dreigt
+dreigen
+dreigen
+dreigen
+heb gedreigd
+hebt gedreigd
+heeft gedreigd
+hebben gedreigd
+hebben gedreigd
+hebben gedreigd
+dreigde
+dreigde
+dreigde
+dreigden
+dreigden
+dreigden
+had gedreigd
+had gedreigd
+had gedreigd
+hadden gedreigd
+hadden gedreigd
+hadden gedreigd
+zou dreigen
+zou dreigen
+zou dreigen
+zouden dreigen
+zouden dreigen
+zouden dreigen
+zou gedreigd hebben
+zou gedreigd hebben
+zou gedreigd hebben
+zouden gedreigd hebben
+zouden gedreigd hebben
+zouden gedreigd hebben
+zal dreigen
+zult dreigen
+zal dreigen
+zullen dreigen
+zullen dreigen
+zullen dreigen
+sorteren
+(to sort)
+sorteer
+sorteert
+sorteert
+sorteren
+sorteren
+sorteren
+heb gesorteerd
+hebt gesorteerd
+heeft gesorteerd
+hebben gesorteerd
+hebben gesorteerd
+hebben gesorteerd
+sorteerde
+sorteerde
+sorteerde
+sorteerden
+sorteerden
+sorteerden
+had gesorteerd
+had gesorteerd
+had gesorteerd
+hadden gesorteerd
+hadden gesorteerd
+hadden gesorteerd
+zou sorteren
+zou sorteren
+zou sorteren
+zouden sorteren
+zouden sorteren
+zouden sorteren
+zou gesorteerd hebben
+zou gesorteerd hebben
+zou gesorteerd hebben
+zouden gesorteerd hebben
+zouden gesorteerd hebben
+zouden gesorteerd hebben
+zal sorteren
+zult sorteren
+zal sorteren
+zullen sorteren
+zullen sorteren
+zullen sorteren
+bewijzen
+(to prove)
+bewijs
+bewijst
+bewijst
+bewijzen
+bewijzen
+bewijzen
+heb bewezen
+hebt bewezen
+heeft bewezen
+hebben bewezen
+hebben bewezen
+hebben bewezen
+bewees
+bewees
+bewees
+bewezen
+bewezen
+bewezen
+had bewezen
+had bewezen
+had bewezen
+hadden bewezen
+hadden bewezen
+hadden bewezen
+zou bewijzen
+zou bewijzen
+zou bewijzen
+zouden bewijzen
+zouden bewijzen
+zouden bewijzen
+zou bewezen hebben
+zou bewezen hebben
+zou bewezen hebben
+zouden bewezen hebben
+zouden bewezen hebben
+zouden bewezen hebben
+zal bewijzen
+zult bewijzen
+zal bewijzen
+zullen bewijzen
+zullen bewijzen
+zullen bewijzen
+gebeuren
+(to happen)
+gebeur
+gebeurt
+gebeurt
+gebeuren
+gebeuren
+gebeuren
+heb gebeurd
+hebt gebeurd
+heeft gebeurd
+hebben gebeurd
+hebben gebeurd
+hebben gebeurd
+gebeurde
+gebeurde
+gebeurde
+gebeurden
+gebeurden
+gebeurden
+had gebeurd
+had gebeurd
+had gebeurd
+hadden gebeurd
+hadden gebeurd
+hadden gebeurd
+zou gebeuren
+zou gebeuren
+zou gebeuren
+zouden gebeuren
+zouden gebeuren
+zouden gebeuren
+zou gebeurd hebben
+zou gebeurd hebben
+zou gebeurd hebben
+zouden gebeurd hebben
+zouden gebeurd hebben
+zouden gebeurd hebben
+zal gebeuren
+zult gebeuren
+zal gebeuren
+zullen gebeuren
+zullen gebeuren
+zullen gebeuren
+hoeven
+(to need)
+hoef
+hoeft
+hoeft
+hoeven
+hoeven
+hoeven
+heb gehoefd
+jij
+gehoeven
+heeft gehoefd
+wij
+gehoeven
+hoefde
+hoefde
+hoefde
+hoefden
+hoefden
+hoefden
+had gehoefd
+jij
+gehoeven
+had gehoefd
+wij
+gehoeven
+zou hoeven
+zou hoeven
+zou hoeven
+zouden hoeven
+zouden hoeven
+zouden hoeven
+zou gehoefd
+jij
+gehoeven hebben
+zou gehoefd
+wij
+gehoeven hebben
+zal hoeven
+zult hoeven
+zal hoeven
+zullen hoeven
+zullen hoeven
+zullen hoeven
+rukken
+(to pull)
+ruk
+rukt
+rukt
+rukken
+rukken
+rukken
+heb gerukt
+hebt gerukt
+heeft gerukt
+hebben gerukt
+hebben gerukt
+hebben gerukt
+rukte
+rukte
+rukte
+rukten
+rukten
+rukten
+had gerukt
+had gerukt
+had gerukt
+hadden gerukt
+hadden gerukt
+hadden gerukt
+zou rukken
+zou rukken
+zou rukken
+zouden rukken
+zouden rukken
+zouden rukken
+zou gerukt hebben
+zou gerukt hebben
+zou gerukt hebben
+zouden gerukt hebben
+zouden gerukt hebben
+zouden gerukt hebben
+zal rukken
+zult rukken
+zal rukken
+zullen rukken
+zullen rukken
+zullen rukken
+oprichten
+(to establish)
+richt op
+richt op
+richt op
+richten op
+richten op
+richten op
+heb opgericht
+hebt opgericht
+heeft opgericht
+hebben opgericht
+hebben opgericht
+hebben opgericht
+richtte op
+richtte op
+richtte op
+richtten op
+richtten op
+richtten op
+had opgericht
+had opgericht
+had opgericht
+hadden opgericht
+hadden opgericht
+hadden opgericht
+zou oprichten
+zou oprichten
+zou oprichten
+zouden oprichten
+zouden oprichten
+zouden oprichten
+zou opgericht hebben
+zou opgericht hebben
+zou opgericht hebben
+zouden opgericht hebben
+zouden opgericht hebben
+zouden opgericht hebben
+zal oprichten
+zult oprichten
+zal oprichten
+zullen oprichten
+zullen oprichten
+zullen oprichten
+beseffen
+(to realize)
+besef
+beseft
+beseft
+beseffen
+beseffen
+beseffen
+heb beseft
+hebt beseft
+heeft beseft
+hebben beseft
+hebben beseft
+hebben beseft
+besefte
+besefte
+besefte
+beseften
+beseften
+beseften
+had beseft
+had beseft
+had beseft
+hadden beseft
+hadden beseft
+hadden beseft
+zou beseffen
+zou beseffen
+zou beseffen
+zouden beseffen
+zouden beseffen
+zouden beseffen
+zou beseft hebben
+zou beseft hebben
+zou beseft hebben
+zouden beseft hebben
+zouden beseft hebben
+zouden beseft hebben
+zal beseffen
+zult beseffen
+zal beseffen
+zullen beseffen
+zullen beseffen
+zullen beseffen
+toebedelen
+(to assign)
+bedeel toe
+bedeelt toe
+bedeelt toe
+bedelen toe
+bedelen toe
+bedelen toe
+heb toebedeeld
+hebt toebedeeld
+heeft toebedeeld
+hebben toebedeeld
+hebben toebedeeld
+hebben toebedeeld
+bedeelde toe
+bedeelde toe
+bedeelde toe
+bedeelden toe
+bedeelden toe
+bedeelden toe
+had toebedeeld
+had toebedeeld
+had toebedeeld
+hadden toebedeeld
+hadden toebedeeld
+hadden toebedeeld
+zou toebedelen
+zou toebedelen
+zou toebedelen
+zouden toebedelen
+zouden toebedelen
+zouden toebedelen
+zou toebedeeld hebben
+zou toebedeeld hebben
+zou toebedeeld hebben
+zouden toebedeeld hebben
+zouden toebedeeld hebben
+zouden toebedeeld hebben
+zal toebedelen
+zult toebedelen
+zal toebedelen
+zullen toebedelen
+zullen toebedelen
+zullen toebedelen
+fietsen
+(to bike)
+fiets
+fietst
+fietst
+fietsen
+fietsen
+fietsen
+heb gefietst
+hebt gefietst
+heeft gefietst
+hebben gefietst
+hebben gefietst
+hebben gefietst
+fietste
+fietste
+fietste
+fietsten
+fietsten
+fietsten
+had gefietst
+had gefietst
+had gefietst
+hadden gefietst
+hadden gefietst
+hadden gefietst
+zou fietsen
+zou fietsen
+zou fietsen
+zouden fietsen
+zouden fietsen
+zouden fietsen
+zou gefietst hebben
+zou gefietst hebben
+zou gefietst hebben
+zouden gefietst hebben
+zouden gefietst hebben
+zouden gefietst hebben
+zal fietsen
+zult fietsen
+zal fietsen
+zullen fietsen
+zullen fietsen
+zullen fietsen
+huren
+(to rent)
+huur
+huurt
+huurt
+huren
+huren
+huren
+heb gehuurd
+hebt gehuurd
+heeft gehuurd
+hebben gehuurd
+hebben gehuurd
+hebben gehuurd
+huurde
+huurde
+huurde
+huurden
+huurden
+huurden
+had gehuurd
+had gehuurd
+had gehuurd
+hadden gehuurd
+hadden gehuurd
+hadden gehuurd
+zou huren
+zou huren
+zou huren
+zouden huren
+zouden huren
+zouden huren
+zou gehuurd hebben
+zou gehuurd hebben
+zou gehuurd hebben
+zouden gehuurd hebben
+zouden gehuurd hebben
+zouden gehuurd hebben
+zal huren
+zult huren
+zal huren
+zullen huren
+zullen huren
+zullen huren
+kosten
+(to cost)
+kost
+kost
+kost
+kosten
+kosten
+kosten
+heb gekost
+hebt gekost
+heeft gekost
+hebben gekost
+hebben gekost
+hebben gekost
+kostte
+kostte
+kostte
+kostten
+kostten
+kostten
+had gekost
+had gekost
+had gekost
+hadden gekost
+hadden gekost
+hadden gekost
+zou kosten
+zou kosten
+zou kosten
+zouden kosten
+zouden kosten
+zouden kosten
+zou gekost hebben
+zou gekost hebben
+zou gekost hebben
+zouden gekost hebben
+zouden gekost hebben
+zouden gekost hebben
+zal kosten
+zult kosten
+zal kosten
+zullen kosten
+zullen kosten
+zullen kosten
+menen
+(to mean)
+meen
+meent
+meent
+menen
+menen
+menen
+heb gemeend
+hebt gemeend
+heeft gemeend
+hebben gemeend
+hebben gemeend
+hebben gemeend
+meende
+meende
+meende
+meenden
+meenden
+meenden
+had gemeend
+had gemeend
+had gemeend
+hadden gemeend
+hadden gemeend
+hadden gemeend
+zou menen
+zou menen
+zou menen
+zouden menen
+zouden menen
+zouden menen
+zou gemeend hebben
+zou gemeend hebben
+zou gemeend hebben
+zouden gemeend hebben
+zouden gemeend hebben
+zouden gemeend hebben
+zal menen
+zult menen
+zal menen
+zullen menen
+zullen menen
+zullen menen
+halen
+(to fetch/pull)
+haal
+haalt
+haalt
+halen
+halen
+halen
+heb gehaald
+hebt gehaald
+heeft gehaald
+hebben gehaald
+hebben gehaald
+hebben gehaald
+haalde
+haalde
+haalde
+haalden
+haalden
+haalden
+had gehaald
+had gehaald
+had gehaald
+hadden gehaald
+hadden gehaald
+hadden gehaald
+zou halen
+zou halen
+zou halen
+zouden halen
+zouden halen
+zouden halen
+zou gehaald hebben
+zou gehaald hebben
+zou gehaald hebben
+zouden gehaald hebben
+zouden gehaald hebben
+zouden gehaald hebben
+zal halen
+zult halen
+zal halen
+zullen halen
+zullen halen
+zullen halen
+noemen
+(to name/call)
+noem
+noemt
+noemt
+noemen
+noemen
+noemen
+heb genoemd
+hebt genoemd
+heeft genoemd
+hebben genoemd
+hebben genoemd
+hebben genoemd
+noemde
+noemde
+noemde
+noemden
+noemden
+noemden
+had genoemd
+had genoemd
+had genoemd
+hadden genoemd
+hadden genoemd
+hadden genoemd
+zou noemen
+zou noemen
+zou noemen
+zouden noemen
+zouden noemen
+zouden noemen
+zou genoemd hebben
+zou genoemd hebben
+zou genoemd hebben
+zouden genoemd hebben
+zouden genoemd hebben
+zouden genoemd hebben
+zal noemen
+zult noemen
+zal noemen
+zullen noemen
+zullen noemen
+zullen noemen
+vieren
+(to celebrate)
+vier
+viert
+viert
+vieren
+vieren
+vieren
+heb gevierd
+hebt gevierd
+heeft gevierd
+hebben gevierd
+hebben gevierd
+hebben gevierd
+vierde
+vierde
+vierde
+vierden
+vierden
+vierden
+had gevierd
+had gevierd
+had gevierd
+hadden gevierd
+hadden gevierd
+hadden gevierd
+zou vieren
+zou vieren
+zou vieren
+zouden vieren
+zouden vieren
+zouden vieren
+zou gevierd hebben
+zou gevierd hebben
+zou gevierd hebben
+zouden gevierd hebben
+zouden gevierd hebben
+zouden gevierd hebben
+zal vieren
+zult vieren
+zal vieren
+zullen vieren
+zullen vieren
+zullen vieren
+verwachten
+(to expect)
+verwacht
+verwacht
+verwacht
+verwachten
+verwachten
+verwachten
+heb verwacht
+hebt verwacht
+heeft verwacht
+hebben verwacht
+hebben verwacht
+hebben verwacht
+verwachtte
+verwachtte
+verwachtte
+verwachtten
+verwachtten
+verwachtten
+had verwacht
+had verwacht
+had verwacht
+hadden verwacht
+hadden verwacht
+hadden verwacht
+zou verwachten
+zou verwachten
+zou verwachten
+zouden verwachten
+zouden verwachten
+zouden verwachten
+zou verwacht hebben
+zou verwacht hebben
+zou verwacht hebben
+zouden verwacht hebben
+zouden verwacht hebben
+zouden verwacht hebben
+zal verwachten
+zult verwachten
+zal verwachten
+zullen verwachten
+zullen verwachten
+zullen verwachten
+merken
+(to mark/perceive)
+merk
+merkt
+merkt
+merken
+merken
+merken
+heb gemerkt
+hebt gemerkt
+heeft gemerkt
+hebben gemerkt
+hebben gemerkt
+hebben gemerkt
+merkte
+merkte
+merkte
+merkten
+merkten
+merkten
+had gemerkt
+had gemerkt
+had gemerkt
+hadden gemerkt
+hadden gemerkt
+hadden gemerkt
+zou merken
+zou merken
+zou merken
+zouden merken
+zouden merken
+zouden merken
+zou gemerkt hebben
+zou gemerkt hebben
+zou gemerkt hebben
+zouden gemerkt hebben
+zouden gemerkt hebben
+zouden gemerkt hebben
+zal merken
+zult merken
+zal merken
+zullen merken
+zullen merken
+zullen merken
+schaden
+(to damage)
+schaad
+schaadt
+schaadt
+schaden
+schaden
+schaden
+heb geschaad
+hebt geschaad
+heeft geschaad
+hebben geschaad
+hebben geschaad
+hebben geschaad
+schaadde
+schaadde
+schaadde
+schaadden
+schaadden
+schaadden
+had geschaad
+had geschaad
+had geschaad
+hadden geschaad
+hadden geschaad
+hadden geschaad
+zou schaden
+zou schaden
+zou schaden
+zouden schaden
+zouden schaden
+zouden schaden
+zou geschaad hebben
+zou geschaad hebben
+zou geschaad hebben
+zouden geschaad hebben
+zouden geschaad hebben
+zouden geschaad hebben
+zal schaden
+zult schaden
+zal schaden
+zullen schaden
+zullen schaden
+zullen schaden
+beschadigen
+(to damage)
+beschadig
+beschadigt
+beschadigt
+beschadigen
+beschadigen
+beschadigen
+heb beschadigd
+hebt beschadigd
+heeft beschadigd
+hebben beschadigd
+hebben beschadigd
+hebben beschadigd
+beschadigde
+beschadigde
+beschadigde
+beschadigden
+beschadigden
+beschadigden
+had beschadigd
+had beschadigd
+had beschadigd
+hadden beschadigd
+hadden beschadigd
+hadden beschadigd
+zou beschadigen
+zou beschadigen
+zou beschadigen
+zouden beschadigen
+zouden beschadigen
+zouden beschadigen
+zou beschadigd hebben
+zou beschadigd hebben
+zou beschadigd hebben
+zouden beschadigd hebben
+zouden beschadigd hebben
+zouden beschadigd hebben
+zal beschadigen
+zult beschadigen
+zal beschadigen
+zullen beschadigen
+zullen beschadigen
+zullen beschadigen
+vergaren
+(to gather)
+vergaar
+vergaart
+vergaart
+vergaren
+vergaren
+vergaren
+heb vergaard
+hebt vergaard
+heeft vergaard
+hebben vergaard
+hebben vergaard
+hebben vergaard
+vergaarde
+vergaarde
+vergaarde
+vergaarden
+vergaarden
+vergaarden
+had vergaard
+had vergaard
+had vergaard
+hadden vergaard
+hadden vergaard
+hadden vergaard
+zou vergaren
+zou vergaren
+zou vergaren
+zouden vergaren
+zouden vergaren
+zouden vergaren
+zou vergaard hebben
+zou vergaard hebben
+zou vergaard hebben
+zouden vergaard hebben
+zouden vergaard hebben
+zouden vergaard hebben
+zal vergaren
+zult vergaren
+zal vergaren
+zullen vergaren
+zullen vergaren
+zullen vergaren
+prijken
+(to shine)
+prijk
+prijkt
+prijkt
+prijken
+prijken
+prijken
+heb geprijkt
+hebt geprijkt
+heeft geprijkt
+hebben geprijkt
+hebben geprijkt
+hebben geprijkt
+prijkte
+prijkte
+prijkte
+prijkten
+prijkten
+prijkten
+had geprijkt
+had geprijkt
+had geprijkt
+hadden geprijkt
+hadden geprijkt
+hadden geprijkt
+zou prijken
+zou prijken
+zou prijken
+zouden prijken
+zouden prijken
+zouden prijken
+zou geprijkt hebben
+zou geprijkt hebben
+zou geprijkt hebben
+zouden geprijkt hebben
+zouden geprijkt hebben
+zouden geprijkt hebben
+zal prijken
+zult prijken
+zal prijken
+zullen prijken
+zullen prijken
+zullen prijken
+treden
+(to step)
+treed
+treedt
+treedt
+treden
+treden
+treden
+heb getreden
+hebt getreden
+heeft getreden
+hebben getreden
+hebben getreden
+hebben getreden
+trad
+trad
+trad
+traden
+traden
+traden
+had getreden
+had getreden
+had getreden
+hadden getreden
+hadden getreden
+hadden getreden
+zou treden
+zou treden
+zou treden
+zouden treden
+zouden treden
+zouden treden
+zou getreden hebben
+zou getreden hebben
+zou getreden hebben
+zouden getreden hebben
+zouden getreden hebben
+zouden getreden hebben
+zal treden
+zult treden
+zal treden
+zullen treden
+zullen treden
+zullen treden
+besturen
+(to control)
+bestuur
+bestuurt
+bestuurt
+besturen
+besturen
+besturen
+heb bestuurd
+hebt bestuurd
+heeft bestuurd
+hebben bestuurd
+hebben bestuurd
+hebben bestuurd
+bestuurde
+bestuurde
+bestuurde
+bestuurden
+bestuurden
+bestuurden
+had bestuurd
+had bestuurd
+had bestuurd
+hadden bestuurd
+hadden bestuurd
+hadden bestuurd
+zou besturen
+zou besturen
+zou besturen
+zouden besturen
+zouden besturen
+zouden besturen
+zou bestuurd hebben
+zou bestuurd hebben
+zou bestuurd hebben
+zouden bestuurd hebben
+zouden bestuurd hebben
+zouden bestuurd hebben
+zal besturen
+zult besturen
+zal besturen
+zullen besturen
+zullen besturen
+zullen besturen
+hangen
+(to hang)
+hang
+hangt
+hangt
+hangen
+hangen
+hangen
+heb gehangen
+hebt gehangen
+heeft gehangen
+hebben gehangen
+hebben gehangen
+hebben gehangen
+hing
+hing
+hing
+hingen
+hingen
+hingen
+had gehangen
+had gehangen
+had gehangen
+hadden gehangen
+hadden gehangen
+hadden gehangen
+zou hangen
+zou hangen
+zou hangen
+zouden hangen
+zouden hangen
+zouden hangen
+zou gehangen hebben
+zou gehangen hebben
+zou gehangen hebben
+zouden gehangen hebben
+zouden gehangen hebben
+zouden gehangen hebben
+zal hangen
+zult hangen
+zal hangen
+zullen hangen
+zullen hangen
+zullen hangen
+afwijken
+(to deviate)
+wijk af
+wijkt af
+wijkt af
+wijken af
+wijken af
+wijken af
+ben afgeweken
+bent afgeweken
+is afgeweken
+zijn afgeweken
+zijn afgeweken
+zijn afgeweken
+week af
+week af
+week af
+weken af
+weken af
+weken af
+was afgeweken
+was afgeweken
+was afgeweken
+waren afgeweken
+waren afgeweken
+waren afgeweken
+zou afwijken
+zou afwijken
+zou afwijken
+zouden afwijken
+zouden afwijken
+zouden afwijken
+zou afgeweken zijn
+zou afgeweken zijn
+zou afgeweken zijn
+zouden afgeweken zijn
+zouden afgeweken zijn
+zouden afgeweken zijn
+zal afwijken
+zult afwijken
+zal afwijken
+zullen afwijken
+zullen afwijken
+zullen afwijken
+bevatten
+(to contain)
+bevat
+bevat
+bevat
+bevatten
+bevatten
+bevatten
+heb bevat
+hebt bevat
+heeft bevat
+hebben bevat
+hebben bevat
+hebben bevat
+bevatte
+bevatte
+bevatte
+bevatten
+bevatten
+bevatten
+had bevat
+had bevat
+had bevat
+hadden bevat
+hadden bevat
+hadden bevat
+zou bevatten
+zou bevatten
+zou bevatten
+zouden bevatten
+zouden bevatten
+zouden bevatten
+zou bevat hebben
+zou bevat hebben
+zou bevat hebben
+zouden bevat hebben
+zouden bevat hebben
+zouden bevat hebben
+zal bevatten
+zult bevatten
+zal bevatten
+zullen bevatten
+zullen bevatten
+zullen bevatten
+bepalen
+(to determine)
+bepaal
+bepaalt
+bepaalt
+bepalen
+bepalen
+bepalen
+heb bepaald
+hebt bepaald
+heeft bepaald
+hebben bepaald
+hebben bepaald
+hebben bepaald
+bepaalde
+bepaalde
+bepaalde
+bepaalden
+bepaalden
+bepaalden
+had bepaald
+had bepaald
+had bepaald
+hadden bepaald
+hadden bepaald
+hadden bepaald
+zou bepalen
+zou bepalen
+zou bepalen
+zouden bepalen
+zouden bepalen
+zouden bepalen
+zou bepaald hebben
+zou bepaald hebben
+zou bepaald hebben
+zouden bepaald hebben
+zouden bepaald hebben
+zouden bepaald hebben
+zal bepalen
+zult bepalen
+zal bepalen
+zullen bepalen
+zullen bepalen
+zullen bepalen
+worstelen
+(to struggle)
+worstel
+worstelt
+worstelt
+worstelen
+worstelen
+worstelen
+heb geworsteld
+hebt geworsteld
+heeft geworsteld
+hebben geworsteld
+hebben geworsteld
+hebben geworsteld
+worstelde
+worstelde
+worstelde
+worstelden
+worstelden
+worstelden
+had geworsteld
+had geworsteld
+had geworsteld
+hadden geworsteld
+hadden geworsteld
+hadden geworsteld
+zou worstelen
+zou worstelen
+zou worstelen
+zouden worstelen
+zouden worstelen
+zouden worstelen
+zou geworsteld hebben
+zou geworsteld hebben
+zou geworsteld hebben
+zouden geworsteld hebben
+zouden geworsteld hebben
+zouden geworsteld hebben
+zal worstelen
+zult worstelen
+zal worstelen
+zullen worstelen
+zullen worstelen
+zullen worstelen
+ontbreken
+(to lack)
+ontbreek
+ontbreekt
+ontbreekt
+ontbreken
+ontbreken
+ontbreken
+heb ontbroken
+hebt ontbroken
+heeft ontbroken
+hebben ontbroken
+hebben ontbroken
+hebben ontbroken
+ontbrak
+ontbrak
+ontbrak
+ontbraken
+ontbraken
+ontbraken
+had ontbroken
+had ontbroken
+had ontbroken
+hadden ontbroken
+hadden ontbroken
+hadden ontbroken
+zou ontbreken
+zou ontbreken
+zou ontbreken
+zouden ontbreken
+zouden ontbreken
+zouden ontbreken
+zou ontbroken hebben
+zou ontbroken hebben
+zou ontbroken hebben
+zouden ontbroken hebben
+zouden ontbroken hebben
+zouden ontbroken hebben
+zal ontbreken
+zult ontbreken
+zal ontbreken
+zullen ontbreken
+zullen ontbreken
+zullen ontbreken
+trekken
+(to pull)
+trek
+trekt
+trekt
+trekken
+trekken
+trekken
+heb getrokken
+hebt getrokken
+heeft getrokken
+hebben getrokken
+hebben getrokken
+hebben getrokken
+trok
+trok
+trok
+trokken
+trokken
+trokken
+had getrokken
+had getrokken
+had getrokken
+hadden getrokken
+hadden getrokken
+hadden getrokken
+zou trekken
+zou trekken
+zou trekken
+zouden trekken
+zouden trekken
+zouden trekken
+zou getrokken hebben
+zou getrokken hebben
+zou getrokken hebben
+zouden getrokken hebben
+zouden getrokken hebben
+zouden getrokken hebben
+zal trekken
+zult trekken
+zal trekken
+zullen trekken
+zullen trekken
+zullen trekken
+vangen
+(to catch)
+vang
+vangt
+vangt
+vangen
+vangen
+vangen
+heb gevangen
+hebt gevangen
+heeft gevangen
+hebben gevangen
+hebben gevangen
+hebben gevangen
+ving
+ving
+ving
+vingen
+vingen
+vingen
+had gevangen
+had gevangen
+had gevangen
+hadden gevangen
+hadden gevangen
+hadden gevangen
+zou vangen
+zou vangen
+zou vangen
+zouden vangen
+zouden vangen
+zouden vangen
+zou gevangen hebben
+zou gevangen hebben
+zou gevangen hebben
+zouden gevangen hebben
+zouden gevangen hebben
+zouden gevangen hebben
+zal vangen
+zult vangen
+zal vangen
+zullen vangen
+zullen vangen
+zullen vangen
+onderschatten
+(to underestimate)
+onderschat
+onderschat
+onderschat
+onderschatten
+onderschatten
+onderschatten
+heb onderschat
+hebt onderschat
+heeft onderschat
+hebben onderschat
+hebben onderschat
+hebben onderschat
+onderschatte
+onderschatte
+onderschatte
+onderschatten
+onderschatten
+onderschatten
+had onderschat
+had onderschat
+had onderschat
+hadden onderschat
+hadden onderschat
+hadden onderschat
+zou onderschatten
+zou onderschatten
+zou onderschatten
+zouden onderschatten
+zouden onderschatten
+zouden onderschatten
+zou onderschat hebben
+zou onderschat hebben
+zou onderschat hebben
+zouden onderschat hebben
+zouden onderschat hebben
+zouden onderschat hebben
+zal onderschatten
+zult onderschatten
+zal onderschatten
+zullen onderschatten
+zullen onderschatten
+zullen onderschatten
+vermoeden
+(to suspect)
+vermoed
+vermoedt
+vermoedt
+vermoeden
+vermoeden
+vermoeden
+heb vermoed
+hebt vermoed
+heeft vermoed
+hebben vermoed
+hebben vermoed
+hebben vermoed
+vermoedde
+vermoedde
+vermoedde
+vermoedden
+vermoedden
+vermoedden
+had vermoed
+had vermoed
+had vermoed
+hadden vermoed
+hadden vermoed
+hadden vermoed
+zou vermoeden
+zou vermoeden
+zou vermoeden
+zouden vermoeden
+zouden vermoeden
+zouden vermoeden
+zou vermoed hebben
+zou vermoed hebben
+zou vermoed hebben
+zouden vermoed hebben
+zouden vermoed hebben
+zouden vermoed hebben
+zal vermoeden
+zult vermoeden
+zal vermoeden
+zullen vermoeden
+zullen vermoeden
+zullen vermoeden
+lokken
+(to lure)
+lok
+lokt
+lokt
+lokken
+lokken
+lokken
+heb gelokt
+hebt gelokt
+heeft gelokt
+hebben gelokt
+hebben gelokt
+hebben gelokt
+lokte
+lokte
+lokte
+lokten
+lokten
+lokten
+had gelokt
+had gelokt
+had gelokt
+hadden gelokt
+hadden gelokt
+hadden gelokt
+zou lokken
+zou lokken
+zou lokken
+zouden lokken
+zouden lokken
+zouden lokken
+zou gelokt hebben
+zou gelokt hebben
+zou gelokt hebben
+zouden gelokt hebben
+zouden gelokt hebben
+zouden gelokt hebben
+zal lokken
+zult lokken
+zal lokken
+zullen lokken
+zullen lokken
+zullen lokken
+pleiten
+(to plead)
+pleit
+pleit
+pleit
+pleiten
+pleiten
+pleiten
+heb gepleit
+hebt gepleit
+heeft gepleit
+hebben gepleit
+hebben gepleit
+hebben gepleit
+pleitte
+pleitte
+pleitte
+pleitten
+pleitten
+pleitten
+had gepleit
+had gepleit
+had gepleit
+hadden gepleit
+hadden gepleit
+hadden gepleit
+zou pleiten
+zou pleiten
+zou pleiten
+zouden pleiten
+zouden pleiten
+zouden pleiten
+zou gepleit hebben
+zou gepleit hebben
+zou gepleit hebben
+zouden gepleit hebben
+zouden gepleit hebben
+zouden gepleit hebben
+zal pleiten
+zult pleiten
+zal pleiten
+zullen pleiten
+zullen pleiten
+zullen pleiten
+ontvangen
+(to receive)
+ontvang
+ontvangt
+ontvangt
+ontvangen
+ontvangen
+ontvangen
+heb ontvangen
+hebt ontvangen
+heeft ontvangen
+hebben ontvangen
+hebben ontvangen
+hebben ontvangen
+ontving
+ontving
+ontving
+ontvingen
+ontvingen
+ontvingen
+had ontvangen
+had ontvangen
+had ontvangen
+hadden ontvangen
+hadden ontvangen
+hadden ontvangen
+zou ontvangen
+zou ontvangen
+zou ontvangen
+zouden ontvangen
+zouden ontvangen
+zouden ontvangen
+zou ontvangen hebben
+zou ontvangen hebben
+zou ontvangen hebben
+zouden ontvangen hebben
+zouden ontvangen hebben
+zouden ontvangen hebben
+zal ontvangen
+zult ontvangen
+zal ontvangen
+zullen ontvangen
+zullen ontvangen
+zullen ontvangen
+barsten
+(to crack)
+barst
+barst
+barst
+barsten
+barsten
+barsten
+ben gebarsten
+bent gebarsten
+is gebarsten
+zijn gebarsten
+zijn gebarsten
+zijn gebarsten
+barstte
+barstte
+barstte
+barstten
+barstten
+barstten
+was gebarsten
+was gebarsten
+was gebarsten
+waren gebarsten
+waren gebarsten
+waren gebarsten
+zou barsten
+zou barsten
+zou barsten
+zouden barsten
+zouden barsten
+zouden barsten
+zou gebarsten zijn
+zou gebarsten zijn
+zou gebarsten zijn
+zouden gebarsten zijn
+zouden gebarsten zijn
+zouden gebarsten zijn
+zal barsten
+zult barsten
+zal barsten
+zullen barsten
+zullen barsten
+zullen barsten
+functioneren
+(to work)
+functioneer
+functioneert
+functioneert
+functioneren
+functioneren
+functioneren
+heb gefunctioneerd
+hebt gefunctioneerd
+heeft gefunctioneerd
+hebben gefunctioneerd
+hebben gefunctioneerd
+hebben gefunctioneerd
+functioneerde
+functioneerde
+functioneerde
+functioneerden
+functioneerden
+functioneerden
+had gefunctioneerd
+had gefunctioneerd
+had gefunctioneerd
+hadden gefunctioneerd
+hadden gefunctioneerd
+hadden gefunctioneerd
+zou functioneren
+zou functioneren
+zou functioneren
+zouden functioneren
+zouden functioneren
+zouden functioneren
+zou gefunctioneerd hebben
+zou gefunctioneerd hebben
+zou gefunctioneerd hebben
+zouden gefunctioneerd hebben
+zouden gefunctioneerd hebben
+zouden gefunctioneerd hebben
+zal functioneren
+zult functioneren
+zal functioneren
+zullen functioneren
+zullen functioneren
+zullen functioneren
+stelen
+(to steal)
+steel
+steelt
+steelt
+stelen
+stelen
+stelen
+heb gestolen
+hebt gestolen
+heeft gestolen
+hebben gestolen
+hebben gestolen
+hebben gestolen
+stal
+stal
+stal
+stalen
+stalen
+stalen
+had gestolen
+had gestolen
+had gestolen
+hadden gestolen
+hadden gestolen
+hadden gestolen
+zou stelen
+zou stelen
+zou stelen
+zouden stelen
+zouden stelen
+zouden stelen
+zou gestolen hebben
+zou gestolen hebben
+zou gestolen hebben
+zouden gestolen hebben
+zouden gestolen hebben
+zouden gestolen hebben
+zal stelen
+zult stelen
+zal stelen
+zullen stelen
+zullen stelen
+zullen stelen
