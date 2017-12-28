@@ -26,7 +26,10 @@ public class UserAnswer {
     public boolean isAnswerInputCorrect(int conjugationIndex, String answer) {
         if (!answer.equals("")) {
             numberOfConjugatedPersons++;
-            if (answer.equalsIgnoreCase(verb.getVerbConjugation()[spinnerPosition][conjugationIndex])) {
+            if ((answer.equalsIgnoreCase(verb.getVerbConjugation()[spinnerPosition][conjugationIndex]))
+                    || (answer.equalsIgnoreCase(
+                        verb.getVerbConjugation()[spinnerPosition][conjugationIndex]
+                                .replace("ï", "i")))) {
                 return true;
             } else {
                 return false;
