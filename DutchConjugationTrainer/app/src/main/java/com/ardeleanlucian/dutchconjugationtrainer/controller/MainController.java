@@ -139,7 +139,7 @@ public class MainController {
         userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
     }
 
-    public void onSpinnerSelection() {
+    public void onSpinnerSelection(int spinnerIndex) {
         if (userAnswer.isVerbCorrectlyConjugated()) {
             if (userAnswer.getNumberOfConjugatedPersons() == 6) {
                 // Increment the correct and total conjugation count
@@ -159,7 +159,8 @@ public class MainController {
             giveFeedbackIfNecessary();
             (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
         }
-        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+        userAnswer = new UserAnswer(spinnerIndex, verb);
+        updateSpinnerPosition(spinnerIndex);
     }
 
     public void onMenuSelection() {

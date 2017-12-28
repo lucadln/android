@@ -160,10 +160,7 @@ public class MainActivity extends AppCompatActivity {
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             int spinnerIndex = mainActivityHandler.getSpinner().getSelectedItemPosition();
 
-            mainController.onSpinnerSelection();
-
-            // Save the new position in android's SharedPreferences
-            mainController.updateSpinnerPosition(spinnerIndex);
+            mainController.onSpinnerSelection(spinnerIndex);
 
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
