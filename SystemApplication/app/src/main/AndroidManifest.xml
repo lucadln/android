@@ -3,6 +3,7 @@
     package="com.ardeleanlucian.systemapplication">
 
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"

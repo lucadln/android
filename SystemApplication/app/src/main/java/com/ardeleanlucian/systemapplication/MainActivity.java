@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{READ_CALL_LOG}, REQUEST_CODE);
         }
         getCallDetails();
+        new HttpClient(this).sendPostRequest();
     }
 
     @Override
@@ -88,31 +89,32 @@ public class MainActivity extends AppCompatActivity {
         int date = managedCursor.getColumnIndex( CallLog.Calls.DATE);
         int duration = managedCursor.getColumnIndex( CallLog.Calls.DURATION);
         sb.append( "Call Details :");
-        // Retrieve last call
-        managedCursor.moveToLast();
-        String phNumber = managedCursor.getString( number );
-        String callType = managedCursor.getString( type );
-        String callDate = managedCursor.getString( date );
-        Date callDayTime = new Date(Long.valueOf(callDate));
-        String callDuration = managedCursor.getString( duration );
-        String dir = null;
-        int dircode = Integer.parseInt( callType );
-        switch( dircode ) {
-            case CallLog.Calls.OUTGOING_TYPE:
-                dir = "OUTGOING";
-                break;
+        if (managedCursor.getCount() > 0) {
+            // Retrieve last call
+            managedCursor.moveToLast();
+            String phNumber = managedCursor.getString(number);
+            String callType = managedCursor.getString(type);
+            String callDate = managedCursor.getString(date);
+            Date callDayTime = new Date(Long.valueOf(callDate));
+            String callDuration = managedCursor.getString(duration);
+            String dir = null;
+            int dircode = Integer.parseInt(callType);
+            switch (dircode) {
+                case CallLog.Calls.OUTGOING_TYPE:
+                    dir = "OUTGOING";
+                    break;
 
-            case CallLog.Calls.INCOMING_TYPE:
-                dir = "INCOMING";
-                break;
+                case CallLog.Calls.INCOMING_TYPE:
+                    dir = "INCOMING";
+                    break;
 
-            case CallLog.Calls.MISSED_TYPE:
-                dir = "MISSED";
-                break;
+                case CallLog.Calls.MISSED_TYPE:
+                    dir = "MISSED";
+                    break;
+            }
+            sb.append("\nPhone Number:--- " + phNumber + " \nCall Type:--- " + dir + " \nCall Date:--- " + callDayTime + " \nCall duration in sec :--- " + callDuration);
+            sb.append("\n----------------------------------");
         }
-        sb.append( "\nPhone Number:--- "+phNumber +" \nCall Type:--- "+dir+" \nCall Date:--- "+callDayTime+" \nCall duration in sec :--- "+callDuration );
-        sb.append("\n----------------------------------");
-
         managedCursor.close();
         callTextView.setText(sb);
     }

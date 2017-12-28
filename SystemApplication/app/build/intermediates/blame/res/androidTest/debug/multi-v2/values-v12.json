@@ -4,7 +4,7 @@
             "outputFile": "/home/ardelean/mijn/android/SystemApplication/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v12/values-v12.xml",
             "map": [
                 {
-                    "source": "/home/ardelean/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/77232bdc5b3a296e4de54521394ebf61/res/values-v12/values-v12.xml",
+                    "source": "/home/ardelean/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/576dc9c25b0f63f252c7da9998457620/res/values-v12/values-v12.xml",
                     "from": {
                         "startLines": "2,5,8,9",
                         "startColumns": "4,4,4,4",
