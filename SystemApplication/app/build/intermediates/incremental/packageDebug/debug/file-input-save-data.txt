@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Dec 28 20:20:13 EET 2017
+#Thu Dec 28 20:53:05 EET 2017
 0.baseType=DIRECTORY
 0.base=/home/ardelean/mijn/android/SystemApplication/app/build/intermediates/transforms/dexMerger/debug/94
 0.path=classes.dex

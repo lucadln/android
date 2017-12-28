@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
 MERGED from [com.android.volley:volley:1.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1ccb64ae778113ebb4fef438ef6ffa1f/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/e818b44d3c08fd957a5c5d5bd6a22d13/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/576dc9c25b0f63f252c7da9998457620/AndroidManifest.xml:17:1-31:12
@@ -19,20 +19,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /home/ardelean/.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/78f5d5e6c586d6da504b030230ee0e42/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/45b26882049a01c3ae22521f9ac5cadc/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/389e009894a3fbbb3aff6f4e39b0fbe9/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:3:5-51
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:1-33:12
 		INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:2:11-69
@@ -44,8 +44,12 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:7:5-75
+	android:name
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:7:22-72
 application
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:8:5-25:19
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:9:5-31:19
 MERGED from [com.android.volley:volley:1.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1ccb64ae778113ebb4fef438ef6ffa1f/AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1ccb64ae778113ebb4fef438ef6ffa1f/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.1.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/e818b44d3c08fd957a5c5d5bd6a22d13/AndroidManifest.xml:25:5-29:19
@@ -77,35 +81,45 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/ardelean/.gradle/c
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/389e009894a3fbbb3aff6f4e39b0fbe9/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ardelean/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/389e009894a3fbbb3aff6f4e39b0fbe9/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:14:9-40
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:15:9-40
 activity#com.ardeleanlucian.systemapplication.MainActivity
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:15:9-24:20
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:16:9-25:20
 	android:label
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:18:13-45
 	android:theme
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:18:13-56
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:19:13-56
 	android:name
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:16:13-41
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:17:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:19:13-23:29
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:20:13-24:29
 action#android.intent.action.MAIN
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:21:17-69
 	android:name
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:21:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:23:17-77
 	android:name
-		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:23:27-74
+receiver#com.ardeleanlucian.systemapplication.PhoneListener
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:26:9-30:20
+	android:name
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:26:19-48
+intent-filter#android.intent.action.PHONE_STATE
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:27:13-29:42
+action#android.intent.action.PHONE_STATE
+ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:28:17-29:26
+	android:name
+		ADDED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml:28:25-73
 uses-sdk
 INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/ardelean/mijn/android/SystemApplication/app/src/main/AndroidManifest.xml
