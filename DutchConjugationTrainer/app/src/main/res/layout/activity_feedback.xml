@@ -3,11 +3,42 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/feedback_message"
-        android:padding="3dp"
-        android:text="You have conjugated lots of verbs!"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- image -->
+        <TableRow>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bad_512"
+                />
+        </TableRow>
+        <!-- message -->
+        <TableRow>
+            <TextView
+                android:id="@+id/feedback_message"
+                android:padding="3dp"
+                android:text="You have conjugated lots of verbs!"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"/>
+        </TableRow>
+        <!-- return button -->
+        <TableRow>
+            <Button
+                android:id="@+id/back"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:textColor="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Ok, leave me alone!" />
+        </TableRow>
+
+    </TableLayout>
 
 </LinearLayout>
