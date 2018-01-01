@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private MainController mainController;
     private MainActivityHandler mainActivityHandler;
     /**
-     * conjugationIndex is used in read-only mode to
+     * conjugationIndex is used in learning mode to
      *   know what conjugation to show at a certain
      *   point (conjugation for 'ik' at index 0,
      *   then for 'jij' at index 1 and so on...) */
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         // @TODO
         /* If the application is started for the first time
-                 *   in read-only mode then instruct the user to tap
+                 *   in learning mode then instruct the user to tap
                  *   screen for conjugation */
 //        if ((firstTimeReadOnly) && (readOnlyPref)) {
 //            String infoTapScreen = "Tap screen for conjugation";
@@ -214,13 +214,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Actions to be taken when the user taps the screen.
-     *   Only important when in read-only mode. Doesn't
+     *   Only important when in learning mode. Doesn't
      *   play any role otherwise.
      */
     private final View.OnClickListener onTapScreen = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            /* If the user opted for the read-only option
+            /* If the user opted for the learning mode
              *   then show the conjugation one by one for
              *   every person (ik, jij, hij...) on screen tap */
             if (mainController.obtainReadOnlyPreference()) {

@@ -6,8 +6,8 @@
         android:summary="For the infinitive form"
         android:defaultValue="true" />
     <CheckBoxPreference
-        android:key="com.ardeleanlucian.dutchconjugationtrainer.read_only"
-        android:title="Read-only conjugations"
+        android:key="com.ardeleanlucian.dutchconjugationtrainer.learning_mode"
+        android:title="Learning mode"
         android:summary="If true, writing conjugations is not required"
         android:defaultValue="false" />
     <CheckBoxPreference
