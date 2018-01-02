@@ -8,12 +8,13 @@
     android:fitsSystemWindows="true"
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.MainActivity">
 
+    <!-- The focus thief will become focusable programmatically -->
     <View
         android:id="@+id/focus_thief"
         android:layout_width="1dp"
         android:layout_height="1dp"
-        android:focusable="true"
-        android:focusableInTouchMode="true" />
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
 
     <!-- app toolbar -->
     <android.support.design.widget.AppBarLayout

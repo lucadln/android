@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -13,7 +14,6 @@ import android.widget.TextView;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
-import com.ardeleanlucian.dutchconjugationtrainer.model.Score;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
@@ -26,6 +26,8 @@ import static android.view.View.VISIBLE;
  */
 
 public class MainActivityHandler {
+
+    private View FOCUS_THIEF;
 
     private Context context;
 
@@ -98,6 +100,8 @@ public class MainActivityHandler {
         WIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.wij_verb_field);
         JULLIE_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.jullie_verb_field);
         ZIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.zij_verb_field);
+
+        FOCUS_THIEF = (View) ((Activity) context).findViewById(R.id.focus_thief);
 
         toolbar = (Toolbar) ((Activity) context).findViewById(R.id.toolbar);
 
@@ -420,6 +424,10 @@ public class MainActivityHandler {
         return toolbar;
     }
 
+    public View getFocusThief() { return FOCUS_THIEF; }
+
+    public Context getContext() { return context; }
+
     public void setToolbar(Toolbar toolbar) {
         this.toolbar = toolbar;
     }
@@ -438,5 +446,21 @@ public class MainActivityHandler {
         } else if (color.equals("red")) {
             textView.setTextColor(Color.RED);
         }
+    }
+
+    /**
+     * Method to turn on/off the focus thief
+     * @param focusAbility
+     */
+    public void switchFocusThief(boolean focusAbility) {
+        FOCUS_THIEF.setFocusable(focusAbility);
+        FOCUS_THIEF.setFocusableInTouchMode(focusAbility);
+    }
+
+    /**
+     * Reset focus to the first edittext in the layout (i.e. IK_VERB_FIELD)
+     */
+    public void resetFocus() {
+        IK_VERB_FIELD.requestFocus();
     }
 }

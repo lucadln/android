@@ -16,6 +16,7 @@ import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
+import com.ardeleanlucian.dutchconjugationtrainer.model.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -142,9 +143,15 @@ public class MainActivity extends AppCompatActivity {
                         mainActivityHandler.setTextViewColor(textViewList[conjugationIndex], "red");
                     }
                 }
-                if (mainActivityHandler.getNumberOfFilledEditTexts() == 6) {
+                if (mainActivityHandler.getNumberOfFilledEditTexts() == 5) {
+                    mainActivityHandler.switchFocusThief(true);
+
+                } else if (mainActivityHandler.getNumberOfFilledEditTexts() == 6) {
                     mainActivityHandler.setVisibility(mainActivityHandler.getSkip(), GONE);
                     mainActivityHandler.setVisibility(mainActivityHandler.getNext(), VISIBLE);
+                    Utils.hideKeyboard(
+                            mainActivityHandler.getContext(), editTextList[conjugationIndex]);
+                    mainActivityHandler.switchFocusThief(false);
                 }
             }
         }
@@ -168,6 +175,9 @@ public class MainActivity extends AppCompatActivity {
                     mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
             mainActivityHandler.clearFields();
             mainActivityHandler.setTextViewValues(mainController.getVerb(), spinnerIndex);
+
+            // Move focus again on the first layout element
+            mainActivityHandler.resetFocus();
         }
 
         @Override
@@ -190,6 +200,9 @@ public class MainActivity extends AppCompatActivity {
             mainActivityHandler.setTextViewValues(mainController.getVerb(), mainController.obtainSpinnerIndex());
             mainActivityHandler.resetConjugationSectionVisibility(
                     mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
+
+            // Move focus again on the first layout element
+            mainActivityHandler.resetFocus();
         }
     };
 
@@ -209,6 +222,8 @@ public class MainActivity extends AppCompatActivity {
             mainActivityHandler.resetConjugationSectionVisibility(
                     mainController.obtainReadOnlyPreference(), mainController.obtainShowTranslationPreference());
 
+            // Move focus again on the first layout element
+            mainActivityHandler.resetFocus();
         }
     };
 
