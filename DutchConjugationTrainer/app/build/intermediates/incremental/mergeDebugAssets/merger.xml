@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\mijn\lucadln\android\DutchConjugationTrainer\app\src\main\assets"><file name="verbs.txt" path="D:\mijn\lucadln\android\DutchConjugationTrainer\app\src\main\assets\verbs.txt"/></source><source path="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\mijn\lucadln\android\DutchConjugationTrainer\app\src\debug\assets"/></dataSet></merger>
