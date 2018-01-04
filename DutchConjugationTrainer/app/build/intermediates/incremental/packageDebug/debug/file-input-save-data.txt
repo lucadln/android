@@ -1,0 +1,31 @@
+#Internal package file, do not edit.
+#Mon Dec 18 13:52:44 EET 2017
+2.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\12
+5.set=DEX
+0.path=classes.dex
+2.baseType=DIRECTORY
+3.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\13
+2.set=DEX
+1.path=verbs.txt
+4.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\16
+count=7
+5.baseType=DIRECTORY
+2.path=classes.dex
+5.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+4.set=DEX
+3.path=classes.dex
+6.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\14
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=classes.dex
+6.set=DEX
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=classes.dex
+0.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\15
+0.baseType=DIRECTORY
+3.set=DEX
+6.path=classes.dex
+1.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\assets\\debug
+4.baseType=DIRECTORY
+0.set=DEX

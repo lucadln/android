@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    build-mode="HOT_WARM"
+    density="hdpi"
+    format="10"
+    plugin-version="3.0.1"
+    timestamp="1513602860778"
+    token="-7306683062898601935"
+    verifier="COMPATIBLE" >
+
+    <task
+        name="javac"
+        duration="588" />
+    <task
+        name="instant-run-dex"
+        duration="19" />
+    <task
+        name="instant-run-transform"
+        duration="74" />
+    <task
+        name="verifier"
+        duration="12" />
+
+    <artifact
+        location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
+
+    <build
+        build-mode="FULL"
+        timestamp="1513597870130"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1513602613712"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1513602850193"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\builds\debug\1513602850193\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1513602860778"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="D:\mijn\lucadln\android\DutchConjugationTrainer\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+
+</instant-run>

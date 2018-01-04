@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Mon Dec 18 13:51:30 EET 2017
+0.baseType=DIRECTORY
+0.base=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\assets\\debug
+0.path=verbs.txt
+0.set=ASSET
+count=1

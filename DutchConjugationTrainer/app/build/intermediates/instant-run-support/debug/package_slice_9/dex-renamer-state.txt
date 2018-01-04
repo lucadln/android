@@ -1,0 +1,4 @@
+#Mon Dec 18 13:52:43 EET 2017
+base.0=D\:\\mijn\\lucadln\\android\\DutchConjugationTrainer\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex
