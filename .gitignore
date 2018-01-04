@@ -4,6 +4,7 @@ SystemApplication/local.properties
 SystemApplication/.idea
 SystemApplication/.DS_Store
 SystemApplication/build
+SystemApplication/app/build
 SystemApplication/captures
 SystemApplication/.externalNativeBuild
 DutchFlashCards/.gradle
@@ -11,6 +12,7 @@ DutchFlashCards/local.properties
 DutchFlashCards/.idea
 DutchFlashCards/.DS_Store
 DutchFlashCards/build
+DutchFlashCards/app/build
 DutchFlashCards/captures
 DutchFlashCards/.externalNativeBuild
 DutchConjugationTrainer/.gradle
@@ -18,5 +20,6 @@ DutchConjugationTrainer/local.properties
 DutchConjugationTrainer/.idea
 DutchConjugationTrainer/.DS_Store
 DutchConjugationTrainer/build
+DutchConjugationTrainer/app/build
 DutchConjugationTrainer/captures
 DutchConjugationTrainer/.externalNativeBuild
