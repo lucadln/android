@@ -1,4 +1,0 @@
-#Thu Dec 28 20:53:05 EET 2017
-base.0=/home/ardelean/mijn/android/SystemApplication/app/build/intermediates/transforms/dexMerger/debug/94
-path.0=classes.dex
-renamed.0=classes.dex
