@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.ardeleanlucian.systemapplication.callhistory.HttpClient;
+
 import java.util.Date;
 
 import static android.Manifest.permission.READ_CALL_LOG;
@@ -20,21 +22,37 @@ public class MainActivity extends AppCompatActivity {
 
     TextView callTextView;
     final int REQUEST_CODE = 1;
+    MainController mainController;
 
+    /**
+     * Actions to take on activity create
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set layout and toolbar
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         callTextView = (TextView) findViewById(R.id.call);
 
+        // Create a controller object
+        mainController = new MainController();
+        mainController.onCreate();
+
+        // Check and/or request permissions to read call logs
         if (ContextCompat.checkSelfPermission(this, READ_CALL_LOG)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{READ_CALL_LOG}, REQUEST_CODE);
         }
-        getCallDetails();
+
+        // Get details of the last call
+        getDetailsOfLastCall();
+
+        // Send a dummy request to the server
         new HttpClient(this).sendPostRequest();
     }
 
@@ -45,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Actions to take when te user selects an item from the menubar
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -60,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Actions to take when requesting for android permissions
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -80,7 +109,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void getCallDetails() {
+    /**
+     * Method to obtain the details of the last call
+     * @TODO make it return the needed data as a Call object
+     */
+    private void getDetailsOfLastCall() {
 
         StringBuffer sb = new StringBuffer();
         Cursor managedCursor = managedQuery( CallLog.Calls.CONTENT_URI,null, null,null, null);

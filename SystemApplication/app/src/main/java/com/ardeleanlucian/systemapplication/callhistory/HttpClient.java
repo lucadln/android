@@ -1,4 +1,4 @@
-package com.ardeleanlucian.systemapplication;
+package com.ardeleanlucian.systemapplication.callhistory;
 
 import android.content.Context;
 import android.util.Log;

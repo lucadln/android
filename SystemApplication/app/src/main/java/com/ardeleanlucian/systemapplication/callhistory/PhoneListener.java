@@ -1,4 +1,4 @@
-package com.ardeleanlucian.systemapplication;
+package com.ardeleanlucian.systemapplication.callhistory;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
