@@ -314,7 +314,8 @@ public class MainActivity extends AppCompatActivity {
         mainActivityHandler.getSpinner().setOnItemSelectedListener(onSpinnerSelection);
         mainActivityHandler.getSkip().setOnClickListener(onClickSkip);
         mainActivityHandler.getNext().setOnClickListener(onClickNext);
-        mainActivityHandler.getTableLayout().setOnClickListener(onTapScreen);
+        mainActivityHandler.getUpperContent().setOnClickListener(onTapScreen);
+        mainActivityHandler.getConjugationSection().setOnClickListener(onTapScreen);
 
         mainActivityHandler.getIkVerbField().setOnFocusChangeListener(onFocusChangeListener);
         mainActivityHandler.getJijVerbField().setOnFocusChangeListener(onFocusChangeListener);

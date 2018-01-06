@@ -57,7 +57,7 @@ public class MainController {
     /**
      * @return read only preference
      */
-    public boolean obtainReadOnlyPreference() { return sharedPreferencesHandler.isReadOnly(); }
+    public boolean obtainReadOnlyPreference() { return sharedPreferencesHandler.isInLearningMode(); }
 
 
     /**

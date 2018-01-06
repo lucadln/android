@@ -42,18 +42,19 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <!-- Infinitive and translation -->
     <RelativeLayout
         android:id="@+id/upper_content"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="70dp">
+        android:layout_height="120dp"
+        android:layout_marginTop="75dp">
 
         <!-- verb in infinitive form -->
         <TextView
             android:id="@+id/infinitive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="40dp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="infinitive"
@@ -65,7 +66,7 @@
             android:id="@+id/translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="70dp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="translation"
@@ -73,22 +74,21 @@
             android:textStyle="italic" />
     </RelativeLayout>
 
-    <!-- conjugations -->
+    <!-- Conjugations -->
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/conjugation_section"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="195dp"
         android:layout_marginBottom="70dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/table_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:paddingLeft="40dp"
-            android:paddingTop="120dp"
-            android:stretchColumns="1"
-            tools:layout_editor_absoluteY="32dp">
+            android:stretchColumns="1">
 
             <!-- 'ik' conjugation -->
             <TableRow>
@@ -185,20 +185,21 @@
 
             <!-- 'wij' conjugation -->
             <TableRow>
+
                 <TextView
                     android:id="@+id/wij"
                     android:gravity="right"
                     android:padding="3dip"
                     android:text="wij"
-                    android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/wij_verb_text"
                     android:padding="3dip"
                     android:text="wij_verb"
-                    android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:visibility="gone" />
 
                 <EditText
                     android:id="@+id/wij_verb_field"

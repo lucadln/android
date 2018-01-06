@@ -18,7 +18,7 @@ public class SharedPreferencesHandler {
     static final String CURRENT_VERB_KEY = "com.ardeleanlucian.dutchconjugationtrainer.current_verb";
     static final String SPINNER_INDEX_KEY = "com.ardeleanlucian.dutchconjugationtrainer.spinner_index";
     static final String SHOW_TRANSLATION_KEY = "com.ardeleanlucian.dutchconjugationtrainer.show_translation";
-    static final String READ_ONLY_KEY = "com.ardeleanlucian.dutchconjugationtrainer.read_only";
+    static final String LEARNING_MODE_KEY = "com.ardeleanlucian.dutchconjugationtrainer.learning_mode";
     static final String GIVE_FEEDBACK_KEY = "com.ardeleanlucian.dutchconjugationtrainer.give_feedback";
     static final String CORRECTLY_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.correct_conjugations_";
     static final String TOTAL_CONJUGATED_VERBS_COUNT_KEY = "com.ardeleanlucian.dutchconjugationtrainer.total_conjugations_";
@@ -45,8 +45,8 @@ public class SharedPreferencesHandler {
     /**
      * @return the application run mode
      */
-    public boolean isReadOnly() {
-        return applicationSettings.getBoolean(READ_ONLY_KEY, false);
+    public boolean isInLearningMode() {
+        return applicationSettings.getBoolean(LEARNING_MODE_KEY, false);
     }
 
     /**
@@ -85,8 +85,8 @@ public class SharedPreferencesHandler {
      *
      * @param newValue
      */
-    public void setIfReadOnly(boolean newValue) {
-        applicationSettings.edit().putBoolean(READ_ONLY_KEY, newValue).apply();
+    public void setIfInLearningMode(boolean newValue) {
+        applicationSettings.edit().putBoolean(LEARNING_MODE_KEY, newValue).apply();
     }
 
     /**

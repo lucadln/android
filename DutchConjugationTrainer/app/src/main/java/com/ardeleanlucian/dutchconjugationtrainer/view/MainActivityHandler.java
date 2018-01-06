@@ -3,11 +3,14 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -32,6 +35,8 @@ public class MainActivityHandler {
     private Context context;
 
     private TableLayout TABLE_LAYOUT;
+    private CoordinatorLayout CONJUGATION_SECTION;
+    private RelativeLayout UPPER_CONTENT;
 
     private Button NEXT;
     private Button SKIP;
@@ -75,6 +80,8 @@ public class MainActivityHandler {
      */
     public void initializeLayoutElements() {
         TABLE_LAYOUT = (TableLayout) ((Activity) context).findViewById(R.id.table_layout);
+        UPPER_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.upper_content);
+        CONJUGATION_SECTION = (CoordinatorLayout) ((Activity) context).findViewById(R.id.conjugation_section);
 
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
@@ -427,6 +434,10 @@ public class MainActivityHandler {
     public View getFocusThief() { return FOCUS_THIEF; }
 
     public Context getContext() { return context; }
+
+    public CoordinatorLayout getConjugationSection() { return CONJUGATION_SECTION; }
+
+    public RelativeLayout getUpperContent() { return UPPER_CONTENT; }
 
     public void setToolbar(Toolbar toolbar) {
         this.toolbar = toolbar;
