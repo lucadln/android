@@ -42,216 +42,229 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <!-- verb in infinitive form -->
-    <TextView
-        android:id="@+id/infinitive"
+    <RelativeLayout
+        android:id="@+id/upper_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:gravity="center_horizontal"
-        android:padding="3dip"
-        android:text="infinitive"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_height="75dp"
+        android:layout_marginTop="70dp">
 
-    <!-- translation -->
-    <TextView
-        android:id="@+id/translation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
-        android:gravity="center_horizontal"
-        android:padding="3dip"
-        android:text="translation"
-        android:textSize="20sp"
-        android:textStyle="italic" />
+        <!-- verb in infinitive form -->
+        <TextView
+            android:id="@+id/infinitive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:text="infinitive"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- translation -->
+        <TextView
+            android:id="@+id/translation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:text="translation"
+            android:textSize="24sp"
+            android:textStyle="italic" />
+    </RelativeLayout>
 
     <!-- conjugations -->
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/table_layout"
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/conjugation_section"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="70dp"
-        android:layout_marginBottom="70dp"
-        android:paddingLeft="40dp"
-        android:paddingTop="120dp"
-        android:stretchColumns="1"
-        tools:layout_editor_absoluteY="32dp">
+        android:layout_marginBottom="70dp">
 
-        <!-- 'ik' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/ik"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="ik"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="40dp"
+            android:paddingTop="120dp"
+            android:stretchColumns="1"
+            tools:layout_editor_absoluteY="32dp">
 
-            <TextView
-                android:id="@+id/ik_verb_text"
-                android:padding="3dip"
-                android:text="ik_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
-
-            <!-- Hack-ish way to keep the edittext field size -->
-            <!-- P.S. sorry mom! -->
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <!-- 'ik' conjugation -->
+            <TableRow>
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="777777777777777777777777777777777777777777777777777777777"
+                    android:id="@+id/ik"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="ik"
                     android:visibility="invisible"
-                    />
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/ik_verb_text"
+                    android:padding="3dip"
+                    android:text="ik_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
+
+                <!-- Hack-ish way to keep the edittext field size -->
+                <!-- P.S. sorry mom! -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="777777777777777777777777777777777777777777777777777777777"
+                        android:visibility="invisible"
+                        />
+                    <EditText
+                        android:id="@+id/ik_verb_field"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="180dp"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </TableRow>
+
+            <!-- 'jij' conjugation -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/jij"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="jij"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:id="@+id/jij_verb_text"
+                    android:padding="3dip"
+                    android:text="jij_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
+
                 <EditText
-                    android:id="@+id/ik_verb_field"
-                    android:layout_width="match_parent"
-                    android:layout_marginRight="180dp"
+                    android:id="@+id/jij_verb_field"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
-            </FrameLayout>
-        </TableRow>
+            </TableRow>
 
-        <!-- 'jij' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/jij"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="jij"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
+            <!-- 'hij' conjugation -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/hij"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="hij/zij"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/jij_verb_text"
-                android:padding="3dip"
-                android:text="jij_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/hij_verb_text"
+                    android:padding="3dip"
+                    android:text="hij_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/jij_verb_field"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="180dp"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:visibility="gone" />
-        </TableRow>
+                <EditText
+                    android:id="@+id/hij_verb_field"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:visibility="gone" />
+            </TableRow>
 
-        <!-- 'hij' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/hij"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="hij/zij"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
+            <!-- 'wij' conjugation -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/wij"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="wij"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/hij_verb_text"
-                android:padding="3dip"
-                android:text="hij_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/wij_verb_text"
+                    android:padding="3dip"
+                    android:text="wij_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/hij_verb_field"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="180dp"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:visibility="gone" />
-        </TableRow>
+                <EditText
+                    android:id="@+id/wij_verb_field"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:visibility="gone" />
+            </TableRow>
 
-        <!-- 'wij' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/wij"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="wij"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
+            <!-- 'jullie' conjugation -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/jullie"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="jullie"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/wij_verb_text"
-                android:padding="3dip"
-                android:text="wij_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/jullie_verb_text"
+                    android:padding="3dip"
+                    android:text="jullie_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/wij_verb_field"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="180dp"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:visibility="gone" />
-        </TableRow>
+                <EditText
+                    android:id="@+id/jullie_verb_field"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:visibility="gone" />
+            </TableRow>
 
-        <!-- 'jullie' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/jullie"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="jullie"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
+            <!-- 'zij' conjugation -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/zij"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="zij"
+                    android:visibility="invisible"
+                    android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/jullie_verb_text"
-                android:padding="3dip"
-                android:text="jullie_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/zij_verb_text"
+                    android:padding="3dip"
+                    android:text="zij_verb"
+                    android:visibility="gone"
+                    android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/jullie_verb_field"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="180dp"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:visibility="gone" />
-        </TableRow>
-
-        <!-- 'zij' conjugation -->
-        <TableRow>
-            <TextView
-                android:id="@+id/zij"
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="zij"
-                android:visibility="invisible"
-                android:textSize="20sp"/>
-
-            <TextView
-                android:id="@+id/zij_verb_text"
-                android:padding="3dip"
-                android:text="zij_verb"
-                android:visibility="gone"
-                android:textSize="20sp"/>
-
-            <EditText
-                android:id="@+id/zij_verb_field"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="180dp"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:visibility="gone" />
-        </TableRow>
-    </TableLayout>
+                <EditText
+                    android:id="@+id/zij_verb_field"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="180dp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:visibility="gone" />
+            </TableRow>
+        </TableLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
     <!-- bottom navigation -->
     <TextView
