@@ -15,7 +15,7 @@ import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
  * Created by ardelean on 10/15/17.
  */
 
-public class MainController {
+public class ConjugationCenterController {
 
     private Context context;
     private SharedPreferencesHandler sharedPreferencesHandler;
@@ -29,7 +29,7 @@ public class MainController {
      * Constructor method
      * @param context
      */
-    public MainController(Context context) {
+    public ConjugationCenterController(Context context) {
         this.context = context;
         sharedPreferencesHandler = new SharedPreferencesHandler(context);
         scoreHandler = new ScoreHandler(sharedPreferencesHandler);

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.MainActivity">
+    tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.ConjugationCenter">
 
     <!-- The focus thief will become focusable programmatically -->
     <View
@@ -46,31 +46,31 @@
     <RelativeLayout
         android:id="@+id/upper_content"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="65dp"
         android:layout_marginTop="75dp">
 
-        <!-- verb in infinitive form -->
+        <!-- Verb in infinitive form -->
         <TextView
             android:id="@+id/infinitive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="infinitive"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- translation -->
+        <!-- Translation -->
         <TextView
             android:id="@+id/translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="35dp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="translation"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="italic" />
     </RelativeLayout>
 
@@ -79,7 +79,7 @@
         android:id="@+id/conjugation_section"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="195dp"
+        android:layout_marginTop="140dp"
         android:layout_marginBottom="70dp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -98,14 +98,14 @@
                     android:padding="3dip"
                     android:text="ik"
                     android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/ik_verb_text"
-                    android:padding="3dip"
                     android:text="ik_verb"
+                    android:padding="3dip"
                     android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <!-- Hack-ish way to keep the edittext field size -->
                 <!-- P.S. sorry mom! -->
@@ -137,14 +137,14 @@
                     android:padding="3dip"
                     android:text="jij"
                     android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/jij_verb_text"
                     android:padding="3dip"
                     android:text="jij_verb"
                     android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/jij_verb_field"
@@ -164,14 +164,14 @@
                     android:padding="3dip"
                     android:text="hij/zij"
                     android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/hij_verb_text"
                     android:padding="3dip"
                     android:text="hij_verb"
                     android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/hij_verb_field"
@@ -191,14 +191,14 @@
                     android:gravity="right"
                     android:padding="3dip"
                     android:text="wij"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:visibility="invisible" />
 
                 <TextView
                     android:id="@+id/wij_verb_text"
                     android:padding="3dip"
                     android:text="wij_verb"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:visibility="gone" />
 
                 <EditText
@@ -219,14 +219,14 @@
                     android:padding="3dip"
                     android:text="jullie"
                     android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/jullie_verb_text"
                     android:padding="3dip"
                     android:text="jullie_verb"
                     android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/jullie_verb_field"
@@ -246,14 +246,14 @@
                     android:padding="3dip"
                     android:text="zij"
                     android:visibility="invisible"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <TextView
                     android:id="@+id/zij_verb_text"
                     android:padding="3dip"
                     android:text="zij_verb"
                     android:visibility="gone"
-                    android:textSize="20sp"/>
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/zij_verb_field"

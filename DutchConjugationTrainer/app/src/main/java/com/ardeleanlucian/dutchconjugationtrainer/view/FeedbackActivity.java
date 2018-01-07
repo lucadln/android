@@ -62,7 +62,7 @@ public class FeedbackActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Intent displayMainActivity= new Intent(
-                    FeedbackActivity.this, MainActivity.class);
+                    FeedbackActivity.this, ConjugationCenter.class);
             startActivity(displayMainActivity);
         }
     };

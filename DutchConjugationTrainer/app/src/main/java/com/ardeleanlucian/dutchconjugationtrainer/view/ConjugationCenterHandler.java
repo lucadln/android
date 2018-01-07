@@ -3,11 +3,9 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -16,7 +14,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
-import com.ardeleanlucian.dutchconjugationtrainer.controller.MainController;
+import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
@@ -28,7 +26,7 @@ import static android.view.View.VISIBLE;
  * Created by Ardelean Lucian on 11/10/2017.
  */
 
-public class MainActivityHandler {
+public class ConjugationCenterHandler {
 
     private View FOCUS_THIEF;
 
@@ -71,7 +69,7 @@ public class MainActivityHandler {
      * 
      * @param context
      */
-    public MainActivityHandler(Context context) {
+    public ConjugationCenterHandler(Context context) {
         this.context = context;
     }
 
@@ -114,7 +112,7 @@ public class MainActivityHandler {
 
         spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
         spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Verb.tenses));
-        spinner.setSelection((new MainController(context)).obtainSpinnerIndex());
+        spinner.setSelection((new ConjugationCenterController(context)).obtainSpinnerIndex());
     }
 
     /**
