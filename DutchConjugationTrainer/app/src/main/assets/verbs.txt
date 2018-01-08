@@ -5281,11 +5281,11 @@ zullen bevestigen
 rijden
 (to ride/drive)
 rijd
-jij
-hij
-wij
-jullie
-zij
+rijdt
+rijdt
+rijden
+rijden
+rijden
 heb gereden
 hebt gereden
 heeft gereden
@@ -5903,11 +5903,11 @@ werken
 werken
 werken
 heb gewerkt
-jij
-gewrocht
+hebt gewerkt
 heeft gewerkt
-wij
-gewrocht
+hebben gewerkt
+hebben gewerkt
+hebben gewerkt
 werkte
 werkte
 werkte
@@ -5915,11 +5915,11 @@ werkten
 werkten
 werkten
 had gewerkt
-jij
-gewrocht
 had gewerkt
-wij
-gewrocht
+had gewerkt
+hadden gewerkt
+hadden gewerkt
+hadden gewerkt
 zou werken
 zou werken
 zou werken
@@ -5927,11 +5927,11 @@ zouden werken
 zouden werken
 zouden werken
 zou gewerkt
-jij
-gewrocht hebben
 zou gewerkt
-wij
-gewrocht hebben
+zou gewerkt
+zouden gewerkt
+zouden gewerkt
+zouden gewerkt
 zal werken
 zult werken
 zal werken
@@ -6601,11 +6601,11 @@ zullen sluiten
 snijden
 (to cut)
 snijd
-jij
-hij
-wij
-jullie
-zij
+snijdt
+snijdt
+snijden
+snijden
+snijden
 heb gesneden
 hebt gesneden
 heeft gesneden
@@ -6871,11 +6871,11 @@ hoeven
 hoeven
 hoeven
 heb gehoefd
-jij
-gehoeven
+hebt gehoefd
 heeft gehoefd
-wij
-gehoeven
+hebben gehoefd
+hebben gehoefd
+hebben gehoefd
 hoefde
 hoefde
 hoefde
@@ -6883,11 +6883,11 @@ hoefden
 hoefden
 hoefden
 had gehoefd
-jij
-gehoeven
 had gehoefd
-wij
-gehoeven
+had gehoefd
+hadden gehoefd
+hadden gehoefd
+hadden gehoefd
 zou hoeven
 zou hoeven
 zou hoeven
@@ -6895,11 +6895,11 @@ zouden hoeven
 zouden hoeven
 zouden hoeven
 zou gehoefd
-jij
-gehoeven hebben
 zou gehoefd
-wij
-gehoeven hebben
+zou gehoefd
+zouden gehoefd
+zouden gehoefd
+zouden gehoefd
 zal hoeven
 zult hoeven
 zal hoeven
