@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/score_layout">
 
-    <com.github.mikephil.charting.charts.HorizontalBarChart
-        android:id="@+id/chart"
+    <!-- Bar chart -->
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp">
 
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!-- Reset button -->
     <Button
         android:id="@+id/reset_scores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reset scores" />
-</LinearLayout>
+        android:text="Reset scores"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp"/>
+
+</android.support.design.widget.CoordinatorLayout>

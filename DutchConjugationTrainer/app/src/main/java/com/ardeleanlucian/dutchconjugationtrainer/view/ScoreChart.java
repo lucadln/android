@@ -70,6 +70,8 @@ public class ScoreChart {
 
         // Create a data object from the data set
         BarData data = new BarData(dataSet);
+        // Set the width of the bars
+        data.setBarWidth(0.68f);
         // Make the chart use the acquired data
         barChart.setData(data);
 

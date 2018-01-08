@@ -291,10 +291,6 @@ public class ConjugationCenter extends AppCompatActivity {
                 Intent displayScores = new Intent(ConjugationCenter.this, ScoreActivity.class);
                 startActivity(displayScores);
                 return true;
-            case R.id.tense_info:
-                Intent displayTensesInfo = new Intent(ConjugationCenter.this, TensesInfoActivity.class);
-                startActivity(displayTensesInfo);
-                return true;
             case R.id.about:
                 Intent displayAbout = new Intent(ConjugationCenter.this, AboutActivity.class);
                 startActivity(displayAbout);
