@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.ConjugationCenter">
 
-    <!-- The focus thief will become focusable programmatically -->
+    <!-- Focus thief -->
     <View
         android:id="@+id/focus_thief"
         android:layout_width="1dp"
@@ -16,29 +16,39 @@
         android:focusable="false"
         android:focusableInTouchMode="false" />
 
-    <!-- app toolbar -->
+    <!-- App toolbar -->
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/appbar_padding_top"
+        android:background="@android:color/white"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <!-- dropdown tense selector -->
+            <!-- Dropdown -->
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="match_parent"
+                android:background="@null" />
+
         </android.support.v7.widget.Toolbar>
+
+        <!-- Toolbar bottom contour -->
+        <TextView
+            android:id="@+id/toolbar_contour"
+            android:layout_width="match_parent"
+            android:layout_height="1.75sp"
+            android:layout_gravity="bottom"
+            android:background="@color/redish_orange"
+            android:text=""
+            tools:layout_editor_absoluteX="0dp" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -267,7 +277,7 @@
         </TableLayout>
     </android.support.design.widget.CoordinatorLayout>
 
-    <!-- bottom navigation -->
+    <!-- Separator line -->
     <TextView
         android:id="@+id/lineSeparator"
         android:layout_width="fill_parent"
@@ -278,6 +288,7 @@
         android:text=""
         tools:layout_editor_absoluteX="0dp" />
 
+    <!-- Bottom navigation -->
     <Button
         android:id="@+id/next"
         style="@android:style/Widget.DeviceDefault.Button.Borderless"

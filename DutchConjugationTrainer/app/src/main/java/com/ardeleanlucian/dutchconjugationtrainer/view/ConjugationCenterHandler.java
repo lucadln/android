@@ -6,15 +6,18 @@ import android.graphics.Color;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.ThemedSpinnerAdapter;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
+import com.ardeleanlucian.dutchconjugationtrainer.model.CustomSpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
@@ -111,7 +114,10 @@ public class ConjugationCenterHandler {
         toolbar = (Toolbar) ((Activity) context).findViewById(R.id.toolbar);
 
         spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
-        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Verb.tenses));
+        CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(
+                getContext(), android.R.layout.simple_spinner_item, Verb.tenses);
+//        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Verb.tenses));
+        spinner.setAdapter(customSpinnerAdapter);
         spinner.setSelection((new ConjugationCenterController(context)).obtainSpinnerIndex());
     }
 

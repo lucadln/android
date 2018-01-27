@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.ConjugationCenter">
+
     <item
         android:id="@+id/settings"
         android:orderInCategory="100"
