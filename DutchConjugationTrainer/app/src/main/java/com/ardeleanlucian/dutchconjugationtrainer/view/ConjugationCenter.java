@@ -37,14 +37,7 @@ public class ConjugationCenter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Get phone screen size and set a layout depending on it
-        double screenSize = ScreenHandler.getScreenSize();
-        if (screenSize >= 4.9) {
-            setContentView(R.layout.conjugation_center_phone_big);
-        } else {
-            setContentView(R.layout.conjugation_center_phone_small);
-        }
+        setContentView(R.layout.conjugation_center);
 
         conjugationCenterHandler = new ConjugationCenterHandler(this);
         conjugationCenterHandler.initializeLayoutElements();
