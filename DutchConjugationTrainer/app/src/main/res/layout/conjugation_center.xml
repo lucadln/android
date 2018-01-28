@@ -31,7 +31,7 @@
             android:background="@android:color/white"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
-            <!-- Dropdown -->
+            <!-- Spinner dropdown -->
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="wrap_content"

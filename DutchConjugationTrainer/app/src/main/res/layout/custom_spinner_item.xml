@@ -9,11 +9,8 @@
     <TextView
         android:id="@+id/spinner_item_text"
         android:textColor="@color/upper_menu_gray"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:textSize="26sp"
         android:fontFamily="sans-serif"
-        android:textAllCaps="true"
-        android:textScaleX="1.05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
@@ -24,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+        android:src="@drawable/ic_arrow_down_gray"
+        android:paddingTop="5sp"
         android:paddingRight="10sp"/>
 
 </LinearLayout>

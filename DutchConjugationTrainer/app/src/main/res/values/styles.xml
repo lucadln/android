@@ -17,27 +17,17 @@
         <item name="android:actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
         <!-- Support library compatibility -->
         <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
-
-        <item name="android:spinnerDropDownItemStyle">@style/SpinnerStyle</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:textColor">@color/upper_menu_gray</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textScaleX">1.05</item>
+
     </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Define a style for the menu icon -->
     <style name="ActionButtonOverflow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
-        <item name="android:src">@drawable/ic_menu_orange_24dp</item>
-    </style>
-
-    <!-- Define a style for the spinner -->
-    <style name="SpinnerStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:src">@drawable/ic_menu_orange</item>
     </style>
 
 </resources>
