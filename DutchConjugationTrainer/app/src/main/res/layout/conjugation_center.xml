@@ -11,8 +11,8 @@
     <!-- Focus thief -->
     <View
         android:id="@+id/focus_thief"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
+        android:layout_width="1sp"
+        android:layout_height="1sp"
         android:focusable="false"
         android:focusableInTouchMode="false" />
 
@@ -48,7 +48,7 @@
             android:layout_gravity="bottom"
             android:background="@color/redish_orange"
             android:text=""
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0sp" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -56,15 +56,15 @@
     <RelativeLayout
         android:id="@+id/upper_content"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="75dp">
+        android:layout_height="120sp"
+        android:layout_marginTop="75sp">
 
         <!-- Verb in infinitive form -->
         <TextView
             android:id="@+id/infinitive"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="40sp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="infinitive"
@@ -76,7 +76,7 @@
             android:id="@+id/translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="70sp"
             android:gravity="center_horizontal"
             android:padding="3dip"
             android:text="translation"
@@ -89,15 +89,15 @@
         android:id="@+id/conjugation_section"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
-        android:layout_marginBottom="70dp">
+        android:layout_marginTop="170sp"
+        android:layout_marginBottom="70sp">
 
         <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/table_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:paddingLeft="40dp"
+            android:paddingLeft="40sp"
             android:stretchColumns="1">
 
             <!-- 'ik' conjugation -->
@@ -131,7 +131,7 @@
                     <EditText
                         android:id="@+id/ik_verb_field"
                         android:layout_width="match_parent"
-                        android:layout_marginRight="180dp"
+                        android:layout_marginRight="180sp"
                         android:layout_height="wrap_content"
                         android:imeOptions="actionNext"
                         android:inputType="text"
@@ -158,9 +158,9 @@
 
                 <EditText
                     android:id="@+id/jij_verb_field"
-                    android:layout_width="120dp"
+                    android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="180dp"
+                    android:layout_marginRight="180sp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
@@ -185,9 +185,9 @@
 
                 <EditText
                     android:id="@+id/hij_verb_field"
-                    android:layout_width="120dp"
+                    android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="180dp"
+                    android:layout_marginRight="180sp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
@@ -213,9 +213,9 @@
 
                 <EditText
                     android:id="@+id/wij_verb_field"
-                    android:layout_width="120dp"
+                    android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="180dp"
+                    android:layout_marginRight="180sp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
@@ -240,9 +240,9 @@
 
                 <EditText
                     android:id="@+id/jullie_verb_field"
-                    android:layout_width="120dp"
+                    android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="180dp"
+                    android:layout_marginRight="180sp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
@@ -267,9 +267,9 @@
 
                 <EditText
                     android:id="@+id/zij_verb_field"
-                    android:layout_width="120dp"
+                    android:layout_width="120sp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="180dp"
+                    android:layout_marginRight="180sp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
                     android:visibility="gone" />
@@ -277,41 +277,73 @@
         </TableLayout>
     </android.support.design.widget.CoordinatorLayout>
 
-    <!-- Separator line -->
-    <TextView
-        android:id="@+id/lineSeparator"
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="58dp"
-        android:background="@android:color/background_dark"
-        android:text=""
-        tools:layout_editor_absoluteX="0dp" />
-
     <!-- Bottom navigation -->
-    <Button
-        android:id="@+id/next"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:textColor="@color/colorAccent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="NEXT"
-        android:visibility="gone" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_gravity="bottom"
+        android:background="@color/upper_menu_gray"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/skip"
-        style="@android:style/Widget.DeviceDefault.Button.Borderless"
-        android:textColor="@color/colorAccent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="SKIP" />
+            <!--<Button-->
+                <!--android:id="@+id/show_correct_answer"-->
+                <!--style="@android:style/Widget.DeviceDefault.Button.Borderless"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:text="Show correct answer" />-->
+
+        <RelativeLayout
+            android:id="@+id/next_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="right|end"
+            android:gravity="right|end"
+            android:background="@color/redish_orange">
+
+            <Button
+                android:id="@+id/next"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingEnd="38sp"
+                android:paddingLeft="38sp"
+                android:paddingRight="38sp"
+                android:paddingStart="38sp"
+                android:text="N E X T"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/skip"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingEnd="38sp"
+                android:paddingLeft="38sp"
+                android:paddingRight="38sp"
+                android:paddingStart="38sp"
+                android:text="S K I P"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
