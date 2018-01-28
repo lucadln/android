@@ -3,22 +3,22 @@ package com.ardeleanlucian.dutchconjugationtrainer.view;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.ThemedSpinnerAdapter;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
 import com.ardeleanlucian.dutchconjugationtrainer.model.CustomSpinnerAdapter;
-import com.ardeleanlucian.dutchconjugationtrainer.model.SpinnerAdapter;
+import com.ardeleanlucian.dutchconjugationtrainer.model.CyclicTransitionDrawable;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Verb;
 
 import static android.view.View.GONE;
@@ -41,6 +41,7 @@ public class ConjugationCenterHandler {
 
     private Button NEXT;
     private Button SKIP;
+    private Button SHOW_CORRECT_ANSWER;
 
     private TextView INFINITIVE;
     private TextView TRANSLATION;
@@ -86,6 +87,7 @@ public class ConjugationCenterHandler {
 
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
+        SHOW_CORRECT_ANSWER = (Button) ((Activity) context).findViewById(R.id.show_correct_answer);
 
         INFINITIVE = (TextView) ((Activity) context).findViewById(R.id.infinitive);
         TRANSLATION = (TextView) ((Activity) context).findViewById(R.id.translation);
@@ -116,7 +118,6 @@ public class ConjugationCenterHandler {
         spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
         CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(
                 getContext(), android.R.layout.simple_spinner_item, Verb.tenses);
-//        spinner.setAdapter(new SpinnerAdapter(toolbar.getContext(), Verb.tenses));
         spinner.setAdapter(customSpinnerAdapter);
         spinner.setSelection((new ConjugationCenterController(context)).obtainSpinnerIndex());
     }
@@ -130,6 +131,7 @@ public class ConjugationCenterHandler {
     public void resetConjugationSectionVisibility(boolean readOnly, boolean showTranslation) {
         SKIP.setVisibility(VISIBLE);
         NEXT.setVisibility(GONE);
+        SHOW_CORRECT_ANSWER.setVisibility(GONE);
 
         if (showTranslation) {
             TRANSLATION.setVisibility(VISIBLE);
@@ -443,6 +445,8 @@ public class ConjugationCenterHandler {
 
     public RelativeLayout getUpperContent() { return UPPER_CONTENT; }
 
+    public Button getShowCorrectAnswer() { return SHOW_CORRECT_ANSWER; }
+
     public void setToolbar(Toolbar toolbar) {
         this.toolbar = toolbar;
     }
@@ -477,5 +481,14 @@ public class ConjugationCenterHandler {
      */
     public void resetFocus() {
         IK_VERB_FIELD.requestFocus();
+    }
+
+    public void pulseButtonColor(Button button) {
+        final CyclicTransitionDrawable drawable = new CyclicTransitionDrawable( new Drawable[] {
+                    new ColorDrawable(context.getResources().getColor(R.color.upper_menu_gray)),
+                    new ColorDrawable(context.getResources().getColor(R.color.greish_red))
+            });
+        button.setBackground(drawable);
+        drawable.startTransition(1000, 0);
     }
 }

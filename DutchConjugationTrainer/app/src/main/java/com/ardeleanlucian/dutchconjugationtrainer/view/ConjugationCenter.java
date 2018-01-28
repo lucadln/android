@@ -1,15 +1,26 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.TransitionDrawable;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +30,7 @@ import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
+import com.ardeleanlucian.dutchconjugationtrainer.model.CyclicTransitionDrawable;
 import com.ardeleanlucian.dutchconjugationtrainer.model.ScreenHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Utils;
 
@@ -144,6 +156,10 @@ public class ConjugationCenter extends AppCompatActivity {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "green");
                     } else {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "red");
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswer(), VISIBLE);
+                        conjugationCenterHandler.pulseButtonColor(
+                                conjugationCenterHandler.getShowCorrectAnswer());
                     }
                 }
                 if (conjugationCenterHandler.getNumberOfFilledEditTexts() == 5) {
