@@ -1,26 +1,12 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
-import android.os.Handler;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,8 +16,6 @@ import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
-import com.ardeleanlucian.dutchconjugationtrainer.model.CyclicTransitionDrawable;
-import com.ardeleanlucian.dutchconjugationtrainer.model.ScreenHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Utils;
 
 public class ConjugationCenter extends AppCompatActivity {
@@ -191,7 +175,7 @@ public class ConjugationCenter extends AppCompatActivity {
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
             conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                    conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
             conjugationCenterHandler.clearFields();
             conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), spinnerIndex);
 
@@ -218,7 +202,7 @@ public class ConjugationCenter extends AppCompatActivity {
             // Obtain and display the next verb
             conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
             conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                    conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
 
             // Move focus again on the first layout element
             conjugationCenterHandler.resetFocus();
@@ -239,7 +223,7 @@ public class ConjugationCenter extends AppCompatActivity {
             // Obtain and display the next verb
             conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
             conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                    conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
 
             // Move focus again on the first layout element
             conjugationCenterHandler.resetFocus();
@@ -257,7 +241,7 @@ public class ConjugationCenter extends AppCompatActivity {
             /* If the user opted for the learning mode
              *   then show the conjugation one by one for
              *   every person (ik, jij, hij...) on screen tap */
-            if (conjugationCenterController.obtainReadOnlyPreference()) {
+            if (conjugationCenterController.isApplicationInLearningMode()) {
                 if (conjugationIndex == 0) {
                     conjugationCenterHandler.getIkVerbText().setVisibility(VISIBLE);
                     conjugationCenterHandler.getJij().setVisibility(VISIBLE);

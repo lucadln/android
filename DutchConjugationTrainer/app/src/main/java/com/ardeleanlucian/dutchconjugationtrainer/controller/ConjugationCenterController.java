@@ -57,7 +57,7 @@ public class ConjugationCenterController {
     /**
      * @return read only preference
      */
-    public boolean obtainReadOnlyPreference() { return sharedPreferencesHandler.isInLearningMode(); }
+    public boolean isApplicationInLearningMode() { return sharedPreferencesHandler.isInLearningMode(); }
 
 
     /**
@@ -94,96 +94,125 @@ public class ConjugationCenterController {
         userAnswer.updateConjugationStatus(answerCorrectness);
     }
 
+
+    /**
+     * Actions to take on activity creation
+     */
     public void onActivityCreate() {
         obtainNextVerb();
     }
 
+
+    /**
+     * Actions to take when clicking on the 'Next' button
+     */
     public void onClickNext() {
-        Feedback.incrementConjugationsCountSinceLastFeedback();
-        (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
-        if (userAnswer.isVerbCorrectlyConjugated()) {
-            // Increment the correct and total conjugation count
-            scoreHandler.incrementCorrectConjugationsCount();
-            scoreHandler.incrementTotalConjugationsCount();
-            // Register stats for feedback
-            Feedback.incrementCorrectConsecutiveConjugationsCount();
-            Feedback.resetWrongConsecutiveConjugationsCount();
-        } else {
-            // Increment the total conjugation count
-            scoreHandler.incrementTotalConjugationsCount();
-            // Register stats for feedback
-            Feedback.incrementWrongConsecutiveConjugationsCount();
-            Feedback.resetCorrectConsecutiveConjugationsCount();
-        }
-        giveFeedbackIfNecessary();
-
-        // Bring on the next verb and prepare a new userAnswer object
-        obtainNextVerb();
-        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
-    }
-
-    public void onClickSkip() {
-        Feedback.incrementConjugationsCountSinceLastFeedback();
-        (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
-        if (!userAnswer.isVerbCorrectlyConjugated()) {
-            // Increment the total conjugation count
-            scoreHandler.incrementTotalConjugationsCount();
-            // Register stats for feedback
-            Feedback.incrementWrongConsecutiveConjugationsCount();
-            Feedback.resetCorrectConsecutiveConjugationsCount();
-            giveFeedbackIfNecessary();
-        }
-
-        // Bring on the next verb and prepare a new userAnswer object
-        obtainNextVerb();
-        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
-    }
-
-    public void onSpinnerSelection(int spinnerIndex) {
-        if (userAnswer.isVerbCorrectlyConjugated()) {
-            if (userAnswer.getNumberOfConjugatedPersons() == 6) {
+        if (isApplicationInLearningMode() == false) {
+            Feedback.incrementConjugationsCountSinceLastFeedback();
+            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
+            if (userAnswer.isVerbCorrectlyConjugated()) {
                 // Increment the correct and total conjugation count
                 scoreHandler.incrementCorrectConjugationsCount();
                 scoreHandler.incrementTotalConjugationsCount();
                 // Register stats for feedback
                 Feedback.incrementCorrectConsecutiveConjugationsCount();
                 Feedback.resetWrongConsecutiveConjugationsCount();
+            } else {
+                // Increment the total conjugation count
+                scoreHandler.incrementTotalConjugationsCount();
+                // Register stats for feedback
+                Feedback.incrementWrongConsecutiveConjugationsCount();
+                Feedback.resetCorrectConsecutiveConjugationsCount();
+            }
+            giveFeedbackIfNecessary();
+        }
+
+        // Bring on the next verb and prepare a new userAnswer object
+        obtainNextVerb();
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+
+    /**
+     * Actions to take when clicking on the 'Skip' button
+     */
+    public void onClickSkip() {
+        if (isApplicationInLearningMode() == false) {
+            Feedback.incrementConjugationsCountSinceLastFeedback();
+            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
+            if (!userAnswer.isVerbCorrectlyConjugated()) {
+                // Increment the total conjugation count
+                scoreHandler.incrementTotalConjugationsCount();
+                // Register stats for feedback
+                Feedback.incrementWrongConsecutiveConjugationsCount();
+                Feedback.resetCorrectConsecutiveConjugationsCount();
+                giveFeedbackIfNecessary();
+            }
+        }
+
+        // Bring on the next verb and prepare a new userAnswer object
+        obtainNextVerb();
+        userAnswer = new UserAnswer(sharedPreferencesHandler.getSpinnerIndex(), verb);
+    }
+
+
+    /**
+     * Actions to take when selecting a new tense from the upper dropdown
+     * @param spinnerIndex
+     */
+    public void onSpinnerSelection(int spinnerIndex) {
+        if (isApplicationInLearningMode() == false) {
+            if (userAnswer.isVerbCorrectlyConjugated()) {
+                if (userAnswer.getNumberOfConjugatedPersons() == 6) {
+                    // Increment the correct and total conjugation count
+                    scoreHandler.incrementCorrectConjugationsCount();
+                    scoreHandler.incrementTotalConjugationsCount();
+                    // Register stats for feedback
+                    Feedback.incrementCorrectConsecutiveConjugationsCount();
+                    Feedback.resetWrongConsecutiveConjugationsCount();
+                    giveFeedbackIfNecessary();
+                    (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
+                }
+            } else {
+                scoreHandler.incrementTotalConjugationsCount();
+                // Register stats for feedback
+                Feedback.incrementWrongConsecutiveConjugationsCount();
+                Feedback.resetCorrectConsecutiveConjugationsCount();
                 giveFeedbackIfNecessary();
                 (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             }
-        } else {
-            scoreHandler.incrementTotalConjugationsCount();
-            // Register stats for feedback
-            Feedback.incrementWrongConsecutiveConjugationsCount();
-            Feedback.resetCorrectConsecutiveConjugationsCount();
-            giveFeedbackIfNecessary();
-            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
         }
+
         userAnswer = new UserAnswer(spinnerIndex, verb);
         updateSpinnerPosition(spinnerIndex);
     }
 
+
+    /**
+     * Actions to take when selecting an item from the upper menu
+     */
     public void onMenuSelection() {
-        if (userAnswer.isVerbCorrectlyConjugated()) {
-            if (userAnswer.getNumberOfConjugatedPersons() == 6) {
-                // Increment the correct and total conjugation count
-                scoreHandler.incrementCorrectConjugationsCount();
+        if (isApplicationInLearningMode() == false) {
+            if (userAnswer.isVerbCorrectlyConjugated()) {
+                if (userAnswer.getNumberOfConjugatedPersons() == 6) {
+                    // Increment the correct and total conjugation count
+                    scoreHandler.incrementCorrectConjugationsCount();
+                    scoreHandler.incrementTotalConjugationsCount();
+                    // Register stats for feedback
+                    Feedback.incrementCorrectConsecutiveConjugationsCount();
+                    Feedback.resetWrongConsecutiveConjugationsCount();
+                    giveFeedbackIfNecessary();
+                    (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
+                }
+            } else {
                 scoreHandler.incrementTotalConjugationsCount();
                 // Register stats for feedback
-                Feedback.incrementCorrectConsecutiveConjugationsCount();
-                Feedback.resetWrongConsecutiveConjugationsCount();
+                Feedback.incrementWrongConsecutiveConjugationsCount();
+                Feedback.resetCorrectConsecutiveConjugationsCount();
                 giveFeedbackIfNecessary();
                 (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             }
-        } else {
-            scoreHandler.incrementTotalConjugationsCount();
-            // Register stats for feedback
-            Feedback.incrementWrongConsecutiveConjugationsCount();
-            Feedback.resetCorrectConsecutiveConjugationsCount();
-            giveFeedbackIfNecessary();
-            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
         }
-
     }
 
     public void onScreenTap() {
