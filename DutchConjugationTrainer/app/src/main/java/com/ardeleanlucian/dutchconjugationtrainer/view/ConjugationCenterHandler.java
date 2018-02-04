@@ -36,7 +36,7 @@ public class ConjugationCenterHandler {
     private Context context;
 
     private TableLayout TABLE_LAYOUT;
-    private CoordinatorLayout CONJUGATION_SECTION;
+    private RelativeLayout CONJUGATION_SECTION;
     private RelativeLayout UPPER_CONTENT;
 
     private Button NEXT;
@@ -83,7 +83,7 @@ public class ConjugationCenterHandler {
     public void initializeLayoutElements() {
         TABLE_LAYOUT = (TableLayout) ((Activity) context).findViewById(R.id.table_layout);
         UPPER_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.upper_content);
-        CONJUGATION_SECTION = (CoordinatorLayout) ((Activity) context).findViewById(R.id.conjugation_section);
+        CONJUGATION_SECTION = (RelativeLayout) ((Activity) context).findViewById(R.id.conjugation_section);
 
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
@@ -441,7 +441,7 @@ public class ConjugationCenterHandler {
 
     public Context getContext() { return context; }
 
-    public CoordinatorLayout getConjugationSection() { return CONJUGATION_SECTION; }
+    public RelativeLayout getConjugationSection() { return CONJUGATION_SECTION; }
 
     public RelativeLayout getUpperContent() { return UPPER_CONTENT; }
 
@@ -485,8 +485,8 @@ public class ConjugationCenterHandler {
 
     public void pulseButtonColor(Button button) {
         final CyclicTransitionDrawable drawable = new CyclicTransitionDrawable( new Drawable[] {
-                    new ColorDrawable(context.getResources().getColor(R.color.upper_menu_gray)),
-                    new ColorDrawable(context.getResources().getColor(R.color.greish_red))
+                    new ColorDrawable(context.getResources().getColor(R.color.colorPrimary)),
+                    new ColorDrawable(context.getResources().getColor(android.R.color.holo_red_dark))
             });
         button.setBackground(drawable);
         drawable.startTransition(1000, 0);
