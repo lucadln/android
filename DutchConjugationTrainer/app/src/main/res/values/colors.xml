@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#FF161616</color>
     <color name="colorAccent">#ff3c00</color>
     <color name="redish_orange">#ff3c00</color>
+    <color name="very_light_gray">#f9f9f9</color>
     <color name="upper_menu_gray">#7c7c7c</color>
+    <color name="gray">#606060</color>
     <color name="greish_red">#b57272</color>
 </resources>
