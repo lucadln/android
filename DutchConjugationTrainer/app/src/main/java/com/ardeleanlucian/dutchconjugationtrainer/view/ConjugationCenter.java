@@ -1,11 +1,15 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -145,6 +149,12 @@ public class ConjugationCenter extends AppCompatActivity {
                                 conjugationCenterHandler.getShowCorrectAnswer(), VISIBLE);
                         conjugationCenterHandler.pulseButtonColor(
                                 conjugationCenterHandler.getShowCorrectAnswer());
+                        conjugationCenterHandler.shake(textViewList[conjugationIndex]);
+
+                        // @TODO make it possible to disable from settings
+                        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        // Vibrate for 500 milliseconds
+                        vibrator.vibrate(200);
                     }
                 }
                 int filledEditTextsCount = conjugationCenterHandler.getNumberOfFilledEditTexts();

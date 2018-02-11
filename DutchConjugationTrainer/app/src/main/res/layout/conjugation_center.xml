@@ -58,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/appbar"
-        android:layout_above="@+id/bottom_navigation">
+        android:layout_above="@+id/bottom_navigation"
+        android:background="@color/very_light_gray">
 
         <RelativeLayout
             android:id="@+id/content_wrapper"
@@ -325,7 +326,7 @@
             android:layout_toLeftOf="@+id/next_wrapper"
             android:text="REVISE"
             android:textColor="@android:color/white"
-            android:textSize="22dp"
+            android:textSize="18sp"
             android:visibility="gone"
             android:textStyle="bold"
             android:fontFamily="sans-serif-condensed"/>
@@ -356,7 +357,7 @@
                 android:paddingStart="38dp"
                 android:text="NEXT"
                 android:textColor="@android:color/white"
-                android:textSize="22dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
 
@@ -375,7 +376,7 @@
                 android:paddingStart="40.5dp"
                 android:text="SKIP"
                 android:textColor="@android:color/white"
-                android:textSize="22dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </RelativeLayout>
     </RelativeLayout>

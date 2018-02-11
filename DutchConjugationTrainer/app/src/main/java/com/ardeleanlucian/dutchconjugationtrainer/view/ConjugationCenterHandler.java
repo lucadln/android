@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -119,7 +121,7 @@ public class ConjugationCenterHandler {
 
         spinner = (Spinner) ((Activity) context).findViewById(R.id.spinner);
         CustomSpinnerAdapter customSpinnerAdapter = new CustomSpinnerAdapter(
-                getContext(), android.R.layout.simple_spinner_item, Verb.tenses);
+                getContext(), R.layout.spinner_content, Verb.tenses);
         spinner.setAdapter(customSpinnerAdapter);
         spinner.setSelection((new ConjugationCenterController(context)).obtainSpinnerIndex());
     }
@@ -459,6 +461,13 @@ public class ConjugationCenterHandler {
 
     public void setTextViewAnswer(TextView textView, String answer) {
         textView.setText(answer);
+    }
+
+    public void shake(TextView textView) {
+        // Shake animation @TODO move in a special animation class
+        final Animation animShake = AnimationUtils.loadAnimation(
+                context, R.anim.wrong_answer_shake);
+        textView.startAnimation(animShake);
     }
 
     public void setTextViewColor(TextView textView, String color) {

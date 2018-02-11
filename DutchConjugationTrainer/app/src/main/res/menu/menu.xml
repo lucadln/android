@@ -4,18 +4,26 @@
     tools:context="com.ardeleanlucian.dutchconjugationtrainer.view.ConjugationCenter">
 
     <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
-        android:orderInCategory="100"
-        android:title="Settings">
-    <item
-        android:id="@+id/scores"
-        android:icon="@drawable/ic_chart"
-        android:orderInCategory="100"
-        android:title="Scores" />
-    <item
-        android:id="@+id/about"
-        android:icon="@drawable/ic_help"
-        android:orderInCategory="100"
-        android:title="About" />
+        android:icon="@drawable/ic_menu_orange"
+        android:title="test"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings"
+                android:orderInCategory="100"
+                android:title="Settings" />
+            <item
+                android:id="@+id/scores"
+                android:icon="@drawable/ic_chart"
+                android:orderInCategory="100"
+                android:title="Scores" />
+            <item
+                android:id="@+id/about"
+                android:icon="@drawable/ic_help"
+                android:orderInCategory="100"
+                android:title="About" />
+        </menu>
+    </item>
 </menu>
