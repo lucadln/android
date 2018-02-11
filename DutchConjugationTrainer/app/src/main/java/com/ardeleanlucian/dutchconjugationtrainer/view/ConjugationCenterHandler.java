@@ -38,6 +38,7 @@ public class ConjugationCenterHandler {
     private TableLayout TABLE_LAYOUT;
     private RelativeLayout CONJUGATION_SECTION;
     private RelativeLayout UPPER_CONTENT;
+    private RelativeLayout APPLICATION_CONTENT;
 
     private Button NEXT;
     private Button SKIP;
@@ -82,6 +83,7 @@ public class ConjugationCenterHandler {
      */
     public void initializeLayoutElements() {
         TABLE_LAYOUT = (TableLayout) ((Activity) context).findViewById(R.id.table_layout);
+        APPLICATION_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.application_content);
         UPPER_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.upper_content);
         CONJUGATION_SECTION = (RelativeLayout) ((Activity) context).findViewById(R.id.conjugation_section);
 
@@ -154,12 +156,12 @@ public class ConjugationCenterHandler {
             JULLIE_VERB_TEXT.setVisibility(INVISIBLE);
             ZIJ_VERB_TEXT.setVisibility(INVISIBLE);
 
-            IK_VERB_FIELD.setVisibility(GONE);
-            JIJ_VERB_FIELD.setVisibility(GONE);
-            HIJ_VERB_FIELD.setVisibility(GONE);
-            WIJ_VERB_FIELD.setVisibility(GONE);
-            JULLIE_VERB_FIELD.setVisibility(GONE);
-            ZIJ_VERB_FIELD.setVisibility(GONE);
+            IK_VERB_FIELD.setVisibility(INVISIBLE);
+            JIJ_VERB_FIELD.setVisibility(INVISIBLE);
+            HIJ_VERB_FIELD.setVisibility(INVISIBLE);
+            WIJ_VERB_FIELD.setVisibility(INVISIBLE);
+            JULLIE_VERB_FIELD.setVisibility(INVISIBLE);
+            ZIJ_VERB_FIELD.setVisibility(INVISIBLE);
         } else {
             IK.setVisibility(VISIBLE);
             JIJ.setVisibility(VISIBLE);
@@ -220,22 +222,22 @@ public class ConjugationCenterHandler {
      */
     public int getNumberOfFilledEditTexts() {
         int count = 0;
-        if (IK_VERB_FIELD.getVisibility() == View.GONE) {
+        if (IK_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
-        if (JIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (JIJ_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
-        if (HIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (HIJ_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
-        if (WIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (WIJ_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
-        if (JULLIE_VERB_FIELD.getVisibility() == View.GONE) {
+        if (JULLIE_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
-        if (ZIJ_VERB_FIELD.getVisibility() == View.GONE) {
+        if (ZIJ_VERB_FIELD.getVisibility() == View.INVISIBLE) {
             count++;
         }
         return count;
@@ -465,6 +467,10 @@ public class ConjugationCenterHandler {
         } else if (color.equals("red")) {
             textView.setTextColor(Color.RED);
         }
+    }
+
+    public RelativeLayout getApplicationContent() {
+        return APPLICATION_CONTENT;
     }
 
     /**

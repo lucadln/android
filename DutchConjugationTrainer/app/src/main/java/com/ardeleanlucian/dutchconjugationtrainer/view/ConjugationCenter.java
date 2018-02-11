@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
@@ -132,7 +133,7 @@ public class ConjugationCenter extends AppCompatActivity {
                 conjugationCenterController.onFieldFocusChange(conjugationIndex, answer);
                 if (!answer.equals("")) { // If the text field was filled in...
                     // Hide the field and show a read-only text instead
-                    conjugationCenterHandler.setVisibility(editTextList[conjugationIndex], GONE);
+                    conjugationCenterHandler.setVisibility(editTextList[conjugationIndex], INVISIBLE);
                     conjugationCenterHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     conjugationCenterHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
@@ -146,10 +147,11 @@ public class ConjugationCenter extends AppCompatActivity {
                                 conjugationCenterHandler.getShowCorrectAnswer());
                     }
                 }
-                if (conjugationCenterHandler.getNumberOfFilledEditTexts() == 5) {
+                int filledEditTextsCount = conjugationCenterHandler.getNumberOfFilledEditTexts();
+                if (filledEditTextsCount == 5) {
                     conjugationCenterHandler.switchFocusThief(true);
 
-                } else if (conjugationCenterHandler.getNumberOfFilledEditTexts() == 6) {
+                } else if (filledEditTextsCount == 6) {
                     conjugationCenterHandler.setVisibility(conjugationCenterHandler.getSkip(), GONE);
                     conjugationCenterHandler.setVisibility(conjugationCenterHandler.getNext(), VISIBLE);
                     Utils.hideKeyboard(
@@ -235,7 +237,7 @@ public class ConjugationCenter extends AppCompatActivity {
      *   Only important when in learning mode. Doesn't
      *   play any role otherwise.
      */
-    private final View.OnClickListener onTapScreen = new View.OnClickListener() {
+    private final View.OnClickListener onScreenTap = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             /* If the user opted for the learning mode
@@ -313,8 +315,8 @@ public class ConjugationCenter extends AppCompatActivity {
         conjugationCenterHandler.getSpinner().setOnItemSelectedListener(onSpinnerSelection);
         conjugationCenterHandler.getSkip().setOnClickListener(onClickSkip);
         conjugationCenterHandler.getNext().setOnClickListener(onClickNext);
-        conjugationCenterHandler.getUpperContent().setOnClickListener(onTapScreen);
-        conjugationCenterHandler.getConjugationSection().setOnClickListener(onTapScreen);
+        conjugationCenterHandler.getApplicationContent().setOnClickListener(onScreenTap);
+        conjugationCenterHandler.getConjugationSection().setOnClickListener(onScreenTap);
 
         conjugationCenterHandler.getIkVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getJijVerbField().setOnFocusChangeListener(onFocusChangeListener);

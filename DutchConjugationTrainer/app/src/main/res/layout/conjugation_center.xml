@@ -70,7 +70,8 @@
             <RelativeLayout
                 android:id="@+id/upper_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp">
 
                 <!-- Verb in infinitive form -->
                 <TextView
@@ -80,7 +81,8 @@
                     android:gravity="center_horizontal"
                     android:text="infinitive"
                     android:textSize="28sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"/>
 
                 <!-- Translation -->
                 <TextView
@@ -99,7 +101,11 @@
                 android:id="@+id/conjugation_section"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/upper_content">
+                android:layout_below="@id/upper_content"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="60dp"
+                android:paddingRight="60dp">
 
                 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/table_layout"
@@ -115,13 +121,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="ik"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="invisible" />
+                            android:visibility="invisible"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/ik_verb_text"
                             android:text="ik_verb"
                             android:visibility="gone"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/ik_verb_field"
@@ -131,7 +139,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
 
                     <!-- 'jij' conjugation -->
@@ -142,13 +151,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="jij"
                             android:visibility="invisible"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/jij_verb_text"
                             android:text="jij_verb"
                             android:visibility="gone"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/jij_verb_field"
@@ -158,7 +169,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
 
                     <!-- 'hij' conjugation -->
@@ -169,13 +181,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="hij/zij"
                             android:visibility="invisible"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/hij_verb_text"
                             android:text="hij_verb"
                             android:visibility="gone"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/hij_verb_field"
@@ -185,7 +199,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
 
                     <!-- 'wij' conjugation -->
@@ -197,13 +212,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="wij"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="invisible" />
+                            android:visibility="invisible"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/wij_verb_text"
                             android:text="wij_verb"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="gone"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/wij_verb_field"
@@ -213,7 +230,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
 
                     <!-- 'jullie' conjugation -->
@@ -224,13 +242,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="jullie"
                             android:visibility="invisible"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/jullie_verb_text"
                             android:text="jullie_verb"
                             android:visibility="gone"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/jullie_verb_field"
@@ -240,7 +260,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
 
                     <!-- 'zij' conjugation -->
@@ -251,13 +272,15 @@
                             android:paddingRight="@dimen/padding_person_conjugation"
                             android:text="zij"
                             android:visibility="invisible"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:textColor="@color/colorPrimary"/>
 
                         <TextView
                             android:id="@+id/zij_verb_text"
                             android:text="zij_verb"
                             android:visibility="gone"
-                            android:textSize="@dimen/conjugation_text_size"/>
+                            android:textSize="@dimen/conjugation_text_size"
+                            android:layout_height="match_parent"/>
 
                         <EditText
                             android:id="@+id/zij_verb_field"
@@ -267,7 +290,8 @@
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             android:textSize="@dimen/conjugation_text_size"
-                            android:visibility="gone" />
+                            android:visibility="invisible"
+                            android:paddingTop="0dp"/>
                     </TableRow>
                 </TableLayout>
             </RelativeLayout>
