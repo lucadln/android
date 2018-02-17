@@ -7,11 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -243,6 +246,29 @@ public class ConjugationCenter extends AppCompatActivity {
     };
 
     /**
+     * Actions to be taken when the user clicks on the 'Revise' button
+     */
+    private final View.OnClickListener onClickRevise = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            conjugationCenterHandler.setCorrectConjugationValues(conjugationCenterController.getVerb(),
+                    conjugationCenterController.obtainSpinnerIndex());
+            slideUp(conjugationCenterHandler.getCorrectConjugation());
+        }
+    };
+
+    /**
+     * Actions to be taken when the user clicks on the 'Revise' button
+     */
+    private final View.OnClickListener onClickCloseCorrectConjugation = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            slideDown(conjugationCenterHandler.getCorrectConjugation());
+            conjugationCenterHandler.setVisibility(conjugationCenterHandler.getCorrectConjugation(), GONE);
+        }
+    };
+
+    /**
      * Actions to be taken when the user taps the screen.
      *   Only important when in learning mode. Doesn't
      *   play any role otherwise.
@@ -325,14 +351,41 @@ public class ConjugationCenter extends AppCompatActivity {
         conjugationCenterHandler.getSpinner().setOnItemSelectedListener(onSpinnerSelection);
         conjugationCenterHandler.getSkip().setOnClickListener(onClickSkip);
         conjugationCenterHandler.getNext().setOnClickListener(onClickNext);
+        conjugationCenterHandler.getShowCorrectAnswer().setOnClickListener(onClickRevise);
+        conjugationCenterHandler.getCloseCorrectConjugation()
+                .setOnClickListener(onClickCloseCorrectConjugation);
         conjugationCenterHandler.getApplicationContent().setOnClickListener(onScreenTap);
         conjugationCenterHandler.getConjugationSection().setOnClickListener(onScreenTap);
-
         conjugationCenterHandler.getIkVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getJijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getHijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getWijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getJullieVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getZijVerbField().setOnFocusChangeListener(onFocusChangeListener);
+    }
+
+    // slide the view from below itself to the current position
+    public void slideUp(View view){
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                300,  // fromYDelta
+                0);                // toYDelta
+        animate.setDuration(400);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+    }
+
+    // slide the view from its current position to below itself
+    public void slideDown(View view){
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                0,                 // fromYDelta
+                view.getHeight()); // toYDelta
+        animate.setDuration(250);
+        animate.setFillAfter(false);
+        view.startAnimation(animate);
     }
 }

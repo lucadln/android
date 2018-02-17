@@ -380,4 +380,176 @@
                 android:textStyle="bold" />
         </RelativeLayout>
     </RelativeLayout>
+
+    <!-- Sections which displays the correct conjugation for the user -->
+    <RelativeLayout
+        android:id="@+id/correct_conjugation"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:visibility="visible"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@color/very_light_gray">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/redish_orange"
+            android:gravity="top"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:padding="15dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONJUGATION TABLE"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <!-- Correct conjugation table -->
+        <RelativeLayout
+            android:id="@+id/correct_conjugation_section"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title"
+            android:layout_above="@+id/close_correct_conjugation_view"
+            android:paddingLeft="60dp"
+            android:paddingStart="60dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/correct_conjugation_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 'ik' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="ik"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/ik_correct_conjugation"
+                        android:text="ik_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+
+                <!-- 'jij' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="jij"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/jij_correct_conjugation"
+                        android:text="jij_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+
+                <!-- 'hij' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="hij"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/hij_correct_conjugation"
+                        android:text="zij_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+
+                <!-- 'wij' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="wij"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/wij_correct_conjugation"
+                        android:text="wij_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+
+                <!-- 'jullie' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="jullie"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/jullie_correct_conjugation"
+                        android:text="jullie_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+
+                <!-- 'zij' conjugation -->
+                <TableRow>
+
+                    <TextView
+                        android:gravity="right"
+                        android:paddingRight="@dimen/padding_person_conjugation"
+                        android:text="zij"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/conjugation_text_size" />
+
+                    <TextView
+                        android:id="@+id/zij_correct_conjugation"
+                        android:text="zij_verb"
+                        android:textSize="@dimen/conjugation_text_size" />
+                </TableRow>
+            </TableLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <Button
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:id="@+id/close_correct_conjugation_view"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="CLOSE"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/redish_orange"
+            android:fontFamily="sans-serif-condensed"
+            android:drawableLeft="@drawable/ic_close"
+            android:drawableStart="@drawable/ic_close"/>
+
+
+
+
+
+    </RelativeLayout>
 </RelativeLayout>

@@ -5,13 +5,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
@@ -34,6 +34,7 @@ import static android.view.View.VISIBLE;
 public class ConjugationCenterHandler {
 
     private View FOCUS_THIEF;
+    private View CORRECT_CONJUGATION;
 
     private Context context;
 
@@ -45,6 +46,7 @@ public class ConjugationCenterHandler {
     private Button NEXT;
     private Button SKIP;
     private Button SHOW_CORRECT_ANSWER;
+    private Button CLOSE_CORRECT_CONJUGATION_VIEW;
 
     private TextView INFINITIVE;
     private TextView TRANSLATION;
@@ -60,6 +62,12 @@ public class ConjugationCenterHandler {
     private TextView WIJ_VERB_TEXT;
     private TextView JULLIE_VERB_TEXT;
     private TextView ZIJ_VERB_TEXT;
+    private TextView IK_CORRECT_CONJUGATION;
+    private TextView JIJ_CORRECT_CONJUGATION;
+    private TextView HIJ_CORRECT_CONJUGATION;
+    private TextView WIJ_CORRECT_CONJUGATION;
+    private TextView JULLIE_CORRECT_CONJUGATION;
+    private TextView ZIJ_CORRECT_CONJUGATION;
 
     private EditText IK_VERB_FIELD;
     private EditText JIJ_VERB_FIELD;
@@ -92,7 +100,8 @@ public class ConjugationCenterHandler {
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
         SHOW_CORRECT_ANSWER = (Button) ((Activity) context).findViewById(R.id.show_correct_answer);
-
+        CLOSE_CORRECT_CONJUGATION_VIEW =
+                (Button) ((Activity) context).findViewById(R.id.close_correct_conjugation_view);
         INFINITIVE = (TextView) ((Activity) context).findViewById(R.id.infinitive);
         TRANSLATION = (TextView) ((Activity) context).findViewById(R.id.translation);
         IK = (TextView) ((Activity) context).findViewById(R.id.ik);
@@ -107,6 +116,12 @@ public class ConjugationCenterHandler {
         WIJ_VERB_TEXT = (TextView) ((Activity) context).findViewById(R.id.wij_verb_text);
         JULLIE_VERB_TEXT = (TextView) ((Activity) context).findViewById(R.id.jullie_verb_text);
         ZIJ_VERB_TEXT = (TextView) ((Activity) context).findViewById(R.id.zij_verb_text);
+        IK_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.ik_correct_conjugation);
+        JIJ_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.jij_correct_conjugation);
+        HIJ_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.hij_correct_conjugation);
+        WIJ_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.wij_correct_conjugation);
+        JULLIE_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.jullie_correct_conjugation);
+        ZIJ_CORRECT_CONJUGATION = (TextView) ((Activity) context).findViewById(R.id.zij_correct_conjugation);
 
         IK_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.ik_verb_field);
         JIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.jij_verb_field);
@@ -116,6 +131,7 @@ public class ConjugationCenterHandler {
         ZIJ_VERB_FIELD = (EditText) ((Activity) context).findViewById(R.id.zij_verb_field);
 
         FOCUS_THIEF = (View) ((Activity) context).findViewById(R.id.focus_thief);
+        CORRECT_CONJUGATION = (View) ((Activity) context).findViewById(R.id.correct_conjugation);
 
         toolbar = (Toolbar) ((Activity) context).findViewById(R.id.toolbar);
 
@@ -136,6 +152,7 @@ public class ConjugationCenterHandler {
         SKIP.setVisibility(VISIBLE);
         NEXT.setVisibility(GONE);
         SHOW_CORRECT_ANSWER.setVisibility(GONE);
+        CORRECT_CONJUGATION.setVisibility(GONE);
 
         if (showTranslation) {
             TRANSLATION.setVisibility(VISIBLE);
@@ -220,6 +237,22 @@ public class ConjugationCenterHandler {
     }
 
     /**
+     * Method to set the values for the correct conjugation screen.
+     *
+     * @param verb
+     * @param spinnerIndex
+     */
+    public void setCorrectConjugationValues(Verb verb, int spinnerIndex) {
+
+        IK_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][0]);
+        JIJ_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][1]);
+        HIJ_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][2]);
+        WIJ_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][3]);
+        JULLIE_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][4]);
+        ZIJ_CORRECT_CONJUGATION.setText(verb.getVerbConjugation()[spinnerIndex][5]);
+    }
+
+    /**
      * @return the number of filled edit texts
      */
     public int getNumberOfFilledEditTexts() {
@@ -268,6 +301,8 @@ public class ConjugationCenterHandler {
     public void setSkip(Button SKIP) {
         this.SKIP = SKIP;
     }
+
+    public Button getCloseCorrectConjugation() {return CLOSE_CORRECT_CONJUGATION_VIEW; }
 
     public TextView getInfinitive() {
         return INFINITIVE;
@@ -450,6 +485,8 @@ public class ConjugationCenterHandler {
     public RelativeLayout getUpperContent() { return UPPER_CONTENT; }
 
     public Button getShowCorrectAnswer() { return SHOW_CORRECT_ANSWER; }
+
+    public View getCorrectConjugation() { return CORRECT_CONJUGATION; }
 
     public void setToolbar(Toolbar toolbar) {
         this.toolbar = toolbar;
