@@ -389,7 +389,8 @@
         android:visibility="visible"
         android:gravity="bottom"
         android:layout_alignParentBottom="true"
-        android:background="@color/very_light_gray">
+        android:background="@color/colorPrimaryDark"
+        android:onClick="letNoClick">
 
         <RelativeLayout
             android:id="@+id/title"
@@ -438,13 +439,14 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="ik"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/ik_correct_conjugation"
                         android:text="ik_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
 
                 <!-- 'jij' conjugation -->
@@ -454,13 +456,14 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="jij"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/jij_correct_conjugation"
                         android:text="jij_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
 
                 <!-- 'hij' conjugation -->
@@ -470,13 +473,14 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="hij"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/hij_correct_conjugation"
                         android:text="zij_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
 
                 <!-- 'wij' conjugation -->
@@ -486,13 +490,14 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="wij"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/wij_correct_conjugation"
                         android:text="wij_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
 
                 <!-- 'jullie' conjugation -->
@@ -502,13 +507,14 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="jullie"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/jullie_correct_conjugation"
                         android:text="jullie_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
 
                 <!-- 'zij' conjugation -->
@@ -518,24 +524,29 @@
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
                         android:text="zij"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 
                     <TextView
                         android:id="@+id/zij_correct_conjugation"
                         android:text="zij_verb"
-                        android:textSize="@dimen/conjugation_text_size" />
+                        android:textSize="@dimen/conjugation_text_size"
+                        android:textColor="@color/upper_menu_gray"/>
                 </TableRow>
             </TableLayout>
             </RelativeLayout>
         </RelativeLayout>
 
-        <Button
-            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        <RelativeLayout
             android:id="@+id/close_correct_conjugation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/close_button"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:gravity="center"
@@ -546,10 +557,6 @@
             android:fontFamily="sans-serif-condensed"
             android:drawableLeft="@drawable/ic_close"
             android:drawableStart="@drawable/ic_close"/>
-
-
-
-
-
+        </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

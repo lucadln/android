@@ -354,6 +354,7 @@ public class ConjugationCenter extends AppCompatActivity {
         conjugationCenterHandler.getShowCorrectAnswer().setOnClickListener(onClickRevise);
         conjugationCenterHandler.getCloseCorrectConjugation()
                 .setOnClickListener(onClickCloseCorrectConjugation);
+        conjugationCenterHandler.getCloseButton().setOnClickListener(onClickCloseCorrectConjugation);
         conjugationCenterHandler.getApplicationContent().setOnClickListener(onScreenTap);
         conjugationCenterHandler.getConjugationSection().setOnClickListener(onScreenTap);
         conjugationCenterHandler.getIkVerbField().setOnFocusChangeListener(onFocusChangeListener);
@@ -387,5 +388,14 @@ public class ConjugationCenter extends AppCompatActivity {
         animate.setDuration(250);
         animate.setFillAfter(false);
         view.startAnimation(animate);
+    }
+
+    /**
+     * Empty method. By having a onClick method set on a view the elements under this view
+     *   cannot be clicked. This is the wanted case when the view that shows the correct
+     *   conjugation slides in from the bottom of the screen.
+     * @param view
+     */
+    public void letNoClick(View view) {
     }
 }

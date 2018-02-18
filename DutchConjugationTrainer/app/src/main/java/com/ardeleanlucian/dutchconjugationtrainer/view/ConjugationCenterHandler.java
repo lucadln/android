@@ -42,11 +42,12 @@ public class ConjugationCenterHandler {
     private RelativeLayout CONJUGATION_SECTION;
     private RelativeLayout UPPER_CONTENT;
     private RelativeLayout APPLICATION_CONTENT;
+    private RelativeLayout CLOSE_CORRECT_CONJUGATION_VIEW;
 
     private Button NEXT;
     private Button SKIP;
     private Button SHOW_CORRECT_ANSWER;
-    private Button CLOSE_CORRECT_CONJUGATION_VIEW;
+    private Button CLOSE_BUTTON;
 
     private TextView INFINITIVE;
     private TextView TRANSLATION;
@@ -100,8 +101,9 @@ public class ConjugationCenterHandler {
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
         SHOW_CORRECT_ANSWER = (Button) ((Activity) context).findViewById(R.id.show_correct_answer);
+        CLOSE_BUTTON = (Button) ((Activity) context).findViewById(R.id.close_button);
         CLOSE_CORRECT_CONJUGATION_VIEW =
-                (Button) ((Activity) context).findViewById(R.id.close_correct_conjugation_view);
+                (RelativeLayout) ((Activity) context).findViewById(R.id.close_correct_conjugation_view);
         INFINITIVE = (TextView) ((Activity) context).findViewById(R.id.infinitive);
         TRANSLATION = (TextView) ((Activity) context).findViewById(R.id.translation);
         IK = (TextView) ((Activity) context).findViewById(R.id.ik);
@@ -302,7 +304,7 @@ public class ConjugationCenterHandler {
         this.SKIP = SKIP;
     }
 
-    public Button getCloseCorrectConjugation() {return CLOSE_CORRECT_CONJUGATION_VIEW; }
+    public RelativeLayout getCloseCorrectConjugation() {return CLOSE_CORRECT_CONJUGATION_VIEW; }
 
     public TextView getInfinitive() {
         return INFINITIVE;
@@ -476,6 +478,8 @@ public class ConjugationCenterHandler {
         return toolbar;
     }
 
+    public Button getCloseButton() { return CLOSE_BUTTON; }
+
     public View getFocusThief() { return FOCUS_THIEF; }
 
     public Context getContext() { return context; }
@@ -538,7 +542,7 @@ public class ConjugationCenterHandler {
     public void pulseButtonColor(Button button) {
         final CyclicTransitionDrawable drawable = new CyclicTransitionDrawable( new Drawable[] {
                     new ColorDrawable(context.getResources().getColor(R.color.colorPrimary)),
-                    new ColorDrawable(context.getResources().getColor(android.R.color.holo_red_dark))
+                    new ColorDrawable(context.getResources().getColor(R.color.darkGray))
             });
         button.setBackground(drawable);
         drawable.startTransition(1000, 0);

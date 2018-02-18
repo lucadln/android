@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#FF161616</color>
     <color name="colorPrimaryDark">#FF161616</color>
+    <color name="darkGray">#FF212121</color>
     <color name="colorAccent">#ff3c00</color>
     <color name="redish_orange">#ff3c00</color>
     <color name="very_light_gray">#f9f9f9</color>
