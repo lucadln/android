@@ -7,14 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -221,6 +217,8 @@ public class ConjugationCenter extends AppCompatActivity {
 
             // Move focus again on the first layout element
             conjugationCenterHandler.resetFocus();
+
+            slideIn(conjugationCenterHandler.getApplicationContent());
         }
     };
 
@@ -242,6 +240,8 @@ public class ConjugationCenter extends AppCompatActivity {
 
             // Move focus again on the first layout element
             conjugationCenterHandler.resetFocus();
+
+            slideIn(conjugationCenterHandler.getApplicationContent());
         }
     };
 
@@ -366,7 +366,7 @@ public class ConjugationCenter extends AppCompatActivity {
     }
 
     // slide the view from below itself to the current position
-    public void slideUp(View view){
+    public void slideUp(View view) {
         view.setVisibility(View.VISIBLE);
         TranslateAnimation animate = new TranslateAnimation(
                 0,                 // fromXDelta
@@ -379,7 +379,7 @@ public class ConjugationCenter extends AppCompatActivity {
     }
 
     // slide the view from its current position to below itself
-    public void slideDown(View view){
+    public void slideDown(View view) {
         TranslateAnimation animate = new TranslateAnimation(
                 0,                 // fromXDelta
                 0,                 // toXDelta
@@ -387,6 +387,17 @@ public class ConjugationCenter extends AppCompatActivity {
                 view.getHeight()); // toYDelta
         animate.setDuration(250);
         animate.setFillAfter(false);
+        view.startAnimation(animate);
+    }
+
+    public void slideIn(View view) {
+        TranslateAnimation animate = new TranslateAnimation(
+                view.getWidth(),                 // fromXDelta
+                0,                 // toXDelta
+                0,                 // fromYDelta
+                0); // toYDelta
+        animate.setDuration(80);
+        animate.setFillAfter(true);
         view.startAnimation(animate);
     }
 
