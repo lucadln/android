@@ -43,6 +43,7 @@ public class ConjugationCenterHandler {
     private RelativeLayout UPPER_CONTENT;
     private RelativeLayout APPLICATION_CONTENT;
     private RelativeLayout CLOSE_CORRECT_CONJUGATION_VIEW;
+    private RelativeLayout SHOW_CORRECT_ANSWER_BUTTON_WRAPPER;
 
     private Button NEXT;
     private Button SKIP;
@@ -97,6 +98,8 @@ public class ConjugationCenterHandler {
         APPLICATION_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.application_content);
         UPPER_CONTENT = (RelativeLayout) ((Activity) context).findViewById(R.id.upper_content);
         CONJUGATION_SECTION = (RelativeLayout) ((Activity) context).findViewById(R.id.conjugation_section);
+        SHOW_CORRECT_ANSWER_BUTTON_WRAPPER = (RelativeLayout) ((Activity) context).findViewById(
+                R.id.show_correct_answer_button_wrapper);
 
         NEXT = (Button) ((Activity) context).findViewById(R.id.next);
         SKIP = (Button) ((Activity) context).findViewById(R.id.skip);
@@ -491,6 +494,8 @@ public class ConjugationCenterHandler {
     public Button getShowCorrectAnswer() { return SHOW_CORRECT_ANSWER; }
 
     public View getCorrectConjugation() { return CORRECT_CONJUGATION; }
+
+    public View getShowCorrectAnswerButtonWrapper() { return SHOW_CORRECT_ANSWER_BUTTON_WRAPPER; }
 
     public void setToolbar(Toolbar toolbar) {
         this.toolbar = toolbar;

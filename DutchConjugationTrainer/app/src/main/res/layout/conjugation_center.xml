@@ -317,19 +317,31 @@
             android:layout_toStartOf="@+id/next_wrapper"
             android:background="@color/upper_menu_gray" />
 
-        <Button
-            android:id="@+id/show_correct_answer"
-            style="@android:style/Widget.DeviceDefault.Button.Borderless"
-            android:layout_width="fill_parent"
+        <RelativeLayout
+            android:id="@+id/show_correct_answer_button_wrapper"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toStartOf="@+id/next_wrapper"
             android:layout_toLeftOf="@+id/next_wrapper"
+            android:background="@color/colorPrimary">
+        <Button
+            android:id="@+id/show_correct_answer"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="REVISE"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:visibility="gone"
             android:textStyle="bold"
+            android:drawableLeft="@drawable/ic_revise"
+            android:drawableStart="@drawable/ic_revise"
             android:fontFamily="sans-serif-condensed"/>
+        </RelativeLayout>
 
         <RelativeLayout
             android:id="@+id/next_wrapper"
@@ -472,7 +484,7 @@
                     <TextView
                         android:gravity="right"
                         android:paddingRight="@dimen/padding_person_conjugation"
-                        android:text="hij"
+                        android:text="hij/zij"
                         android:textColor="@color/very_light_gray"
                         android:textSize="@dimen/conjugation_text_size" />
 

@@ -10,6 +10,6 @@
     android:textColor="@color/gray"
     android:textSize="20sp"
     android:fontFamily="sans-serif"
-    android:drawableLeft="@drawable/ic_arrow_right"
+    android:drawableLeft="@drawable/ic_label"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"/>
