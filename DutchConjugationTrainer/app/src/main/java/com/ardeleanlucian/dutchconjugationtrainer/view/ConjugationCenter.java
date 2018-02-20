@@ -148,6 +148,8 @@ public class ConjugationCenter extends AppCompatActivity {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "red");
                         conjugationCenterHandler.setVisibility(
                                 conjugationCenterHandler.getShowCorrectAnswer(), VISIBLE);
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswerButtonWrapper(), VISIBLE);
                         conjugationCenterHandler.shake(textViewList[conjugationIndex]);
 
                         // @TODO make it possible to disable from settings

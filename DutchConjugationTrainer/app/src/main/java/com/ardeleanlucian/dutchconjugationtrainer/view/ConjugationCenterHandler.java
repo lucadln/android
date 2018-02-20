@@ -157,6 +157,7 @@ public class ConjugationCenterHandler {
         SKIP.setVisibility(VISIBLE);
         NEXT.setVisibility(GONE);
         SHOW_CORRECT_ANSWER.setVisibility(GONE);
+        SHOW_CORRECT_ANSWER_BUTTON_WRAPPER.setVisibility(GONE);
         CORRECT_CONJUGATION.setVisibility(GONE);
 
         if (showTranslation) {

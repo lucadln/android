@@ -316,31 +316,31 @@
             android:layout_toLeftOf="@+id/next_wrapper"
             android:layout_toStartOf="@+id/next_wrapper"
             android:background="@color/upper_menu_gray" />
-
-        <RelativeLayout
-            android:id="@+id/show_correct_answer_button_wrapper"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toStartOf="@+id/next_wrapper"
-            android:layout_toLeftOf="@+id/next_wrapper"
-            android:background="@color/colorPrimary">
-        <Button
-            android:id="@+id/show_correct_answer"
-            style="@android:style/Widget.DeviceDefault.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="REVISE"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:visibility="gone"
-            android:textStyle="bold"
-            android:drawableLeft="@drawable/ic_revise"
-            android:drawableStart="@drawable/ic_revise"
-            android:fontFamily="sans-serif-condensed"/>
+            <RelativeLayout
+                android:id="@+id/show_correct_answer_button_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/next_wrapper"
+                android:layout_toLeftOf="@+id/next_wrapper"
+                android:background="@color/colorPrimary"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/show_correct_answer"
+                    style="@android:style/Widget.DeviceDefault.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:text="REVISE"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_revise"
+                    android:drawableStart="@drawable/ic_revise"
+                    android:fontFamily="sans-serif-condensed"/>
         </RelativeLayout>
 
         <RelativeLayout
