@@ -109,7 +109,6 @@ public class ConjugationCenterController {
     public void onClickNext() {
         if (isApplicationInLearningMode() == false) {
             Feedback.incrementConjugationsCountSinceLastFeedback();
-            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             if (userAnswer.isVerbCorrectlyConjugated()) {
                 // Increment the correct and total conjugation count
                 scoreHandler.incrementCorrectConjugationsCount();
@@ -139,7 +138,6 @@ public class ConjugationCenterController {
     public void onClickSkip() {
         if (isApplicationInLearningMode() == false) {
             Feedback.incrementConjugationsCountSinceLastFeedback();
-            (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             if (!userAnswer.isVerbCorrectlyConjugated()) {
                 // Increment the total conjugation count
                 scoreHandler.incrementTotalConjugationsCount();
@@ -171,7 +169,6 @@ public class ConjugationCenterController {
                     Feedback.incrementCorrectConsecutiveConjugationsCount();
                     Feedback.resetWrongConsecutiveConjugationsCount();
                     giveFeedbackIfNecessary();
-                    (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
                 }
             } else {
                 scoreHandler.incrementTotalConjugationsCount();
@@ -179,7 +176,6 @@ public class ConjugationCenterController {
                 Feedback.incrementWrongConsecutiveConjugationsCount();
                 Feedback.resetCorrectConsecutiveConjugationsCount();
                 giveFeedbackIfNecessary();
-                (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             }
         }
 
@@ -202,7 +198,6 @@ public class ConjugationCenterController {
                     Feedback.incrementCorrectConsecutiveConjugationsCount();
                     Feedback.resetWrongConsecutiveConjugationsCount();
                     giveFeedbackIfNecessary();
-                    (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
                 }
             } else {
                 scoreHandler.incrementTotalConjugationsCount();
@@ -210,7 +205,6 @@ public class ConjugationCenterController {
                 Feedback.incrementWrongConsecutiveConjugationsCount();
                 Feedback.resetCorrectConsecutiveConjugationsCount();
                 giveFeedbackIfNecessary();
-                (new Feedback(context)).incrementConjugationsCountSinceLastMilestone();
             }
         }
     }

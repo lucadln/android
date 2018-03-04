@@ -39,9 +39,6 @@ public class ScoreController extends Score {
         Feedback.resetCorrectConsecutiveConjugationsCount();
         Feedback.resetWrongConsecutiveConjugationsCount();
         Feedback.resetConjugationsCountSinceLastFeedback();
-        for (int spinnerIndex = 0; spinnerIndex < tenses.length; spinnerIndex++) {
-            (new Feedback(context)).updateConjugationsCountSinceLastMilestone(spinnerIndex, 0);
-        }
     }
 
     /**
