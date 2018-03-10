@@ -3,6 +3,8 @@ package com.ardeleanlucian.dutchconjugationtrainer.model;
 import android.content.Context;
 import android.view.View;
 
+import com.ardeleanlucian.dutchconjugationtrainer.view.FeedbackDisplayer;
+
 import static com.ardeleanlucian.dutchconjugationtrainer.model.Verb.tenses;
 
 /**
@@ -71,9 +73,9 @@ public class Feedback extends ScoreHandler {
              * Give feedback on correct consecutive conjugations
              */
             if (correctConsecutiveConjugationsCount == 7) {
-                FeedbackDisplayer.informOnCorrectConsecutiveConjugations(view, correctConsecutiveConjugationsCount);
+                FeedbackDisplayer.informOnCorrectConsecutiveConjugations(context, view, correctConsecutiveConjugationsCount);
             } else if (correctConsecutiveConjugationsCount == 15) {
-                FeedbackDisplayer.informOnCorrectConsecutiveConjugations(view, correctConsecutiveConjugationsCount);
+                FeedbackDisplayer.informOnCorrectConsecutiveConjugations(context, view, correctConsecutiveConjugationsCount);
             }
 
             /*
@@ -94,8 +96,9 @@ public class Feedback extends ScoreHandler {
                 calculateReferenceScores();
             } else { // If reference scores already exist then compare them with the current scores
                 float variation = getAllScores()[spinnerIndex] - referenceScores[spinnerIndex];
-                if ((conjugationsCountSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
-                    FeedbackDisplayer.informOnScoreVariation(view, getAllScores()[spinnerIndex], spinnerIndex);
+//                if ((conjugationsCountSinceLastFeedback >= 10) && (Math.abs(variation) >= 10)) {
+                if (1 == 1) {
+                    FeedbackDisplayer.informOnScoreVariation(context, view, getAllScores()[spinnerIndex], spinnerIndex);
                     resetConjugationsCountSinceLastFeedback();
                     referenceScores = getAllScores();
                 }
