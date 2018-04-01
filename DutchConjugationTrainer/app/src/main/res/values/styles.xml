@@ -1,5 +1,5 @@
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -12,10 +12,30 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- Set new icon for the menu icon -->
+        <item name="android:actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
+        <!-- Support library compatibility -->
+        <item name="actionOverflowButtonStyle">@style/ActionButtonOverflow</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light">
+
+    </style>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Define a style for the menu icon -->
+    <style name="ActionButtonOverflow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_orange</item>
+    </style>
+
+    <style name="captionOnly">
+            <item name="android:background">@null</item>
+            <item name="android:clickable">false</item>
+            <item name="android:focusable">false</item>
+            <item name="android:minHeight">0dp</item>
+            <item name="android:minWidth">0dp</item>
+    </style>
 
 </resources>

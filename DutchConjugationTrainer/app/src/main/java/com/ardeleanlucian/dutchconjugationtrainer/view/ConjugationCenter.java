@@ -1,22 +1,27 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
 import com.ardeleanlucian.dutchconjugationtrainer.controller.ConjugationCenterController;
-import com.ardeleanlucian.dutchconjugationtrainer.model.ScreenHandler;
 import com.ardeleanlucian.dutchconjugationtrainer.model.Utils;
 
 public class ConjugationCenter extends AppCompatActivity {
@@ -133,7 +138,7 @@ public class ConjugationCenter extends AppCompatActivity {
                 conjugationCenterController.onFieldFocusChange(conjugationIndex, answer);
                 if (!answer.equals("")) { // If the text field was filled in...
                     // Hide the field and show a read-only text instead
-                    conjugationCenterHandler.setVisibility(editTextList[conjugationIndex], GONE);
+                    conjugationCenterHandler.setVisibility(editTextList[conjugationIndex], INVISIBLE);
                     conjugationCenterHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     conjugationCenterHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
@@ -141,12 +146,23 @@ public class ConjugationCenter extends AppCompatActivity {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "green");
                     } else {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "red");
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswer(), VISIBLE);
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswerButtonWrapper(), VISIBLE);
+                        conjugationCenterHandler.shake(textViewList[conjugationIndex]);
+
+                        // @TODO make it possible to disable from settings
+                        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        // Vibrate for 500 milliseconds
+                        vibrator.vibrate(200);
                     }
                 }
-                if (conjugationCenterHandler.getNumberOfFilledEditTexts() == 5) {
+                int filledEditTextsCount = conjugationCenterHandler.getNumberOfFilledEditTexts();
+                if (filledEditTextsCount == 5) {
                     conjugationCenterHandler.switchFocusThief(true);
 
-                } else if (conjugationCenterHandler.getNumberOfFilledEditTexts() == 6) {
+                } else if (filledEditTextsCount == 6) {
                     conjugationCenterHandler.setVisibility(conjugationCenterHandler.getSkip(), GONE);
                     conjugationCenterHandler.setVisibility(conjugationCenterHandler.getNext(), VISIBLE);
                     Utils.hideKeyboard(
@@ -172,7 +188,7 @@ public class ConjugationCenter extends AppCompatActivity {
             // Display the conjugations corresponding to the current tense selection
             conjugationIndex = 0;
             conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                    conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
             conjugationCenterHandler.clearFields();
             conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), spinnerIndex);
 
@@ -191,18 +207,51 @@ public class ConjugationCenter extends AppCompatActivity {
     private final View.OnClickListener onClickSkip = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            conjugationCenterController.onClickSkip();
+            // Define slide out animation
+            TranslateAnimation slideOutAnimation = new TranslateAnimation(
+                    0,
+                    -conjugationCenterHandler.getApplicationContent().getWidth(),
+                    0,
+                    0);
+            slideOutAnimation.setDuration(100);
+            // Trigger the slide out animation
+            conjugationCenterHandler.getApplicationContent().startAnimation(slideOutAnimation);
 
-            conjugationCenterHandler.clearFields();
-            conjugationIndex = 0;
+            // Continue execution
+            slideOutAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    // TODO Auto-generated method stub
+                }
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                    // TODO Auto-generated method stub
+                }
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    conjugationCenterController.onClickSkip();
 
-            // Obtain and display the next verb
-            conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
-            conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                    conjugationCenterHandler.clearFields();
+                    conjugationIndex = 0;
 
-            // Move focus again on the first layout element
-            conjugationCenterHandler.resetFocus();
+                    // Obtain and display the next verb
+                    conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
+                    conjugationCenterHandler.resetConjugationSectionVisibility(
+                            conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
+
+                    // Move focus again on the first layout element
+                    conjugationCenterHandler.resetFocus();
+
+                    // Define slide in animation
+                    final TranslateAnimation slideInAnimation = new TranslateAnimation(
+                            conjugationCenterHandler.getApplicationContent().getWidth(),                 // fromXDelta
+                            0,                 // toXDelta
+                            0,                 // fromYDelta
+                            0); // toYDelta
+                    slideInAnimation.setDuration(100);
+                    conjugationCenterHandler.getApplicationContent().startAnimation(slideInAnimation);
+                }
+            });
         }
     };
 
@@ -212,18 +261,77 @@ public class ConjugationCenter extends AppCompatActivity {
     private final View.OnClickListener onClickNext = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            conjugationCenterController.onClickNext();
+            // Define slide out animation
+            TranslateAnimation slideOutAnimation = new TranslateAnimation(
+                    0,
+                    -conjugationCenterHandler.getApplicationContent().getWidth(),
+                    0,
+                    0);
+            slideOutAnimation.setDuration(100);
+            // Trigger the slide out animation
+            conjugationCenterHandler.getApplicationContent().startAnimation(slideOutAnimation);
 
-            conjugationCenterHandler.clearFields();
-            conjugationIndex = 0;
+            // Continue execution
+            slideOutAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    // TODO Auto-generated method stub
+                }
 
-            // Obtain and display the next verb
-            conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
-            conjugationCenterHandler.resetConjugationSectionVisibility(
-                    conjugationCenterController.obtainReadOnlyPreference(), conjugationCenterController.obtainShowTranslationPreference());
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                    // TODO Auto-generated method stub
+                }
 
-            // Move focus again on the first layout element
-            conjugationCenterHandler.resetFocus();
+                @Override
+                public void onAnimationEnd(Animation animation) {
+
+                    conjugationCenterController.onClickNext();
+
+                    conjugationCenterHandler.clearFields();
+                    conjugationIndex = 0;
+
+                    // Obtain and display the next verb
+                    conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), conjugationCenterController.obtainSpinnerIndex());
+                    conjugationCenterHandler.resetConjugationSectionVisibility(
+                            conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
+
+                    // Move focus again on the first layout element
+                    conjugationCenterHandler.resetFocus();
+
+                    // Define slide in animation
+                    final TranslateAnimation slideInAnimation = new TranslateAnimation(
+                            conjugationCenterHandler.getApplicationContent().getWidth(),                 // fromXDelta
+                            0,                 // toXDelta
+                            0,                 // fromYDelta
+                            0); // toYDelta
+                    slideInAnimation.setDuration(100);
+                    conjugationCenterHandler.getApplicationContent().startAnimation(slideInAnimation);
+                }
+            });
+        }
+    };
+
+    /**
+     * Actions to be taken when the user clicks on the 'Revise' button
+     */
+    private final View.OnClickListener onClickRevise = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            conjugationCenterHandler.setCorrectConjugationValues(conjugationCenterController.getVerb(),
+                    conjugationCenterController.obtainSpinnerIndex());
+            slideUp(conjugationCenterHandler.getCorrectConjugation());
+        }
+    };
+
+    /**
+     * Actions to be taken when the user clicks on the 'Revise' button
+     */
+    private final View.OnClickListener onClickCloseCorrectConjugation = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            slideDown(conjugationCenterHandler.getCorrectConjugation());
+            conjugationCenterHandler.setVisibility(conjugationCenterHandler.getCorrectConjugation(), GONE);
         }
     };
 
@@ -232,13 +340,13 @@ public class ConjugationCenter extends AppCompatActivity {
      *   Only important when in learning mode. Doesn't
      *   play any role otherwise.
      */
-    private final View.OnClickListener onTapScreen = new View.OnClickListener() {
+    private final View.OnClickListener onScreenTap = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             /* If the user opted for the learning mode
              *   then show the conjugation one by one for
              *   every person (ik, jij, hij...) on screen tap */
-            if (conjugationCenterController.obtainReadOnlyPreference()) {
+            if (conjugationCenterController.isApplicationInLearningMode()) {
                 if (conjugationIndex == 0) {
                     conjugationCenterHandler.getIkVerbText().setVisibility(VISIBLE);
                     conjugationCenterHandler.getJij().setVisibility(VISIBLE);
@@ -310,14 +418,53 @@ public class ConjugationCenter extends AppCompatActivity {
         conjugationCenterHandler.getSpinner().setOnItemSelectedListener(onSpinnerSelection);
         conjugationCenterHandler.getSkip().setOnClickListener(onClickSkip);
         conjugationCenterHandler.getNext().setOnClickListener(onClickNext);
-        conjugationCenterHandler.getUpperContent().setOnClickListener(onTapScreen);
-        conjugationCenterHandler.getConjugationSection().setOnClickListener(onTapScreen);
-
+        conjugationCenterHandler.getShowCorrectAnswer().setOnClickListener(onClickRevise);
+        conjugationCenterHandler.getCloseCorrectConjugation()
+                .setOnClickListener(onClickCloseCorrectConjugation);
+        conjugationCenterHandler.getShowCorrectAnswerButtonWrapper()
+                .setOnClickListener(onClickRevise);
+        conjugationCenterHandler.getCloseButton().setOnClickListener(onClickCloseCorrectConjugation);
+        conjugationCenterHandler.getApplicationContent().setOnClickListener(onScreenTap);
+        conjugationCenterHandler.getConjugationSection().setOnClickListener(onScreenTap);
         conjugationCenterHandler.getIkVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getJijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getHijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getWijVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getJullieVerbField().setOnFocusChangeListener(onFocusChangeListener);
         conjugationCenterHandler.getZijVerbField().setOnFocusChangeListener(onFocusChangeListener);
+    }
+
+    // slide the view from below itself to the current position
+    public void slideUp(View view) {
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                300,  // fromYDelta
+                0);                // toYDelta
+        animate.setDuration(400);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+    }
+
+    // slide the view from its current position to below itself
+    public void slideDown(View view) {
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                0,                 // toXDelta
+                0,                 // fromYDelta
+                view.getHeight()); // toYDelta
+        animate.setDuration(250);
+        animate.setFillAfter(false);
+        view.startAnimation(animate);
+    }
+
+    /**
+     * Empty method. By having a onClick method set on a view the elements under this view
+     *   cannot be clicked. This is the wanted case when the view that shows the correct
+     *   conjugation slides in from the bottom of the screen.
+     * @param view
+     */
+    public void letNoClick(View view) {
     }
 }
