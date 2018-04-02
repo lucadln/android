@@ -135,6 +135,8 @@ public class ConjugationCenter extends AppCompatActivity {
             if (conjugationIndex != -1) { // If one of the text fields looses focus...
                 // Get text field content
                 answer = editTextList[conjugationIndex].getText().toString();
+                // Trim white spaces
+                answer = answer.trim().replaceAll(" +", " ");
                 conjugationCenterController.onFieldFocusChange(conjugationIndex, answer);
                 if (!answer.equals("")) { // If the text field was filled in...
                     // Hide the field and show a read-only text instead
