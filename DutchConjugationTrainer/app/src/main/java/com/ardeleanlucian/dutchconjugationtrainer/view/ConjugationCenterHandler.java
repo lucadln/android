@@ -522,6 +522,8 @@ public class ConjugationCenterHandler {
             textView.setTextColor(Color.rgb( 0, 153, 0 ));
         } else if (color.equals("red")) {
             textView.setTextColor(Color.RED);
+        } else if (color.equals("yellow")) {
+            textView.setTextColor(Color.rgb( 255, 162, 25 ));
         }
     }
 

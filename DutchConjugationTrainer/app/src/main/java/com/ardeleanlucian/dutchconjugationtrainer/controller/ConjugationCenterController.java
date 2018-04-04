@@ -21,7 +21,7 @@ public class ConjugationCenterController {
     private SharedPreferencesHandler sharedPreferencesHandler;
     private UserAnswer userAnswer;
     private Verb verb;
-    private boolean answerCorrectness;
+    private String answerCorrectness;
     private ScoreHandler scoreHandler;
 
 
@@ -109,7 +109,8 @@ public class ConjugationCenterController {
     public void onClickNext() {
         if (isApplicationInLearningMode() == false) {
             Feedback.incrementConjugationsCountSinceLastFeedback();
-            if (userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getConjugationCorrectnessForVerb().equals("correct") ||
+                    userAnswer.getConjugationCorrectnessForVerb().equals("almost")) {
                 // Increment the correct and total conjugation count
                 scoreHandler.incrementCorrectConjugationsCount();
                 scoreHandler.incrementTotalConjugationsCount();
@@ -138,7 +139,7 @@ public class ConjugationCenterController {
     public void onClickSkip() {
         if (isApplicationInLearningMode() == false) {
             Feedback.incrementConjugationsCountSinceLastFeedback();
-            if (!userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getConjugationCorrectnessForVerb().equals("incorrect")) {
                 // Increment the total conjugation count
                 scoreHandler.incrementTotalConjugationsCount();
                 // Register stats for feedback
@@ -160,7 +161,8 @@ public class ConjugationCenterController {
      */
     public void onSpinnerSelection(int spinnerIndex) {
         if (isApplicationInLearningMode() == false) {
-            if (userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getConjugationCorrectnessForVerb().equals("correct") ||
+                    userAnswer.getConjugationCorrectnessForVerb().equals("almost")) {
                 if (userAnswer.getNumberOfConjugatedPersons() == 6) {
                     // Increment the correct and total conjugation count
                     scoreHandler.incrementCorrectConjugationsCount();
@@ -189,7 +191,8 @@ public class ConjugationCenterController {
      */
     public void onMenuSelection() {
         if (isApplicationInLearningMode() == false) {
-            if (userAnswer.isVerbCorrectlyConjugated()) {
+            if (userAnswer.getConjugationCorrectnessForVerb().equals("correct") ||
+                    userAnswer.getConjugationCorrectnessForVerb().equals("almost")) {
                 if (userAnswer.getNumberOfConjugatedPersons() == 6) {
                     // Increment the correct and total conjugation count
                     scoreHandler.incrementCorrectConjugationsCount();
@@ -216,7 +219,7 @@ public class ConjugationCenterController {
     /**
      * Returns whether the newly inputted field is correctly conjugated
      */
-    public boolean isAnswerCorrect() {
+    public String isAnswerCorrect() {
         return answerCorrectness;
     }
 

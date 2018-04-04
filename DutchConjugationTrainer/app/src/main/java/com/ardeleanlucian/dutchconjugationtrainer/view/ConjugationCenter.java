@@ -144,8 +144,14 @@ public class ConjugationCenter extends AppCompatActivity {
                     conjugationCenterHandler.setVisibility(textViewList[conjugationIndex], VISIBLE);
                     conjugationCenterHandler.setTextViewAnswer(textViewList[conjugationIndex], answer);
 
-                    if (conjugationCenterController.isAnswerCorrect()) {
+                    if (conjugationCenterController.isAnswerCorrect().equals("correct")) {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "green");
+                    } else if (conjugationCenterController.isAnswerCorrect().equals("almost")) {
+                        conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "yellow");
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswer(), VISIBLE);
+                        conjugationCenterHandler.setVisibility(
+                                conjugationCenterHandler.getShowCorrectAnswerButtonWrapper(), VISIBLE);
                     } else {
                         conjugationCenterHandler.setTextViewColor(textViewList[conjugationIndex], "red");
                         conjugationCenterHandler.setVisibility(
