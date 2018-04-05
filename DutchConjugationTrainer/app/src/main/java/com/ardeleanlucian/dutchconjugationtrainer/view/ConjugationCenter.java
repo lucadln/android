@@ -388,19 +388,22 @@ public class ConjugationCenter extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        conjugationCenterController.onMenuSelection();
+
 
         switch (id) {
 
             case R.id.settings:
+                conjugationCenterController.onMenuSelection();
                 Intent displaySettings = new Intent(ConjugationCenter.this, SettingsActivity.class);
                 startActivity(displaySettings);
                 return true;
             case R.id.scores:
+                conjugationCenterController.onMenuSelection();
                 Intent displayScores = new Intent(ConjugationCenter.this, ScoreActivity.class);
                 startActivity(displayScores);
                 return true;
             case R.id.about:
+                conjugationCenterController.onMenuSelection();
                 Intent displayAbout = new Intent(ConjugationCenter.this, AboutActivity.class);
                 startActivity(displayAbout);
                  return true;
