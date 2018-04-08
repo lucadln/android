@@ -44,7 +44,7 @@ public class ConjugationCenter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         final ProgressDialog progressDialog = new ProgressDialog(this, R.style.CustomDialog);
-        progressDialog.setMessage("Opening the conjugation center...");
+        progressDialog.setMessage("Preparing next conjugation...");
         progressDialog.show();
         progressDialog.setCancelable(true);
         new Thread(new Runnable() {
@@ -207,6 +207,7 @@ public class ConjugationCenter extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             int spinnerIndex = conjugationCenterHandler.getSpinner().getSelectedItemPosition();
+            int previousSpinnerIndex = conjugationCenterController.obtainSpinnerIndex();
 
             conjugationCenterController.onSpinnerSelection(spinnerIndex);
 
@@ -219,6 +220,17 @@ public class ConjugationCenter extends AppCompatActivity {
 
             // Move focus again on the first loading_background element
             conjugationCenterHandler.resetFocus();
+
+            // Inform the user on tense changes
+            if (previousSpinnerIndex != conjugationCenterHandler.getSpinner().getSelectedItemPosition()) {
+                CustomToast toast = new CustomToast(
+                        ConjugationCenter.this,
+                        R.layout.good_score_toast,
+                        view.findViewById(R.id.good_score_container));
+                toast.setToastMessage("The current tense is now "
+                        + conjugationCenterHandler.getSpinner().getSelectedItem());
+                toast.show();
+            }
         }
 
         @Override
