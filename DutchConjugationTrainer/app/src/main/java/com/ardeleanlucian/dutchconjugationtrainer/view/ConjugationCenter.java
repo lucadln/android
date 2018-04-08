@@ -55,8 +55,8 @@ public class ConjugationCenter extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    // Let the progress ring for 10 seconds...
-                    Thread.sleep(2500);
+                    // Run this for 2 seconds
+                    Thread.sleep(2000);
                 } catch (Exception e) {
                 }
                 progressDialog.dismiss();
@@ -221,7 +221,7 @@ public class ConjugationCenter extends AppCompatActivity {
             conjugationCenterHandler.clearFields();
             conjugationCenterHandler.setTextViewValues(conjugationCenterController.getVerb(), spinnerIndex);
 
-            // Move focus again on the first layout element
+            // Move focus again on the first loading_background element
             conjugationCenterHandler.resetFocus();
         }
 
@@ -268,7 +268,7 @@ public class ConjugationCenter extends AppCompatActivity {
                     conjugationCenterHandler.resetConjugationSectionVisibility(
                             conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
 
-                    // Move focus again on the first layout element
+                    // Move focus again on the first loading_background element
                     conjugationCenterHandler.resetFocus();
 
                     // Define slide in animation
@@ -325,7 +325,7 @@ public class ConjugationCenter extends AppCompatActivity {
                     conjugationCenterHandler.resetConjugationSectionVisibility(
                             conjugationCenterController.isApplicationInLearningMode(), conjugationCenterController.obtainShowTranslationPreference());
 
-                    // Move focus again on the first layout element
+                    // Move focus again on the first loading_background element
                     conjugationCenterHandler.resetFocus();
 
                     // Define slide in animation
@@ -444,7 +444,7 @@ public class ConjugationCenter extends AppCompatActivity {
     }
 
     /**
-     * Set listeners for layout elements
+     * Set listeners for loading_background elements
      */
     private void setListenersForLayoutElements() {
         conjugationCenterHandler.getSpinner().setOnItemSelectedListener(onSpinnerSelection);

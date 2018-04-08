@@ -91,7 +91,7 @@ public class ConjugationCenterHandler {
     }
 
     /**
-     * Initialize layout elements
+     * Initialize loading_background elements
      */
     public void initializeLayoutElements() {
         TABLE_LAYOUT = (TableLayout) ((Activity) context).findViewById(R.id.table_layout);
@@ -212,7 +212,7 @@ public class ConjugationCenterHandler {
     }
 
     /**
-     * Method to clear all values from the layout fields
+     * Method to clear all values from the loading_background fields
      */
     public void clearFields() {
         IK_VERB_FIELD.setText( "" );
@@ -224,7 +224,7 @@ public class ConjugationCenterHandler {
     }
 
     /**
-     * Method to set the values for the TextViews in the layout.
+     * Method to set the values for the TextViews in the loading_background.
      *
      * @param verb
      * @param spinnerIndex
@@ -541,7 +541,7 @@ public class ConjugationCenterHandler {
     }
 
     /**
-     * Reset focus to the first edittext in the layout (i.e. IK_VERB_FIELD)
+     * Reset focus to the first edittext in the loading_background (i.e. IK_VERB_FIELD)
      */
     public void resetFocus() {
         IK_VERB_FIELD.requestFocus();

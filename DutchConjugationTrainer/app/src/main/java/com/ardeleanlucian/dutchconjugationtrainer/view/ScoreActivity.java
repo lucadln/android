@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
 import com.ardeleanlucian.dutchconjugationtrainer.R;
@@ -32,7 +33,7 @@ public class ScoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_score);
+        setContentView(R.layout.score);
         context = this;
 
         // Add an action bar and set navigation on it
@@ -50,6 +51,22 @@ public class ScoreActivity extends AppCompatActivity {
 
         RESET_SCORES = (Button) findViewById(R.id.reset_scores);
         RESET_SCORES.setOnClickListener(onClickReset);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        View view = findViewById(R.id.load_bar);
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                -600,                 // fromXDelta
+                0,                 // toXDelta
+                0,  // fromYDelta
+                0);                // toYDelta
+        animate.setDuration(400);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+
+        return super.onSupportNavigateUp();
     }
 
     /**
