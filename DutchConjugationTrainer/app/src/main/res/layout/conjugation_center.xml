@@ -407,7 +407,7 @@
         android:id="@+id/correct_conjugation"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:gravity="bottom"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimaryDark"
