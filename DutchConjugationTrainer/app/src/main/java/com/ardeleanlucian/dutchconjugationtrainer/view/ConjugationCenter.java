@@ -1,5 +1,7 @@
 package com.ardeleanlucian.dutchconjugationtrainer.view;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Vibrator;
@@ -8,9 +10,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -42,6 +46,23 @@ public class ConjugationCenter extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final ProgressDialog progressDialog = new ProgressDialog(this, R.style.CustomDialog);
+        progressDialog.setMessage("Opening the conjugation center...");
+        progressDialog.show();
+        progressDialog.setCancelable(true);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // Let the progress ring for 10 seconds...
+                    Thread.sleep(2500);
+                } catch (Exception e) {
+                }
+                progressDialog.dismiss();
+            }
+        }).start();
+
         setContentView(R.layout.conjugation_center);
 
         conjugationCenterHandler = new ConjugationCenterHandler(this);
