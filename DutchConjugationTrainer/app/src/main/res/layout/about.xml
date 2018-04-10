@@ -17,4 +17,48 @@
         android:visibility="gone"
         tools:layout_editor_absoluteX="0dp" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/app_presentation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dutch Conjugation Trainer is an open source application."
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/app_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\nEverybody is welcome to contribute to this project. The code can be found on GIT at:"
+            android:textSize="24sp"
+            android:layout_below="@+id/app_presentation"/>
+
+        <TextView
+            android:id="@+id/app_git"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="http://www.github.com/lucadln/android"
+            android:textSize="24sp"
+            android:layout_below="@+id/app_info"/>
+
+        <TextView
+            android:id="@+id/app_opinions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="\nOpinions, suggestions or improvement proposals can also be sent to"
+            android:textSize="24sp"
+            android:layout_below="@+id/app_git"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="lucyan.ardelean@gmail.com"
+            android:textSize="24sp"
+            android:layout_below="@id/app_opinions"/>
+    </RelativeLayout>
+
 </android.support.design.widget.CoordinatorLayout>
