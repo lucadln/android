@@ -40,7 +40,12 @@ public class UserAnswer {
             } else {
                 for (int i = 0; i < stringLength; i++) {
                     if (userAnswer.charAt(i) != correctAnswer.charAt(i)) {
-                        differentCharsCount++;
+                        if (((correctAnswer.charAt(i) == 'ï') && (userAnswer.charAt(i) == 'i'))
+                                || (((correctAnswer.charAt(i)) == 'ë') && (userAnswer.charAt(i) == 'e'))) {
+                            // Answer still correct. Move on
+                        } else {
+                            differentCharsCount++;
+                        }
                     }
                 }
                 if (differentCharsCount == 0) {
