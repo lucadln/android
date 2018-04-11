@@ -21,29 +21,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+        android:layout_margin="24dp">
         <TextView
             android:id="@+id/app_presentation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dutch Conjugation Trainer is an open source application."
-            android:textSize="28sp" />
+            android:text="Dutch Conjugation Trainer \nis an \nopen source application."
+            android:textSize="28sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:id="@+id/app_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="\nEverybody is welcome to contribute to this project. The code can be found on GIT at:"
+            android:text="\nEverybody is welcome to contribute to it. The code can be found on GIT at:"
             android:textSize="24sp"
-            android:layout_below="@+id/app_presentation"/>
+            android:layout_below="@+id/app_presentation"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:id="@+id/app_git"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="http://www.github.com/lucadln/android"
+            android:text="www.github.com/lucadln/android"
             android:textSize="24sp"
-            android:layout_below="@+id/app_info"/>
+            android:layout_below="@+id/app_info"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:id="@+id/app_opinions"
@@ -51,14 +58,18 @@
             android:layout_height="wrap_content"
             android:text="\nOpinions, suggestions or improvement proposals can also be sent to"
             android:textSize="24sp"
-            android:layout_below="@+id/app_git"/>
+            android:layout_below="@+id/app_git"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="lucyan.ardelean@gmail.com"
             android:textSize="24sp"
-            android:layout_below="@id/app_opinions"/>
+            android:layout_below="@id/app_opinions"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
