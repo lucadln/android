@@ -24,49 +24,76 @@
         android:gravity="center"
         android:layout_margin="24dp">
         <TextView
-            android:id="@+id/app_presentation"
+            android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dutch Conjugation Trainer \nis an \nopen source application."
-            android:textSize="28sp"
+            android:text="Dutch Conjugation Trainer"
+            android:textSize="26sp"
             android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/app_title_explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="is an"
+            android:textSize="22sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/app_title" />
+
+        <TextView
+            android:id="@+id/app_open_source_declaration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="open source application\n"
+            android:textSize="26sp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/app_title_explanation"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:id="@+id/app_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\nEverybody is welcome to contribute to it. The code can be found on GIT at:"
-            android:textSize="24sp"
-            android:layout_below="@+id/app_presentation"
+            android:textSize="22sp"
+            android:layout_below="@+id/app_open_source_declaration"
             android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:id="@+id/app_git"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="www.github.com/lucadln/android"
-            android:textSize="24sp"
+            android:text="www.github.com/lucadln/android\n"
+            android:textSize="20sp"
             android:layout_below="@+id/app_info"
             android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textColor="@color/blue" />
 
         <TextView
             android:id="@+id/app_opinions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="\nOpinions, suggestions or improvement proposals can also be sent to"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:layout_below="@+id/app_git"
             android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lucyan.ardelean@gmail.com"
-            android:textSize="24sp"
+            android:text="lucyan.ardelean@gmail.com\n"
+            android:textSize="22sp"
             android:layout_below="@id/app_opinions"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"/>
