@@ -30,33 +30,50 @@ public class UserAnswer {
         } else {
             numberOfConjugatedPersons++;
             userAnswer = userAnswer.toLowerCase();
-            String correctAnswer = verb.getVerbConjugation()[spinnerPosition][conjugationIndex];
+            String correctAnswer[];
+            String correctAnswerRow = verb.getVerbConjugation()[spinnerPosition][conjugationIndex];
+            String status = "";
             int differentCharsCount = 0;
             int stringLength = 0;
+            int conjugationAlternatives = 1;
 
-            if ((stringLength = userAnswer.length()) != correctAnswer.length()) {
-                // The strings are not equal
-                return "incorrect";
+            if (correctAnswerRow.contains("/")) {
+                conjugationAlternatives = 2;
+                correctAnswer = correctAnswerRow.split("/");
             } else {
-                for (int i = 0; i < stringLength; i++) {
-                    if (userAnswer.charAt(i) != correctAnswer.charAt(i)) {
-                        if (((correctAnswer.charAt(i) == 'ï') && (userAnswer.charAt(i) == 'i'))
-                                || (((correctAnswer.charAt(i)) == 'ë') && (userAnswer.charAt(i) == 'e'))) {
-                            // Answer still correct. Move on
-                        } else {
-                            differentCharsCount++;
+                conjugationAlternatives = 1;
+                correctAnswer = new String[1];
+                correctAnswer[0] = correctAnswerRow;
+            }
+
+            for (int i = 0; i < conjugationAlternatives; i++) {
+                differentCharsCount = 0;
+                if ((stringLength = correctAnswer[i].length()) != userAnswer.length()) {
+                    status = "incorrect"; // The string length differs
+                } else {
+                    // Compare character by character
+                    for (int j = 0; j < stringLength; j++) {
+                        if (userAnswer.charAt(j) != correctAnswer[i].charAt(j)) {
+                            if (((correctAnswer[i].charAt(j) == 'ï') && (userAnswer.charAt(j) == 'i'))
+                                    || (((correctAnswer[i].charAt(j)) == 'ë') && (userAnswer.charAt(j) == 'e'))) {
+                                // The answer is correct
+                            } else {
+                                differentCharsCount++; // The characters from current index are different
+                            }
                         }
                     }
-                }
-                if (differentCharsCount == 0) {
-                    return "correct";
-                } else if (differentCharsCount == 1) {
-                    return "almost";
-                }
-                else {
-                    return "incorrect";
+                    if (differentCharsCount == 0) {
+                        status = "correct";
+                        break;
+                    } else if (differentCharsCount == 1) {
+                        status = "almost";
+                        break;
+                    } else {
+                        status = "incorrect";
+                    }
                 }
             }
+            return status;
         }
     }
 
