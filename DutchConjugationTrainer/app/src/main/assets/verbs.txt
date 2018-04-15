@@ -226,36 +226,36 @@ eindigt
 eindigen
 eindigen
 eindigen
-heb geëindigd
-hebt geëindigd
-heeft geëindigd
-hebben geëindigd
-hebben geëindigd
-hebben geëindigd
+ben geëindigd
+bent geëindigd
+is geëindigd
+zijn geëindigd
+zijn geëindigd
+zijn geëindigd
 eindigde
 eindigde
 eindigde
 eindigden
 eindigden
 eindigden
-had geëindigd
-had geëindigd
-had geëindigd
-hadden geëindigd
-hadden geëindigd
-hadden geëindigd
+was geëindigd
+was geëindigd
+was geëindigd
+waren geëindigd
+waren geëindigd
+waren geëindigd
 zou eindigen
 zou eindigen
 zou eindigen
 zouden eindigen
 zouden eindigen
 zouden eindigen
-zou geëindigd hebben
-zou geëindigd hebben
-zou geëindigd hebben
-zouden geëindigd hebben
-zouden geëindigd hebben
-zouden geëindigd hebben
+zou geëindigd waren
+zou geëindigd waren
+zou geëindigd waren
+zouden geëindigd waren
+zouden geëindigd waren
+zouden geëindigd waren
 zal eindigen
 zal eindigen
 zal eindigen
@@ -2382,36 +2382,36 @@ innert her
 inneren her
 inneren her
 inneren her
-heb hergeïnnerd
-hebt hergeïnnerd
-heeft hergeïnnerd
-hebben hergeïnnerd
-hebben hergeïnnerd
-hebben hergeïnnerd
+heb herinnerd
+hebt herinnerd
+heeft herinnerd
+hebben herinnerd
+hebben herinnerd
+hebben herinnerd
 innerde her
 innerde her
 innerde her
 innerden her
 innerden her
 innerden her
-had hergeïnnerd
-had hergeïnnerd
-had hergeïnnerd
-hadden hergeïnnerd
-hadden hergeïnnerd
-hadden hergeïnnerd
+had herinnerd
+had herinnerd
+had herinnerd
+hadden herinnerd
+hadden herinnerd
+hadden herinnerd
 zou herinneren
 zou herinneren
 zou herinneren
 zouden herinneren
 zouden herinneren
 zouden herinneren
-zou hergeïnnerd hebben
-zou hergeïnnerd hebben
-zou hergeïnnerd hebben
-zouden hergeïnnerd hebben
-zouden hergeïnnerd hebben
-zouden hergeïnnerd hebben
+zou herinnerd hebben
+zou herinnerd hebben
+zou herinnerd hebben
+zouden herinnerd hebben
+zouden herinnerd hebben
+zouden herinnerd hebben
 zal herinneren
 zult herinneren
 zal herinneren
@@ -2729,8 +2729,8 @@ zullen proberen
 willen
 (to want)
 wil
-wilt
-wil
+wilt/wil
+wil/wilt
 willen
 willen
 willen
@@ -2740,12 +2740,12 @@ heeft gewild
 hebben gewild
 hebben gewild
 hebben gewild
-wou
-wou
-wou
-wouden
-wouden
-wouden
+wou/wilde
+wou/wilde
+wou/wilde
+wouden/wilden
+wouden/wilden
+wouden/wilden
 had gewild
 had gewild
 had gewild
@@ -3394,36 +3394,36 @@ mag
 mogen
 mogen
 mogen
-heb gemoogd
-hebt gemoogd
-heeft gemoogd
-hebben gemoogd
-hebben gemoogd
-hebben gemoogd
+heb gemogen
+hebt gemogen
+heeft gemogen
+hebben gemogen
+hebben gemogen
+hebben gemogen
 mocht
 mocht
 mocht
 mochten
 mochten
 mochten
-had gemoogd
-had gemoogd
-had gemoogd
-hadden gemoogd
-hadden gemoogd
-hadden gemoogd
+had gemogen
+had gemogen
+had gemogen
+hadden gemogen
+hadden gemogen
+hadden gemogen
 zou mogen
 zou mogen
 zou mogen
 zouden mogen
 zouden mogen
 zouden mogen
-zou gemoogd hebben
-zou gemoogd hebben
-zou gemoogd hebben
-zouden gemoogd hebben
-zouden gemoogd hebben
-zouden gemoogd hebben
+zou gemogen hebben
+zou gemogen hebben
+zou gemogen hebben
+zouden gemogen hebben
+zouden gemogen hebben
+zouden gemogen hebben
 zal mogen
 zult mogen
 zal mogen
@@ -4406,36 +4406,36 @@ waarschuwt
 waarschuwen
 waarschuwen
 waarschuwen
-heb waarschuwd
-hebt waarschuwd
-heeft waarschuwd
-hebben waarschuwd
-hebben waarschuwd
-hebben waarschuwd
+heb gewaarschuwd
+hebt gewaarschuwd
+heeft gewaarschuwd
+hebben gewaarschuwd
+hebben gewaarschuwd
+hebben gewaarschuwd
 waarschuwde
 waarschuwde
 waarschuwde
 waarschuwden
 waarschuwden
 waarschuwden
-had waarschuwd
-had waarschuwd
-had waarschuwd
-hadden waarschuwd
-hadden waarschuwd
-hadden waarschuwd
+had gewaarschuwd
+had gewaarschuwd
+had gewaarschuwd
+hadden gewaarschuwd
+hadden gewaarschuwd
+hadden gewaarschuwd
 zou waarschuwen
 zou waarschuwen
 zou waarschuwen
 zouden waarschuwen
 zouden waarschuwen
 zouden waarschuwen
-zou waarschuwd hebben
-zou waarschuwd hebben
-zou waarschuwd hebben
-zouden waarschuwd hebben
-zouden waarschuwd hebben
-zouden waarschuwd hebben
+zou gewaarschuwd hebben
+zou gewaarschuwd hebben
+zou gewaarschuwd hebben
+zouden gewaarschuwd hebben
+zouden gewaarschuwd hebben
+zouden gewaarschuwd hebben
 zal waarschuwen
 zult waarschuwen
 zal waarschuwen
@@ -4626,36 +4626,36 @@ kent her
 kennen her
 kennen her
 kennen her
-heb hergekend
-hebt hergekend
-heeft hergekend
-hebben hergekend
-hebben hergekend
-hebben hergekend
+heb herkend
+hebt herkend
+heeft herkend
+hebben herkend
+hebben herkend
+hebben herkend
 kende her
 kende her
 kende her
 kenden her
 kenden her
 kenden her
-had hergekend
-had hergekend
-had hergekend
-hadden hergekend
-hadden hergekend
-hadden hergekend
+had herkend
+had herkend
+had herkend
+hadden herkend
+hadden herkend
+hadden herkend
 zou herkennen
 zou herkennen
 zou herkennen
 zouden herkennen
 zouden herkennen
 zouden herkennen
-zou hergekend hebben
-zou hergekend hebben
-zou hergekend hebben
-zouden hergekend hebben
-zouden hergekend hebben
-zouden hergekend hebben
+zou herkend hebben
+zou herkend hebben
+zou herkend hebben
+zouden herkend hebben
+zouden herkend hebben
+zouden herkend hebben
 zal herkennen
 zult herkennen
 zal herkennen
@@ -5462,36 +5462,36 @@ eet
 eten
 eten
 eten
-heb geëten
-hebt geëten
-heeft geëten
-hebben geëten
-hebben geëten
-hebben geëten
+heb gegeten
+hebt gegeten
+heeft gegeten
+hebben gegeten
+hebben gegeten
+hebben gegeten
 at
 at
 at
 aten
 aten
 aten
-had geëten
-had geëten
-had geëten
-hadden geëten
-hadden geëten
-hadden geëten
+had gegeten
+had gegeten
+had gegeten
+hadden gegeten
+hadden gegeten
+hadden gegeten
 zou eten
 zou eten
 zou eten
 zouden eten
 zouden eten
 zouden eten
-zou geëten hebben
-zou geëten hebben
-zou geëten hebben
-zouden geëten hebben
-zouden geëten hebben
-zouden geëten hebben
+zou gegeten hebben
+zou gegeten hebben
+zou gegeten hebben
+zouden gegeten hebben
+zouden gegeten hebben
+zouden gegeten hebben
 zal eten
 zult eten
 zal eten
@@ -8454,36 +8454,36 @@ vertrekt
 vertrekken
 vertrekken
 vertrekken
-heb vertrokken
-hebt vertrokken
-heeft vertrokken
-hebben vertrokken
-hebben vertrokken
-hebben vertrokken
+ben vertrokken
+bent vertrokken
+is vertrokken
+zijn vertrokken
+zijn vertrokken
+zijn vertrokken
 vertrok
 vertrok
 vertrok
 vertrokken
 vertrokken
 vertrokken
-had vertrokken
-had vertrokken
-had vertrokken
-hadden vertrokken
-hadden vertrokken
-hadden vertrokken
+was vertrokken
+was vertrokken
+was vertrokken
+waren vertrokken
+waren vertrokken
+waren vertrokken
 zou vertrekken
 zou vertrekken
 zou vertrekken
 zouden vertrekken
 zouden vertrekken
 zouden vertrekken
-zou vertrokken hebben
-zou vertrokken hebben
-zou vertrokken hebben
-zouden vertrokken hebben
-zouden vertrokken hebben
-zouden vertrokken hebben
+zou vertrokken waren
+zou vertrokken waren
+zou vertrokken waren
+zouden vertrokken waren
+zouden vertrokken waren
+zouden vertrokken waren
 zal vertrekken
 zult vertrekken
 zal vertrekken
